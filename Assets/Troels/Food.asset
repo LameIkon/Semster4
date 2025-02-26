@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Name: 
   _Description: 
-  _PreferdType: 0
-  _PreferdTypePoints: 0
-  _OkayType: 0
-  _OkayTypePoints: 0
-  _WrongTypePoints: 0
+  _PreferdType: 3
+  _PreferdTypePoints: 5
+  _OkayType: 2
+  _OkayTypePoints: 1
+  _WrongTypePoints: -3

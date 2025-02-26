@@ -18,3 +18,4 @@ MonoBehaviour:
   _PreferdTypePoints: 5
   _OkayType: 5
   _OkayTypePoints: 2
+  _WrongTypePoints: -10

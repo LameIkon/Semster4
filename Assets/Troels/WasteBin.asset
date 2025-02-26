@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f7f39bd7cfd084081785a57b9a71b9, type: 3}
   m_Name: WasteBin
   m_EditorClassIdentifier: 
-  _AllowedType: 0
+  _AllowedType: 2
