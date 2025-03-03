@@ -4,9 +4,9 @@ public enum SortingCategory : Byte
 {
     FoodWaste,                     // Madaffald 
     ResidualWaste,                 // Restaffald
-    PaperAndCardboard,             // Papir & småt pap
+    PaperAndCardboard,             // Papir & smÃ¥t pap
     GlassAndMetal,                 // Glas & metal 
     PlasticAndFoodBeverageCartons, // Plast og mad- & drikkekartoner
-    HazardousAndSmallElectronics,  // Farligt affald og småt elektronik
+    HazardousAndSmallElectronics,  // Farligt affald og smÃ¥t elektronik
     Textiles,                      // Tekstilaffald
 }
