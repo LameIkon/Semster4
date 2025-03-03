@@ -171,7 +171,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 424510164214139090, guid: a567c56e238de9c4595df985f860d2a8, type: 3}
       propertyPath: m_Name
-      value: Tin Can
+      value: TinCan
       objectReference: {fileID: 0}
     - target: {fileID: 1900511572045765977, guid: a567c56e238de9c4595df985f860d2a8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -2258,7 +2258,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 424510164214139090, guid: a567c56e238de9c4595df985f860d2a8, type: 3}
       propertyPath: m_Name
-      value: Tin Can (1)
+      value: TinCan (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1900511572045765977, guid: a567c56e238de9c4595df985f860d2a8, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3049,7 +3049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892860578}
   m_Layer: 0
-  m_Name: VR stuff
+  m_Name: VR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

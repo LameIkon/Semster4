@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8708086065440063694}
   - component: {fileID: 4335622445684436465}
   m_Layer: 0
-  m_Name: Tin Can
+  m_Name: TinCan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
