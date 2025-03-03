@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: MilkCarton
   m_EditorClassIdentifier: 
-  _Name: Milk
+  _Name: Milk carton
   _Description: Hmm, semi skimmed
   _PreferdType: 4
   _PreferdTypePoints: 10
