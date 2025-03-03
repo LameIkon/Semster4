@@ -22,14 +22,14 @@ public class HighscoreTable : MonoBehaviour
         _pointCounter.text = 0.ToString();
     }
 
-    public static void UpdateHighScorePoints(float? point)
+    public static void UpdateHighScorePoints(float? points)
     {
         if (_instance is null) return;
 
         float  currentPoints     = float.Parse(_instance._pointCounter.text);
         float? incrementedPoints = currentPoints;
 
-        incrementedPoints            += point;
+        incrementedPoints            += points;
         _instance._pointCounter.text =  incrementedPoints.ToString();
     }
 }
