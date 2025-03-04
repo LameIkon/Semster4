@@ -41,18 +41,25 @@ public class HighscoreTable : MonoBehaviour
         float  currentPoints     = float.Parse(_instance._totalScore.text);
         float? incrementedPoints = currentPoints;
 
-        incrementedPoints                    += points;
-        _instance._totalScore.text           =  incrementedPoints.ToString();
-        _instance._scoreIncremenTracker.text =  FormatScoreIncrementTracker();
+        incrementedPoints          += points;
+        _instance._totalScore.text =  incrementedPoints.ToString();
+
+        String formatScoreIncrementTracker = (points > 0)
+                ? $"+{points}" 
+                : points.ToString();
+        _instance._scoreIncremenTracker.text  = formatScoreIncrementTracker;
+        _instance._scoreIncremenTracker.color = SetScoreIncrementTrackerColor();
         return;
-        
-        String FormatScoreIncrementTracker()
+
+
+        Color SetScoreIncrementTrackerColor()
         {
             return points switch
             {
-                
+                > 0 => _instance._scoreIncremenTracker.color = Color.green,
+                < 0 => _instance._scoreIncremenTracker.color = Color.red,
+                _   => _instance._scoreIncremenTracker.color = Color.white
             };
         }
     }
-    
 }

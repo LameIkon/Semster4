@@ -3152,11 +3152,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6179092898700069722, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
+      propertyPath: _totalScore
+      value: 
+      objectReference: {fileID: 1706051379}
+    - target: {fileID: 6179092898700069722, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
       propertyPath: _totalPoints
       value: 
       objectReference: {fileID: 1706051379}
     - target: {fileID: 6179092898700069722, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
       propertyPath: _pointTracker
+      value: 
+      objectReference: {fileID: 147327806}
+    - target: {fileID: 6179092898700069722, guid: dc067c577ec1b854684d789b6e727cc0, type: 3}
+      propertyPath: _scoreIncremenTracker
       value: 
       objectReference: {fileID: 147327806}
     m_RemovedComponents: []
