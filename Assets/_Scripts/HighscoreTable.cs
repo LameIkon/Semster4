@@ -36,30 +36,22 @@ public class HighscoreTable : MonoBehaviour
 
     public static void UpdateHighScorePoints(float? points)
     {
-        if (_instance is null) return;
+        if (_instance is null || points is null) return;
 
-        float  currentPoints     = float.Parse(_instance._totalScore.text);
-        float? incrementedPoints = currentPoints;
+        float? currentPoints     = float.Parse(_instance._totalScore.text);
+        float? incrementedPoints = currentPoints + points.Value;
 
-        incrementedPoints          += points;
-        _instance._totalScore.text =  incrementedPoints.ToString();
+        _instance._totalScore.text = incrementedPoints.ToString();
 
-        String formatScoreIncrementTracker = (points > 0)
-                ? $"+{points}" 
+        String formatScoreIncrementTracker = points > 0
+                ? $"+{points}"
                 : points.ToString();
-        _instance._scoreIncremenTracker.text  = formatScoreIncrementTracker;
-        _instance._scoreIncremenTracker.color = SetScoreIncrementTrackerColor();
-        return;
-
-
-        Color SetScoreIncrementTrackerColor()
+        _instance._scoreIncremenTracker.text = formatScoreIncrementTracker;
+        _instance._scoreIncremenTracker.color = points switch
         {
-            return points switch
-            {
-                > 0 => _instance._scoreIncremenTracker.color = Color.green,
-                < 0 => _instance._scoreIncremenTracker.color = Color.red,
-                _   => _instance._scoreIncremenTracker.color = Color.white
-            };
-        }
+            > 0 => Color.green,
+            < 0 => Color.red,
+            _   => Color.white
+        };
     }
 }
