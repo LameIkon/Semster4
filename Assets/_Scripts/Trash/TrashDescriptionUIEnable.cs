@@ -30,6 +30,7 @@ public class TrashDescriptionUIEnable : MonoBehaviour
     {
         _trashUIPanel.SetActive(true);
         _trashUIPanel.transform.SetParent(_playerCamera);
+        _trashUIPanel.transform.localScale = new Vector3(0.5f,0.5f,0.5f); 
     }
 
     public void OnRelease()

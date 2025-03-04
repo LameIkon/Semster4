@@ -9,4 +9,5 @@ public enum SortingCategory : Byte
     PlasticAndFoodBeverageCartons, // Plast og mad- & drikkekartoner
     HazardousAndSmallElectronics,  // Farligt affald og småt elektronik
     Textiles,                      // Tekstilaffald
+    None
 }

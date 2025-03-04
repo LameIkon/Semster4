@@ -10,3 +10,5 @@ public class SOTrashBinData : ScriptableObject
 	public SortingCategory _AllowedType; // Used to determine which trash goes in to the bin.
 
 }
+
+// _AllowedCategory instead of _AllowedType
