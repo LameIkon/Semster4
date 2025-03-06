@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  _Name: Banan
+  _Name: Banana
   _Description: "Materiale: Organisk\r\n\r\nNedbrydningstid: 2-5 uger\r\n\r\nAffaldsh\xE5ndtering:
     Bioaffald (genanvendes til biogas og g\xF8dning)\r\n\r\n "
   _PreferdType: 0
