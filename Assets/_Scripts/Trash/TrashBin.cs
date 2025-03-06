@@ -31,6 +31,7 @@ public class TrashBin : MonoBehaviour
 				_Points += (float)points; // Purely for debugging
 				OnTrashedEvent.Invoke((float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				HighscoreTable.UpdateHighScorePoints(points);
+				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
 			}
 		}
 	}
