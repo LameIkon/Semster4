@@ -6,8 +6,8 @@ using UnityEngine;
 public class SOTrashData : ScriptableObject
 {
 	[Header("Description")]
-	[SerializeField] private string _Name;
-	[SerializeField, TextArea(3, 10)] private string _Description;
+	public string _Name;
+	[TextArea(3, 15)] public string _Description;
 
 	[Header("Sorting Category"), Space(2)]
 	public SortingCategory _PreferdType;		// Preferd trash type, this is implemented as this to make it more dynamic and scalable

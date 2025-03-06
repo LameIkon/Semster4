@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Banana
   m_EditorClassIdentifier: 
   _Name: Banana
-  _Description: It's rotten
+  _Description: "Materiale: Organisk\r\n\r\nNedbrydningstid: 2-5 uger\r\n\r\nAffaldsh\xE5ndtering:
+    Bioaffald (genanvendes til biogas og g\xF8dning)\r\n\r\n "
   _PreferdType: 0
   _PreferdTypePoints: 5
   _AcceptableType: 1
