@@ -19,8 +19,14 @@ public class TrashBin : MonoBehaviour
 
 	public static event Action<float> OnTrashedEvent; // The event that connects to the TrashManager
 
-	
-	private void OnTriggerEnter(Collider target) 
+	private Animator _animator;
+
+    private void Start()
+    {
+		_animator = gameObject.GetComponent<Animator>();
+    }
+
+    private void OnTriggerEnter(Collider target) 
 	{
 		if (_binData != null)
 		{
@@ -32,9 +38,34 @@ public class TrashBin : MonoBehaviour
 				OnTrashedEvent.Invoke((float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				HighscoreTable.UpdateHighScorePoints(points);
 				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
+
+				EnablePolish(points);
 			}
 		}
 	}
+
+	private void EnablePolish(float? points) // Checks if the value is positive or negative
+	{
+		if (points >= 0)
+		{
+			Debug.Log("positive");
+			StartCoroutine(TrashBinPolish("ExpandCorrect"));
+		}
+		else if (points < 0)
+		{
+			Debug.Log("negative");
+            StartCoroutine(TrashBinPolish("ExpandIncorrect"));
+        }
+	}
+
+	private IEnumerator TrashBinPolish(string state)
+	{
+		//meshRenderer.material = material;
+		_animator.Play(state);
+        yield return new WaitForSeconds(0.3f);
+		//meshRenderer.material = TrashbinDefault;
+
+    }
 
 	// Makes sure that the BoxCollider is a set to a Trigger
 	public void Reset()
