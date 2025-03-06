@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: CandyBag
   m_EditorClassIdentifier: 
-  _Name: Candy bag
-  _Description: Hmm, semi skimmed
+  _Name: Slikpose
+  _Description: "Materiale: Plastik\n\nNedbrydningstid: 100-500 \xE5r\n\nAffaldsh\xE5ndtering:
+    Restaffald (forbr\xE6nding)"
   _PreferdType: 1
   _PreferdTypePoints: 25
   _AcceptableType: 1

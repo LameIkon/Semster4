@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: JamJar
   m_EditorClassIdentifier: 
-  _Name: Jam jar
-  _Description: Made with fresh Ghanian strawberries
+  _Name: "Syltet\xF8jsglas"
+  _Description: "Materiale: Glas\n\nNedbrydningstid: Flere tusinde \xE5r\n\nAffaldsh\xE5ndtering:
+    Glas-genbrug (Knuses og smeltes om til nye glasflasker eller glasemballage.)"
   _PreferdType: 3
   _PreferdTypePoints: 15
   _AcceptableType: 1

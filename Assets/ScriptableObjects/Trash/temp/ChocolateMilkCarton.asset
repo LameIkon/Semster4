@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
-  m_Name: MilkCarton
+  m_Name: ChocolateMilkCarton
   m_EditorClassIdentifier: 
-  _Name: Milk carton
-  _Description: Hmm, semi skimmed
+  _Name: Kako karton
+  _Description: "Materiale: Pap + plast + aluminium \n\nNedbrydningstid: 5-10 \xE5r\n\nAffaldsh\xE5ndtering:
+    Drikkekarton-genbrug"
   _PreferdType: 4
   _PreferdTypePoints: 10
   _AcceptableType: 1
