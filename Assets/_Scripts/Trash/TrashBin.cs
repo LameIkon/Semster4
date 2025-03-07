@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using TMPro;
 
 [RequireComponent(typeof(BoxCollider))]
 public class TrashBin : MonoBehaviour
@@ -13,11 +14,13 @@ public class TrashBin : MonoBehaviour
 	[SerializeField]
 	private SOTrashBinData _binData; // The Trash type comes from the SO 
 
+	public GameObject _FloatingPoint;
+
 	private BoxCollider _boxCollider;
 
 	public float _Points; // Purely for debugging
 
-	public static event Action<float> OnTrashedEvent; // The event that connects to the TrashManager
+	public static event Action<GameObject, float> OnTrashedEvent; // The event that connects to the TrashManager
 
 	private Animator _animator;
 
@@ -35,7 +38,10 @@ public class TrashBin : MonoBehaviour
 			if (points != null) 
 			{
 				_Points += (float)points; // Purely for debugging
-				OnTrashedEvent.Invoke((float)points); // Casts the points as a float and invokes the OnTrashedEvent
+				OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
+				Debug.Log(gameObject);
+
+				HandleTrashEvent(_Points);
 				HighscoreTable.UpdateHighScorePoints(points);
 				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
 
@@ -72,5 +78,17 @@ public class TrashBin : MonoBehaviour
 	{
 		GetComponent<BoxCollider>().isTrigger = true;
 	}
+
+    private void HandleTrashEvent(float points)
+    {
+        if (_FloatingPoint != null)
+        {
+            GetComponent<TrashBin>();
+
+            GameObject go = Instantiate(_FloatingPoint, transform.position + Vector3.up*3, Quaternion.identity, transform);      // Instantiates the FloatingPoint. Becomes a child of parent object.
+            go.GetComponent<TextMeshPro>().text = points.ToString();                                              // <- Variable for points goes here.
+        }
+
+    }
 
 }

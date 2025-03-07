@@ -22,7 +22,7 @@ public sealed class TrashManager : MonoBehaviour
 	}
 
 
-	private void HandleTrashEvent(float points) 
+	private void HandleTrashEvent(GameObject sender, float points) 
 	{
 		_Points += points;
 	}
