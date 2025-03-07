@@ -20,7 +20,7 @@ public class TrashBin : MonoBehaviour
 
 	public float _Points; // Purely for debugging
 
-	public static event Action<GameObject, float> OnTrashedEvent; // The event that connects to the TrashManager
+	public static event Action<MonoBehaviour, float> OnTrashedEvent; // The event that connects to the TrashManager
 
 	private Animator _animator;
 
@@ -38,10 +38,10 @@ public class TrashBin : MonoBehaviour
 			if (points != null) 
 			{
 				_Points += (float)points; // Purely for debugging
-				OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
+				OnTrashedEvent.Invoke(this, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				Debug.Log(gameObject);
 
-				HandleTrashEvent(_Points);
+				//HandleTrashEvent(_Points);
 				HighscoreTable.UpdateHighScorePoints(points);
 				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
 
