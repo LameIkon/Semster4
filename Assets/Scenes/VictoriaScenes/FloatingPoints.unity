@@ -468,6 +468,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: 8b73b73e164406848bbcc7ae641cdf4d, type: 2}
+  _FloatingPoint: {fileID: 0}
   _Points: 0
 --- !u!23 &142732615
 MeshRenderer:
@@ -919,6 +920,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: 72e1b6f218195074fa1b1f8e09135784, type: 2}
+  _FloatingPoint: {fileID: 8049100341368274221, guid: 4edb37ca0a20bef4e8cd431a5a76086c, type: 3}
   _Points: 0
 --- !u!23 &211844274
 MeshRenderer:
@@ -1328,6 +1330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 1391981695}
+  _trashData: {fileID: 0}
 --- !u!114 &266961328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2023,6 +2026,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: ae51828bbc7cdd545ad12e67b3567673, type: 2}
+  _FloatingPoint: {fileID: 8049100341368274221, guid: 4edb37ca0a20bef4e8cd431a5a76086c, type: 3}
   _Points: 0
 --- !u!23 &420133198
 MeshRenderer:
@@ -2359,6 +2363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 1217918945}
+  _trashData: {fileID: 0}
 --- !u!114 &517601710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3532,6 +3537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: 089b6243392c4bd4abe039917e3f62ab, type: 2}
+  _FloatingPoint: {fileID: 8049100341368274221, guid: 4edb37ca0a20bef4e8cd431a5a76086c, type: 3}
   _Points: 0
 --- !u!23 &658896426
 MeshRenderer:
@@ -5169,6 +5175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: 9496a3a6a04179d4eab618abd37e1e56, type: 2}
+  _FloatingPoint: {fileID: 0}
   _Points: 0
 --- !u!23 &1365205600
 MeshRenderer:
@@ -5342,6 +5349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: d82458219b2e9d5418df228141d3c662, type: 2}
+  _FloatingPoint: {fileID: 8049100341368274221, guid: 4edb37ca0a20bef4e8cd431a5a76086c, type: 3}
   _Points: 0
 --- !u!23 &1390943959
 MeshRenderer:
@@ -5880,6 +5888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 623499509}
+  _trashData: {fileID: 0}
 --- !u!114 &1461446701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6625,6 +6634,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 501813932}
+  _trashData: {fileID: 0}
 --- !u!1 &1523131662
 GameObject:
   m_ObjectHideFlags: 0
@@ -6747,6 +6757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: 4e87165ae1b82d047a961c582f6a76fc, type: 2}
+  _FloatingPoint: {fileID: 0}
   _Points: 0
 --- !u!23 &1523131668
 MeshRenderer:
@@ -7057,6 +7068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 1330575068}
+  _trashData: {fileID: 0}
 --- !u!114 &1946516172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7548,6 +7560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 964501776}
+  _trashData: {fileID: 0}
 --- !u!114 &2136573147
 MonoBehaviour:
   m_ObjectHideFlags: 0
