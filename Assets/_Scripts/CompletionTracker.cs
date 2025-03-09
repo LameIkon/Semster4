@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class CompletionTracker : MonoBehaviour
 {
-    public static event Action OnCompletion;
+    public static event Action OnCompletion; // Look trashManager
 
     public static int _TrashObjectsCount = 0;
-    [SerializeField] private GameObject[] _trashObjectsToTrack;
+    [SerializeField] private GameObject[] _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage
     public static int _targetCount;
 
     private void Awake()
