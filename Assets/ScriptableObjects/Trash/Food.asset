@@ -19,3 +19,4 @@ MonoBehaviour:
   _AcceptableType: 1
   _AcceptableTypePoints: 1
   _WrongTypePoints: -3
+  _TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

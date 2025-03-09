@@ -21,6 +21,7 @@ public class TrashBin : MonoBehaviour
 	public float _Points; // Purely for debugging
 
 	public static event Action<MonoBehaviour, float> OnTrashedEvent; // The event that connects to the TrashManager
+	public static event Action<AudioClip, Vector3> _OnTrashAudioEvent;
 
 	private Animator _animator;
 
@@ -34,8 +35,8 @@ public class TrashBin : MonoBehaviour
 		if (_binData != null)
 		{
 			float? points = target.GetComponent<ITrashable>()?.Trashing(_binData._AllowedType); // Check if the GameObject entering the Trigger has an ITrashable
-																								  // and calling the Trashing method, the method returns a float
-			if (points != null) 
+																								// and calling the Trashing method, the method returns a float
+			if (points != null)
 			{
 				_Points += (float)points; // Purely for debugging
 				OnTrashedEvent.Invoke(this, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
@@ -46,6 +47,12 @@ public class TrashBin : MonoBehaviour
 				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
 
 				EnablePolish(points);
+			}
+
+			AudioClip clip = target.GetComponent<ITrashable>()?.TrashAudio();
+			if (clip != null) 
+			{
+				_OnTrashAudioEvent.Invoke(clip, transform.position);
 			}
 		}
 	}

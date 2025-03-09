@@ -1,26 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
-[RequireComponent(typeof(AudioSource[]))]
+[RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
 {
-    private AudioSource[] _audioSources;
+    private AudioSource _audioSource;
+    public AudioMixerGroup _AudioMixer;
 
-    private void PlaySounds() 
+
+    private void HandlePlaySounds(AudioClip clip, Vector3 position) 
     {
-        _audioSources[1].Play();
-    
+        AudioSource.PlayClipAtPoint(clip, position, 1f);
     }
 
+
+    #region UnityMethods
+    private void Start() 
+    {
+        _audioSource = GetComponent<AudioSource>();
+        _audioSource.outputAudioMixerGroup = _AudioMixer;
+    }
+    
     private void Reset()
     {
-        AudioSource[] audioSourcesOnObject = GetComponents<AudioSource>();
 
-        for (int i = audioSourcesOnObject.Length; i < 4; i++)
-        {
-            gameObject.AddComponent<AudioSource>();
-        }
     }
+
+	private void OnEnable()
+	{
+        TrashBin._OnTrashAudioEvent += HandlePlaySounds;
+	}
+
+	private void OnDisable()
+	{
+		TrashBin._OnTrashAudioEvent -= HandlePlaySounds;
+	}
+
+	#endregion
 }

@@ -25,4 +25,11 @@ public class Trash : MonoBehaviour, ITrashable
 		return _data._WrongTypePoints;
 
 	}
+
+	public AudioClip TrashAudio() 
+	{
+		if (_data == null) throw new NullReferenceException();
+
+		return _data._TrashAudioClip;
+	}
 }

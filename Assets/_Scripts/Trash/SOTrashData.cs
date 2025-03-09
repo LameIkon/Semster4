@@ -20,6 +20,9 @@ public class SOTrashData : ScriptableObject
 	[Space()]
 	public float _WrongTypePoints;
 
+	[Space()]
+	public AudioClip _TrashAudioClip;
+
 }
 
 
