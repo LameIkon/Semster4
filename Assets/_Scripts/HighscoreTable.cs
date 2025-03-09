@@ -15,7 +15,6 @@ public class HighscoreTable : MonoBehaviour
     private static           HighscoreTable  s_instance; 
     [SerializeField] private TextMeshProUGUI _totalScore;
     [SerializeField] private TextMeshProUGUI _scoreIncrementTracker;
-    [SerializeField] private TextMeshProUGUI _errorMessage;
 
     private void Awake()
     {
@@ -31,17 +30,17 @@ public class HighscoreTable : MonoBehaviour
             _totalScore.text = 0.ToString();
 
         if (_scoreIncrementTracker is not null)
-            _scoreIncrementTracker.text = "";
-
-        if (_errorMessage is not null)
-            _errorMessage.text = "";
+            _scoreIncrementTracker.text = String.Empty;
     }
     
     public static void UpdateHighScorePoints(float? points)
     {
-        if (s_instance is null || points is null)
-            Debug.LogError("Error: UpdateHighScorePoints had an unexpected error.");
-
+        if (s_instance is null)
+            Debug.LogError("Error: An instance of HighscoreTable.cs does not currently exist.");
+        
+        if (points is null)
+            Debug.LogError("Error: DisplayErrorMessage had an unexpected error.");
+        
         float? currentPoints               = float.Parse(s_instance._totalScore.text);
         float? incrementedPoints           = currentPoints + points.Value;
         String formatScoreIncrementTracker = (points > 0) ? $"+{points}" : points.ToString();
@@ -60,25 +59,5 @@ public class HighscoreTable : MonoBehaviour
                 _   => Color.white
             };
         }
-    }
-
-    public static void DisplayErrorMessage(float? points, String trashName, String trashBin)
-    {
-        if (s_instance is null || points is null || trashName.IsNullOrEmpty() || trashBin.IsNullOrEmpty())
-            Debug.LogError("Error: DisplayErrorMessage had an unexpected error.");
-
-        if (points >= 0)
-        {
-            s_instance._errorMessage.text = "";
-            return;
-        }
-
-        {
-            // Temporary, will be deleted once the TrashManager.cs is fully implemented 
-            trashName    = "NOT DEFINED";
-            trashBin = "NOT DEFINED";
-        }
-
-        s_instance._errorMessage.text = $"You may not discard {trashName} in {trashBin}";
     }
 }

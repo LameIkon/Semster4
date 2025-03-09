@@ -22,13 +22,29 @@ namespace _Scripts
             if (_infoMessage is not null)
                 _infoMessage.text = String.Empty;
         }
-
-        public static void UpdateInfoMessage()
+        
+        public static void DisplayInfoMessage(float? points, String trashName, String trashBin)
         {
             if (s_instance is null)
-                Debug.LogError("Error: An instance of Infoboard.cs does not currently exist");
-            
-            
+                Debug.LogError("Error: An instance of Infoboard.cs does not currently exist.");
+
+            if (points is null || String.IsNullOrEmpty(trashName) || String.IsNullOrEmpty(trashBin))
+                Debug.LogError("Error: DisplayInfoMessage had an unexpected error.");
+        
+            if (points >= 0)
+            {
+                s_instance._infoMessage.text = "";
+                // $"You may not discord {trashName} in {trashBin1}"
+                return;
+            }
+
+            // Temporary, will be deleted once the TrashManager.cs is fully implemented 
+            {
+                trashName = "NOT DEFINED";
+                trashBin  = "NOT DEFINED";
+            }
+
+            s_instance._infoMessage.text = $"You may not discard {trashName} in {trashBin}";
         }
     }
 }

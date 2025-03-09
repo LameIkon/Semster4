@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
+using _Scripts;
 using UnityEngine;
 using TMPro;
 
@@ -43,7 +44,7 @@ public class TrashBin : MonoBehaviour
 
 				HandleTrashEvent(_Points);
 				HighscoreTable.UpdateHighScorePoints(points);
-				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
+				Infoboard.DisplayInfoMessage(points, "apple", "fruit bin");
 
 				EnablePolish(points);
 			}
