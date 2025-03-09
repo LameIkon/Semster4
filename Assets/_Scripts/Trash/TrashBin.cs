@@ -23,7 +23,7 @@ public class TrashBin : MonoBehaviour
 
     private void Start()
     {
-		if (gameObject.TryGetComponent(out Animator animator)) // if component exist try get
+		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
 		{
 			_animator = animator;
 		}
