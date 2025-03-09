@@ -16,7 +16,7 @@ MonoBehaviour:
   _Description: "Materiale: Plastik\n\nNedbrydningstid: 100-500 \xE5r\n\nAffaldsh\xE5ndtering:
     Restaffald (forbr\xE6nding)"
   _PreferdType: 1
-  _PreferdTypePoints: 25
-  _AcceptableType: 1
-  _AcceptableTypePoints: 2
-  _WrongTypePoints: -12
+  _PreferdTypePoints: 2
+  _AcceptableType: 7
+  _AcceptableTypePoints: 0
+  _WrongTypePoints: -2

@@ -16,7 +16,7 @@ MonoBehaviour:
   _Description: "Materiale: Glas\n\nNedbrydningstid: Flere tusinde \xE5r\n\nAffaldsh\xE5ndtering:
     Glas-genbrug (Knuses og smeltes om til nye glasflasker eller glasemballage.)"
   _PreferdType: 3
-  _PreferdTypePoints: 15
-  _AcceptableType: 1
-  _AcceptableTypePoints: 2
-  _WrongTypePoints: -5
+  _PreferdTypePoints: 2
+  _AcceptableType: 7
+  _AcceptableTypePoints: 0
+  _WrongTypePoints: -2
