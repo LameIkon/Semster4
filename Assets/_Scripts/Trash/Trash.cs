@@ -11,6 +11,7 @@ public class Trash : MonoBehaviour, ITrashable
 	public float Trashing(SortingCategory type)
 	{
 		if (_data == null) throw new NullReferenceException();
+		CompletionTracker.RegisterTrash();
 		Destroy(gameObject);
 		
 		if (type == _data._PreferdType)	// Will check the type it gets from the TrashBin to the Preferd and Okay types
