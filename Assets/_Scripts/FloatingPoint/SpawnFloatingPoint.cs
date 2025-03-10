@@ -20,11 +20,9 @@ public class SpawnFloatingPoint : MonoBehaviour
     private void HandleTrashEvent(GameObject sender, float points)
     {
         if ( _FloatingPoint != null )
-        {
-            sender.GetComponent<TrashBin>();
-            
-            GameObject go = Instantiate(_FloatingPoint, sender.transform.position, Quaternion.identity, transform);      // Instantiates the FloatingPoint. Becomes a child of parent object.
-            go.GetComponent<TextMeshPro>().text = "points.ToString()";                                              // <- Variable for points goes here.
+        {       
+            GameObject go = Instantiate(_FloatingPoint, sender.transform.position, Quaternion.identity, sender.transform);      // Instantiates the FloatingPoint. Becomes a child of parent object.
+            go.GetComponent<TextMeshPro>().text = points.ToString();                                              // <- Variable for points goes here.
         }
        
     }
