@@ -43,7 +43,7 @@ public class Infoboard : MonoBehaviour
         }
 
         s_instance._infoMessage.text = (points >= 0)
-                ? $"{soTrashData._Description}"
+                ? $"{soTrashData.SO_Description}"
                 : $"{soTrashData.InfoIfSortedWrongly}";
     }
 }

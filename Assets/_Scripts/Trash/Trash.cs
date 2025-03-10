@@ -13,17 +13,24 @@ public class Trash : MonoBehaviour, ITrashable
 		if (_data == null) throw new NullReferenceException();
 		Destroy(gameObject);
 		
-		if (type == _data._PreferdType)	// Will check the type it gets from the TrashBin to the Preferd and Okay types
+		if (type == _data.SO_PreferdType)	// Will check the type it gets from the TrashBin to the Preferd and Okay types
 		{
-			return _data._PreferdTypePoints;
+			return _data.SO_PreferdTypePoints;
 		}
-		else if (type == _data._AcceptableType)
+		else if (type == _data.SO_AcceptableType)
 		{
-			return _data._AcceptableTypePoints;
+			return _data.SO_AcceptableTypePoints;
 		}
 
-		return _data._WrongTypePoints;
+		return _data.SO_WrongTypePoints;
 
+	}
+
+	public AudioClip TrashingSound() 
+	{
+		if ( _data == null) throw new NullReferenceException();
+
+		return _data.SO_TrashAudioClip;
 	}
 
 	#region UnityMethods

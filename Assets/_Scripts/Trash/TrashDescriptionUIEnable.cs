@@ -57,11 +57,11 @@ public class TrashDescriptionUIEnable : MonoBehaviour
     {
         if (_headerText != null)
         {
-            _headerText.text = _trashData._Name; 
+            _headerText.text = _trashData.SO_Name; 
         }
         if (_contentText != null)
         {
-            _contentText.text = _trashData._Description;
+            _contentText.text = _trashData.SO_Description;
         }
     }
 }
