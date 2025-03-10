@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(BoxCollider), typeof(Animator))]
 public class TrashBin : MonoBehaviour
 {
 	/* The implementation of the TrashBin handles the sending of data to the TrashManager,
