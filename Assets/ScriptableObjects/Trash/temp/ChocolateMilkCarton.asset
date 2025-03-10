@@ -20,3 +20,5 @@ MonoBehaviour:
   _AcceptableType: 1
   _AcceptableTypePoints: 2
   _WrongTypePoints: -4
+  InfoIfSortedCorrectly: Flot, kakaokartoner skal ud i plast og mad- og drikke
+  InfoIfSortedWrongly: Kakaokartoner skal faktisk smides ud i plast og mad- og drikke

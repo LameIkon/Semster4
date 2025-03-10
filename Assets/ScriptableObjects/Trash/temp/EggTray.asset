@@ -20,3 +20,5 @@ MonoBehaviour:
   _AcceptableType: 1
   _AcceptableTypePoints: 2
   _WrongTypePoints: -5
+  InfoIfSortedCorrectly: Puha
+  InfoIfSortedWrongly: Det stinker
