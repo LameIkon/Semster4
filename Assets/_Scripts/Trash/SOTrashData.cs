@@ -6,23 +6,24 @@ using UnityEngine;
 public class SOTrashData : ScriptableObject
 {
 	[Header("Description")]
-	public string _Name;
-	[TextArea(3, 15)] public string _Description;
+	public string SO_Name;
+	[TextArea(3, 15)] public string SO_Description;
 
 	[Header("Sorting Category"), Space(2)]
-	public SortingCategory _PreferdType;		// Preferd trash type, this is implemented as this to make it more dynamic and scalable
-	public float _PreferdTypePoints;
+	public SortingCategory SO_PreferdType;		// Preferd trash type, this is implemented as this to make it more dynamic and scalable
+	public float SO_PreferdTypePoints;
 
 	[Space()]
-	public SortingCategory _AcceptableType;
-	public float _AcceptableTypePoints;
+	public SortingCategory SO_AcceptableType;
+	public float SO_AcceptableTypePoints;
 
 	[Space()]
-	public float _WrongTypePoints;
+	public float SO_WrongTypePoints;
 	public string InfoIfSortedCorrectly;
 	public string InfoIfSortedWrongly;
 
-
+	[Space()]
+	public AudioClip SO_TrashAudioClip;
 }
 
 

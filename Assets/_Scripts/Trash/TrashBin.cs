@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(BoxCollider), typeof(Animator))]
+[RequireComponent(typeof(BoxCollider), typeof(Animator), typeof(AudioSource))]
 public class TrashBin : MonoBehaviour
 {
 	/* The implementation of the TrashBin handles the sending of data to the TrashManager,
@@ -23,30 +23,35 @@ public class TrashBin : MonoBehaviour
 	public static event Action<GameObject, float> OnTrashedEvent; // The event that connects to the TrashManager
 
 	private Animator _animator;
+	private AudioSource _audioSource;
 
-    private void Start()
-    {
+	private void Start()
+	{
 		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
 		{
 			_animator = animator;
 		}
-    }
+		_audioSource = GetComponent<AudioSource>();
+		_audioSource.playOnAwake = false;
+		_audioSource.spatialBlend = 1f;
+	}
 
-    private void OnTriggerEnter(Collider target) 
+	private void OnTriggerEnter(Collider target)
 	{
 		if (_binData != null)
 		{
-			float? points = target.GetComponent<ITrashable>()?.Trashing(_binData._AllowedType); // Check if the GameObject entering the Trigger has an ITrashable
-																								  // and calling the Trashing method, the method returns a float
-			if (points != null) 
+			ITrashable trash = target.GetComponent<ITrashable>();
+
+			float? points = trash.Trashing(_binData._AllowedType); // Check if the GameObject entering the Trigger has an ITrashable
+																   // and calling the Trashing method, the method returns a float
+			if (points != null)
 			{
 				_Points += (float)points; // Purely for debugging
 				OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				Debug.Log(gameObject);
-				
-				HandleTrashEvent(_Points);
+
 				HighscoreTable.UpdateHighScorePoints(points);
-				
+
 				SOTrashData trashData = target.GetComponent<Trash>()?._data;
 				if (trashData != null)
 				{
@@ -55,7 +60,20 @@ public class TrashBin : MonoBehaviour
 
 				EnablePolish(points);
 			}
+
+			AudioClip clip = trash.TrashingSound();
+			if (clip != null)
+			{
+				PlayTrashSound(clip);
+			}
+
 		}
+	}
+
+	private void PlayTrashSound(AudioClip clip) 
+	{
+		_audioSource.clip = clip;
+		_audioSource.Play();
 	}
 
 	private void EnablePolish(float? points) // Checks if the value is positive or negative
@@ -66,11 +84,6 @@ public class TrashBin : MonoBehaviour
 		}
 	}
 
-	// Makes sure that the BoxCollider is a set to a Trigger
-	public void Reset()
-	{
-		GetComponent<BoxCollider>().isTrigger = true;
-	}
 
     private void HandleTrashEvent(float points)
     {
@@ -84,4 +97,13 @@ public class TrashBin : MonoBehaviour
 
     }
 
+	#region UnityMethods
+	// Makes sure that the BoxCollider is a set to a Trigger
+	public void Reset()
+	{
+		GetComponent<BoxCollider>().isTrigger = true;
+		AudioSource source = GetComponent<AudioSource>();
+	}
+
+    #endregion
 }
