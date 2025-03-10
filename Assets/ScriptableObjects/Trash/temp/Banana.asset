@@ -20,3 +20,6 @@ MonoBehaviour:
   _AcceptableType: 1
   _AcceptableTypePoints: 2
   _WrongTypePoints: -2
+  InfoIfSortedCorrectly: Korrekt sorteret
+  InfoIfSortedWrongly: "Bananer er et organisk materiale og b\xF8r derfor smides
+    i madaffald"

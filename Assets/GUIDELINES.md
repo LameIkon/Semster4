@@ -2,10 +2,12 @@
 
  
 ### -2: Don't bully anyone, especially Adam
+Otherwise, Adam will cry.
 
 ---
 
 ### -1: Never base scenes on Adam's work
+Adam's scenes are infamous for being error-prone. This rule must always be followed.
 
 ---
 
@@ -90,7 +92,7 @@ The `Update()` function is heavy on the CPU, therefore it should only be used wh
 
 ---
 
-### 5: No use of `Time.time`!
+### 5: No use of `Time.time`
 This can cause issues when the game runs for a long time. Use `Time.deltaTime` instead as `Time.time` are easy to misuse.
 
 ---
@@ -104,10 +106,10 @@ Separating code helps us to prevent large dependency issues as we did in Jerk'n'
 
 ---
 
-### 7: Better Architecture in Unity!
+### 7: Better Unity Architecture 
 Jerk'n'Jolt was horrid to look at! Everything must be nice and tidy so it's easy to find things. 
 
-We should use always have an elaborate folder system. Alternatively, make some more use of inheritance and interfaces. (UML diagrams may be useful here)
+We should use always have an elaborate folder system. Alternatively, make some more use of inheritance and interfaces (UML diagrams may be useful here).
 
 ---
 
@@ -121,20 +123,61 @@ Don't leave empty whitespaces, lines, and gaps in your code. Unorganised code ca
 
 ---
 
-### 10: Don't nest your code deeply
-Deeply nested code can reduce readability. Instead, try to use techniques like Inversion and Guard Clause to limit nesting.
+### 10: Limit your nesting
+Deeply nested code can reduce readability. Instead, try to use techniques like **Inversion** and **Guard Clause** to limit nesting.
+The code example below illustrates the differences.
 
 ```
-if (
+// No Nesting = Ideal
+if (variableOne == null)
+{
+    return;
+}
+
+if (variableTwo == null)
+{
+    return;
+}
+
+if (variableThree == null)
+{
+    return;
+}
+
+// Main logic here...
+```
+```
+// Deeply Nested Code = Not Ideal
+if (variableOne != null)
+{
+    if (variableTwo != null) 
+    {
+        if (variableThree != null)
+        {
+            // Main logic here...
+        }
+    }
+}
 ```
 
 ---
 
-### 10: Don't neglect Null Checks
+### 11: Don't neglect Null Checks
 Failing to account for null-safety may lead to runtime errors. Here are ways to check for null values:
-* Nullable type modifier: `Type? theVariable`
-* If-checks: `if (obj == null) Debug.LogError("Message");`
-* Null-coalescing operator: 
+
+**Nullable type modifier:** 
+
+```
+Type? theVariable
+```
+
+**If-checks:**
+
+```
+if (obj == null) print("Msg");
+```
+
+**Null-coalescing operator:** 
 ```
 int? number = null;
 int result = number ?? 42; // Result will be 42
