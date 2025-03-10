@@ -121,6 +121,15 @@ Don't leave empty whitespaces, lines, and gaps in your code. Unorganised code ca
 
 ---
 
+### 10: Don't nest your code deeply
+Deeply nested code can reduce readability. Instead, try to use techniques like Inversion and Guard Clause to limit nesting.
+
+```
+if (
+```
+
+---
+
 ### 10: Don't neglect Null Checks
 Failing to account for null-safety may lead to runtime errors. Here are ways to check for null values:
 * Nullable type modifier: `Type? theVariable`

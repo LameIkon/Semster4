@@ -33,13 +33,23 @@ public class HighscoreTable : MonoBehaviour
             _scoreIncrementTracker.text = String.Empty;
     }
     
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="points"></param>
     public static void UpdateHighScorePoints(float? points)
     {
         if (s_instance is null)
+        {
             Debug.LogError("Error: An instance of HighscoreTable.cs does not currently exist.");
-        
+            return;
+        }
+
         if (points is null)
-            Debug.LogError("Error: DisplayErrorMessage had an unexpected error.");
+        {
+            Debug.LogError($"Error: DisplayErrorMessage encountered a null parameter. points: {points}");
+            return;
+        }
         
         float? currentPoints               = float.Parse(s_instance._totalScore.text);
         float? incrementedPoints           = currentPoints + points.Value;

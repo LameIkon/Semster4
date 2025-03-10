@@ -6,7 +6,7 @@ using UnityEngine;
 public class Trash : MonoBehaviour, ITrashable
 {
 
-	[SerializeField] private SOTrashData _data; // All the data on the object is handle with a Flyweight pattern
+	public SOTrashData _data; // All the data on the object is handle with a Flyweight pattern
 
 	public float Trashing(SortingCategory type)
 	{

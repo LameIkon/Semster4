@@ -2,49 +2,48 @@
 using TMPro;
 using UnityEngine;
 
-namespace _Scripts
+public class Infoboard : MonoBehaviour
 {
-    public class Infoboard : MonoBehaviour
+    private static           Infoboard       s_instance;
+    [SerializeField] private TextMeshProUGUI _infoMessage;
+
+    private void Awake()
     {
-        private static           Infoboard       s_instance;
-        [SerializeField] private TextMeshProUGUI _infoMessage;
+        if (s_instance is null)
+            s_instance = this;
 
-        private void Awake()
+        else Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        if (_infoMessage is not null)
+            _infoMessage.text = String.Empty;
+    }
+
+    /// <summary>
+    /// This method displays information regarding how well trash is sorted on the Infoboard. It takes 2 parameters
+    /// of type float and SOTrashData. 
+    /// </summary>
+    /// <param name="points">Used for checking how well trash was sorted.</param>
+    /// <param name="soTrashData">Used for accessing infomation about trash.</param>
+    public static void DisplayInfoMessage(float? points, SOTrashData soTrashData)
+    {
+        if (s_instance is null)
         {
-            if (s_instance is null)
-                s_instance = this;
-            
-            else Destroy(gameObject);
+            Debug.LogError("Error: An instance of Infoboard.cs does not currently exist.");
+            return;
         }
 
-        private void Start()
+        if (points is null || soTrashData is null)
         {
-            if (_infoMessage is not null)
-                _infoMessage.text = String.Empty;
+            Debug.LogError(
+                    $"Error: DisplayInfoMessage encountered a null parameter. points: {points}, soTrashData: {soTrashData}");
+            return;
         }
-        
-        public static void DisplayInfoMessage(float? points, String trashName, String trashBin)
-        {
-            if (s_instance is null)
-                Debug.LogError("Error: An instance of Infoboard.cs does not currently exist.");
 
-            if (points is null || String.IsNullOrEmpty(trashName) || String.IsNullOrEmpty(trashBin))
-                Debug.LogError("Error: DisplayInfoMessage had an unexpected error.");
-        
-            if (points >= 0)
-            {
-                s_instance._infoMessage.text = "";
-                // $"You may not discord {trashName} in {trashBin1}"
-                return;
-            }
-
-            // Temporary, will be deleted once the TrashManager.cs is fully implemented 
-            {
-                trashName = "NOT DEFINED";
-                trashBin  = "NOT DEFINED";
-            }
-
-            s_instance._infoMessage.text = $"You may not discard {trashName} in {trashBin}";
-        }
+        s_instance._infoMessage.text = (points >= 0)
+                ? $"{soTrashData.InfoIfSortedCorrectly}"
+                : $"{soTrashData.InfoIfSortedWrongly}";
     }
 }

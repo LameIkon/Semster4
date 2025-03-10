@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System;
-using _Scripts;
 using UnityEngine;
 using TMPro;
 
@@ -41,10 +40,15 @@ public class TrashBin : MonoBehaviour
 				_Points += (float)points; // Purely for debugging
 				OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				Debug.Log(gameObject);
-
+				
 				HandleTrashEvent(_Points);
 				HighscoreTable.UpdateHighScorePoints(points);
-				Infoboard.DisplayInfoMessage(points, "apple", "fruit bin");
+				
+				SOTrashData trashData = target.GetComponent<Trash>()?._data;
+				if (trashData != null)
+				{
+					Infoboard.DisplayInfoMessage(points, trashData);
+				}
 
 				EnablePolish(points);
 			}
