@@ -26,8 +26,8 @@ This ensures that we don’t end up with a _NegativeFeedbackLoop_ and _PowerUp_ 
 * parameters: theVariable
 * local variables: theVariable
 * ScriptableObjects classes: SOClassName
-* ScriptableObjects variables: SO_TheVariable || SO_theVariable
-* static: s_TheVariable or s_theVariable
+* ScriptableObjects variables: SO_TheVariable _or_ SO_theVariable
+* static: s_TheVariable _or_ s_theVariable
 
 ###### // Måske bør underscore genovervejes i public variabler, da det ikke standard i C#. Dette kan potentielt skabe en dårlig vane. 
 ###### // Forslag: Metoder bør være udsagnsord (UpdateX, ApplyX, SetX, DisplayX) og variabler bør være beskrivende og meningsfulde navneord (timeDuration, elevatorSpeed). Booleans bør hedde `is`, `has`, `can`, or `should`.
@@ -63,20 +63,6 @@ if (_gameInput == null)
 ```
 I sidste ende er målet at skrive ren og vedligeholdelsesfri kode, der minimerer behovet for kommentarer. Kommentarer er vigtige, men kun når de behøves.
 "A comment is a failure to express yourself in code." - Robert C. Martin
-
-
-```
-// To standardize our codebase, 
-// our comment block should 
-// look like this
- 
- 
-/* 
-    To standardize our codebase, 
-    our comment block should 
-    look like this
-*/
-```
 
 ---
 
