@@ -26,7 +26,10 @@ public class TrashBin : MonoBehaviour
 
     private void Start()
     {
-		_animator = gameObject.GetComponent<Animator>();
+		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
+		{
+			_animator = animator;
+		}
     }
 
     private void OnTriggerEnter(Collider target) 
@@ -57,26 +60,11 @@ public class TrashBin : MonoBehaviour
 
 	private void EnablePolish(float? points) // Checks if the value is positive or negative
 	{
-		if (points >= 0)
+		if (_animator != null)
 		{
-			Debug.Log("positive");
-			StartCoroutine(TrashBinPolish("ExpandCorrect"));
+			_animator.Play(points >= 0 ? "ExpandCorrect" : "ExpandIncorrect"); // Play corresponding animation
 		}
-		else if (points < 0)
-		{
-			Debug.Log("negative");
-            StartCoroutine(TrashBinPolish("ExpandIncorrect"));
-        }
 	}
-
-	private IEnumerator TrashBinPolish(string state)
-	{
-		//meshRenderer.material = material;
-		_animator.Play(state);
-        yield return new WaitForSeconds(0.3f);
-		//meshRenderer.material = TrashbinDefault;
-
-    }
 
 	// Makes sure that the BoxCollider is a set to a Trigger
 	public void Reset()
