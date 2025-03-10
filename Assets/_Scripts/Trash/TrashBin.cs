@@ -4,7 +4,7 @@ using System;
 using UnityEngine;
 using TMPro;
 
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(BoxCollider), typeof(Animator))]
 public class TrashBin : MonoBehaviour
 {
 	/* The implementation of the TrashBin handles the sending of data to the TrashManager,
@@ -26,7 +26,10 @@ public class TrashBin : MonoBehaviour
 
     private void Start()
     {
-		_animator = gameObject.GetComponent<Animator>();
+		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
+		{
+			_animator = animator;
+		}
     }
 
     private void OnTriggerEnter(Collider target) 
@@ -40,10 +43,15 @@ public class TrashBin : MonoBehaviour
 				_Points += (float)points; // Purely for debugging
 				OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 				Debug.Log(gameObject);
-
+				
 				HandleTrashEvent(_Points);
 				HighscoreTable.UpdateHighScorePoints(points);
-				HighscoreTable.DisplayErrorMessage(points, "apple", "fruit bin");
+				
+				SOTrashData trashData = target.GetComponent<Trash>()?._data;
+				if (trashData != null)
+				{
+					Infoboard.DisplayInfoMessage(points, trashData);
+				}
 
 				EnablePolish(points);
 			}
@@ -52,26 +60,11 @@ public class TrashBin : MonoBehaviour
 
 	private void EnablePolish(float? points) // Checks if the value is positive or negative
 	{
-		if (points >= 0)
+		if (_animator != null)
 		{
-			Debug.Log("positive");
-			StartCoroutine(TrashBinPolish("ExpandCorrect"));
+			_animator.Play(points >= 0 ? "ExpandCorrect" : "ExpandIncorrect"); // Play corresponding animation
 		}
-		else if (points < 0)
-		{
-			Debug.Log("negative");
-            StartCoroutine(TrashBinPolish("ExpandIncorrect"));
-        }
 	}
-
-	private IEnumerator TrashBinPolish(string state)
-	{
-		//meshRenderer.material = material;
-		_animator.Play(state);
-        yield return new WaitForSeconds(0.3f);
-		//meshRenderer.material = TrashbinDefault;
-
-    }
 
 	// Makes sure that the BoxCollider is a set to a Trigger
 	public void Reset()

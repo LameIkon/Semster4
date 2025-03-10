@@ -8,19 +8,18 @@ using UnityEngine.Serialization;
 public class HighscoreTable : MonoBehaviour
 {
     // This class uses a Singleton pattern to ensure one instance of the class,
-    // avoiding the need to update "UpdateHighScorePoints()" in the Update() function, which is expensive.
-    // By using the Singleton pattern, we can make the UpdateHighScorePoints() method static and call it 
-    // only when the score should be changed, improving performance.
+    // avoiding the need to update "UpdateHighScorePoints()" on line 40 in the Update() function, which is CPU heavy.
+    // By using a Singleton pattern here, we can make the UpdateHighScorePoints() method static and call it 
+    // only when the score must be changed, improving overall performance.
 
-    private static           HighscoreTable  _instance;
+    private static           HighscoreTable  s_instance; 
     [SerializeField] private TextMeshProUGUI _totalScore;
     [SerializeField] private TextMeshProUGUI _scoreIncrementTracker;
-    [SerializeField] private TextMeshProUGUI _errorMessage;
 
     private void Awake()
     {
-        if (_instance == null)
-            _instance = this;
+        if (s_instance == null) 
+            s_instance = this;
 
         else Destroy(gameObject);
     }
@@ -31,24 +30,34 @@ public class HighscoreTable : MonoBehaviour
             _totalScore.text = 0.ToString();
 
         if (_scoreIncrementTracker is not null)
-            _scoreIncrementTracker.text = "";
-
-        if (_errorMessage is not null)
-            _errorMessage.text = "";
+            _scoreIncrementTracker.text = String.Empty;
     }
-
+    
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="points"></param>
     public static void UpdateHighScorePoints(float? points)
     {
-        if (_instance is null || points is null)
-            Debug.LogError("Error: UpdateHighScorePoints had an unexpected error.");
+        if (s_instance is null)
+        {
+            Debug.LogError("Error: An instance of HighscoreTable.cs does not currently exist.");
+            return;
+        }
 
-        float? currentPoints               = float.Parse(_instance._totalScore.text);
+        if (points is null)
+        {
+            Debug.LogError($"Error: DisplayErrorMessage encountered a null parameter. points: {points}");
+            return;
+        }
+        
+        float? currentPoints               = float.Parse(s_instance._totalScore.text);
         float? incrementedPoints           = currentPoints + points.Value;
         String formatScoreIncrementTracker = (points > 0) ? $"+{points}" : points.ToString();
 
-        _instance._totalScore.text             = incrementedPoints.ToString();
-        _instance._scoreIncrementTracker.text  = formatScoreIncrementTracker;
-        _instance._scoreIncrementTracker.color = ApplyTextColor();
+        s_instance._totalScore.text             = incrementedPoints.ToString();
+        s_instance._scoreIncrementTracker.text  = formatScoreIncrementTracker;
+        s_instance._scoreIncrementTracker.color = ApplyTextColor();
         return;
 
         Color ApplyTextColor()
@@ -60,25 +69,5 @@ public class HighscoreTable : MonoBehaviour
                 _   => Color.white
             };
         }
-    }
-
-    public static void DisplayErrorMessage(float? points, String trashName, String trashBin)
-    {
-        if (_instance is null || points is null || trashName.IsNullOrEmpty() || trashBin.IsNullOrEmpty())
-            Debug.LogError("Error: DisplayErrorMessage had an unexpected error.");
-
-        if (points >= 0)
-        {
-            _instance._errorMessage.text = "";
-            return;
-        }
-
-        {
-            // Temporary, will be deleted once the TrashManager.cs is fully implemented 
-            trashName    = "NOT DEFINED";
-            trashBin = "NOT DEFINED";
-        }
-
-        _instance._errorMessage.text = $"You may not discard {trashName} in {trashBin}";
     }
 }

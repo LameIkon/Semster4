@@ -19,6 +19,9 @@ public class SOTrashData : ScriptableObject
 
 	[Space()]
 	public float _WrongTypePoints;
+	public string InfoIfSortedCorrectly;
+	public string InfoIfSortedWrongly;
+
 
 }
 

@@ -20,3 +20,6 @@ MonoBehaviour:
   _AcceptableType: 1
   _AcceptableTypePoints: 2
   _WrongTypePoints: -12
+  InfoIfSortedCorrectly: Godt klart, slikposer skal nemlig smides ud i restaffaldet
+  InfoIfSortedWrongly: Selvom slikposer er lavet af plast, skal det stadig smides
+    ud i restaffaldet

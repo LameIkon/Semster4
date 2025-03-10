@@ -135,7 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _totalScore: {fileID: 4123621797218744236}
   _scoreIncrementTracker: {fileID: 6028412705990429635}
-  _errorMessage: {fileID: 4172850771292099818}
 --- !u!1 &2826703931790311525
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &105181459699436601
 RectTransform:
   m_ObjectHideFlags: 0
@@ -643,7 +642,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "fsddfsfdsfsdfsdljkbfhsdk\xE6hfsd\xE6hklfkh\xE6lsdfkh\xE6sdfk\xE6hfsdk\xE6hsfdhk\xE6fsdk\xE6h"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
