@@ -43,7 +43,7 @@ public class SOTrashData : ScriptableObject
 {
 	[Header("Description")]
 	[SerializeField] private string _name;
-	[SerializeField, TextArea(3, 10)] private string _description;
+	[SerializeField, TextArea(3, 10)] public string _Description;
 
 	[Header("Sorting Category"), Space(2)]
 	public SortingCategory _PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
