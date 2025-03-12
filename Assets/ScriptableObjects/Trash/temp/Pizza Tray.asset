@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Pizza Tray
   m_EditorClassIdentifier: 
-  _Name: Pizzabakke
-  _Description: "Materiale: Pap (med madrester)\n\nNedbrydningstid: 3-6 m\xE5neder\n\nAffaldsh\xE5ndtering:
+  SO_Name: Pizzabakke (beskidt)
+  SO_Description: "Materiale: Pap (med madrester)\n\nNedbrydningstid: 3-6 m\xE5neder\n\nAffaldsh\xE5ndtering:
     Restaffald (forbr\xE6nding \u2013 kan ikke genbruges pga. fedt)"
-  _PreferdType: 1
-  _PreferdTypePoints: 2
-  _AcceptableType: 7
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_PreferdType: 1
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 7
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -2
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: "Selvom den er lavet af pap, skal den i restaffald s\xE5 l\xE6nge
+    den er beskidt, pga. fedt."
+  SO_TrashAudioClip: {fileID: 0}

@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: CandyBag
   m_EditorClassIdentifier: 
-  _Name: Slikpose
-  _Description: "Materiale: Plastik\n\nNedbrydningstid: 100-500 \xE5r\n\nAffaldsh\xE5ndtering:
-    Restaffald (forbr\xE6nding)"
-  _PreferdType: 1
-  _PreferdTypePoints: 25
-  _AcceptableType: 1
-  _AcceptableTypePoints: 2
-  _WrongTypePoints: -12
-  InfoIfSortedCorrectly: Godt klart, slikposer skal nemlig smides ud i restaffaldet
-  InfoIfSortedWrongly: Selvom slikposer er lavet af plast, skal det stadig smides
-    ud i restaffaldet
+  SO_Name: Slikpose
+  SO_Description: "Materiale: Bl\xF8d plastik (multilag)\n\nNedbrydningstid: 100-500
+    \xE5r\n\nAffaldsh\xE5ndtering: Restaffald (forbr\xE6nding)\n\n"
+  SO_PreferdType: 1
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 4
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -2
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: "Da det er bl\xF8d plast kan det ikke genanvendes."
+  SO_TrashAudioClip: {fileID: 0}

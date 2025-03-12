@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: JamJar
   m_EditorClassIdentifier: 
-  _Name: "Syltet\xF8jsglas"
-  _Description: "Materiale: Glas\n\nNedbrydningstid: Flere tusinde \xE5r\n\nAffaldsh\xE5ndtering:
-    Glas-genbrug (Knuses og smeltes om til nye glasflasker eller glasemballage.)"
-  _PreferdType: 3
-  _PreferdTypePoints: 15
-  _AcceptableType: 1
-  _AcceptableTypePoints: 2
-  _WrongTypePoints: -5
-  InfoIfSortedCorrectly: Glas glas glas
-  InfoIfSortedWrongly: Nej forkert
+  SO_Name: "Syltet\xF8jsglas"
+  SO_Description: "Materiale: Glas\n\nNedbrydningstid: Flere tusinde \xE5r\n\nAffaldsh\xE5ndtering:
+    Glas-genbrug (Knuses og smeltes om til nye glasflasker eller glasemballage.)\n"
+  SO_PreferdType: 3
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 7
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -2
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: 
+  SO_TrashAudioClip: {fileID: 0}

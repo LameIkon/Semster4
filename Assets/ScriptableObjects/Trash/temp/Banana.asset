@@ -12,14 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Banana
   m_EditorClassIdentifier: 
-  _Name: Banan
-  _Description: "Materiale: Organisk\r\n\r\nNedbrydningstid: 2-5 uger\r\n\r\nAffaldsh\xE5ndtering:
-    Bioaffald (genanvendes til biogas og g\xF8dning)\r\n\r\n "
-  _PreferdType: 0
-  _PreferdTypePoints: 2
-  _AcceptableType: 1
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
-  InfoIfSortedCorrectly: Korrekt, bananer skal altid smides ud i madaffaldet
-  InfoIfSortedWrongly: "Bananer er et organisk materiale og b\xF8r derfor smides
-    i madaffald"
+  SO_Name: Banan
+  SO_Description: "Materiale: Organisk\n\nNedbrydningstid: 2-5 uger\n\nAffaldsh\xE5ndtering:
+    Bioaffald (genanvendes til biogas og g\xF8dning)"
+  SO_PreferdType: 0
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 1
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -2
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: Banan er organisk materiale og skal ud i madaffald da det
+    laves om til biogas.
+  SO_TrashAudioClip: {fileID: 0}

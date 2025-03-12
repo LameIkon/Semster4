@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Phone Charger
   m_EditorClassIdentifier: 
-  _Name: Mobil oplader
-  _Description: "Materiale: Elektronik\n\nNedbrydningstid: Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering:
+  SO_Name: Mobiloplader
+  SO_Description: "Materiale: Elektronik\n\nNedbrydningstid: Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering:
     Elektronik-genbrug (skal afleveres p\xE5 genbrugsplads)"
-  _PreferdType: 5
-  _PreferdTypePoints: 2
-  _AcceptableType: 7
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_PreferdType: 5
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 7
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -5
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
+  SO_TrashAudioClip: {fileID: 0}

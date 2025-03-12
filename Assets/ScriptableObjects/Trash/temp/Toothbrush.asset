@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Toothbrush
   m_EditorClassIdentifier: 
-  _Name: "Tandb\xF8rste"
-  _Description: "Materiale: Plastik (polypropylen + nylon)\n\nNedbrydningstid: Flere
-    hundrede \xE5r\n\nAffaldsh\xE5ndtering: Restaffald  (Br\xE6ndes til fjernvarme
+  SO_Name: "Tandb\xF8rste"
+  SO_Description: "Materiale: Plastik (polypropylen + nylon)\n\nNedbrydningstid:
+    Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering: Restaffald  (Br\xE6ndes til fjernvarme
     og elproduktion.)"
-  _PreferdType: 1
-  _PreferdTypePoints: 2
-  _AcceptableType: 7
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_PreferdType: 1
+  SO_PreferdTypePoints: 2
+  SO_AcceptableType: 7
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: -2
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: " da den best\xE5r af foreskellige materialer"
+  SO_TrashAudioClip: {fileID: 0}
