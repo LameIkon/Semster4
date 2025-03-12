@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CompletionTracker : MonoBehaviour
 {
-    public static event Action OnCompletion; // Look trashManager
+    public static event Action s_OnCompletion; // Look DoorOpener
 
     public static int _TrashObjectsCount = 0;
     [SerializeField] private List<GameObject> _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage
@@ -27,7 +27,7 @@ public class CompletionTracker : MonoBehaviour
 
         if(_TrashObjectsCount >= _targetCount)
         {
-            OnCompletion?.Invoke();
+            s_OnCompletion?.Invoke();
         }
     }
 
