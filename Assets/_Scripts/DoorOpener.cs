@@ -11,7 +11,16 @@ public class DoorOpener : MonoBehaviour
     private bool _isOpening = false;
 
     [SerializeField] private GameObject _door; //put in right door
+    private AudioSource _audioSource; //saves door audio source comp
+    [SerializeField] private AudioClip _doorSound; // acutal Audio clip to play
 
+    private void Awake()
+    {
+        _audioSource = _door.GetComponent<AudioSource>();
+        _audioSource.clip = _doorSound;
+        _audioSource.spatialBlend = 1; //3D sound
+        _audioSource.playOnAwake = false;
+    }
 
     public void OpenDoor()
     {
@@ -25,10 +34,11 @@ public class DoorOpener : MonoBehaviour
     {
         _isOpening = true;
         float timeElapsed = 0f;
+        _audioSource?.Play();
 
         while (timeElapsed < duration)
         {
-           _door.transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / duration);
+           _door.transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / duration);            
             timeElapsed += Time.deltaTime;
             yield return null;  
         }
