@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-public class Infoboard : MonoBehaviour
+public sealed class Infoboard : MonoBehaviour
 {
     private static           Infoboard       s_instance;
     [SerializeField] private TextMeshProUGUI _infoMessage;
