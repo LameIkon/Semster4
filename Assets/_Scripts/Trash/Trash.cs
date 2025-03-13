@@ -8,7 +8,7 @@ public class Trash : MonoBehaviour, ITrashable
 {
 
 	public SOTrashData _data; // All the data on the object is handle with a Flyweight pattern
-	private AudioSource _audioSource;
+	[SerializeField] private AudioSource _audioSource;
 
 	public float Trashing(SortingCategory type)
 	{
@@ -51,6 +51,17 @@ public class Trash : MonoBehaviour, ITrashable
 	private void Awake() 
 	{
 		gameObject.tag = "Trash";
+		
+	}
+
+	private void Start() 
+	{
+		_audioSource = GetComponent<AudioSource>();
+		_audioSource.playOnAwake = false;
+		if (_data.SO_PickUpAudioClip != null)
+		{
+			_audioSource.clip = _data.SO_PickUpAudioClip;
+		}
 	}
 
     #endregion

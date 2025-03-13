@@ -22,4 +22,5 @@ MonoBehaviour:
   SO_WrongTypePoints: -2
   InfoIfSortedCorrectly: 
   InfoIfSortedWrongly: "Da det er bl\xF8d plast kan det ikke genanvendes."
-  SO_TrashAudioClip: {fileID: 0}
+  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_PickUpAudioClip: {fileID: 0}
