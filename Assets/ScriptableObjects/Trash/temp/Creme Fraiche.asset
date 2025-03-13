@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Creme Fraiche
   m_EditorClassIdentifier: 
-  _Name: "Creme Fraiche B\xF8tte"
-  _Description: "Materiale: H\xE5rd plastik\n\nNedbrydningstid: 100-500 \xE5r\n\nAffaldsh\xE5ndtering:
-    Plastik-genbrug (Smeltes og bruges til nye plastprodukter)"
-  _PreferdType: 4
-  _PreferdTypePoints: 2
-  _AcceptableType: 7
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_Name: 
+  SO_Description: 
+  SO_PreferdType: 0
+  SO_PreferdTypePoints: 0
+  SO_AcceptableType: 0
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: 0
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: 
+  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

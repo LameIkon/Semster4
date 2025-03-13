@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  _Name: "\xC6ble"
-  _Description: "Materiale: Organisk\n\nNedbrydningstid: 2-5 uger\n\nAffaldsh\xE5ndtering:
-    Bioaffald (genanvendes til biogas og g\xF8dning)"
-  _PreferdType: 0
-  _PreferdTypePoints: 2
-  _AcceptableType: 1
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_Name: 
+  SO_Description: 
+  SO_PreferdType: 0
+  SO_PreferdTypePoints: 0
+  SO_AcceptableType: 0
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: 0
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: 
+  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

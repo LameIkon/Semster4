@@ -25,16 +25,7 @@ public class TrashBin : MonoBehaviour
 	private Animator _animator;
 	private AudioSource _audioSource;
 
-	private void Start()
-	{
-		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
-		{
-			_animator = animator;
-		}
-		_audioSource = GetComponent<AudioSource>();
-		_audioSource.playOnAwake = false;
-		_audioSource.spatialBlend = 1f;
-	}
+
 
 	private void OnTriggerEnter(Collider target)
 	{
@@ -98,11 +89,28 @@ public class TrashBin : MonoBehaviour
     }
 
 	#region UnityMethods
+
+	private void Awake() 
+	{
+		gameObject.tag = "TrashBin";
+	}
+
+	private void Start()
+	{
+		Reset();
+	}
+
 	// Makes sure that the BoxCollider is a set to a Trigger
 	public void Reset()
 	{
+		if (gameObject.TryGetComponent(out Animator animator)) // if component exist get
+		{
+			_animator = animator;
+		}
+		_audioSource = GetComponent<AudioSource>();
+		_audioSource.playOnAwake = false;
+		_audioSource.spatialBlend = 1f;
 		GetComponent<BoxCollider>().isTrigger = true;
-		AudioSource source = GetComponent<AudioSource>();
 	}
 
     #endregion

@@ -24,7 +24,6 @@ public class CompletionTracker : MonoBehaviour
 
         _trashObjectsToTrack.Remove(go);
 
-
         if(_TrashObjectsCount >= _targetCount)
         {
             OnCompletion?.Invoke();

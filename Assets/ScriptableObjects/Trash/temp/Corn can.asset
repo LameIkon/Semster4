@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Corn can
   m_EditorClassIdentifier: 
-  _Name: "Majsd\xE5se"
-  _Description: "Materiale: Metal (st\xE5l/aluminium)\n\nNedbrydningstid: 50-200
-    \xE5r\n\nAffaldsh\xE5ndtering: Metal-genbrug (Smeltes om og bruges til nye d\xE5ser,
-    cykler, bildele eller jernskinner.)"
-  _PreferdType: 3
-  _PreferdTypePoints: 2
-  _AcceptableType: 7
-  _AcceptableTypePoints: 0
-  _WrongTypePoints: -2
+  SO_Name: 
+  SO_Description: 
+  SO_PreferdType: 0
+  SO_PreferdTypePoints: 0
+  SO_AcceptableType: 0
+  SO_AcceptableTypePoints: 0
+  SO_WrongTypePoints: 0
+  InfoIfSortedCorrectly: 
+  InfoIfSortedWrongly: 
+  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

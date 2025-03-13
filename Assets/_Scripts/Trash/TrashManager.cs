@@ -2,14 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class TrashManager : MonoBehaviour
+public sealed class TrashManager : Singleton<TrashManager>
 {
-	//TODO: This GameObject should be have a Singleton Pattern but I cannot remember how to implement it in Unity right now.
-
 
 	//TODO: This is just for debugging it should be displayed elseware.
 	public float _Points;
+	private ISet<GameObject> _trashBins;
 
+
+	#region UnityMethods
+	protected override void Awake() 
+	{
+		base.Awake();
+		InitTrashbins();
+	}
 
 	public void OnEnable() 
 	{
@@ -23,6 +29,8 @@ public sealed class TrashManager : MonoBehaviour
         CompletionTracker.OnCompletion -= CompletionEvent;
     }
 
+	#endregion
+
 	private void HandleTrashEvent(GameObject sender, float points) 
 	{
 		_Points += points;
@@ -31,5 +39,11 @@ public sealed class TrashManager : MonoBehaviour
 	private void CompletionEvent()
 	{
 		Debug.Log("All trash objects have been sorted");
+	}
+
+	private void InitTrashbins() 
+	{
+		_trashBins = new HashSet<GameObject>();
+	
 	}
 }
