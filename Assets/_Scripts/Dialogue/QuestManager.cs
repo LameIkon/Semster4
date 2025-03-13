@@ -14,10 +14,8 @@ public class QuestManager : MonoBehaviour
             s_Instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+
+        else Destroy(gameObject);
     }
 
     public int GetQuestStage(string questName)
@@ -27,7 +25,7 @@ public class QuestManager : MonoBehaviour
             return stage;
         }
 
-        return 0; // Default stage
+        return 0; // Default game stage
     }
 
     public void SetQuestStage(string questName, int stage)

@@ -3,6 +3,8 @@ using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
+    // Should perhaps be turned into a Singleton?
+    
     public SODialogueNode _CurrentDisplayedNode;
 
     public void StartDialogue(SODialogueNode startingNode)
@@ -18,14 +20,12 @@ public class DialogueManager : MonoBehaviour
         // Check conditions for next nodes
         foreach (SODialogueNode nextNode in node._NextNodes)
         {
-            if (AreConditionsMet(nextNode))
-            {
-                ShowNextValidDialogueNodes();
+            if (!AreConditionsMet(nextNode)) continue;
+            ShowNextValidDialogueNodes();
                 
-                void ShowNextValidDialogueNodes()
-                {
-                    print($"Next: {nextNode._DialogueText}");
-                }
+            void ShowNextValidDialogueNodes()
+            {
+                print($"Next: {nextNode._DialogueText}");
             }
         }
 
