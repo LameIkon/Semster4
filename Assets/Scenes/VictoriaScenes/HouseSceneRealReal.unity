@@ -3168,7 +3168,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FloatingPoint: {fileID: 8049100341368274221, guid: 4edb37ca0a20bef4e8cd431a5a76086c, type: 3}
-  _pointPosition: 1
 --- !u!1001 &2082988362
 PrefabInstance:
   m_ObjectHideFlags: 0
