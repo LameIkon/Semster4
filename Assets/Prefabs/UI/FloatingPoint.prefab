@@ -185,7 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc44532df60a1684cbac29658da1e15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DestroyObject: 1.5
+  _FloatingPoint: {fileID: 8049100341368274221}
+  _ScorePosition: {fileID: 420304489067813161, guid: e7b5c07684cf51147a44fbeb7e5f501d, type: 3}
+  _DestroyObject: 1
+  _pointSpeed: 3
 --- !u!95 &2401325018650387164
 Animator:
   serializedVersion: 5
