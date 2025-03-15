@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928e646c8d534bc4aa5d02d31038d66f, type: 3}
   m_Name: BjarneFarvel
   m_EditorClassIdentifier: 
-  _DialogueText: 
+  _DialogueText: "Jamen farvel s\xE5"
   _NextNodes: []
   _Conditions: []
   _PlayerResponses: []
