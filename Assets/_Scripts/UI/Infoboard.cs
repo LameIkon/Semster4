@@ -4,9 +4,10 @@ using UnityEngine;
 
 public sealed class Infoboard : MonoBehaviour
 {
-    private static           Infoboard       s_instance;
+    private static Infoboard s_instance;
     [SerializeField] private TextMeshProUGUI _infoMessage;
 
+    #region Unity Methods
     private void Awake()
     {
         if (s_instance is null)
@@ -21,13 +22,25 @@ public sealed class Infoboard : MonoBehaviour
             _infoMessage.text = String.Empty;
     }
 
+    private void OnEnable()
+    {
+        TrashBin.s_OnTrashedEvent2 += DisplayInfoMessage;
+    }
+
+    private void OnDisable()
+    {
+        TrashBin.s_OnTrashedEvent2 -= DisplayInfoMessage;
+    }
+
+    #endregion
+
     /// <summary>
     /// This method displays information regarding how well trash is sorted on the Infoboard. It takes 2 parameters
     /// of type float and SOTrashData. 
     /// </summary>
     /// <param name="points">Used for checking how well trash was sorted.</param>
     /// <param name="soTrashData">Used for accessing infomation about trash.</param>
-    public static void DisplayInfoMessage(float? points, SOTrashData soTrashData)
+    public static void DisplayInfoMessage(float points, SOTrashData soTrashData)
     {
         if (s_instance is null)
         {
@@ -35,12 +48,12 @@ public sealed class Infoboard : MonoBehaviour
             return;
         }
 
-        if (points is null || soTrashData is null)
-        {
-            Debug.LogError(
-                    $"Error: DisplayInfoMessage encountered a null parameter. points: {points}, soTrashData: {soTrashData}");
-            return;
-        }
+        //if (points is null || soTrashData is null)
+        //{
+        //    Debug.LogError(
+        //            $"Error: DisplayInfoMessage encountered a null parameter. points: {points}, soTrashData: {soTrashData}");
+        //    return;
+        //}
 
         s_instance._infoMessage.text = (points >= 0)
                 ? $"{soTrashData.SO_Description}"

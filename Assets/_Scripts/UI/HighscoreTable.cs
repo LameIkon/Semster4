@@ -16,6 +16,7 @@ public sealed class HighscoreTable : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _totalScore;
     [SerializeField] private TextMeshProUGUI _scoreIncrementTracker;
 
+    #region Unity Methods
     private void Awake()
     {
         if (s_instance == null)
@@ -33,11 +34,23 @@ public sealed class HighscoreTable : MonoBehaviour
             _scoreIncrementTracker.text = String.Empty;
     }
 
+    private void OnEnable()
+    {
+        TrashBin.s_OnTrashedEvent += HandleUpdateHighScorePoints;    
+    }
+
+    private void OnDisable()
+    {
+        TrashBin.s_OnTrashedEvent -= HandleUpdateHighScorePoints;
+    }
+
+    #endregion
+
     /// <summary>
     /// 
     /// </summary>
     /// <param name="points"></param>
-    public static void UpdateHighScorePoints(float? points)
+    public static void HandleUpdateHighScorePoints(GameObject go, float points)
     {
         if (s_instance is null)
         {
@@ -45,18 +58,18 @@ public sealed class HighscoreTable : MonoBehaviour
             return;
         }
 
-        if (points is null)
-        {
-            Debug.LogError($"Error: DisplayErrorMessage encountered a null parameter. points: {points}");
-            return;
-        }
+        //if (points is null)
+        //{
+        //    Debug.LogError($"Error: DisplayErrorMessage encountered a null parameter. points: {points}");
+        //    return;
+        //}
 
-        float? currentPoints               = float.Parse(s_instance._totalScore.text);
-        float? incrementedPoints           = currentPoints + points.Value;
-        String formatScoreIncrementTracker = (points > 0) ? $"+{points}" : points.ToString();
+        float? currentPoints = float.Parse(s_instance._totalScore.text);
+        float? incrementedPoints = currentPoints + points;
+        string formatScoreIncrementTracker = (points > 0) ? $"+{points}" : points.ToString();
 
-        s_instance._totalScore.text             = incrementedPoints.ToString();
-        s_instance._scoreIncrementTracker.text  = formatScoreIncrementTracker;
+        s_instance._totalScore.text = incrementedPoints.ToString();
+        s_instance._scoreIncrementTracker.text = formatScoreIncrementTracker;
         s_instance._scoreIncrementTracker.color = ApplyTextColor();
         return;
 

@@ -19,12 +19,12 @@ public sealed class TrashManager : Singleton<TrashManager>
 
 	public void OnEnable() 
 	{
-		TrashBin.OnTrashedEvent += HandleTrashEvent; // Adds the HandleTrashEvent to the Action OnTrashedEvent
+		TrashBin.s_OnTrashedEvent += HandleTrashEvent; // Adds the HandleTrashEvent to the Action OnTrashedEvent
 	}
 
 	public void OnDisable()
 	{
-		TrashBin.OnTrashedEvent -= HandleTrashEvent;       
+		TrashBin.s_OnTrashedEvent -= HandleTrashEvent;       
     }
 
 	#endregion
@@ -42,6 +42,5 @@ public sealed class TrashManager : Singleton<TrashManager>
 	private void InitTrashbins() 
 	{
 		_trashBins = new HashSet<GameObject>();
-	
 	}
 }
