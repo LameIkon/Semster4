@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 14dd60c3dacf63d4ba4228b41ad8f2f0, type: 3}
-  m_Name: QuestStageCondition
+  m_Name: BjarneIntro
   m_EditorClassIdentifier: 
-  _QuestName: 
+  _QuestName: Talk to Bjarne
   _RequiredStage: 0

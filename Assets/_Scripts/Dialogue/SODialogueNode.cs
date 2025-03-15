@@ -14,7 +14,7 @@ public class SODialogueNode : ScriptableObject
     [Serializable]
     public class PlayerResponse
     {
-        public String         _ResponseText;  // Could potentially be an Array
+        public String         _ResponseText;  // Could potentially be an Array or a TextArea, I'll think about it
         public SODialogueNode _NextNode;
     }
 

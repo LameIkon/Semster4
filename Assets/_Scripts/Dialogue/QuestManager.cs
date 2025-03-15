@@ -31,5 +31,6 @@ public class QuestManager : MonoBehaviour
     public void SetQuestStage(string questName, int stage)
     {
         questStages[questName] = stage;
+        Debug.Log($"{questName} is now set to {stage}");
     }
 }

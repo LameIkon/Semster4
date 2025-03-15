@@ -3,11 +3,12 @@ using UnityEngine.Serialization;
 
 public class NPC : MonoBehaviour
 {
-    public SODialogueNode _StartingSoDialogue;
+    [FormerlySerializedAs("_StartingSoDialogue")] 
+    public SODialogueNode _StartingDialogue;
 
     public void Interact()
     {
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
-        dialogueManager.StartDialogue(_StartingSoDialogue);
+        dialogueManager.StartDialogue(_StartingDialogue);
     }
 }
