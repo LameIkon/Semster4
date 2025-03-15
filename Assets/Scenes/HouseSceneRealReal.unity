@@ -543,6 +543,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8298045291338814965, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
   m_PrefabInstance: {fileID: 149303011}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &205645648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4180997823914918562, guid: f31c00f9b41786941b2df3c4c0dc1b91, type: 3}
+  m_PrefabInstance: {fileID: 689656283}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &211844269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7672801313143365673, guid: 173dd99f2c9bfe044ba865c154bb1c8b, type: 3}
@@ -3456,6 +3461,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1867237202}
+    - target: {fileID: 3324767464902400134, guid: d332a292d9a9e244f968ffe0d5584ce8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1867237202}
+    - target: {fileID: 3324767464902400134, guid: d332a292d9a9e244f968ffe0d5584ce8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TurnTVONOFFButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 3324767464902400134, guid: d332a292d9a9e244f968ffe0d5584ce8, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TVManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3859679934228846227, guid: d332a292d9a9e244f968ffe0d5584ce8, type: 3}
       propertyPath: m_Delegates.Array.data[2].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -3845,6 +3862,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6919012741620224224, guid: bc962e9044a11ca4e84d2651ae133593, type: 3}
+      propertyPath: _tv
+      value: 
+      objectReference: {fileID: 205645648}
     - target: {fileID: 6919012741620224224, guid: bc962e9044a11ca4e84d2651ae133593, type: 3}
       propertyPath: _progressBar
       value: 
