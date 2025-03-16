@@ -18,6 +18,11 @@ public class QuestManager : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="questName"></param>
+    /// <returns></returns>
     public int GetQuestStage(string questName)
     {
         if (questStages.TryGetValue(questName, out int stage))

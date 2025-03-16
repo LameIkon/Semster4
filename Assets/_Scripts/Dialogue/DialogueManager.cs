@@ -13,6 +13,10 @@ public class DialogueManager : MonoBehaviour
         DisplayNode(_CurrentDisplayedNode);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="node"></param>
     public void DisplayNode(SODialogueNode node)
     {
         Debug.Log(node._DialogueText);
@@ -48,6 +52,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="node"></param>
+    /// <returns></returns>
     private bool AreConditionsMet(SODialogueNode node)
     {
         if (node._Conditions == null || node._Conditions.Length == 0)

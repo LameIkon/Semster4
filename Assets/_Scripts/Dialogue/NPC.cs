@@ -5,6 +5,9 @@ public class NPC : MonoBehaviour
 {
     [FormerlySerializedAs("_StartingSoDialogue")] 
     public SODialogueNode _StartingDialogue;
+    
+    // TriggerCollision Player
+    // Call Interact
 
     public void Interact()
     {
