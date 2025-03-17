@@ -16,7 +16,7 @@ MonoBehaviour:
   _NextNodes:
   - {fileID: 11400000, guid: c3f8302c53b0e3941b2b797333c6277e, type: 2}
   _Conditions:
-  - {fileID: 11400000, guid: 6c0b3d4384c7d724daa0116514dce436, type: 2}
+  - {fileID: 11400000, guid: bdec80ead13edf94f8623176da465610, type: 2}
   _PlayerResponses:
   - _ResponseText: Fedt man
     _NextNode: {fileID: 11400000, guid: c3f8302c53b0e3941b2b797333c6277e, type: 2}

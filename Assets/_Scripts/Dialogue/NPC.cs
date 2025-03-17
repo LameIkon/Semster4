@@ -14,10 +14,12 @@ public class NPC : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public void Interact()
     {
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueManager.StartDialogue(_StartingDialogue);
     }
-    
 }

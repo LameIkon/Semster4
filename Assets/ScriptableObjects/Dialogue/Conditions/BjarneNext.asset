@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: BjarneNext
   m_EditorClassIdentifier: 
   _QuestName: BjarneQuest
-  _RequiredStage: 1
+  _RequiredStage: 10

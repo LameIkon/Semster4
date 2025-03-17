@@ -1,8 +1,7 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [CreateAssetMenu(fileName = "QuestStageCondition", menuName = "Dialogue/Conditions/Quest Stage")]
-public class SOQuestStageCondition : SOCondition
+public class SOQuestStageCondition : ScriptableObject, ICondition
 {
     public string _QuestName;
     public int    _RequiredStage;

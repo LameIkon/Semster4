@@ -2,7 +2,6 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Serialization;
 
 public class DialogueUI : MonoBehaviour
 {
@@ -11,6 +10,10 @@ public class DialogueUI : MonoBehaviour
     public Transform       _ResponseContainer;
     const  int             _MaxResponses = 4;
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="currentNode"></param>
     public void UpdateDialogueUI(SODialogueNode currentNode)
     {
         _DialogueText.text = currentNode._DialogueText;
@@ -21,7 +24,7 @@ public class DialogueUI : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
+        
         // Used to dynamically create buttons based on the node's responses
         if (currentNode._PlayerResponses != null)
         {
