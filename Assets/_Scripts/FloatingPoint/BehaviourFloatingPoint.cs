@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class BehaviourFloatingPoint : MonoBehaviour
 {
-    public float _DestroyObject = 3f; // Declaring a variable, which will be the countdown for when the GameObject should be destroyed.
+    public GameObject _FloatingPoint;
+    public GameObject _ScorePosition;
+
+    [SerializeField] private float _DestroyObject;  // How much time before gameobject is destroyed.
+    [SerializeField] private float _pointSpeed;     // Speed at which the object moves to target position.
 
     private void Start()
     {
-        Destroy(gameObject, _DestroyObject);
+        Destroy(gameObject, _DestroyObject);  
+    }
+
+    private void FixedUpdate()
+    {
+        FlyToBoard();
+    }
+
+    private void FlyToBoard()
+    {
+        _FloatingPoint.transform.position = Vector3.MoveTowards(_FloatingPoint.transform.position, _ScorePosition.transform.position, _pointSpeed*Time.deltaTime);
     }
 }
