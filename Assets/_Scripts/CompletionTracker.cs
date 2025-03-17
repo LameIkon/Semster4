@@ -8,18 +8,13 @@ public class CompletionTracker : MonoBehaviour
     public static event Action s_OnCompletion; // Look DoorOpener
 
     public static int s_TrashObjectsCount = 0;
-    private ISet<GameObject> _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage, in Unity removing GameObjects from an IList or ISet is not possible with the .Remove(GameObject)
-    public List<GameObject> _trashObjects;
+    //private ISet<GameObject> _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage, in Unity removing GameObjects from an IList or ISet is not possible with the .Remove(GameObject
     public static int s_targetCount;
 
 
     public void HandleRegisterTrash(GameObject go, float points)
     {
         s_TrashObjectsCount++;
-
-        _trashObjects.Add(go);
-
-        Debug.Log(s_TrashObjectsCount);
 
         if(s_TrashObjectsCount >= s_targetCount)
         {
@@ -30,7 +25,6 @@ public class CompletionTracker : MonoBehaviour
     #region Unity Methods
     private IEnumerator Start()
     {
-        _trashObjects = new List<GameObject>();
         yield return new WaitForFixedUpdate();
         s_targetCount = GameObject.FindGameObjectsWithTag("Trash").Length;
     }

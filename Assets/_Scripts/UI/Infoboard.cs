@@ -40,7 +40,7 @@ public sealed class Infoboard : MonoBehaviour
     /// </summary>
     /// <param name="points">Used for checking how well trash was sorted.</param>
     /// <param name="soTrashData">Used for accessing infomation about trash.</param>
-    public static void DisplayInfoMessage(float points, SOTrashData soTrashData)
+    private static void DisplayInfoMessage(float points, SOTrashData soTrashData)
     {
         if (s_instance is null)
         {

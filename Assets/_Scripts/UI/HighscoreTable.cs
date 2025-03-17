@@ -50,7 +50,7 @@ public sealed class HighscoreTable : MonoBehaviour
     /// 
     /// </summary>
     /// <param name="points"></param>
-    public static void HandleUpdateHighScorePoints(GameObject go, float points)
+    private static void HandleUpdateHighScorePoints(GameObject go, float points)
     {
         if (s_instance is null)
         {
