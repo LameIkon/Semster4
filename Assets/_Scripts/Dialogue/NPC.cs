@@ -3,11 +3,23 @@ using UnityEngine.Serialization;
 
 public class NPC : MonoBehaviour
 {
-    public SODialogueNode _StartingSoDialogue;
+    [FormerlySerializedAs("_StartingSoDialogue")] 
+    public SODialogueNode _StartingDialogue;
 
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Interact();
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
     public void Interact()
     {
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
-        dialogueManager.StartDialogue(_StartingSoDialogue);
+        dialogueManager.StartDialogue(_StartingDialogue);
     }
 }

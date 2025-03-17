@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 928e646c8d534bc4aa5d02d31038d66f, type: 3}
-  m_Name: BjarneNode
+  m_Name: BjarnePost
   m_EditorClassIdentifier: 
-  _DialogueText: Hej med dig, mit navn er Bjarne
-  _NextNodes:
-  - {fileID: 11400000, guid: c3f8302c53b0e3941b2b797333c6277e, type: 2}
+  _DialogueText: Jeg elsker at blive betalt for at spille playstation
+  _NextNodes: []
   _Conditions:
   - {fileID: 11400000, guid: bdec80ead13edf94f8623176da465610, type: 2}
   _PlayerResponses:
-  - _ResponseText: Fedt man
-    _NextNode: {fileID: 11400000, guid: c3f8302c53b0e3941b2b797333c6277e, type: 2}
-  - _ResponseText: Farvel
+  - _ResponseText: Cool, farvel
     _NextNode: {fileID: 11400000, guid: 4ceaa4401df3ae948bc50bbc926ab3ce, type: 2}
