@@ -10,7 +10,6 @@ public class NPC : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("HRGHER");
             Interact();
         }
     }

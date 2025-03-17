@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         _dialogueUI = FindObjectOfType<DialogueUI>(); 
-        Debug.Log(_dialogueUI);
+        Debug.Log($"DialogueUI found: {_dialogueUI is null}");
     }
 
     public void StartDialogue(SODialogueNode startingNode)

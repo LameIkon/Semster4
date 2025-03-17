@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -51,20 +52,18 @@ public class DialogueUI : MonoBehaviour
             button.GetComponentInChildren<TextMeshProUGUI>().text = "Fortsæt";
             button.GetComponent<Button>().onClick.AddListener(() =>
             {
-                OnResponseSelected(null); // Passing null or ending dialogue logic
+                OnResponseSelected(null); 
             });
         }
     }
 
-    private void OnResponseSelected(SODialogueNode nextNode)
+    private void OnResponseSelected([CanBeNull] SODialogueNode nextNode)
     {
-        if (nextNode != null)
-        {
-            // Move to the next dialogue node
-            FindObjectOfType<DialogueManager>().ProgressToNextDialogue(nextNode); 
-        }
-
-        else EndDialogue();
+        if (nextNode is null)
+            EndDialogue();
+        
+        // Move to the next dialogue node
+        else FindObjectOfType<DialogueManager>().ProgressToNextDialogue(nextNode); 
     }
 
     private void EndDialogue()

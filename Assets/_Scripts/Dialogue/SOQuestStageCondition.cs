@@ -7,7 +7,7 @@ public class SOQuestStageCondition : SOCondition
     public string _QuestName;
     public int    _RequiredStage;
 
-    public override bool IsMet()
+    public bool IsMet()
     {
         return QuestManager.s_Instance.GetQuestStage(_QuestName) >= _RequiredStage;
     }
