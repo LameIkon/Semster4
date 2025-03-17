@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Transformers;
 
-[RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(BoxCollider), typeof(Rigidbody), typeof(AudioSource)), 
+	RequireComponent(typeof(XRGrabInteractable), typeof(XRGeneralGrabTransformer), typeof(TrashDescriptionUIEnable))]
 public class Trash : MonoBehaviour, ITrashable
 {
 
-	public SOTrashData _data; // All the data on the object is handle with a Flyweight pattern
+	[SerializeField] private SOTrashData _data; // All the data on the object is handle with a Flyweight pattern
 	[SerializeField] private AudioSource _audioSource;
 
 	public float Trashing(SortingCategory type)
@@ -44,6 +47,15 @@ public class Trash : MonoBehaviour, ITrashable
 			_audioSource.clip = _data.SO_PickUpAudioClip;
 			_audioSource.Play();
 		}
+	}
+
+	public SOTrashData TrashData() 
+	{
+		if (_data == null) 
+		{
+			Debug.LogError($"Data has not been assigned for this object: {gameObject}");
+		}
+		return _data;
 	}
 
 	#region UnityMethods

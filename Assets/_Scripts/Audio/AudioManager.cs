@@ -2,25 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
-using static Unity.VisualScripting.Member;
 
 public class AudioManager : Singleton<AudioManager>
 {
-
 	[SerializeField] private AudioMixer _audioMixer;
 	[SerializeField] private AudioMixerGroup _audioMixerGroup;
 	private ISet<GameObject> _trashBins;
 	private ISet<GameObject> _trash;
 
-	#region UnityMethods
-	protected void Start() 
-	{
-		StartCoroutine(InitTrash());
-	}
-
-	#endregion
-
-	private IEnumerator InitTrash() 
+	#region Unity Methods
+	private IEnumerator Start() 
 	{
 		_audioMixerGroup = _audioMixer.FindMatchingGroups("SFX")[0];
 		yield return new WaitForFixedUpdate();
@@ -36,22 +27,19 @@ public class AudioManager : Singleton<AudioManager>
 		_trashBins.Clear();
 		_trash.Clear();
 	}
-
+	#endregion
 
 	private void SetupAudioSource(ISet<GameObject> values) 
 	{
-		AudioSource source;
+        foreach (GameObject obj in values)
+        {
+            if (obj == null) continue;
 
-		foreach (GameObject obj in values)
-		{
-			if (obj == null) continue;
-
-			if (obj.TryGetComponent<AudioSource>(out source) && _audioMixerGroup != null)
-			{
-				source.outputAudioMixerGroup = _audioMixerGroup;
-				source.spatialBlend = 1;
-			}
-
-		}
-	}
+            if (obj.TryGetComponent<AudioSource>(out AudioSource source) && _audioMixerGroup != null)
+            {
+                source.outputAudioMixerGroup = _audioMixerGroup;
+                source.spatialBlend = 1;
+            }
+        }
+    }
 }

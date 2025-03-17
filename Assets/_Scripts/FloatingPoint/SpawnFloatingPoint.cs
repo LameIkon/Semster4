@@ -10,12 +10,12 @@ public class SpawnFloatingPoint : MonoBehaviour
 
     private void OnEnable()
     {
-        TrashBin.OnTrashedEvent += HandleTrashEvent;   
+        TrashBin.s_OnTrashedEvent += HandleTrashEvent;   
     }
 
     private void OnDisable()
     {
-        TrashBin.OnTrashedEvent -= HandleTrashEvent;
+        TrashBin.s_OnTrashedEvent -= HandleTrashEvent;
     }
 
     private void HandleTrashEvent(GameObject sender, float points)

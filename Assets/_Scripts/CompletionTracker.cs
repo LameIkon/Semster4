@@ -7,36 +7,42 @@ public class CompletionTracker : MonoBehaviour
 {
     public static event Action s_OnCompletion; // Look DoorOpener
 
-    public static int _TrashObjectsCount = 0;
-    [SerializeField] private List<GameObject> _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage
-    public static int _targetCount;
+    public static int s_TrashObjectsCount = 0;
+    private ISet<GameObject> _trashObjectsToTrack; //All trash objects that needs to be sorted before next stage, in Unity removing GameObjects from an IList or ISet is not possible with the .Remove(GameObject)
+    public List<GameObject> _trashObjects;
+    public static int s_targetCount;
 
-    private void Start()
+
+    public void HandleRegisterTrash(GameObject go, float points)
     {
-        GameObject[] trashObjects = GameObject.FindGameObjectsWithTag("Trash");
-        _trashObjectsToTrack = new List<GameObject>(trashObjects);
-        _targetCount = _trashObjectsToTrack.Count;
-    }
+        s_TrashObjectsCount++;
 
-    public void RegisterTrash(GameObject go, float points)
-    {
-        _TrashObjectsCount++;
+        _trashObjects.Add(go);
 
-        _trashObjectsToTrack.Remove(go);
+        Debug.Log(s_TrashObjectsCount);
 
-        if(_TrashObjectsCount >= _targetCount)
+        if(s_TrashObjectsCount >= s_targetCount)
         {
             s_OnCompletion?.Invoke();
         }
     }
 
+    #region Unity Methods
+    private IEnumerator Start()
+    {
+        _trashObjects = new List<GameObject>();
+        yield return new WaitForFixedUpdate();
+        s_targetCount = GameObject.FindGameObjectsWithTag("Trash").Length;
+    }
+
     private void OnEnable()
     {
-        TrashBin.OnTrashedEvent += RegisterTrash;
+        TrashBin.s_OnTrashedEvent += HandleRegisterTrash;
     }
 
     private void OnDisable() 
     {
-        TrashBin.OnTrashedEvent -= RegisterTrash;
+        TrashBin.s_OnTrashedEvent -= HandleRegisterTrash;
     }
+    #endregion
 }
