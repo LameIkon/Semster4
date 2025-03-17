@@ -5,13 +5,20 @@ public class NPC : MonoBehaviour
 {
     [FormerlySerializedAs("_StartingSoDialogue")] 
     public SODialogueNode _StartingDialogue;
-    
-    // TriggerCollision Player
-    // Call Interact
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log("HRGHER");
+            Interact();
+        }
+    }
 
     public void Interact()
     {
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
         dialogueManager.StartDialogue(_StartingDialogue);
     }
+    
 }

@@ -1,22 +1,31 @@
+using System;
 using UnityEngine;
 using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Should perhaps be turned into a Singleton?
-    
-    public SODialogueNode _CurrentDisplayedNode;
+    private DialogueUI     _dialogueUI;
+    public  SODialogueNode _CurrentDisplayedNode;
+
+    private void Start()
+    {
+        _dialogueUI = FindObjectOfType<DialogueUI>(); 
+        Debug.Log(_dialogueUI);
+    }
 
     public void StartDialogue(SODialogueNode startingNode)
     {
         _CurrentDisplayedNode = startingNode;
         DisplayNode(_CurrentDisplayedNode);
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode);
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="node"></param>
+    
+    public void ProgressToNextDialogue(SODialogueNode nextNode)
+    {
+        _CurrentDisplayedNode = nextNode;                    // Move to the next node
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode); // Update the UI with new node
+    }
+    
     public void DisplayNode(SODialogueNode node)
     {
         Debug.Log(node._DialogueText);
@@ -26,7 +35,7 @@ public class DialogueManager : MonoBehaviour
         {
             if (!AreConditionsMet(nextNode)) continue;
             ShowNextValidDialogueNodes();
-                
+
             void ShowNextValidDialogueNodes()
             {
                 print($"Next: {nextNode._DialogueText}");
@@ -51,12 +60,7 @@ public class DialogueManager : MonoBehaviour
             StartDialogue(_CurrentDisplayedNode._PlayerResponses[responseIndex]._NextNode);
         }
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="node"></param>
-    /// <returns></returns>
+    
     private bool AreConditionsMet(SODialogueNode node)
     {
         if (node._Conditions == null || node._Conditions.Length == 0)

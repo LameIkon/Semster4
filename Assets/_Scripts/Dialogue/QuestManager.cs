@@ -4,9 +4,8 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager s_Instance;
-
     private Dictionary<string, int> questStages = new();
-
+    
     private void Awake()
     {
         if (s_Instance == null)
@@ -17,12 +16,7 @@ public class QuestManager : MonoBehaviour
 
         else Destroy(gameObject);
     }
-
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="questName"></param>
-    /// <returns></returns>
+    
     public int GetQuestStage(string questName)
     {
         if (questStages.TryGetValue(questName, out int stage))
