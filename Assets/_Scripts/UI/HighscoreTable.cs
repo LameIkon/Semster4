@@ -12,7 +12,7 @@ public sealed class HighscoreTable : MonoBehaviour
     // By using a Singleton pattern here, we can make the UpdateHighScorePoints() method static and call it 
     // only when the score must be changed, improving overall performance.
 
-    private static           HighscoreTable  s_instance;
+    private static HighscoreTable s_instance;
     [SerializeField] private TextMeshProUGUI _totalScore;
     [SerializeField] private TextMeshProUGUI _scoreIncrementTracker;
 
@@ -27,10 +27,10 @@ public sealed class HighscoreTable : MonoBehaviour
 
     private void Start()
     {
-        if (_totalScore is not null)
+        if (_totalScore != null)
             _totalScore.text = 0.ToString();
 
-        if (_scoreIncrementTracker is not null)
+        if (_scoreIncrementTracker != null)
             _scoreIncrementTracker.text = String.Empty;
     }
 
@@ -52,7 +52,7 @@ public sealed class HighscoreTable : MonoBehaviour
     /// <param name="points"></param>
     private static void HandleUpdateHighScorePoints(GameObject go, float points)
     {
-        if (s_instance is null)
+        if (s_instance == null)
         {
             Debug.LogError("Error: An instance of HighscoreTable.cs does not currently exist.");
             return;

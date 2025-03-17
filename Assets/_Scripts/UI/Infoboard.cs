@@ -10,7 +10,7 @@ public sealed class Infoboard : MonoBehaviour
     #region Unity Methods
     private void Awake()
     {
-        if (s_instance is null)
+        if (s_instance == null)
             s_instance = this;
 
         else Destroy(gameObject);
@@ -18,7 +18,7 @@ public sealed class Infoboard : MonoBehaviour
 
     private void Start()
     {
-        if (_infoMessage is not null)
+        if (_infoMessage != null)
             _infoMessage.text = String.Empty;
     }
 
@@ -42,7 +42,7 @@ public sealed class Infoboard : MonoBehaviour
     /// <param name="soTrashData">Used for accessing infomation about trash.</param>
     private static void DisplayInfoMessage(float points, SOTrashData soTrashData)
     {
-        if (s_instance is null)
+        if (s_instance == null)
         {
             Debug.LogError("Error: An instance of Infoboard.cs does not currently exist.");
             return;

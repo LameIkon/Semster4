@@ -5341,8 +5341,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _binData: {fileID: 11400000, guid: d82458219b2e9d5418df228141d3c662, type: 2}
-  _FloatingPoint: {fileID: 0}
-  _Points: 0
 --- !u!23 &2131957601
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5891,31 +5889,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9956843
+      value: 0.99340695
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.003789809
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.09280506
+      value: 0.11457363
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0.00106657
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 0.445
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 10.65
+      value: 13.158
       objectReference: {fileID: 0}
     - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.072
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 830164807862776038, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
