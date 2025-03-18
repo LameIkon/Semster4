@@ -6,7 +6,7 @@ using TMPro;
 
 [RequireComponent(typeof(BoxCollider), typeof(Animator), typeof(AudioSource)),
 	RequireComponent(typeof(Rigidbody))]
-public class TrashBin : MonoBehaviour
+public class TrashBin : MonoBehaviour, ILogable
 {
 	/* The implementation of the TrashBin handles the sending of data to the TrashManager,
 	 * It is also responsible for calling the Trashing method on the ITrashables
@@ -17,6 +17,7 @@ public class TrashBin : MonoBehaviour
 
 	public static event Action<GameObject, float> s_OnTrashedEvent; // The event that connects to the TrashManager
 	public static event Action<float, SOTrashData> s_OnTrashedEvent2;
+	public static event Action<string, string> s_OnLogEvent;
 
 	private AudioSource _audioSource;
 
@@ -43,6 +44,7 @@ public class TrashBin : MonoBehaviour
 		{
 			s_OnTrashedEvent.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 			s_OnTrashedEvent2.Invoke((float)points, trash.TrashData());
+			s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name);
 
 			EnablePolish(points);
 		}
@@ -70,6 +72,12 @@ public class TrashBin : MonoBehaviour
 		}
 		_animator.Play(points >= 0 ? _expandCorrectAnimation : _expandIncorrectAnimation); // Play corresponding animation
 	}
+
+	public void Log() 
+	{
+		
+	}
+
 
 	#region UnityMethods
 
