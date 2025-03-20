@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Icecream stick
   m_EditorClassIdentifier: 
   SO_Name: Ispind
-  SO_Description: "Materiale: Tr\xE6\n\nNedbrydningstid: Optil 10 \xE5r\n\nAffaldsh\xE5ndtering:
-    Restaffald (Br\xE6ndes til fjernvarme og elproduktion.)"
+  SO_Description: "Materiale: Tr\xE6.\n\nNedbrydningstid: Optil 10 \xE5r.\n\nAffaldsh\xE5ndtering:
+    Br\xE6ndes til fjernvarme og elproduktion."
   SO_PreferdType: 1
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
   SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: Placeholder text
+  InfoIfSortedCorrectly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro
+    at den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at
+    det er sv\xE6rt at nedbryde for naturen."
   InfoIfSortedWrongly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro at
     den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at det
     er sv\xE6rt at nedbryde for naturen."

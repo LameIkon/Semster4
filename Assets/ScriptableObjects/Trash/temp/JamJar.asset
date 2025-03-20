@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: JamJar
   m_EditorClassIdentifier: 
   SO_Name: "Syltet\xF8jsglas"
-  SO_Description: "Materiale: Glas\n\nNedbrydningstid: Flere tusinde \xE5r\n\nAffaldsh\xE5ndtering:
-    Glas-genbrug (Knuses og smeltes om til nye glasflasker eller glasemballage.)\n"
+  SO_Description: "Materiale: Glas.\n\nNedbrydningstid: Flere tusinde \xE5r.\n\nAffaldsh\xE5ndtering:
+    Knuses og smeltes om til nye glasskomponenter.\n"
   SO_PreferdType: 3
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
   SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: Placeholder text
-  InfoIfSortedWrongly: Placeholder text
+  InfoIfSortedCorrectly: 'Fordi beholderen er lavet af glas skal det sorteres ud
+    til glas. '
+  InfoIfSortedWrongly: 'Fordi beholderen er lavet af glas skal det sorteres ud til
+    glas. '
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Phone Charger
   m_EditorClassIdentifier: 
   SO_Name: Mobiloplader
-  SO_Description: "Materiale: Elektronik\n\nNedbrydningstid: Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering:
-    Elektronik-genbrug (skal afleveres p\xE5 genbrugsplads)"
+  SO_Description: "Materiale: Elektronik.\n\nNedbrydningstid: Flere hundrede \xE5r.\n\nAffaldsh\xE5ndtering:
+    skal afleveres p\xE5 genbrugsplads."
   SO_PreferdType: 5
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7

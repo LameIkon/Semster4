@@ -13,14 +13,16 @@ MonoBehaviour:
   m_Name: Hair spray
   m_EditorClassIdentifier: 
   SO_Name: "H\xE5rspray"
-  SO_Description: "Materiale: Metal + kemikalier\n\nNedbrydningstid: 50-200 \xE5r\n\nAffaldsh\xE5ndtering:
-    Farligt affald (p\xE5 genbrugsplads, pga. trykbeholder)"
+  SO_Description: "Materiale: Metal + kemikalier.\n\nNedbrydningstid: 50-200 \xE5r.\n\nAffaldsh\xE5ndtering:
+    Affald best\xE5ende af kemikalier skal sorteres korrekt, da det indeholder skadelige
+    komponenter."
   SO_PreferdType: 5
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
   SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -5
-  InfoIfSortedCorrectly: Placeholder text
+  InfoIfSortedCorrectly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
+    rester af kemikalier og derfor skal den altid smides ud i farligt affald."
   InfoIfSortedWrongly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
     rester af kemikalier og derfor skal den altid smides ud i farligt affald."
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

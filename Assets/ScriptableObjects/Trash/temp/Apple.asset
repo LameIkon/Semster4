@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   SO_Name: "\xC6ble"
-  SO_Description: "Materiale: Organisk\n\nNedbrydningstid: 2-5 uger\n\nAffaldsh\xE5ndtering:
-    Bioaffald (genanvendes til biogas og g\xF8dning)"
+  SO_Description: "Materiale: Organisk.\n\nNedbrydningstid: 2-5 uger.\n\nAffaldsh\xE5ndtering:
+    Genanvendes til biogas og g\xF8dning."
   SO_PreferdType: 0
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 1
-  SO_AcceptableTypePoints: 1
+  SO_AcceptableTypePoints: 0
   SO_WrongTypePoints: -2
   InfoIfSortedCorrectly: "\xC6ble er organisk materiale og skal ud i madaffald da
     det laves om til biogas."

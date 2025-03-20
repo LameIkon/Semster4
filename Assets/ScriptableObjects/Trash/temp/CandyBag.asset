@@ -13,14 +13,15 @@ MonoBehaviour:
   m_Name: CandyBag
   m_EditorClassIdentifier: 
   SO_Name: Slikpose
-  SO_Description: "Materiale: Bl\xF8d plastik (multilag)\n\nNedbrydningstid: 100-500
-    \xE5r\n\nAffaldsh\xE5ndtering: Restaffald (forbr\xE6nding)\n\n"
+  SO_Description: "Materiale: Bl\xF8d plastik (multilag).\n\nNedbrydningstid: 100-500
+    \xE5r.\n\nAffaldsh\xE5ndtering: Affaldet kan ikke genanvendes og skal bare til
+    forbr\xE6nding."
   SO_PreferdType: 1
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 4
-  SO_AcceptableTypePoints: 1
+  SO_AcceptableTypePoints: 0
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: "Da det er bl\xF8d plast skal det i rest affald"
+  InfoIfSortedCorrectly: "Da det er bl\xF8d plast skal det i rest affald."
   InfoIfSortedWrongly: "Da det er bl\xF8d plast kan det ikke genanvendes."
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}
