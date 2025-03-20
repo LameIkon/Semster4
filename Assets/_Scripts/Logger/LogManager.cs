@@ -4,34 +4,40 @@ using UnityEngine;
 
 public class LogManager : Singleton<LogManager>
 {
-	private IDictionary<string, string> _trashDic;
+	private string _appPath;
+	private LogData _data;
+	private Logger _logger;
 
-	private void AddToDic(string trash, string trashBin) 
-	{
-		_trashDic.TryAdd(trash, trashBin);
-
-		foreach (KeyValuePair<string, string> kvp in _trashDic)
-		{
-			Debug.Log($"Trash: {kvp.Key}, TrashBin: {kvp.Value}");
-		}
-	}
 
 	#region Unity Methods
 
 	private void Start() 
 	{
-		_trashDic = new Dictionary<string, string>();
+		_appPath = Application.persistentDataPath;
+		_data = new LogData();
+		_logger = new Logger(_appPath, _data);
 	}
 
 	private void OnEnable()
 	{
-		TrashBin.s_OnLogEvent += AddToDic;
+		TrashBin.s_OnLogEvent += Add;
 	}
 
 	private void OnDisable()
 	{
-		TrashBin.s_OnLogEvent -= AddToDic;
+		TrashBin.s_OnLogEvent -= Add;
 	}
+
+	private void Add(string trash, string trashBin) 
+	{
+		_data.AddToDic(trash, trashBin);
+		_logger.Log();
+	}
+
+	//private void OnApplicationQuit()
+	//{
+	//	_logger.Log();
+	//}
 
 	#endregion
 }
