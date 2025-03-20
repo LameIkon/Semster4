@@ -38,11 +38,11 @@ public class Logger : ILogable
 		WriteLog($"Tutorial time: {_data.TutorialTime()}");
 		WriteLog($"Total points: {_data.TotalPoints}");
 	}
-
+//
 	private void WriteLog(string LogMessage) 
 	{
 		string file = string.Concat(_id, _fileExtention);
-		string fullPath = Path.Combine(_appPath, _appDir, file);
+		string fullPath = Path.Combine(_appPath, file);
 
 		using (StreamWriter writer = new StreamWriter(fullPath, true))
 		{
