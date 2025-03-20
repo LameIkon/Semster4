@@ -1,7 +1,6 @@
 using System;
 using JetBrains.Annotations;
 using TMPro;
-using Unity.Tutorials.Core.Editor;
 using UnityEngine;
 using UnityEngine.Serialization;
 
