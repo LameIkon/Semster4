@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Phone Charger
   m_EditorClassIdentifier: 
   SO_Name: Mobiloplader
-  SO_Description: "Materiale: Elektronik\n\nNedbrydningstid: Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering:
-    Elektronik-genbrug (skal afleveres p\xE5 genbrugsplads)"
+  SO_Description: "Materiale: Elektronik.\n\nNedbrydningstid: Flere hundrede \xE5r.\n\nAffaldsh\xE5ndtering:
+    skal afleveres p\xE5 genbrugsplads."
   SO_PreferdType: 5
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 0
+  SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -5
-  InfoIfSortedCorrectly: 
+  InfoIfSortedCorrectly: Placeholder text
   InfoIfSortedWrongly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

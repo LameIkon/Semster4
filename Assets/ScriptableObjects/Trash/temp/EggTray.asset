@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: EggTray
   m_EditorClassIdentifier: 
   SO_Name: "\xC6ggebakke"
-  SO_Description: "Materiale: Papir/pap\n\nNedbrydningstid: Ca. 3 m\xE5neder\n\nAffaldsh\xE5ndtering:
-    Pap-genbrug (omdannes til nyt pap/papir)"
+  SO_Description: "Materiale: Papir/pap.\n\nNedbrydningstid: Ca. 3 m\xE5neder.\n\nAffaldsh\xE5ndtering:
+    Omdannes til nyt pap eller papir."
   SO_PreferdType: 2
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 1
   SO_AcceptableTypePoints: 0
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: 
-  InfoIfSortedWrongly: 
+  InfoIfSortedCorrectly: "Da den best\xE5r af pap skal det sorteres til pap."
+  InfoIfSortedWrongly: "Da den best\xE5r af pap skal det sorteres til pap."
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

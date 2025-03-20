@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: ChocolateMilkCarton
   m_EditorClassIdentifier: 
   SO_Name: Matilde Kakao
-  SO_Description: "Materiale: Pap (ca. 75%) + plast (ca. 20%) + aluminium (ca. 5%)\n\nNedbrydningstid:
-    5-10 \xE5r\n\nAffaldsh\xE5ndtering: Drikkekarton-genbrug"
+  SO_Description: "Materiale: Pap (ca. 75%) + plast (ca. 20%) + aluminium (ca. 5%).\n\nNedbrydningstid:
+    5-10 \xE5r for beholderen og 30-70+\xE5r for plastikl\xE5get.\n\nAffaldsh\xE5ndtering:
+    Det bliver genanvendt til nyt pap og plastik."
   SO_PreferdType: 4
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 1
   SO_AcceptableTypePoints: 0
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: 
+  InfoIfSortedCorrectly: "Selvom den best\xE5r af forskellige materialer, skal den
+    i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
   InfoIfSortedWrongly: "Selvom den best\xE5r af forskellige materialer, skal den
-    i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik.."
+    i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

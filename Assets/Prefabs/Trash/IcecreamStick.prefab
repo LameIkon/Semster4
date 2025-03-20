@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 175718178628341229}
   - component: {fileID: 2903839765303797604}
   - component: {fileID: 2292389457856435682}
+  - component: {fileID: 701247602171061752}
   m_Layer: 0
   m_Name: IcecreamStick
   m_TagString: Untagged
@@ -32,9 +33,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196472729540457107}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.10878007, z: -0, w: 0.9940658}
+  m_LocalRotation: {x: 0, y: 0.10878007, z: 0, w: 0.9940658}
   m_LocalPosition: {x: -2.496, y: -1.0999999, z: 2.842}
-  m_LocalScale: {x: 0.21, y: 0.07, z: 0.42}
+  m_LocalScale: {x: 0.14, y: 0.046666667, z: 0.28}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 439295383621826806}
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 6293202612baae44da05363f6398e51d, type: 2}
+  _audioSource: {fileID: 0}
 --- !u!114 &175718178628341229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +349,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 5915727845650922767}
   _trashData: {fileID: 11400000, guid: 6293202612baae44da05363f6398e51d, type: 2}
+--- !u!82 &701247602171061752
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196472729540457107}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3779651351636084863
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 543215930745342785, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.000543325
+      value: 0.0014071144
       objectReference: {fileID: 0}
     - target: {fileID: 1406772183033754728, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_text

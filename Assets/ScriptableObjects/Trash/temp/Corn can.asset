@@ -12,16 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Corn can
   m_EditorClassIdentifier: 
-  SO_Name: 
-  SO_Description: "Materiale: Metal (st\xE5l/aluminium)\n\nNedbrydningstid: 50-200
-    \xE5r\n\nAffaldsh\xE5ndtering: Metal-genbrug (Smeltes om og bruges til nye d\xE5ser,
-    cykler, bildele eller jernskinner.)"
+  SO_Name: "Mejsd\xE5se"
+  SO_Description: "Materiale: Metal (st\xE5l/aluminium).\n\nNedbrydningstid: 50-200
+    \xE5r.\n\nAffaldsh\xE5ndtering: Smeltes om og bruges til nye metaldele."
   SO_PreferdType: 3
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
   SO_AcceptableTypePoints: 0
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: 
-  InfoIfSortedWrongly: 
+  InfoIfSortedCorrectly: "Da den best\xE5r af metal skal den ud i metal, da det kan
+    genanvendes til nye dele. "
+  InfoIfSortedWrongly: "Da den best\xE5r af metal skal den ud i metal, da det kan
+    genanvendes til nye dele. "
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}
