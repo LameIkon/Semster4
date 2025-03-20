@@ -71,6 +71,11 @@ public class TrashBin : MonoBehaviour
 		_animator.Play(points >= 0 ? _expandCorrectAnimation : _expandIncorrectAnimation); // Play corresponding animation
 	}
 
+	private void HighLightBin()
+	{
+
+	}
+
 	#region UnityMethods
 
 	private void Awake() 
