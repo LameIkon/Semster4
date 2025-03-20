@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(BoxCollider), typeof(Animator), typeof(AudioSource)),
 	RequireComponent(typeof(Rigidbody))]
@@ -25,6 +27,11 @@ public class TrashBin : MonoBehaviour
 	private readonly int _expandCorrectAnimation = Animator.StringToHash("ExpandCorrect");
 	private readonly int _expandIncorrectAnimation = Animator.StringToHash("ExpandIncorrect");
 
+	// MeshRenderer and Material
+	private MeshRenderer _meshRenderer;
+
+	public Material _Material0;
+	public Material _Material1;
 
 
 	private void OnTriggerEnter(Collider target)
@@ -71,14 +78,27 @@ public class TrashBin : MonoBehaviour
 		_animator.Play(points >= 0 ? _expandCorrectAnimation : _expandIncorrectAnimation); // Play corresponding animation
 	}
 
-	private void HighLightBin()
+	public void HighLightBin()
 	{
+        _meshRenderer.GetComponent<MeshRenderer>().material = _Material1;
+		Debug.Log("I'm hovering!");
+    }
 
-	}
+    public void OnHoverEntered(HoverEnterEventArgs args)
+    {
+        Debug.Log($"{args.interactorObject} hovered over {args.interactableObject}", this);
+		HighLightBin();
+    }
 
-	#region UnityMethods
+    public void OnHoverExited(HoverExitEventArgs args)
+    {
+        Debug.Log($"{args.interactorObject} stopped hovering over {args.interactableObject}", this);
+    }
 
-	private void Awake() 
+
+    #region UnityMethods
+
+    private void Awake() 
 	{
 		gameObject.tag = "TrashBin";
 	}
@@ -86,6 +106,7 @@ public class TrashBin : MonoBehaviour
 	private void Start()
 	{
 		Reset();
+
 	}
 
 	// Makes sure that the BoxCollider is a set to a Trigger
@@ -99,7 +120,9 @@ public class TrashBin : MonoBehaviour
 		Rigidbody rb = GetComponent<Rigidbody>();
 		rb.isKinematic = true;
 		rb.detectCollisions = true;
-	}
+		_meshRenderer = gameObject.GetComponent<MeshRenderer>();
+        _meshRenderer.material = _Material0;
+    }
 
     #endregion
 }

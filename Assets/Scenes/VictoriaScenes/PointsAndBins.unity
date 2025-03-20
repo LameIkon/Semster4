@@ -3175,13 +3175,13 @@ MonoBehaviour:
   m_HoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2100000, guid: b4d519b78738d414cbf59ebe8999d50f, type: 2}
-        m_TargetAssemblyTypeName: UnityEngine.Material, UnityEngine
-        m_MethodName: set_parent
-        m_Mode: 2
+      - m_Target: {fileID: 2615631769921150574}
+        m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3190,13 +3190,13 @@ MonoBehaviour:
   m_HoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
+      - m_Target: {fileID: 2615631769921150574}
+        m_TargetAssemblyTypeName: TrashBin, Assembly-CSharp
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3488,6 +3488,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1519935669818411917, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+      propertyPath: _Material0
+      value: 
+      objectReference: {fileID: -876546973899608171, guid: 3739e562a03fc0b4982d8aa66cc50865, type: 3}
+    - target: {fileID: 1519935669818411917, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+      propertyPath: _Material1
+      value: 
+      objectReference: {fileID: 2100000, guid: b4d519b78738d414cbf59ebe8999d50f, type: 2}
+    - target: {fileID: 3093917489216028985, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3093917489216028985, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4d519b78738d414cbf59ebe8999d50f, type: 2}
     - target: {fileID: 8427882432193255828, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
       propertyPath: m_Name
       value: FoodWaste
@@ -3500,6 +3516,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 2007280911}
   m_SourcePrefab: {fileID: 100100000, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+--- !u!114 &2615631769921150574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1519935669818411917, guid: 6f89cc4de19201d43b8dfc58c6855441, type: 3}
+  m_PrefabInstance: {fileID: 2615631769921150573}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2007280910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61801da161e5b8649a2d7eef53e045e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4956665404093111468
 PrefabInstance:
   m_ObjectHideFlags: 0
