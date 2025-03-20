@@ -27,11 +27,11 @@ public class TrashBin : MonoBehaviour
 	private readonly int _expandCorrectAnimation = Animator.StringToHash("ExpandCorrect");
 	private readonly int _expandIncorrectAnimation = Animator.StringToHash("ExpandIncorrect");
 
-	// MeshRenderer and Material
-	private MeshRenderer _meshRenderer;
+	//// MeshRenderer and Material
+	//private MeshRenderer _meshRenderer;
 
-	public Material _Material0;
-	public Material _Material1;
+	//public Material _Material0;
+	//public Material _Material1;
 
 
 	private void OnTriggerEnter(Collider target)
@@ -78,23 +78,22 @@ public class TrashBin : MonoBehaviour
 		_animator.Play(points >= 0 ? _expandCorrectAnimation : _expandIncorrectAnimation); // Play corresponding animation
 	}
 
-	public void HighLightBin()
-	{
-        _meshRenderer.GetComponent<MeshRenderer>().material = _Material1;
-		Debug.Log("I'm hovering!");
-    }
+	// public void HighLightBin()
+	//{
+ //       _meshRenderer.GetComponent<MeshRenderer>().material = _Material1;
+	//	Debug.Log("I'm hovering!");
+ //   }
 
-    public void OnHoverEntered(HoverEnterEventArgs args)
-    {
-        Debug.Log($"{args.interactorObject} hovered over {args.interactableObject}", this);
-		HighLightBin();
-    }
+ //   public void OnHoverEntered(HoverEnterEventArgs args)
+ //   {
+ //       Debug.Log($"{args.interactorObject} hovered over {args.interactableObject}", this);
+	//	HighLightBin();
+ //   }
 
-    public void OnHoverExited(HoverExitEventArgs args)
-    {
-        Debug.Log($"{args.interactorObject} stopped hovering over {args.interactableObject}", this);
-    }
-
+ //   public void OnHoverExited(HoverExitEventArgs args)
+ //   {
+ //       Debug.Log($"{args.interactorObject} stopped hovering over {args.interactableObject}", this);
+ //   }
 
     #region UnityMethods
 
@@ -120,8 +119,8 @@ public class TrashBin : MonoBehaviour
 		Rigidbody rb = GetComponent<Rigidbody>();
 		rb.isKinematic = true;
 		rb.detectCollisions = true;
-		_meshRenderer = gameObject.GetComponent<MeshRenderer>();
-        _meshRenderer.material = _Material0;
+		//_meshRenderer = gameObject.GetComponent<MeshRenderer>();
+  //      _meshRenderer.material = _Material0;
     }
 
     #endregion
