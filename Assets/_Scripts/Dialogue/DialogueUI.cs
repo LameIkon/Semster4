@@ -36,7 +36,7 @@ public class DialogueUI : MonoBehaviour
                     break;
                 }
 
-                // Create a new button
+                // Creating buttons
                 GameObject button = Instantiate(_ButtonPrefab, _ResponseContainer);
                 button.GetComponentInChildren<TextMeshProUGUI>().text = currentNode._PlayerResponses[i]._ResponseText;
                 
