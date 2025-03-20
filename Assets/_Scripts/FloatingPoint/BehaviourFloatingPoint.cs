@@ -7,12 +7,12 @@ public class BehaviourFloatingPoint : MonoBehaviour
     public GameObject _FloatingPoint;
     public GameObject _ScorePosition;
 
-    [SerializeField] private float _DestroyObject;  // How much time before gameobject is destroyed.
+    [SerializeField] private float _timeUntilDestruction;  // How much time before gameobject is destroyed.
     [SerializeField] private float _pointSpeed;     // Speed at which the object moves to target position.
 
     private void Start()
     {
-        Destroy(gameObject, _DestroyObject);  
+        Destroy(gameObject, _timeUntilDestruction);  
     }
 
     private void FixedUpdate()

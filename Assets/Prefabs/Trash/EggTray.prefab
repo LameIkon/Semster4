@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 2138769085700236186}
   - component: {fileID: 5147944822340801400}
   - component: {fileID: 1501621020368524911}
+  - component: {fileID: 5062369802372579462}
   m_Layer: 0
   m_Name: EggTray
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.5022505, z: 0, w: 0.86472225}
   m_LocalPosition: {x: -0.5590012, y: -1.0999999, z: 3.3009973}
-  m_LocalScale: {x: 0.21, y: 0.07, z: 0.42}
+  m_LocalScale: {x: 0.14, y: 0.046666667, z: 0.28}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6785392327107173338}
@@ -69,7 +70,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 29048254ac014fd46a1a8684451bffd8, type: 2}
+  - {fileID: 7390553463975553142, guid: 7ab6f3b0fd1a6ba41b2a47766c16613f, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -152,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: d93c20081b55fcd4c800f057f026cdd7, type: 2}
+  _audioSource: {fileID: 0}
 --- !u!114 &2138769085700236186
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +349,102 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trashUIPanel: {fileID: 4503337379787776855}
   _trashData: {fileID: 11400000, guid: d93c20081b55fcd4c800f057f026cdd7, type: 2}
+--- !u!82 &5062369802372579462
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1128667810536215243}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &2476340095574112582
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 543215930745342785, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -0.00015697944
+      value: -0.00047770978
       objectReference: {fileID: 0}
     - target: {fileID: 1406772183033754728, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_text
