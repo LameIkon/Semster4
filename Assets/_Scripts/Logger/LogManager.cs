@@ -21,23 +21,38 @@ public class LogManager : Singleton<LogManager>
 	private void OnEnable()
 	{
 		TrashBin.s_OnLogEvent += Add;
+		CompletionTracker.s_OnCompletion += HandleEndGame;
+		GameStarter.s_OnGameStartEvent += HandleStartGame;
 	}
 
 	private void OnDisable()
 	{
 		TrashBin.s_OnLogEvent -= Add;
+		CompletionTracker.s_OnCompletion -= HandleEndGame;
+		GameStarter.s_OnGameStartEvent -= HandleStartGame;
 	}
 
-	private void Add(string trash, string trashBin) 
+
+	private void OnApplicationQuit()
 	{
-		_data.AddToDic(trash, trashBin);
+		_logger.GameFinished();
+	}
+
+	#endregion
+
+	private void Add(string trash, string trashBin, float points) 
+	{
+		_data.AddToDic(trash, trashBin, points);
 		_logger.Log();
 	}
 
-	//private void OnApplicationQuit()
-	//{
-	//	_logger.Log();
-	//}
-
-	#endregion
+	private void HandleStartGame() 
+	{
+		_logger.GameStarted();
+		Debug.Log("Game Started");
+	}
+	private void HandleEndGame() 
+	{
+		_logger.GameFinished();
+	}
 }
