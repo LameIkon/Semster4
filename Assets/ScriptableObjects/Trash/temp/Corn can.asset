@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
   m_Name: Corn can
   m_EditorClassIdentifier: 
-  SO_Name: "Mejsd\xE5se"
+  SO_Name: "Majsd\xE5se"
   SO_Description: "Materiale: Metal (st\xE5l/aluminium).\n\nNedbrydningstid: 50-200
     \xE5r.\n\nAffaldsh\xE5ndtering: Smeltes om og bruges til nye metaldele."
   SO_PreferdType: 3

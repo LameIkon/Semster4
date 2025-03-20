@@ -16,12 +16,6 @@ public sealed class Infoboard : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Start()
-    {
-        if (_infoMessage != null)
-            _infoMessage.text = String.Empty;
-    }
-
     private void OnEnable()
     {
         TrashBin.s_OnTrashedEvent2 += DisplayInfoMessage;

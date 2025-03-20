@@ -20,7 +20,7 @@ MonoBehaviour:
   SO_AcceptableType: 7
   SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -5
-  InfoIfSortedCorrectly: Placeholder text
+  InfoIfSortedCorrectly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
   InfoIfSortedWrongly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}
