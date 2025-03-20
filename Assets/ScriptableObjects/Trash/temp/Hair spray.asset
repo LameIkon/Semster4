@@ -18,9 +18,9 @@ MonoBehaviour:
   SO_PreferdType: 5
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 0
+  SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -5
-  InfoIfSortedCorrectly: 
+  InfoIfSortedCorrectly: Placeholder text
   InfoIfSortedWrongly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
     rester af kemikalier og derfor skal den altid smides ud i farligt affald."
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}

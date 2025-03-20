@@ -56,7 +56,7 @@ public sealed class Infoboard : MonoBehaviour
         //}
 
         s_instance._infoMessage.text = (points >= 0)
-                ? $"{soTrashData.SO_Description}"
-                : $"{soTrashData.InfoIfSortedWrongly}";
+                ? $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}"
+                : $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedWrongly}";
     }
 }

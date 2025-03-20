@@ -18,9 +18,9 @@ MonoBehaviour:
   SO_PreferdType: 1
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 0
+  SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: 
+  InfoIfSortedCorrectly: Placeholder text
   InfoIfSortedWrongly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro at
     den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at det
     er sv\xE6rt at nedbryde for naturen."

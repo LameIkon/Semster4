@@ -18,9 +18,9 @@ MonoBehaviour:
   SO_PreferdType: 6
   SO_PreferdTypePoints: 2
   SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 0
+  SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: 
-  InfoIfSortedWrongly: WRONG!
+  InfoIfSortedCorrectly: Placeholder text
+  InfoIfSortedWrongly: Placeholder text
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 8300000, guid: 852f1ca83534d1946bbba3b539a77bbc, type: 3}
