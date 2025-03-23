@@ -58,7 +58,7 @@ public class TrackerBoard : MonoBehaviour
 				list.Add(gui);
 			}
 		}
-
+		
 		return list;
 	}
 
@@ -102,6 +102,7 @@ public class TrackerBoard : MonoBehaviour
 		}
 
 		FillBoardsWithObjects();
+		return;
 
 		string Format(string text) 
 		{
