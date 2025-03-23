@@ -9,6 +9,18 @@ public class Leaderboard : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _scores;
     [SerializeField] private TextMeshProUGUI _timing;
 
+
+    public void OnEnable()
+    {
+        //CompletionTracker.s_OnCompletion += CompletionEvent;
+    }
+
+    public void OnDisable()
+    {
+        //CompletionTracker.s_OnCompletion -= CompletionEvent;
+    }
+
+
     private void Start()
     {
         //SaveSystem.DeleteAllSaveFiles();

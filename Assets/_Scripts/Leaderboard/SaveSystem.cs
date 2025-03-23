@@ -5,12 +5,12 @@ using UnityEngine;
 public static class SaveSystem
 {
     //private static readonly string s_saveFolder = GetSavePath();
-    private static readonly string LeaderboardKey = "LeaderboardData";
-    private static int _dataStorageCapacity = 10;
+    private static readonly string LeaderboardKey = "LeaderboardData"; // Playerprefs key
+    private static int _dataStorageCapacity = 10; // Limiter for how much data can be shown on leaderboard
 
 
     [System.Serializable]
-    public class SaveData
+    public class SaveData // A Datafile 
     {
         public string _Username;
         public int _Score;
@@ -18,7 +18,7 @@ public static class SaveSystem
     }
 
     [System.Serializable]
-    public class LeaderboardData
+    public class LeaderboardData // Stores SaveData files
     {
         public List<SaveData> scores = new List<SaveData>();
     }
@@ -103,7 +103,7 @@ public static class SaveSystem
         {
             return scoreComparison; // Return highest score
         }
-        return a._TotalTime.CompareTo(b._TotalTime); // If score is equal then compare the total play time
+        return a._TotalTime.CompareTo(b._TotalTime); // If score is equal then compare the total play time. Takes the one with lowest
     }
 
     public static List<SaveData> Load()
@@ -123,14 +123,14 @@ public static class SaveSystem
 
         if (!PlayerPrefs.HasKey(LeaderboardKey))
         {
-            return new LeaderboardData();
+            return new LeaderboardData(); // return an empty data collection 
         }
 
         string json = PlayerPrefs.GetString(LeaderboardKey);
         return JsonUtility.FromJson<LeaderboardData>(json);
     }
 
-    public static void DeleteAllSaveFiles()
+    public static void DeleteAllSaveFiles() // For testing purpose, otherwise should not be used
     {
         PlayerPrefs.DeleteKey("LeaderboardData");
         PlayerPrefs.Save();
