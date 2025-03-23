@@ -49,7 +49,6 @@ public class LogManager : Singleton<LogManager>
 	private void HandleStartGame() 
 	{
 		_logger.GameStarted();
-		Debug.Log("Game Started");
 	}
 	private void HandleEndGame() 
 	{

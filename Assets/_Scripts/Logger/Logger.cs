@@ -16,6 +16,7 @@ public class Logger : ILogable
 		_appPath = appPath;
 		_data = logData;
 		_id = _data.CreatedTime.ToString("yyyyMMddHHmmss");
+		Directory.CreateDirectory(Path.Combine(_appPath, _appDir));
 	}
 
 	public void Log()
@@ -42,7 +43,7 @@ public class Logger : ILogable
 	private void WriteLog(string LogMessage) 
 	{
 		string file = string.Concat(_id, _fileExtention);
-		string fullPath = Path.Combine(_appPath, file);
+		string fullPath = Path.Combine(_appPath, _appDir, file);
 
 		using (StreamWriter writer = new StreamWriter(fullPath, true))
 		{
