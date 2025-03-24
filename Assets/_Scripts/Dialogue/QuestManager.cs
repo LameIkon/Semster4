@@ -5,7 +5,8 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager s_Instance;
     private Dictionary<string, int> questStages = new();
-    
+    private const int DefaultGameStage = 0;
+
     private void Awake()
     {
         if (s_Instance == null)
@@ -16,15 +17,10 @@ public class QuestManager : MonoBehaviour
 
         else Destroy(gameObject);
     }
-    
+
     public int GetQuestStage(string questName)
     {
-        if (questStages.TryGetValue(questName, out int stage))
-        {
-            return stage;
-        }
-
-        return 0; // Default game stage
+        return questStages.GetValueOrDefault(questName, DefaultGameStage);
     }
 
     /// <summary>
