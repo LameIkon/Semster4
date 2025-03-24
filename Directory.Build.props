@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\Semster4.xml</DocumentationFile>
+  </PropertyGroup>
+</Project>

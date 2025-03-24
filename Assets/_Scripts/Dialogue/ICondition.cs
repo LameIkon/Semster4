@@ -1,4 +1,4 @@
-public interface ICondition 
+public interface ICondition
 {
-    public bool IsMet(); 
+    public bool IsMet();
 }

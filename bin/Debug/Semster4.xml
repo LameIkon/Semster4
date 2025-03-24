@@ -1,0 +1,383 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Assembly-CSharp</name>
+    </assembly>
+    <members>
+        <member name="T:Unity.VRTemplate.AnchorVisuals">
+            <summary>
+            Helper script used to control the Teleport Anchor visuals animations.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.AnchorVisuals.OnAnchorEnter">
+            <summary>
+            Performs animations when teleport interactor enters the teleport anchor selection.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.AnchorVisuals.OnAnchorExit">
+            <summary>
+            Performs animations when teleport interactor exits the teleport anchor selection.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.AnchorVisuals.HideArrowOnTeleport">
+            <summary>
+            Hides the arrow visual when teleporting
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.RayAttachModifier">
+            <summary>
+            Add this to your interactable to make it snap to the source of the XR Ray Interactor
+            instead of staying at a distance. Has a similar outcome as enabling Force Grab.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.CalloutGazeController">
+            <summary>
+            Fires events when this object is is within the field of view of the gaze transform. This is currently used to
+            hide and show tooltip callouts on the controllers when the controllers are within the field of view.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.VideoTimeScrubControl">
+            <summary>
+            Connects a UI slider control to a video player, allowing users to scrub to a particular time in th video.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.XRPokeFollowAffordanceFill">
+            <summary>
+            Follow animation affordance for <see cref="T:UnityEngine.XR.Interaction.Toolkit.Filtering.IPokeStateDataProvider"/>, such as <see cref="T:UnityEngine.XR.Interaction.Toolkit.Filtering.XRPokeFilter"/>.
+            Used to animate a pressed transform, such as a button to follow the poke position.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform">
+            <summary>
+            Transform that will animate along the axis of interaction when this interactable is poked.
+            Note: Must be a direct child GameObject as it moves in local space relative to the poke target's transform.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.smoothingSpeed">
+            <summary>
+            Multiplies transform position interpolation as a factor of <see cref="P:UnityEngine.Time.deltaTime"/>. If <c>0</c>, no smoothing will be applied.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.returnToInitialPosition">
+            <summary>
+            When this component is no longer the target of the poke, the <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform"/> returns to the original position.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.applyIfChildIsTarget">
+            <summary>
+            Whether to apply the follow animation if the target of the poke is a child of this transform.
+            This is useful for UI objects that may have child graphics.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.clampToMinDistance">
+            <summary>
+            Whether to keep the <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform"/> from moving past <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.minDistance"/> from the poke target.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.minDistance">
+            <summary>
+            The minimum distance from this transform that the <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform"/> can move when
+            <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.clampToMinDistance"/> is <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.clampToMaxDistance">
+            <summary>
+            Whether to keep the <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform"/> from moving past <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.maxDistance"/> from the poke target.
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.maxDistance">
+            <summary>
+            The maximum distance from this transform that the <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.pokeFollowTransform"/> can move when
+            <see cref="P:Unity.VRTemplate.XRPokeFollowAffordanceFill.clampToMaxDistance"/> is <see langword="true"/>.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRPokeFollowAffordanceFill.Awake">
+            <summary>
+            See <see cref="T:UnityEngine.MonoBehaviour"/>.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRPokeFollowAffordanceFill.Start">
+            <summary>
+            See <see cref="T:UnityEngine.MonoBehaviour"/>.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRPokeFollowAffordanceFill.OnDestroy">
+            <summary>
+            See <see cref="T:UnityEngine.MonoBehaviour"/>.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRPokeFollowAffordanceFill.LateUpdate">
+            <summary>
+            See <see cref="T:UnityEngine.MonoBehaviour"/>.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.VideoPlayerRenderTexture">
+            <summary>
+            Create a RenderTexture for rendering video to a target renderer.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.DestroyObject">
+            <summary>
+            Destroys GameObject after a few seconds.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.StepManager">
+            <summary>
+            Controls the steps in the in coaching card.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.Callout">
+            <summary>
+            Callout used to display information like world and controller tooltips.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.LaunchProjectile">
+            <summary>
+            Apply forward force to instantiated prefab
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.BezierCurve">
+            <summary>
+            Draws a bezier curve from a starting point transform to an end point transform
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.BezierCurve.k_ViewerScaleChangeThreshold">
+            <summary>
+            If the view scale changes more than this amount, then the line width will be updated causing the line to be rebuilt.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.BezierCurve.UpdateType">
+            <summary>
+            The time within the frame that the curve will be updated.
+            </summary>
+            <seealso cref="T:UnityEngine.XR.Interaction.Toolkit.XRBaseController.UpdateType"/>
+        </member>
+        <member name="F:Unity.VRTemplate.BezierCurve.UpdateType.UpdateAndBeforeRender">
+            <summary>
+            Sample at both update and directly before rendering. For smooth tracking,
+            we recommend using this value as it will provide the lowest input latency for the device.
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.BezierCurve.UpdateType.Update">
+            <summary>
+            Only sample input during the update phase of the frame.
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.BezierCurve.UpdateType.BeforeRender">
+            <summary>
+            Only sample input directly before rendering.
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.BezierCurve.DrawCurve">
+            <summary>
+            Updates the line points to draw the bezier curve.
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.BooleanToggleVisualsController">
+            <summary>
+            Controls the visual states of a boolean toggle switch UI
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.BooleanToggleVisualsController.UnityEngine#EventSystems#IPointerEnterHandler#OnPointerEnter(UnityEngine.EventSystems.PointerEventData)">
+            <inheritdoc />
+        </member>
+        <member name="M:Unity.VRTemplate.BooleanToggleVisualsController.UnityEngine#EventSystems#IPointerExitHandler#OnPointerExit(UnityEngine.EventSystems.PointerEventData)">
+            <inheritdoc />
+        </member>
+        <member name="T:Unity.VRTemplate.Rotator">
+            <summary>
+            Rotates this object at a user defined speed
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.XRKnob">
+            <summary>
+            An interactable knob that follows the rotation of the interactor
+            </summary>
+        </member>
+        <member name="T:Unity.VRTemplate.XRKnob.TrackedRotation">
+            <summary>
+            Helper class used to track rotations that can go beyond 180 degrees while minimizing accumulation error
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.XRKnob.TrackedRotation.m_BaseAngle">
+            <summary>
+            The anchor rotation we calculate an offset from
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.XRKnob.TrackedRotation.m_CurrentOffset">
+            <summary>
+            The target rotate we calculate the offset to
+            </summary>
+        </member>
+        <member name="F:Unity.VRTemplate.XRKnob.TrackedRotation.m_AccumulatedAngle">
+            <summary>
+            Any previous offsets we've added in
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.TrackedRotation.totalOffset">
+            <summary>
+            The total rotation that occurred from when this rotation started being tracked
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRKnob.TrackedRotation.Reset">
+            <summary>
+            Resets the tracked rotation so that total offset returns 0
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRKnob.TrackedRotation.SetBaseFromVector(UnityEngine.Vector3)">
+            <summary>
+            Sets a new anchor rotation while maintaining any previously accumulated offset
+            </summary>
+            <param name="direction">The XZ vector used to calculate a rotation angle</param>
+        </member>
+        <member name="M:Unity.VRTemplate.XRKnob.TrackedRotation.SetTargetFromVector(UnityEngine.Vector3)">
+            <summary>
+            Updates current offset and base angle based on target direction.
+            </summary>
+            <param name="direction">The XZ vector used to calculate a rotation angle</param>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.handle">
+            <summary>
+            The object that is visually grabbed and manipulated
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.value">
+            <summary>
+            The value of the knob
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.clampedMotion">
+            <summary>
+            Whether this knob's rotation should be clamped by the angle limits
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.maxAngle">
+            <summary>
+            Rotation of the knob at value '1'
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.minAngle">
+            <summary>
+            Rotation of the knob at value '0'
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.positionTrackedRadius">
+            <summary>
+            The position of the interactor controls rotation when outside this radius
+            </summary>
+        </member>
+        <member name="P:Unity.VRTemplate.XRKnob.onValueChange">
+            <summary>
+            Events to trigger when the knob is rotated
+            </summary>
+        </member>
+        <member name="M:Unity.VRTemplate.XRKnob.ProcessInteractable(UnityEngine.XR.Interaction.Toolkit.XRInteractionUpdateOrder.UpdatePhase)">
+            <inheritdoc />
+        </member>
+        <member name="M:Unity.VRTemplate.XRKnob.GetAttachTransform(UnityEngine.XR.Interaction.Toolkit.Interactors.IXRInteractor)">
+            <inheritdoc />
+        </member>
+        <member name="M:IdyllicFantasyNature.BushLeafTrigger.OnTriggerExit(UnityEngine.Collider)">
+            <summary>
+            When the player leaves the trigger, the particle system is placed at the last player position and starts playing
+            </summary>
+            <param name="other"></param>
+        </member>
+        <member name="M:IdyllicFantasyNature.VegetationBendControl.moveOnVegetation">
+            <summary>
+            the material gets the object position to know when to bend
+            only updates when player moves
+            </summary>
+        </member>
+        <member name="M:IdyllicFantasyNature.VegetationBendControl.BendSettings">
+            <summary>
+            the material gets the bend settings
+            </summary>
+        </member>
+        <member name="M:IdyllicFantasyNature.ButterflySpawn.ActivateButterfly">
+            <summary>
+            activates the butterfly when the cooldown reaches 0 and the animation isn't already playing
+            </summary>
+        </member>
+        <member name="M:IdyllicFantasyNature.ButterflySpawn.AnimationEnded">
+            <summary>
+            animation event will be used at the end of the butterfly animation
+            Resets the stats to enable the cooldown for the respawn
+            </summary>
+        </member>
+        <member name="M:IdyllicFantasyNature.WindControl.OnValidate">
+            <summary>
+            the material gets the wind settings
+            method only runs in the editor mode
+            </summary>
+        </member>
+        <member name="M:HighscoreTable.HandleUpdateHighScorePoints(UnityEngine.GameObject,System.Single)">
+            <summary>
+            
+            </summary>
+            <param name="points"></param>
+        </member>
+        <member name="M:DialogueUI.ClearExistingButtons">
+            <summary>
+            Ensures that the UI is cleared from any leftover buttons so the new ones can be loaded safely.
+            </summary>
+        </member>
+        <member name="M:QuestManager.SetQuestStage(System.String,System.Int32)">
+            <summary>
+            This method should be called in scripts responsible for player actions, game events, or dialogue progression that directly affect quest progress.
+            Examples of this could be key items that advances the quest by or to a certain stage.
+            </summary>
+            <param name="questName">The name of the quest that should be advanced</param>
+            <param name="stage">The stage the quest should be advanced to</param>
+        </member>
+        <member name="M:Infoboard.DisplayInfoMessage(System.Single,SOTrashData)">
+            <summary>
+            This method displays information regarding how well trash is sorted on the Infoboard. It takes 2 parameters
+            of type float and SOTrashData. 
+            </summary>
+            <param name="points">Used for checking how well trash was sorted.</param>
+            <param name="soTrashData">Used for accessing infomation about trash.</param>
+        </member>
+        <member name="M:DialogueManager.StartDialogue(SODialogueNode,System.String)">
+             <summary>
+             This method is responsible for starting the dialogue with an NPC. The way this works is to pass
+             the starting dialogue of an NPC as an argument and then call this method in Interact() at NPC.cs.
+            
+             The current displayed node in the UI will then be initialized to the starting node of the NPC
+             that we pass as an argument.
+            
+             Then...
+            
+             Lastly, the UI gets updated.
+             </summary>
+             <param name="startingNode">A starting dialogue that will be passed in at NPC.cs</param>
+        </member>
+        <member name="M:DialogueManager.ProgressToNextDialogue(SODialogueNode)">
+             <summary>
+             This method is responsible for continuing the dialogue with an NPC.
+            
+            
+             Lastly, the UI gets updated.
+             </summary>
+             <param name="nextNode"></param>
+        </member>
+        <member name="M:DialogueManager.DisplayNode(SODialogueNode)">
+            <summary>
+            This method is responsible for....
+            </summary>
+            <param name="node"></param>
+        </member>
+        <member name="M:DialogueManager.AreConditionsMet(SODialogueNode)">
+             <summary>
+             This method is responsible for checking if the stage conditions are being met.
+            
+             It firstly checks if there are any conditions, if there aren't any, it returns true.
+            
+             If there are any conditions, it will iterate through them all and call IsMet() from SOQuestStageCondition.cs
+             on every single condition. If IsMet() returns false on any condition, then this method will return false.
+             </summary>
+             <param name="node">The dialogue node that will have its conditions checked.</param>
+             <returns>Returns true if the conditions have been met, false if they haven't.</returns>
+        </member>
+    </members>
+</doc>

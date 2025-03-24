@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Globalization;
 
 public class Logger : ILogable
 {
@@ -31,14 +32,16 @@ public class Logger : ILogable
 	public void GameFinished() 
 	{
 		_data.StopedGame();
-		WriteLog($"Created: {_data.CreatedTime.ToString()}");
-		WriteLog($"Started: {_data.StartedTime.ToString()}");
-		WriteLog($"Stopped: {_data.StoppedTime.ToString()}");
-		WriteLog($"GameTime: {_data.GameTime()}");
-		WriteLog($"Tutorial time: {_data.TutorialTime()}");
-		WriteLog($"Total points: {_data.TotalPoints}");
+		
+		WriteLog("\n------- Game Stats -------");
+		WriteLog($"Created:        {_data.CreatedTime.ToString("dd-MM-yyyy HH:mm:ss", CultureInfo.GetCultureInfo("da-DK"))}");
+		WriteLog($"Started:        {_data.StartedTime.ToString("dd-MM-yyyy HH:mm:ss", CultureInfo.GetCultureInfo("da-DK"))}");
+		WriteLog($"Stopped:        {_data.StoppedTime.ToString("dd-MM-yyyy HH:mm:ss", CultureInfo.GetCultureInfo("da-DK"))}");
+		WriteLog($"Game Time:      {_data.GameTime()}");
+		WriteLog($"Tutorial Time:  {_data.TutorialTime()}");
+		WriteLog($"Total Points:   {_data.TotalPoints}");
 	}
-//
+
 	private void WriteLog(string LogMessage) 
 	{
 		string file = string.Concat(_id, _fileExtention);
@@ -49,6 +52,4 @@ public class Logger : ILogable
 			writer.WriteLine(LogMessage);
 		}
 	}
-
-	
 }

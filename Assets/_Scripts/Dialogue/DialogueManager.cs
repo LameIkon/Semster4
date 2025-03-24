@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    private DialogueUI     _dialogueUI;
-    public  SODialogueNode _CurrentDisplayedNode;
+    private DialogueUI _dialogueUI;
+    public SODialogueNode _CurrentDisplayedNode;
+    public string _CurrentNPCName;
 
-    /// <summary>
-    /// DialogueUI (_dialogueUI) is found and initialized so that it can be used in the rest of the script.
-    ///
-    /// We then print out DialogueUI as a way to verify if we have found it in the console.
-    /// </summary>
+    // DialogueUI (_dialogueUI) is found and initialized so that it can be used in the rest of the script.
+    // We then print out DialogueUI as a way to verify if we have found it in the console.
     private void Start()
     {
         _dialogueUI = FindObjectOfType<DialogueUI>();
@@ -28,11 +26,12 @@ public class DialogueManager : MonoBehaviour
     /// Lastly, the UI gets updated.
     /// </summary>
     /// <param name="startingNode">A starting dialogue that will be passed in at NPC.cs</param>
-    public void StartDialogue(SODialogueNode startingNode)
+    public void StartDialogue(SODialogueNode startingNode, string npcName)
     {
+        _CurrentNPCName       = npcName;
         _CurrentDisplayedNode = startingNode;
         DisplayNode(_CurrentDisplayedNode);
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode);
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
     }
 
     /// <summary>
@@ -44,8 +43,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="nextNode"></param>
     public void ProgressToNextDialogue(SODialogueNode nextNode)
     {
-        _CurrentDisplayedNode = nextNode;                    // Move to the next node
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode); 
+        _CurrentDisplayedNode = nextNode; // Move to the next node
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
     }
 
     /// <summary>
@@ -80,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         if (_CurrentDisplayedNode._PlayerResponses != null &&
             responseIndex < _CurrentDisplayedNode._PlayerResponses.Length)
         {
-            StartDialogue(_CurrentDisplayedNode._PlayerResponses[responseIndex]._NextNode);
+            StartDialogue(_CurrentDisplayedNode._PlayerResponses[responseIndex]._NextNode, _CurrentNPCName);
         }
     }
 

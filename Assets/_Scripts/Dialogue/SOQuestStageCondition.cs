@@ -4,7 +4,7 @@ using UnityEngine;
 public class SOQuestStageCondition : ScriptableObject, ICondition
 {
     public string _QuestName;
-    public int    _RequiredStage;
+    public int _RequiredStage;
 
     public bool IsMet()
     {
