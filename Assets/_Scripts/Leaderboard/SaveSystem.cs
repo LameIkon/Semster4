@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using System;
 
 public static class SaveSystem
 {
@@ -9,7 +10,7 @@ public static class SaveSystem
     private static int _dataStorageCapacity = 10; // Limiter for how much data can be shown on leaderboard
 
 
-    [System.Serializable]
+    [Serializable]
     public class SaveData // A Datafile 
     {
         public string _Username;
@@ -17,7 +18,7 @@ public static class SaveSystem
         public float _TotalTime;
     }
 
-    [System.Serializable]
+    [Serializable]
     public class LeaderboardData // Stores SaveData files
     {
         public List<SaveData> scores = new List<SaveData>();
