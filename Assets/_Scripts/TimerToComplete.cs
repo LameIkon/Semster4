@@ -29,22 +29,6 @@ public class TimerToComplete : MonoBehaviour
         }       
     }
 
-    //private void CheckTimeLeft()
-    //{
-    //    if (_countDownStarted)
-    //    {
-    //        if (_timeRemaining > 0)
-    //        {
-    //            _timeRemaining -= Time.deltaTime;
-    //            UpdateTimer(_timeRemaining);
-    //        }
-
-    //        else
-    //        {
-    //            _timeRemaining = 0;
-    //        }
-    //    }
-    //}
 
     IEnumerator CountDown ()
     {
