@@ -25,5 +25,6 @@ MonoBehaviour:
     sv\xE6rt at genbruge det."
   InfoIfSortedWrongly: "Da den best\xE5r af mange forskellige materiale er det sv\xE6rt
     at genbruge det."
+  InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

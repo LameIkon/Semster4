@@ -49,8 +49,24 @@ public sealed class Infoboard : MonoBehaviour
         //    return;
         //}
 
-        s_instance._infoMessage.text = (points >= 0)
-                ? $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}"
-                : $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedWrongly}";
+        //s_instance._infoMessage.text = (points >= 0)
+        //        ? $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}"
+        //        : $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedWrongly}";
+
+        if (points > 0) // Correct
+        {
+            Debug.Log("Correct");
+            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}");
+        }
+        else if (points == 0) // Acceptable
+        {
+            Debug.Log("Acceptable");
+            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedAcceptable}");
+        }
+        else // Incorrect
+        {
+            Debug.Log("Incorrect");
+            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedWrongly}");
+        }
     }
 }

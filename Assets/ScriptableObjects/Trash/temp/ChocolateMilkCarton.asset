@@ -25,5 +25,6 @@ MonoBehaviour:
     i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
   InfoIfSortedWrongly: "Selvom den best\xE5r af forskellige materialer, skal den
     i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
+  InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

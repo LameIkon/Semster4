@@ -22,5 +22,6 @@ MonoBehaviour:
   SO_WrongTypePoints: -2
   InfoIfSortedCorrectly: "Da det er t\xF8j skal det sortes som tekstilaffald."
   InfoIfSortedWrongly: "Da det er t\xF8j skal det sortes som tekstilaffald."
+  InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 8300000, guid: 852f1ca83534d1946bbba3b539a77bbc, type: 3}
