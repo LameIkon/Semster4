@@ -25,7 +25,7 @@ public class TutorialTracker : MonoBehaviour
 
         _index++;
 
-        if (_index < SO_tutoialData.Length) // Ensure no out of bounds
+        if (_index < SO_tutoialData.Length) 
         {
             _text.text = SO_tutoialData[_index].SO_Description;
             _highlightDots[_index].SetActive(true);

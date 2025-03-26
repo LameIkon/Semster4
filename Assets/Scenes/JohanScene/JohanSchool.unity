@@ -26566,6 +26566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1522480845705297911, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
+      propertyPath: m_OverridePixelPerfect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2951798914348467121, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: _camera
       value: 
@@ -26650,6 +26654,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5563060382511541408, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5638706965918808500, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -26692,6 +26700,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5992487086396680204, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6663625627634872154, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7871368764237260704, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
