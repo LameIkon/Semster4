@@ -5,50 +5,54 @@ using System.Globalization;
 public class LogData
 {
 	private IDictionary<string, string> _trashDic;
-	private IList<string> _logList;
 	private DateTime _created, _startGame, _stoppedGame, _betweenTrash;
-	private float _totalPoints;
+	private IList<TimeSpan> _timeBetweenTrash;
+	private IList<float> _points;
 
 	public LogData()
 	{
 		_trashDic = new Dictionary<string, string>();
-		_logList = new List<string>();
+		_timeBetweenTrash = new List<TimeSpan>();
+		_points = new List<float>();
 		_created = DateTime.Now;
-		_totalPoints = 0;
+	}
+
+	public LogData(IDictionary<string, string> trashDic, DateTime created, DateTime startedGame, DateTime stoppedGame, IList<float> points, IList<TimeSpan> timeBetweenTrash) 
+	{
+		_trashDic = trashDic;
+		_created = created;
+		_startGame = startedGame;
+		_stoppedGame = stoppedGame;
+		_timeBetweenTrash = timeBetweenTrash;
+		_points = points;
 	}
 
 	public DateTime CreatedTime{ get => _created; }
 	public DateTime StartedTime { get => _startGame; }
 	public DateTime StoppedTime { get => _stoppedGame; }
-	public DateTime BetweenTrashTime { get => _betweenTrash; }
-	public string TotalPoints { get => _totalPoints.ToString(); }
+	public float TotalPoints
+	{
+		get 
+		{
+			float total = 0;
+			foreach (float point in _points) 
+			{
+				total += point;
+			}
+			return total;
+		} 
+	
+	}
+	public IDictionary<string, string> TrashDic { get => _trashDic; }
+	public IList<TimeSpan> TimeBetweenTrash { get => _timeBetweenTrash; }
+	public IList<float> Points { get => _points; }
 
 	public void AddToDic(string trash, string trashBin, float points)
 	{
-		if (_trashDic.TryAdd(trash, trashBin)) 
-		{
-			_logList.Add( $"Trash: {trash}, TrashBin: {trashBin}, points: {points}");
-			_totalPoints += points;
-		}
-	}
-
-	public IList<string> GetTrashData() 
-	{
-		IList<string> data = new List<string>();
-
-		data.Add($"Trash,TrashBin");
-
-		foreach (KeyValuePair<string, string> kvp in _trashDic) 
-		{
-			data.Add($"{kvp.Key},{kvp.Value}");
-		}
-
-		return data;
-	}
-
-	public string GetLastEntry() 
-	{
-		return $"{_logList[_logList.Count - 1]}, time from last item trashed: {TimeBetweenTrash()}";
+		_trashDic.TryAdd(trash, trashBin);
+		AddPoints(points);
+		AddTimeBetweenTrash();
+		StopedGame();
 	}
 
 	public void StartedGame() 
@@ -56,30 +60,29 @@ public class LogData
 		_startGame = DateTime.Now;
 		_betweenTrash = _startGame;
 	}
+
 	public void StopedGame() => _stoppedGame = DateTime.Now;
 
-	public string TutorialTime() 
+	public TimeSpan TutorialTime() 
 	{
-		return $"{FormatTime(_startGame - _created)}";
+		return (_startGame - _created);
 	}
 
-	public string GameTime() 
+	public TimeSpan GameTime() 
 	{
-		return $"{FormatTime(_stoppedGame - _startGame)}";
+		return (_stoppedGame - _startGame);
 	}
 
-	private string TimeBetweenTrash() 
+	private void AddTimeBetweenTrash() 
 	{
 		DateTime timeNow = DateTime.Now;
 		TimeSpan trashTime = timeNow - _betweenTrash;
 		_betweenTrash = timeNow;
-
-		return $"{FormatTime(trashTime)}";
-
+		_timeBetweenTrash.Add(trashTime);
 	}
 
-	private string FormatTime(TimeSpan time) 
+	private void AddPoints(float points) 
 	{
-		return time.ToString("mm':'ss'.'fff");
+		_points.Add(points);
 	}
 }
