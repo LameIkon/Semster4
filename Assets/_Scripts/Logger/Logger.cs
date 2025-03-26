@@ -20,11 +20,7 @@ public class Logger : ILogable
 		_data = logData;
 		_id = _data.CreatedTime.ToString("yyyyMMddHHmmss");
 
-		string logPath = Path.Combine(_appPath, _logs);
-		Directory.CreateDirectory(logPath);
-
-		_logDir = Path.Combine(logPath, _id);
-		Directory.CreateDirectory(_logDir);
+		_logDir = CreateLogDir(CreateRootDir());
 
 		_writer = new LogWriter(_logDir);
 	}
@@ -54,8 +50,22 @@ public class Logger : ILogable
 
 	private void WriteLog(string logMessage) 
 	{
-		_writer.WriteTrashLog(logMessage);
+		
 	}
+
+	private string CreateRootDir() 
+	{
+        string logPath = Path.Combine(_appPath, _logs);
+        Directory.CreateDirectory(logPath);
+		return logPath;
+    }
+
+	private string CreateLogDir(string logPath) 
+	{
+        string logDir = Path.Combine(logPath, _id);
+        Directory.CreateDirectory(_logDir);
+		return logDir;
+    }
 }
 
 
@@ -74,20 +84,30 @@ public class LogWriter
 	}
 
 
-	public void WriteTrashLog(string logMessage) 
+	public void WriteLog(IList<string> trashLog, IList<string> timeLog) 
 	{
-		string trashFile = string.Concat(_trashLog, _trashExtention);
-		string fullPath = Path.Combine(_logDir, trashFile);
+		WriteTrashLog(trashLog);
+		WriteTimeLog(timeLog);
+	
+	}
 
-		using (StreamWriter writer = new StreamWriter(fullPath, true))
+	private void WriteTrashLog(IList<string> trashLog) 
+	{
+		using (StreamWriter writer = new StreamWriter(GetTrashPath(), true))
 		{
-			writer.WriteLine(logMessage);
+			foreach (string trashLogItem in trashLog)
+			{
+				writer.WriteLine(trashLogItem);
+			}
 		}
 	}
 
-	public void WriteTimeLog(string timeMessage) 
+	private void WriteTimeLog(IList<string> timeLog) 
 	{
-	
+		using (StreamWriter writer = new StreamWriter(GetTimePath(), true)) 
+		{
+			
+		}
 	}
 
 	private string GetTrashPath() 
