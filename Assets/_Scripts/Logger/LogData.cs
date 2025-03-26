@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Globalization;
 
 public class LogData
 {
@@ -31,13 +32,15 @@ public class LogData
 		}
 	}
 
-	public IList<string> GetData() 
+	public IList<string> GetTrashData() 
 	{
 		IList<string> data = new List<string>();
 
+		data.Add($"Trash,TrashBin");
+
 		foreach (KeyValuePair<string, string> kvp in _trashDic) 
 		{
-			data.Add($"Trash: {kvp.Key}, TrashBin: {kvp.Value}");
+			data.Add($"{kvp.Key},{kvp.Value}");
 		}
 
 		return data;
