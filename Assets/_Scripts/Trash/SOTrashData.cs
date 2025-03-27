@@ -19,10 +19,13 @@ public class SOTrashData : ScriptableObject
 
 	[Space()]
 	public float SO_WrongTypePoints;
-	[TextArea(3,15)] public string InfoIfSortedCorrectly;
-    [TextArea(3, 15)] public string InfoIfSortedWrongly;
 
-	[Space()]
+    [Space()]
+    [TextArea(3,15)] public string InfoIfSortedCorrectly;
+    [TextArea(3, 15)] public string InfoIfSortedWrongly;
+    [TextArea(3, 15)] public string InfoIfSortedAcceptable;
+
+    [Space()]
 	public AudioClip SO_TrashAudioClip;
 	public AudioClip SO_PickUpAudioClip;
 }

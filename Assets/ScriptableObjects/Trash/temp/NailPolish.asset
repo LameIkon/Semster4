@@ -25,5 +25,6 @@ MonoBehaviour:
     Enten i farligt affald eller ud med det p\xE5 en genbrugsstation."
   InfoIfSortedWrongly: "Det er kemisk affald og derfor skal det h\xE5ndteres korrekt.
     Enten i farligt affald eller ud med det p\xE5 en genbrugsstation."
+  InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

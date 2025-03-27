@@ -26,5 +26,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro at
     den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at det
     er sv\xE6rt at nedbryde for naturen."
+  InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}
