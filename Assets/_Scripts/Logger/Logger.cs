@@ -203,7 +203,7 @@ public class LogReader
 					}
 					catch (FormatException ex) 
 					{
-						
+						Console.WriteLine(ex.Message);
 					}
 
 				}
@@ -232,7 +232,7 @@ public class LogReader
 					}
 					catch (FormatException ex)
 					{
-
+						Console.WriteLine(ex.Message);
 					}
 
 				}
