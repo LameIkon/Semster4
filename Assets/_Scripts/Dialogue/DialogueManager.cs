@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -5,6 +6,8 @@ using UnityEngine.Serialization;
 public class DialogueManager : MonoBehaviour
 {
     private DialogueUI _dialogueUI;
+    private Stack<SODialogueVideoNode> _nodeHistory = new Stack<SODialogueVideoNode>();
+    private SODialogueVideoNode _rootNode;
     public SODialogueNode _CurrentDisplayedNode;
     public SODialogueVideoNode _CurrentDisplayedVideoNode;
     public string _CurrentNPCName;
@@ -31,6 +34,8 @@ public class DialogueManager : MonoBehaviour
     /// <param name="startingNode">A starting dialogue that will be passed in at NPC.cs</param>
     public void StartDialogue(SODialogueVideoNode startingNode, string npcName)
     {
+        _nodeHistory.Clear(); // Clear history when a new dialogue starts
+        _rootNode = startingNode;
         _CurrentNPCName = npcName;
         _CurrentDisplayedVideoNode = startingNode;
         DisplayNode(_CurrentDisplayedVideoNode);
@@ -46,9 +51,51 @@ public class DialogueManager : MonoBehaviour
     /// <param name="nextNode"></param>
     public void ProgressToNextDialogue(SODialogueVideoNode nextNode)
     {
-        _CurrentDisplayedVideoNode = nextNode; // Move to the next node
+        if (_CurrentDisplayedVideoNode != null)
+        {
+            _nodeHistory.Push(_CurrentDisplayedVideoNode);
+            Debug.Log("Pushed to history: " + _CurrentDisplayedVideoNode);
+        }
+        
+        _CurrentDisplayedVideoNode = nextNode;
         _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
     }
+
+    public void ProgressToPreviousDialogue()
+    {
+        if (_nodeHistory.Count > 0)
+        {
+            _CurrentDisplayedVideoNode = _nodeHistory.Pop();
+            if (_CurrentDisplayedVideoNode != null)
+            {
+                _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
+                Debug.Log("Progressed to previous node: " + _CurrentDisplayedVideoNode);
+            }
+            else
+            {
+                Debug.LogWarning("Current displayed video node is null!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("No previous node available in history!");
+        }
+    }
+
+    public void ReturnToRootDialogue()
+    {
+        if (_rootNode != null)
+        {
+            _nodeHistory.Clear(); 
+            _CurrentDisplayedVideoNode = _rootNode;
+            _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
+        }
+        else
+        {
+            Debug.LogWarning("Root node is not defined!");
+        }
+    }
+
 
     /// <summary>
     /// This method is responsible for....
@@ -68,13 +115,13 @@ public class DialogueManager : MonoBehaviour
         }
 
         // Display player responses if available
-        if (node._PlayerResponses != null)
-        {
-            for (int i = 0; i < node._PlayerResponses.Length; i++)
-            {
-                Debug.Log($"{i + 1}: {node._PlayerResponses[i]._ResponseText}");
-            }
-        }
+        // if (node._PlayerResponses != null)
+        // {
+        //     for (int i = 0; i < node._PlayerResponses.Length; i++)
+        //     {
+        //         Debug.Log($"{i + 1}: {node._PlayerResponses[i]._ResponseText}");
+        //     }
+        // }
     }
 
     public void ChooseResponse(int responseIndex)

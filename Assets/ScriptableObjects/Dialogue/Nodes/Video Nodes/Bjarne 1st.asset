@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f78c6f33a71040849e79ab1a71568304, type: 3}
-  m_Name: BjarneFirstVideo
+  m_Name: Bjarne 1st
   m_EditorClassIdentifier: 
-  _DialogueVideo: {fileID: 0}
+  _DialogueVideo: {fileID: 32900000, guid: fa2c21687b1ab50488bbe638b709921e, type: 3}
   _NextVideoNodes: []
   _Conditions: []
-  _PlayerResponses: []
+  _PlayerResponses:
+  - _ResponseText: Go to 2
+    _NextVideoNode: {fileID: 11400000, guid: 159e059b0a435b945bbd316fd797e364, type: 2}

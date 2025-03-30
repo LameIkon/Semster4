@@ -15,24 +15,29 @@ public class DialogueUI : MonoBehaviour
 
     [SerializeField]
     private VideoClip _dialogueVideo;
-    
+
     [SerializeField]
     private Transform _responseContainer;
+
+    [SerializeField]
+    private Button _returnToRoot, _returnToPrevious;
 
     [SerializeField]
     private GameObject _buttonPrefab;
 
     private const int MaxResponses = 4;
 
-    /// <summary>
-    /// 
-    /// </summary>
-    /// <param name="currentNode"></param>
-    /// <param name="npcName"></param>
+
+    private void Start()
+    {
+        _returnToRoot.onClick.AddListener(() => FindObjectOfType<DialogueManager>().ReturnToRootDialogue());
+        _returnToPrevious.onClick.AddListener(() => FindObjectOfType<DialogueManager>().ProgressToPreviousDialogue());
+    }
+
     public void UpdateDialogueUI(SODialogueVideoNode currentNode, string npcName)
     {
         _npcName.text = npcName;
-        
+
         // Should update the video clip in the UI instead of the dialogue text
         _dialogueText.text = currentNode._DialogueVideo.ToString();
 
@@ -70,8 +75,9 @@ public class DialogueUI : MonoBehaviour
             Destroy(_responseContainer.GetChild(i).gameObject);
         }
     }
-    
-    private static void CreateButtons(SODialogueVideoNode? nextNode, GameObject buttonPrefab, Transform responseContainer, string buttonText)
+
+    private static void CreateButtons(SODialogueVideoNode? nextNode, GameObject buttonPrefab, Transform responseContainer,
+                                      string buttonText)
     {
         GameObject button = Instantiate(buttonPrefab, responseContainer);
         button.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
@@ -84,7 +90,7 @@ public class DialogueUI : MonoBehaviour
 
         button.GetComponent<Button>().onClick.AddListener(() => OnResponseSelected(null));
     }
-    
+
     private static void OnResponseSelected(SODialogueVideoNode? nextNode)
     {
         if (nextNode is not null)
