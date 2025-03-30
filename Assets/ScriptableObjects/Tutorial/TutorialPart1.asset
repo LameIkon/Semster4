@@ -10,7 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: PartThree
+  m_Name: TutorialPart1
   m_EditorClassIdentifier: 
-  SO_Name: Part Three
-  SO_Description: "Godt G\xE5et! \n\n<b><color=#00FF00>1/1</color> Samlet op</b>\n"
+  SO_Name: Part One
+  SO_Description: "Velkommen!\n\nF\xF8r du kan g\xE5 i gang er der et par ting du
+    burde vide f\xF8r du kan forts\xE6tte. test"

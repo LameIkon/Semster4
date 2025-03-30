@@ -44,7 +44,10 @@ public class TrashBin : MonoBehaviour, ILogable
 		{
 			s_OnTrashedEvent?.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
 			s_OnTrashedEvent2?.Invoke((float)points, trash.TrashData());
-			s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name, (float)points);
+			if (s_OnLogEvent != null)
+			{
+				s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name, (float)points);
+			}
 
 			EnablePolish(points);
 		}

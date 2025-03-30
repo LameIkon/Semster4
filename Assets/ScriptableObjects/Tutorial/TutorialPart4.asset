@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: PartOne
+  m_Name: TutorialPart4
   m_EditorClassIdentifier: 
-  SO_Name: Part One
-  SO_Description: "Velkommen!\n\nF\xF8r du kan g\xE5 i gang er der et par ting du
-    burde vide f\xF8r du kan forts\xE6tte. test"
+  SO_Name: Part Four
+  SO_Description: "Kan du se skraldespanden lidt l\xE6ngere henne af gangen? pr\xF8v
+    at smide affald ud der.\n\n<b><color=#00FF00>0/4</color> affald smidt ud</b>\n"

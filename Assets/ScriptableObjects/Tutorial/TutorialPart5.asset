@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: PartTwo
+  m_Name: TutorialPart5
   m_EditorClassIdentifier: 
-  SO_Name: Part Two
-  SO_Description: "Som det f\xF8rste, pr\xF8v at samle affald op. \n\n<b><color=#FFFF00>0/1</color>
-    affald samlet op</b>"
+  SO_Name: Part Five
+  SO_Description: "Du har mulighed for at inspicere affaldet. Dette kan bruges til
+    at l\xE6se hvad type affald det er og bruges hvis du er usikker hvordan affaldet
+    skal sorteres."

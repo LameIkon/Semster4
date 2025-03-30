@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: PartFour
+  m_Name: TutorialPart5 1
   m_EditorClassIdentifier: 
-  SO_Name: Part Three
-  SO_Description: "Kan du se skraldespanden lidt l\xE6ngere henne af gangen? pr\xF8v
-    at smide det ud der, som du kan se ligge rundt omkring.\n\n<b><color=#00FF00>1/2</color>
-    Samlet op</b>\n"
+  SO_Name: Part Six
+  SO_Description: Inspicer affaldet og sorter det korrekt

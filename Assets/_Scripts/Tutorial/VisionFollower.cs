@@ -6,18 +6,12 @@ public class VisionFollower : MonoBehaviour
     private bool _isCentered;
 
     [Header("Settings")]
+    [SerializeField] private bool _canFollow;
     [SerializeField] private float _distance;
     [SerializeField] private float _moveSpeed = 0.025f;
     [SerializeField] private float _centeringTreshold = 0.1f;
     [SerializeField] private float _resetDelay = 2f;
     private float _timeSinceOutOfView = 0f;
-
-
-    //private void OnBecameInvisible()
-    //{
-    //    Debug.Log("False");
-    //    _isCentered = false;   
-    //}
 
     private void Start()
     {
@@ -26,6 +20,13 @@ public class VisionFollower : MonoBehaviour
 
     void Update()
     {
+        if (!_canFollow) return;
+        HandleVisionFollower();
+    }
+
+    private void HandleVisionFollower()
+    {
+
         if (!IsCanvasInView())
         {
             _timeSinceOutOfView += Time.deltaTime;
