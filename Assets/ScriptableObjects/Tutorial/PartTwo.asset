@@ -13,6 +13,5 @@ MonoBehaviour:
   m_Name: PartTwo
   m_EditorClassIdentifier: 
   SO_Name: Part Two
-  SO_Description: 'test
-
-'
+  SO_Description: "Som det f\xF8rste, pr\xF8v at samle stykke affald op.\nThis is
+    a <b>bold</b> word and this is a <color=#FF0000>red</color> word."
