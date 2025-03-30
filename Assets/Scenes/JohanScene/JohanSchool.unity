@@ -420,7 +420,7 @@ GameObject:
   - component: {fileID: 37300106}
   - component: {fileID: 37300105}
   m_Layer: 5
-  m_Name: Highlighted Dot
+  m_Name: Highlighted Dot5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3279,7 +3279,7 @@ GameObject:
   - component: {fileID: 265388600}
   - component: {fileID: 265388599}
   m_Layer: 5
-  m_Name: Highlighted Dot
+  m_Name: Highlighted Dot6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5342,7 +5342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &416240834
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5358,9 +5358,9 @@ RectTransform:
   - {fileID: 781259020}
   m_Father: {fileID: 139859333}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 94, y: -4}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 8, y: 8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &416240835
@@ -10443,7 +10443,7 @@ GameObject:
   - component: {fileID: 781259022}
   - component: {fileID: 781259021}
   m_Layer: 5
-  m_Name: Highlighted Dot
+  m_Name: Highlighted Dot7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23383,7 +23383,7 @@ GameObject:
   - component: {fileID: 1676797015}
   - component: {fileID: 1676797014}
   m_Layer: 5
-  m_Name: Highlighted Dot
+  m_Name: Highlighted Dot4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24537,6 +24537,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b9a309c89a3833548a1bced804e40626, type: 2}
   - {fileID: 11400000, guid: 70814f1a8fa59e74697a9621d71bb1a9, type: 2}
   - {fileID: 11400000, guid: 5d149f1a66e36c4498709951bc4b7255, type: 2}
+  - {fileID: 11400000, guid: 8be315a04b78369448d5e27cc0391368, type: 2}
   - {fileID: 11400000, guid: b61a6879ac27e0c41b12a80616fb0af2, type: 2}
   - {fileID: 11400000, guid: 3894aa88d6d19324d99b934964be3335, type: 2}
   _highlightDots:
@@ -24546,8 +24547,13 @@ MonoBehaviour:
   - {fileID: 1676797012}
   - {fileID: 37300103}
   - {fileID: 265388597}
+  - {fileID: 781259019}
   _text: {fileID: 1303463133}
   _continueButton: {fileID: 1469943051}
+  SO_tutorialObjectiveTwo:
+  - {fileID: 11400000, guid: 58f8c5ba8d6cfa0408b231c681a6a04d, type: 2}
+  - {fileID: 11400000, guid: 02053f775d548c441980b592ae34b8c7, type: 2}
+  - {fileID: 11400000, guid: 6bce72524724059419a6f6e12b556fc0, type: 2}
 --- !u!4 &1763595380
 Transform:
   m_ObjectHideFlags: 0
@@ -26169,6 +26175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detector: {fileID: 1885914416}
   _characterController: {fileID: 1221733912}
+  _pushBackStrength: 0.1
 --- !u!1 &1890684036
 GameObject:
   m_ObjectHideFlags: 0
