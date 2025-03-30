@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: TutorialPart5 1
+  m_Name: TutorialPart6
   m_EditorClassIdentifier: 
   SO_Name: Part Six
   SO_Description: Inspicer affaldet og sorter det korrekt
