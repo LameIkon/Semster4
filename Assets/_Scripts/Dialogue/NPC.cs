@@ -1,9 +1,11 @@
+using _Scripts.Dialogue;
 using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
     [SerializeField]
     private string _npcName;
+    public SODialogueVideoNode _StartingVideoDialogue;
     public SODialogueNode _StartingDialogue;
 
     private void OnTriggerEnter(Collider collision)
@@ -25,7 +27,7 @@ public class NPC : MonoBehaviour
     private void Interact()
     {
         DialogueManager dialogueManager = FindObjectOfType<DialogueManager>();
-        dialogueManager.StartDialogue(_StartingDialogue, _npcName);
+        dialogueManager.StartDialogue(_StartingVideoDialogue, _npcName);
     }
 
     private void CloseDialogue()

@@ -1,9 +1,12 @@
+using _Scripts.Dialogue;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
     private DialogueUI _dialogueUI;
     public SODialogueNode _CurrentDisplayedNode;
+    public SODialogueVideoNode _CurrentDisplayedVideoNode;
     public string _CurrentNPCName;
 
     // DialogueUI (_dialogueUI) is found and initialized so that it can be used in the rest of the script.
@@ -26,12 +29,12 @@ public class DialogueManager : MonoBehaviour
     /// Lastly, the UI gets updated.
     /// </summary>
     /// <param name="startingNode">A starting dialogue that will be passed in at NPC.cs</param>
-    public void StartDialogue(SODialogueNode startingNode, string npcName)
+    public void StartDialogue(SODialogueVideoNode startingNode, string npcName)
     {
-        _CurrentNPCName       = npcName;
-        _CurrentDisplayedNode = startingNode;
-        DisplayNode(_CurrentDisplayedNode);
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
+        _CurrentNPCName = npcName;
+        _CurrentDisplayedVideoNode = startingNode;
+        DisplayNode(_CurrentDisplayedVideoNode);
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
     }
 
     /// <summary>
@@ -41,26 +44,26 @@ public class DialogueManager : MonoBehaviour
     /// Lastly, the UI gets updated.
     /// </summary>
     /// <param name="nextNode"></param>
-    public void ProgressToNextDialogue(SODialogueNode nextNode)
+    public void ProgressToNextDialogue(SODialogueVideoNode nextNode)
     {
-        _CurrentDisplayedNode = nextNode; // Move to the next node
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
+        _CurrentDisplayedVideoNode = nextNode; // Move to the next node
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
     }
 
     /// <summary>
     /// This method is responsible for....
     /// </summary>
     /// <param name="node"></param>
-    private void DisplayNode(SODialogueNode node)
+    private void DisplayNode(SODialogueVideoNode node)
     {
-        Debug.Log(node._DialogueText);
+        Debug.Log(node._DialogueVideo);
 
         // Check conditions for next nodes
-        foreach (SODialogueNode nextNode in node._NextNodes)
+        foreach (SODialogueVideoNode nextNode in node._NextVideoNodes)
         {
             if (AreConditionsMet(nextNode))
             {
-                Debug.Log($"Next: {nextNode._DialogueText}");
+                Debug.Log($"Next: {nextNode._DialogueVideo}");
             }
         }
 
@@ -79,7 +82,7 @@ public class DialogueManager : MonoBehaviour
         if (_CurrentDisplayedNode._PlayerResponses != null &&
             responseIndex < _CurrentDisplayedNode._PlayerResponses.Length)
         {
-            StartDialogue(_CurrentDisplayedNode._PlayerResponses[responseIndex]._NextNode, _CurrentNPCName);
+            StartDialogue(_CurrentDisplayedVideoNode._PlayerResponses[responseIndex]._NextVideoNode, _CurrentNPCName);
         }
     }
 
@@ -93,7 +96,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     /// <param name="node">The dialogue node that will have its conditions checked.</param>
     /// <returns>Returns true if the conditions have been met, false if they haven't.</returns>
-    private bool AreConditionsMet(SODialogueNode node)
+    private bool AreConditionsMet(SODialogueVideoNode node)
     {
         if (node._Conditions == null || node._Conditions.Length == 0)
             return true;

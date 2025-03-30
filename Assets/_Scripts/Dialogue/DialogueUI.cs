@@ -1,8 +1,10 @@
 using System;
+using _Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Serialization;
+using UnityEngine.Video;
 
 #nullable enable
 
@@ -10,13 +12,16 @@ public class DialogueUI : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI _npcName, _dialogueText;
-    
-    [SerializeField] 
-    private Transform _responseContainer;
+
+    [SerializeField]
+    private VideoClip _dialogueVideo;
     
     [SerializeField]
+    private Transform _responseContainer;
+
+    [SerializeField]
     private GameObject _buttonPrefab;
-    
+
     private const int MaxResponses = 4;
 
     /// <summary>
@@ -24,10 +29,12 @@ public class DialogueUI : MonoBehaviour
     /// </summary>
     /// <param name="currentNode"></param>
     /// <param name="npcName"></param>
-    public void UpdateDialogueUI(SODialogueNode currentNode, string npcName)
+    public void UpdateDialogueUI(SODialogueVideoNode currentNode, string npcName)
     {
-        _npcName.text      = npcName;
-        _dialogueText.text = currentNode._DialogueText;
+        _npcName.text = npcName;
+        
+        // Should update the video clip in the UI instead of the dialogue text
+        _dialogueText.text = currentNode._DialogueVideo.ToString();
 
         ClearExistingButtons();
 
@@ -37,7 +44,7 @@ public class DialogueUI : MonoBehaviour
             CreateButtons(null, _buttonPrefab, _responseContainer, "Fortsæt");
             return;
         }
-        
+
         // Otherwise, create buttons based on the number of player responses and fill them with player response text
         for (int i = 0; i < currentNode._PlayerResponses.Length; i++)
         {
@@ -48,7 +55,7 @@ public class DialogueUI : MonoBehaviour
                 break;
             }
 
-            SODialogueNode nextNode = currentNode._PlayerResponses[i]._NextNode;
+            SODialogueVideoNode nextNode = currentNode._PlayerResponses[i]._NextVideoNode;
             CreateButtons(nextNode, _buttonPrefab, _responseContainer, currentNode._PlayerResponses[i]._ResponseText);
         }
     }
@@ -63,8 +70,8 @@ public class DialogueUI : MonoBehaviour
             Destroy(_responseContainer.GetChild(i).gameObject);
         }
     }
-
-    private static void CreateButtons(SODialogueNode? nextNode, GameObject buttonPrefab, Transform responseContainer, string buttonText)
+    
+    private static void CreateButtons(SODialogueVideoNode? nextNode, GameObject buttonPrefab, Transform responseContainer, string buttonText)
     {
         GameObject button = Instantiate(buttonPrefab, responseContainer);
         button.GetComponentInChildren<TextMeshProUGUI>().text = buttonText;
@@ -78,7 +85,7 @@ public class DialogueUI : MonoBehaviour
         button.GetComponent<Button>().onClick.AddListener(() => OnResponseSelected(null));
     }
     
-    private static void OnResponseSelected(SODialogueNode? nextNode)
+    private static void OnResponseSelected(SODialogueVideoNode? nextNode)
     {
         if (nextNode is not null)
         {
