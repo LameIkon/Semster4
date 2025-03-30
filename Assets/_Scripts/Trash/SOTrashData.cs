@@ -28,6 +28,7 @@ public class SOTrashData : ScriptableObject
     [Space()]
 	public AudioClip SO_TrashAudioClip;
 	public AudioClip SO_PickUpAudioClip;
+	public AudioClip SO_DropOnFloorAudioClip;
 }
 
 

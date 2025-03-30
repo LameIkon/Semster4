@@ -26,5 +26,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
     rester af kemikalier og derfor skal den altid smides ud i farligt affald."
   InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  SO_TrashAudioClip: {fileID: 8300000, guid: 871244e86929c5248a94e719456d6eea, type: 3}
+  SO_PickUpAudioClip: {fileID: 8300000, guid: 6396910bb413bd4499c48651d2213f98, type: 3}
+  SO_DropOnFloorAudioClip: {fileID: 0}

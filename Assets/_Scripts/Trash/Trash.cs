@@ -49,7 +49,26 @@ public class Trash : MonoBehaviour, ITrashable
 		}
 	}
 
-	public SOTrashData TrashData() 
+	public void DropSound()
+	{
+        if (_data == null) throw new NullReferenceException();
+
+        if (_data.SO_PickUpAudioClip != null)
+        {
+            _audioSource.clip = _data.SO_DropOnFloorAudioClip;
+            _audioSource.Play();
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+		if (collision.gameObject.CompareTag("Floor"))
+		{
+			DropSound();
+		}
+    }
+
+    public SOTrashData TrashData() 
 	{
 		if (_data == null) 
 		{
@@ -57,6 +76,8 @@ public class Trash : MonoBehaviour, ITrashable
 		}
 		return _data;
 	}
+
+
 
 	#region UnityMethods
 

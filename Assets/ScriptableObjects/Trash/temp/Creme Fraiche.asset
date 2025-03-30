@@ -24,5 +24,5 @@ MonoBehaviour:
     plast."
   InfoIfSortedWrongly: "Da den best\xE5r af h\xE5rd plast skal det sorteres til plast."
   InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  SO_TrashAudioClip: {fileID: 8300000, guid: d1d2ed79410b2bb47b0bcaf6ebc7af68, type: 3}
+  SO_PickUpAudioClip: {fileID: 8300000, guid: 07ee009c88df35e46b9202fff3956bd7, type: 3}

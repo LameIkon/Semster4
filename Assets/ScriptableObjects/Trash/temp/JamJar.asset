@@ -25,5 +25,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: 'Fordi beholderen er lavet af glas skal det sorteres ud til
     glas. '
   InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  SO_TrashAudioClip: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
+  SO_PickUpAudioClip: {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}
+  SO_DropOnFloorAudioClip: {fileID: 0}
