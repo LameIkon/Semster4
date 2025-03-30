@@ -26,6 +26,9 @@ public class TutorialManager : Singleton<TutorialManager>
     private const int _totalInspectedAmount = 3; // Counted as 4, since index 0 counts also
     private int _currentInspectedObjects;
 
+    private bool Objecttwo;
+    private bool ObjectThree;
+
     public void OnEnable()
     {
         TrashBin.s_OnTrashedEvent += SecondObjective; // Adds the HandleTrashEvent to the Action OnTrashedEvent
@@ -41,6 +44,8 @@ public class TutorialManager : Singleton<TutorialManager>
     private void Start()
     {
         _playerVR = PlayerVR.S_Instance;
+        _ObjectivetextOne.gameObject.SetActive(false);
+        _Objectivetexttwo.gameObject.SetActive(false);
         SetTutorialQuest(_index);
     }
 
@@ -79,20 +84,37 @@ public class TutorialManager : Singleton<TutorialManager>
             case 0: // Press continue button
                 _continueButton.SetActive(true);
                 break;
-            case 1: // Complete Objective to continue
+            case 1: // Complete Objective to continue. Hold Object
                 _continueButton.SetActive(false);
                 FirstObjective(); 
                 break;
             case 2: // Press continue button
                 _continueButton.SetActive(true);
                 break;
-            case 3: // Complete Objective to continue. 2nd Objective
+            case 3: // Complete Objective to continue. Trash Objects
                 _continueButton.SetActive(false);
+                Objecttwo = true;
                 break;
             case 4: // Press continue button
                 _continueButton.SetActive(true);
                 break;
+            case 5: // Press Continue button
+                _continueButton.SetActive(true);
+                break;
+            case 6: // Complete Objective to contine. Inspect and trash objects
+                _continueButton.SetActive(false);
+                ObjectThree = true;
+                _ObjectivetextOne.gameObject.SetActive(true);
+                _Objectivetexttwo.gameObject.SetActive(true);
+                ThirdObjectiveInspectObjects();
+                break;
+            case 7: // Press Continue button
+                _continueButton.SetActive(true);
+                break;
             default:
+                _continueButton.SetActive(false);
+                _ObjectivetextOne.gameObject.SetActive(false);
+                _Objectivetexttwo.gameObject.SetActive(false);
                 break;
         }
     }
@@ -108,11 +130,14 @@ public class TutorialManager : Singleton<TutorialManager>
 
     private void SecondObjective(GameObject sender, float points) // Trash object
     {
+        if (!Objecttwo) return;
+
         Debug.Log(_currentTrashThrownOut);
         if (_currentTrashThrownOut == _totalTrashAmountThrownOut)
         {
             ContinueTutorial();
             _currentTrashThrownOut = 0; // Resetted for other use cases
+            Objecttwo = false; // this method can not be called anymore
             return;
         }
         else
@@ -122,43 +147,58 @@ public class TutorialManager : Singleton<TutorialManager>
         }
 
     }
-
+    private bool _triggerOnce = true; // temporary
+    private bool _wasInspectingButtonPressed = false; // temporary
     private void ThirdObjectiveInspectObjects()
     {
-        if (_playerVR._IsInspectingObjectButton && _playerVR.IsHoldingObject()) // Inspect
+        if (_triggerOnce)
         {
+            _ObjectivetextOne.text = ($"<b><color=#FFFF00>{_currentInspectedObjects}/{_totalInspectedAmount}</color> inspiceret affald</b>");
+            _Objectivetexttwo.text = ($"<b><color=#FFFF00>{_currentTrashThrownOut}/{_totalTrashAmountThrownOut}</color> affald sorteret</b>");
+            _triggerOnce = false;
+        }
+
+        bool isButtonPressed = _playerVR._IsInspectingObjectButton;
+        if (isButtonPressed && !_wasInspectingButtonPressed && _playerVR.IsHoldingObject()) // Inspect
+        {
+            _currentInspectedObjects++;
             if (_currentInspectedObjects < _totalInspectedAmount) // Yellow text
             {
-                _ObjectivetextOne.text = ($"<b><color=#FFFF00>{_currentInspectedObjects}</color>/{_totalInspectedAmount} inspiceret affald</b>");
+                _ObjectivetextOne.text = ($"<b><color=#FFFF00>{_currentInspectedObjects}/{_totalInspectedAmount}</color> inspiceret affald</b>");
             }
             else // Green text
             {
-                _ObjectivetextOne.text = ($"<b><color=#00FF00>{_currentInspectedObjects}</color>/{_totalInspectedAmount} inspiceret affald</b>");
-            }
-            _currentInspectedObjects++;
+                _ObjectivetextOne.text = ($"<b><color=#00FF00>{_currentInspectedObjects}/{_totalInspectedAmount}</color> inspiceret affald</b>");
+            }        
         }
+
+        _wasInspectingButtonPressed = isButtonPressed;
 
         if (_currentTrashThrownOut >= _totalTrashAmountThrownOut && _currentInspectedObjects >= _totalInspectedAmount) // When both inspection and trashing is complete
         {
             ContinueTutorial();
+            ObjectThree = false; // this method can not be called anymore
         }
     }
 
     private void ThirdObjectiveTrashObjects(GameObject sender, float points) //trash object
     {
+        if (!ObjectThree) return;
+
+        _currentTrashThrownOut++;
         if (_currentTrashThrownOut < _totalTrashAmountThrownOut) // Yellow Text
         {
-            _Objectivetexttwo.text = ($"<b><color=#FFFF00>{_currentInspectedObjects}</color>/{_totalInspectedAmount} affald sorteret</b>");
+            _Objectivetexttwo.text = ($"<b><color=#FFFF00>{_currentTrashThrownOut}/{_totalTrashAmountThrownOut}</color> affald sorteret</b>");
         }
         else // Green Text
         {
-            _ObjectivetextOne.text = ($"<b><color=#00FF00>{_currentInspectedObjects}</color>/{_totalInspectedAmount} affald sorteret</b>");
-        }
-        _currentTrashThrownOut++;
+            _Objectivetexttwo.text = ($"<b><color=#00FF00>{_currentTrashThrownOut}/{_totalTrashAmountThrownOut}</color> affald sorteret</b>");
+        }       
 
         if (_currentTrashThrownOut >= _totalTrashAmountThrownOut && _currentInspectedObjects >= _totalInspectedAmount) // When both inspection and trashing is complete
         {
             ContinueTutorial();
+            ObjectThree = false; // this method can not be called anymore
         }
     }
 
