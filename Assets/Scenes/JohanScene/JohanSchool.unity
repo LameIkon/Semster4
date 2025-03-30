@@ -15151,7 +15151,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -16491,6 +16491,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputActionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  _IsHoldingObject: 0
+  _IsInspectingObject: 0
 --- !u!1001 &1227939904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18359,7 +18361,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -29181,7 +29183,7 @@ PrefabInstance:
       objectReference: {fileID: 815394135}
     - target: {fileID: 2951798914348467121, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: _canFollow
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3939071145283394141, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_Pivot.x

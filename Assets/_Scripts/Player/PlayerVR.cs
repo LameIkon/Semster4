@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class PlayerVR : Singleton<PlayerVR>
 {
@@ -10,76 +9,121 @@ public class PlayerVR : Singleton<PlayerVR>
 
     // Left hand
     private InputAction _leftGripAction;
+    private InputAction _leftSelectionAction;
 
     // Rigth hand
     private InputAction _rightGripAction;
-    private InputAction rightSelectionAction;
+    private InputAction _rightSelectionAction;
 
     // To track held objects
-    private GameObject _heldObject;
+    private GameObject _heldObject; // For other scripts to check if holding an object
+
+    [Header("booleans")] // For other scripts to check if buttons are being pressed
+    public bool _IsHoldingObjectButton;
+    public bool _IsInspectingObjectButton;
 
     private void OnEnable()
     {
-        // Initialize the left and right Action Maps from the Input Action Asset
-        _leftActionMap = _inputActionAsset.FindActionMap("XRI Left Interaction");  // Left Interaction Map
-        _rightActionMap = _inputActionAsset.FindActionMap("XRI Right Interaction");  // Right Interaction Map
-
-        // Find the Select actions in each Action Map
-        _leftGripAction = _leftActionMap.FindAction("Select");     
-        _rightGripAction = _rightActionMap.FindAction("Select");
-
-        // Find the activate action in Action Map
-        rightSelectionAction = _rightActionMap.FindAction("Activate"); 
-
+        FindActionMaps();
+       
         // Enable both Action Maps
         _leftActionMap.Enable();
         _rightActionMap.Enable();
 
         // Subscribe to the action event
-        _leftGripAction.performed += OnLeftGripPerformed;
-        _rightGripAction.performed += OnRightGripPerformed;
-        rightSelectionAction.performed += OnRightSelectionPerformed;
+        EnableRightMap();
+        EnableLeftMap();
     }
 
     private void OnDisable()
     {
-        // Unsubscribe from the action event when disabling the actions
-        _leftGripAction.performed -= OnLeftGripPerformed;
-        _rightGripAction.performed -= OnRightGripPerformed;
-
         // Disable both Action Maps
         _leftActionMap.Disable();
         _rightActionMap.Disable();
+
+        // Unsubscribe from the action event when disabling the actions
+        DisableRightMap();
+        DisableLeftMap();
     }
 
-    private void OnLeftGripPerformed(InputAction.CallbackContext context)
+    private void OnGripPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("Left Grip Pressed");
+        _IsHoldingObjectButton = true;
     }
 
-    // Handler when the right grip button is pressed
-    private void OnRightGripPerformed(InputAction.CallbackContext context)
+    private void OnGripReleased(InputAction.CallbackContext context)
     {
-        Debug.Log("Right Grip Pressed");
+        _IsHoldingObjectButton = false;
     }
 
-    private void OnRightSelectionPerformed(InputAction.CallbackContext context)
+    private void OnSelectionPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("Selection Pressed");
+        _IsInspectingObjectButton = true;
     }
 
-    public bool IsHoldingObject()
+    private void OnSelectionReleased(InputAction.CallbackContext context)
+    {
+        _IsInspectingObjectButton = false;
+    }
+
+    public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {
         return _heldObject != null;
     }
 
-    public void OnObjectTriggerEnter(Collider other)
+    public void OnObjectTriggerEnter(Collider other) // Used by hands for when entering its trigger
     {
         _heldObject = other.gameObject;
     }
 
-    public void OnObjectTriggerExit()
+    public void OnObjectTriggerExit() // Used by hands for when entering exiting trigger
     {
         _heldObject = null;
+    }
+
+    private void FindActionMaps()
+    {
+        // Initialize the left and right Action Maps from the Input Action Asset
+        _leftActionMap = _inputActionAsset.FindActionMap("XRI Left Interaction");
+        _rightActionMap = _inputActionAsset.FindActionMap("XRI Right Interaction");
+
+        // Find the actions in each Action Map
+        _leftGripAction = _leftActionMap.FindAction("Select");
+        _rightGripAction = _rightActionMap.FindAction("Select");
+
+        _leftSelectionAction = _leftActionMap.FindAction("Activate");
+        _rightSelectionAction = _rightActionMap.FindAction("Activate");
+
+    }
+
+    private void EnableRightMap()
+    {
+        _rightGripAction.performed += OnGripPerformed;
+        _rightGripAction.canceled += OnGripReleased;
+        _rightSelectionAction.performed += OnSelectionPerformed;
+        _rightSelectionAction.canceled += OnSelectionReleased;
+    }
+
+    private void EnableLeftMap()
+    {
+        _leftGripAction.performed += OnGripPerformed;
+        _leftGripAction.canceled += OnGripReleased;
+        _leftSelectionAction.performed += OnSelectionPerformed;
+        _leftSelectionAction.canceled += OnSelectionReleased;
+    }
+    private void DisableRightMap()
+    {
+        _rightGripAction.performed -= OnGripPerformed;
+        _rightGripAction.canceled -= OnGripReleased;
+        _rightSelectionAction.performed -= OnSelectionPerformed;
+        _rightSelectionAction.canceled -= OnSelectionReleased;
+    }
+
+    private void DisableLeftMap()
+    {
+        _leftGripAction.performed -= OnGripPerformed;
+        _leftGripAction.canceled -= OnGripReleased;
+        _leftSelectionAction.performed -= OnSelectionPerformed;
+        _leftSelectionAction.canceled -= OnSelectionReleased;
     }
 }
