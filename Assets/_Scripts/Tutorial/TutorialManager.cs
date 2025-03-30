@@ -72,7 +72,10 @@ public class TutorialManager : Singleton<TutorialManager>
     private void SetTutorialQuest(int index)
     {
         _Descriptiontext.text = SO_tutorialData[index].SO_Description;
-        _highlightDots[index-1].SetActive(false); // Deactive previous dot
+        if (index > 0) // Prevent no negative number
+        {
+            _highlightDots[index-1].SetActive(false); // Deactive previous dot
+        }
         _highlightDots[index].SetActive(true); // Activate next dot.
     }
 
