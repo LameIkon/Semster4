@@ -13,6 +13,4 @@ MonoBehaviour:
   m_Name: PartThree
   m_EditorClassIdentifier: 
   SO_Name: Part Three
-  SO_Description: 'another test
-
-'
+  SO_Description: "Godt G\xE5et! \n\n<b><color=#00FF00>1/1</color> Samlet op</b>\n"
