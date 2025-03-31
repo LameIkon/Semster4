@@ -1,9 +1,7 @@
-using System;
 using _Scripts.Dialogue;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.Video;
 
 #nullable enable
@@ -14,32 +12,23 @@ public class DialogueUI : MonoBehaviour
     private TextMeshProUGUI _npcName, _dialogueText;
 
     [SerializeField]
-    private VideoClip _dialogueVideo;
+    private VideoPlayer _videoPlayer;
 
     [SerializeField]
     private Transform _responseContainer;
-
-    [SerializeField]
-    private Button _returnToRoot, _returnToPrevious;
-
+    
     [SerializeField]
     private GameObject _buttonPrefab;
 
     private const int MaxResponses = 4;
-
-
-    private void Start()
-    {
-        _returnToRoot.onClick.AddListener(() => FindObjectOfType<DialogueManager>().ReturnToRootDialogue());
-        _returnToPrevious.onClick.AddListener(() => FindObjectOfType<DialogueManager>().ProgressToPreviousDialogue());
-    }
-
+    
     public void UpdateDialogueUI(SODialogueVideoNode currentNode, string npcName)
     {
         _npcName.text = npcName;
 
         // Should update the video clip in the UI instead of the dialogue text
         _dialogueText.text = currentNode._DialogueVideo.ToString();
+        _videoPlayer.clip = currentNode._DialogueVideo;
 
         ClearExistingButtons();
 
