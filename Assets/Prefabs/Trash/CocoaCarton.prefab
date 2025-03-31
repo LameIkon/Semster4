@@ -335,7 +335,19 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2322344936353004049}
+        m_TargetAssemblyTypeName: Trash, Assembly-CSharp
+        m_MethodName: PickUpSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
@@ -695,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 543215930745342785, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0002710749
+      value: -0.0010373691
       objectReference: {fileID: 0}
     - target: {fileID: 1406772183033754728, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_text
