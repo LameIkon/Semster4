@@ -10,9 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: PartTwo
+  m_Name: TutorialPart4 - 1
   m_EditorClassIdentifier: 
-  SO_Name: Part Two
-  SO_Description: 'test
-
-'
+  SO_Description: "Kan du se skraldespanden lidt l\xE6ngere henne af gangen? pr\xF8v
+    at smide affald ud der.\n\n<b><color=#FFFF00>1/4</color> affald smidt ud</b>\n"

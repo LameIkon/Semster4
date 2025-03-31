@@ -6,7 +6,7 @@ public class HeadCollisionHandler : MonoBehaviour
 {
     [SerializeField] private HeadCollisionDetector _detector;
     [SerializeField] private CharacterController _characterController;
-    private float _pushBackStrength = 1f;
+    [SerializeField] private float _pushBackStrength = 1f;
 
     
     private Vector3 CalculatePushBackDirection(List<RaycastHit> colliderHits)
