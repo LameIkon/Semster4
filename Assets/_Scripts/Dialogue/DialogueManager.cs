@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    // Private Fields
     private DialogueUI _dialogueUI;
     private SODialogueVideoNode _rootNode;
     private Stack<SODialogueVideoNode> _nodeHistory = new();
     
-    // Public Fields
     public SODialogueNode _CurrentDisplayedNode;
     public SODialogueVideoNode _CurrentDisplayedVideoNode;
     public string _CurrentNPCName;
-
     
     // DialogueUI (_dialogueUI) is found and initialized so that it can be used in the rest of the script.
     // We then print out DialogueUI as a way to verify if we have found it in the console.
