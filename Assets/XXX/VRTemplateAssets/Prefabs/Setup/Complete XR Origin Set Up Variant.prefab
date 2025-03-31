@@ -44,8 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676d5f06bf8e1634594ad1faf5973ef3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _detectionDelay: 0.05
-  _detectionDistance: 0.2
   _detectionLayers:
     serializedVersion: 2
     m_Bits: 256
