@@ -1,11 +1,17 @@
+using System.Collections.Generic;
+using _Scripts.Dialogue;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
     private DialogueUI _dialogueUI;
+    private SODialogueVideoNode _rootNode;
+    private Stack<SODialogueVideoNode> _nodeHistory = new();
+    
     public SODialogueNode _CurrentDisplayedNode;
+    public SODialogueVideoNode _CurrentDisplayedVideoNode;
     public string _CurrentNPCName;
-
+    
     // DialogueUI (_dialogueUI) is found and initialized so that it can be used in the rest of the script.
     // We then print out DialogueUI as a way to verify if we have found it in the console.
     private void Start()
@@ -13,65 +19,70 @@ public class DialogueManager : MonoBehaviour
         _dialogueUI = FindObjectOfType<DialogueUI>();
         Debug.Log($"DialogueUI found: {_dialogueUI}");
     }
-
-    /// <summary>
-    /// This method is responsible for starting the dialogue with an NPC. The way this works is to pass
-    /// the starting dialogue of an NPC as an argument and then call this method in Interact() at NPC.cs.
-    ///
-    /// The current displayed node in the UI will then be initialized to the starting node of the NPC
-    /// that we pass as an argument.
-    ///
-    /// Then...
-    ///
-    /// Lastly, the UI gets updated.
-    /// </summary>
-    /// <param name="startingNode">A starting dialogue that will be passed in at NPC.cs</param>
-    public void StartDialogue(SODialogueNode startingNode, string npcName)
+    
+    public void StartDialogue(SODialogueVideoNode startingNode, string npcName)
     {
-        _CurrentNPCName       = npcName;
-        _CurrentDisplayedNode = startingNode;
-        DisplayNode(_CurrentDisplayedNode);
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
+        _nodeHistory.Clear(); 
+        _rootNode = startingNode;
+        _CurrentNPCName = npcName;
+        _CurrentDisplayedVideoNode = startingNode;
+        DisplayNode(_CurrentDisplayedVideoNode);
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
+    }
+    
+    public void ProgressToNextDialogue(SODialogueVideoNode nextNode)
+    {
+        if (_CurrentDisplayedVideoNode != null)
+        {
+            _nodeHistory.Push(_CurrentDisplayedVideoNode);
+        }
+
+        _CurrentDisplayedVideoNode = nextNode;
+        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
     }
 
-    /// <summary>
-    /// This method is responsible for continuing the dialogue with an NPC.
-    ///
-    ///
-    /// Lastly, the UI gets updated.
-    /// </summary>
-    /// <param name="nextNode"></param>
-    public void ProgressToNextDialogue(SODialogueNode nextNode)
+    public void ProgressToPreviousDialogue()
     {
-        _CurrentDisplayedNode = nextNode; // Move to the next node
-        _dialogueUI.UpdateDialogueUI(_CurrentDisplayedNode, _CurrentNPCName);
+        if (_nodeHistory.Count > 0)
+        {
+            _CurrentDisplayedVideoNode = _nodeHistory.Pop();
+            _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
+        }
     }
 
-    /// <summary>
-    /// This method is responsible for....
-    /// </summary>
-    /// <param name="node"></param>
-    private void DisplayNode(SODialogueNode node)
+    public void ReturnToRootDialogue()
     {
-        Debug.Log(node._DialogueText);
+        // Clears the history stack, so that we don't have any previous nodes in the stack before going to the root node
+        if (_rootNode != null)
+        {
+            _nodeHistory.Clear();
+            _CurrentDisplayedVideoNode = _rootNode;
+            _dialogueUI.UpdateDialogueUI(_CurrentDisplayedVideoNode, _CurrentNPCName);
+        }
+    }
+    
+    private void DisplayNode(SODialogueVideoNode node)
+    {
+        // TODO: Add logic to the rest of the function or remove it if not needed
+        
+        Debug.Log(node._DialogueVideo);
 
-        // Check conditions for next nodes
-        foreach (SODialogueNode nextNode in node._NextNodes)
+        foreach (SODialogueVideoNode nextNode in node._NextVideoNodes)
         {
             if (AreConditionsMet(nextNode))
             {
-                Debug.Log($"Next: {nextNode._DialogueText}");
+                Debug.Log($"Next: {nextNode._DialogueVideo}");
             }
         }
 
         // Display player responses if available
-        if (node._PlayerResponses != null)
-        {
-            for (int i = 0; i < node._PlayerResponses.Length; i++)
-            {
-                Debug.Log($"{i + 1}: {node._PlayerResponses[i]._ResponseText}");
-            }
-        }
+        // if (node._PlayerResponses != null)
+        // {
+        //     for (int i = 0; i < node._PlayerResponses.Length; i++)
+        //     {
+        //         Debug.Log($"{i + 1}: {node._PlayerResponses[i]._ResponseText}");
+        //     }
+        // }
     }
 
     public void ChooseResponse(int responseIndex)
@@ -79,13 +90,12 @@ public class DialogueManager : MonoBehaviour
         if (_CurrentDisplayedNode._PlayerResponses != null &&
             responseIndex < _CurrentDisplayedNode._PlayerResponses.Length)
         {
-            StartDialogue(_CurrentDisplayedNode._PlayerResponses[responseIndex]._NextNode, _CurrentNPCName);
+            StartDialogue(_CurrentDisplayedVideoNode._PlayerResponses[responseIndex]._NextVideoNode, _CurrentNPCName);
         }
     }
 
     /// <summary>
     /// This method is responsible for checking if the stage conditions are being met.
-    ///
     /// It firstly checks if there are any conditions, if there aren't any, it returns true.
     ///
     /// If there are any conditions, it will iterate through them all and call IsMet() from SOQuestStageCondition.cs
@@ -93,7 +103,7 @@ public class DialogueManager : MonoBehaviour
     /// </summary>
     /// <param name="node">The dialogue node that will have its conditions checked.</param>
     /// <returns>Returns true if the conditions have been met, false if they haven't.</returns>
-    private bool AreConditionsMet(SODialogueNode node)
+    private bool AreConditionsMet(SODialogueVideoNode node)
     {
         if (node._Conditions == null || node._Conditions.Length == 0)
             return true;
