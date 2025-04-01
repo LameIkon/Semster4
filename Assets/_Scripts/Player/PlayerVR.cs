@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -21,6 +22,9 @@ public class PlayerVR : Singleton<PlayerVR>
     [Header("booleans")] // For other scripts to check if buttons are being pressed
     public bool _IsHoldingObjectButton;
     public bool _IsInspectingObjectButton;
+
+
+    public static event Action<bool> OnGripStateChanged; // Event to notify listeners
 
     private void OnEnable()
     {
@@ -48,28 +52,37 @@ public class PlayerVR : Singleton<PlayerVR>
 
     private void OnGripPerformed(InputAction.CallbackContext context)
     {
-        _IsHoldingObjectButton = true;
+        if (context.performed)
+        {
+            //_IsHoldingObjectButton = true;
+            OnGripStateChanged?.Invoke(true);
+        }
+        else if (context.canceled)
+        {
+            //_IsHoldingObjectButton = false;
+            OnGripStateChanged?.Invoke(false);
+        }
+    }
+    public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
+    {
+        return _heldObject != null;
     }
 
-    private void OnGripReleased(InputAction.CallbackContext context)
-    {
-        _IsHoldingObjectButton = false;
-    }
+    //private void OnGripReleased(InputAction.CallbackContext context)
+    //{
+    //    _IsHoldingObjectButton = false;
+    //}
 
     private void OnSelectionPerformed(InputAction.CallbackContext context)
     {
         _IsInspectingObjectButton = true;
     }
 
-    private void OnSelectionReleased(InputAction.CallbackContext context)
-    {
-        _IsInspectingObjectButton = false;
-    }
+    //private void OnSelectionReleased(InputAction.CallbackContext context)
+    //{
+    //    _IsInspectingObjectButton = false;
+    //}
 
-    public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
-    {
-        return _heldObject != null;
-    }
 
     public void OnObjectTriggerEnter(Collider other) // Used by hands for when entering its trigger
     {
@@ -99,31 +112,31 @@ public class PlayerVR : Singleton<PlayerVR>
     private void EnableRightMap()
     {
         _rightGripAction.performed += OnGripPerformed;
-        _rightGripAction.canceled += OnGripReleased;
+        //_rightGripAction.canceled += OnGripReleased;
         _rightSelectionAction.performed += OnSelectionPerformed;
-        _rightSelectionAction.canceled += OnSelectionReleased;
+        //_rightSelectionAction.canceled += OnSelectionReleased;
     }
 
     private void EnableLeftMap()
     {
         _leftGripAction.performed += OnGripPerformed;
-        _leftGripAction.canceled += OnGripReleased;
+        //_leftGripAction.canceled += OnGripReleased;
         _leftSelectionAction.performed += OnSelectionPerformed;
-        _leftSelectionAction.canceled += OnSelectionReleased;
+        //_leftSelectionAction.canceled += OnSelectionReleased;
     }
     private void DisableRightMap()
     {
         _rightGripAction.performed -= OnGripPerformed;
-        _rightGripAction.canceled -= OnGripReleased;
+       // _rightGripAction.canceled -= OnGripReleased;
         _rightSelectionAction.performed -= OnSelectionPerformed;
-        _rightSelectionAction.canceled -= OnSelectionReleased;
+        //_rightSelectionAction.canceled -= OnSelectionReleased;
     }
 
     private void DisableLeftMap()
     {
         _leftGripAction.performed -= OnGripPerformed;
-        _leftGripAction.canceled -= OnGripReleased;
+        //_leftGripAction.canceled -= OnGripReleased;
         _leftSelectionAction.performed -= OnSelectionPerformed;
-        _leftSelectionAction.canceled -= OnSelectionReleased;
+        //_leftSelectionAction.canceled -= OnSelectionReleased;
     }
 }
