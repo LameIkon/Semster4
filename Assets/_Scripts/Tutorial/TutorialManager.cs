@@ -29,15 +29,12 @@ public class TutorialManager : Singleton<TutorialManager>
     private int _currenProgressDisplay = 0;
     public void ShowProgression()
     {
-        Debug.Log("before");
         if (_currenProgressDisplay > 0) // if current step is higher than 0. Prevents out of bounds
         {
-            Debug.Log("in");
             _highlightDots[_currenProgressDisplay - 1].SetActive(false); // previous set to false
         }
         _highlightDots[_currenProgressDisplay].SetActive(true); // Set new one to true
         _currenProgressDisplay++;
-        Debug.Log("after");
     }
 
     public void NextObjective()

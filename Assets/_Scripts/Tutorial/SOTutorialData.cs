@@ -6,7 +6,7 @@ using UnityEngine;
 public class SOTutorialData : ScriptableObject
 {
     [Header("Description")]
-    [TextArea(3, 15)] public string SO_Description;
+    [TextArea(3, 15)] public string[] SO_Description;
 
     [Space(10)]
     public bool SO_ShowContinueButton;

@@ -5,6 +5,7 @@ public abstract class TutorialObjectiveBase : ScriptableObject
 {
     public SOTutorialData SO_tutorialData;
     protected int _currentTask;
+    protected int _currentPage;
 
     public abstract void EnterState(TutorialManager manager);
     public virtual void ExecuteState(TutorialManager manager) { }
@@ -12,7 +13,7 @@ public abstract class TutorialObjectiveBase : ScriptableObject
 
     protected void UpdateText(TutorialManager manager)
     {
-        manager._Descriptiontext.text = _runtimeTutorialData.SO_Description;
+        manager._Descriptiontext.text = _runtimeTutorialData.SO_Description[_currentPage];
         manager._Objective.text = string.Empty;
 
 
