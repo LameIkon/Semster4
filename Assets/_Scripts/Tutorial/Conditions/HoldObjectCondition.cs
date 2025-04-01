@@ -5,7 +5,6 @@ public class HoldObjectCondition : ObjectiveCondition
 {
     public override void Execute()
     {
-        Debug.Log("test");
         if (PlayerVR.S_Instance.IsHoldingObject())
         {
             _currentAmount++;
