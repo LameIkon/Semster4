@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SO_Description: "Velkommen!\n\nF\xF8r du kan g\xE5 i gang er der et par ting du
     burde vide f\xF8r du kan forts\xE6tte."
+  SO_ShowContinueButton: 0
+  SO_Objectives: []

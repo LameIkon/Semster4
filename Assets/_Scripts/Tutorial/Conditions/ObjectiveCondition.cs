@@ -8,5 +8,5 @@ public class ObjectiveCondition
     public int _requiredAmount;
     public bool _isCompleted;
 
-    public virtual void Execute(TutorialManager manager){}
+    public virtual void Execute(){}
 }

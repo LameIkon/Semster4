@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tutorial/Data")]
@@ -14,9 +13,12 @@ public class SOTutorialData : ScriptableObject
 
     public void ExecuteCondition(TutorialManager manager, int conditionIndex)
     {
+        Debug.Log("try execute");
         if (SO_Objectives[conditionIndex] != null)
         {
-            SO_Objectives[conditionIndex].Execute(manager);
+            Debug.Log($"execute {SO_Objectives[conditionIndex]._conditionDescription}");
+            SO_Objectives[conditionIndex].Execute();
+            Debug.Log("test after execute");
         }
     }
 

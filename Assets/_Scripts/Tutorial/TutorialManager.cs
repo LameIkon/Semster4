@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -6,13 +7,10 @@ public class TutorialManager : Singleton<TutorialManager>
     [Header("Main Components")]
 
     // Current Objective
-    TutorialObjectiveBase _currentObjective; 
+    TutorialObjectiveBase _currentObjective;
 
-    // Objectives
-    public TutorialObjectiveOne _objectiveOne;
-    public TutorialObjectiveTwo _objectiveTwo;
-    public TutorialObjectiveThree _objectiveThree;
-    public TutorialObjectiveFour _objectiveFour;
+    // All Objectives 
+    public List<TutorialObjectiveBase> _allObjectives;
 
     [Header("UI Components")]
     public GameObject _ContinueButton;
@@ -20,9 +18,10 @@ public class TutorialManager : Singleton<TutorialManager>
     public TextMeshProUGUI _Objective;
     [SerializeField] private GameObject[] _highlightDots;
 
+
     private void Start()
     {
-        _currentObjective = _objectiveOne;
+        _currentObjective = _allObjectives[0]; // Start at the first index. Rest will assign by themselves
         _currentObjective.EnterState(this);
     }
 
@@ -38,10 +37,13 @@ public class TutorialManager : Singleton<TutorialManager>
         _currenProgressDisplay++;      
     }
 
-    public void NextObjective(TutorialObjectiveBase objective)
+    public void NextObjective()
     {
-        _currentObjective = objective;
-        _currentObjective.EnterState(this);
+        if (_currenProgressDisplay < _allObjectives.Count)
+        {
+            _currentObjective = _allObjectives[_currenProgressDisplay];
+            _currentObjective.EnterState(this);
+        }
     }
 
     //[SerializeField] private SOTutorialData[] SO_tutorialData;

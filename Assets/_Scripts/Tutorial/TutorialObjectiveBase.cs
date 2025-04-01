@@ -12,13 +12,13 @@ public abstract class TutorialObjectiveBase : ScriptableObject
     protected void UpdateText(TutorialManager manager)
     {
         manager._Descriptiontext.text = SO_tutorialData.SO_Description;
-        manager._Objective.text = string.Format(SO_tutorialData.SO_Objectives[_currentDataIndex]._conditionDescription, SO_tutorialData.SO_Objectives[_currentDataIndex]._currentAmount, SO_tutorialData.SO_Objectives[_currentDataIndex]._requiredAmount);
-        manager._ContinueButton.SetActive(SO_tutorialData.SO_ShowContinueButton); // Check if there are more 
-        
-        //if (!string.IsNullOrEmpty(SO_tutorialData[_currentDataIndex].SO_Objective)) // Ensure not empty or null
-        //{
-        //    manager._Objective.text = string.Format(SO_tutorialData[_currentDataIndex].SO_Objective, currentAmount, totalAmount); // What the UI Should display of elements. Manager will set it up currectly
-        //}
 
+        ObjectiveCondition currentCondition = SO_tutorialData.SO_Objectives[_currentDataIndex];
+
+        manager._Objective.text = string.Format("{0}/{1} {2}", // It takes the 3 below values and insert it in corresponding formation
+            currentCondition._currentAmount, // Current amount (0)
+            currentCondition._requiredAmount, // Max amount (1)
+        currentCondition._conditionDescription); // Task Description (2)
+        manager._ContinueButton.SetActive(SO_tutorialData.SO_ShowContinueButton); // Check if there are more 
     }
 }
