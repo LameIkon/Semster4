@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
   m_Name: New Hold Object Condition
   m_EditorClassIdentifier: 
-  _conditionDescription: affald
-  _currentAmount: 1
-  _requiredAmount: 1
+  _conditionDescription: affald taget op
+  _currentAmount: 0
+  _requiredAmount: 10
   _isCompleted: 0

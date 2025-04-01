@@ -25,6 +25,7 @@ public class PlayerVR : Singleton<PlayerVR>
 
 
     public static event Action<bool> OnGripStateChanged; // Event to notify listeners
+    public static event Action<bool> OnSelectStateChanged; // Event to notify listeners
 
     private void OnEnable()
     {
@@ -71,6 +72,11 @@ public class PlayerVR : Singleton<PlayerVR>
     public void TestButton() // button
     {
         OnGripStateChanged?.Invoke(true);
+    }
+
+    public void Test2Button() // button
+    {
+        OnSelectStateChanged?.Invoke(true);
     }
 
 
