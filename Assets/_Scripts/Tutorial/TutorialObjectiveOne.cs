@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tutorial/ObjectiveOne")]
@@ -7,6 +8,8 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
     public override void EnterState(TutorialManager manager) // Start objective
     {
         Debug.Log("Tutorial: Hold an Object");
+
+        CloneData(); // Copy the scriptable objects that needs to be used
         UpdateText(manager);
 
         PlayerVR.OnGripStateChanged += HandleGripStateChanged;
@@ -15,26 +18,22 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
 
     private void HandleGripStateChanged(bool isHolding) // The Objective
     {
-        ObjectiveCondition condition = SO_tutorialData.SO_Objectives[_currentDataIndex]; // Get the objectives to the current task
+        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[_currentTask]; // Get the objectives to the current task
 
         if (isHolding && !condition._isCompleted)
         {
-            // Execute the condition logic
-            Debug.Log(condition);
-            SO_tutorialData.ExecuteCondition(TutorialManager.S_Instance, _currentDataIndex); // Check the objective
+            _runtimeTutorialData.ExecuteCondition(_currentTask); // Check the objective
             UpdateText(TutorialManager.S_Instance);
         }
     }
 
     private void HanldeInspect(bool isInspecting)
     {
-        ObjectiveCondition condition = SO_tutorialData.SO_Objectives[1]; // Get the objectives to the current task
+        ObjectiveCondition condition = SO_tutorialData.SO_Tasks[1]; // Get the objectives to the current task
 
         if (isInspecting && !condition._isCompleted)
         {
-            // Execute the condition logic
-            Debug.Log(condition);
-            SO_tutorialData.ExecuteCondition(TutorialManager.S_Instance, 1); // Check the objective
+            _runtimeTutorialData.ExecuteCondition(1); // Check the objective
             UpdateText(TutorialManager.S_Instance);
         }
     }
@@ -43,6 +42,7 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
     {
         Debug.Log("Completed: Holding Object");
         PlayerVR.OnGripStateChanged -= HandleGripStateChanged;
+        PlayerVR.OnSelectStateChanged -= HanldeInspect;
         manager.ShowProgression();
         manager.NextObjective(); // Start next objective
     }

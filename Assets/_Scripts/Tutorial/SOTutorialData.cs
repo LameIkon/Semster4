@@ -10,16 +10,13 @@ public class SOTutorialData : ScriptableObject
 
     [Space(10)]
     public bool SO_ShowContinueButton;
-    public List<ObjectiveCondition> SO_Objectives;
+    public List<ObjectiveCondition> SO_Tasks; 
 
-    public void ExecuteCondition(TutorialManager manager, int conditionIndex)
+    public void ExecuteCondition(int conditionIndex)
     {
-        Debug.Log("try execute");
-        if (SO_Objectives[conditionIndex] != null)
+        if (SO_Tasks[conditionIndex] != null)
         {
-            Debug.Log($"execute {SO_Objectives[conditionIndex]._conditionDescription}");
-            SO_Objectives[conditionIndex].Execute();
-            Debug.Log("test after execute");
+            SO_Tasks[conditionIndex].Execute();
         }
     }
 }
