@@ -1,69 +1,52 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Tutorial/ObjectiveOne")]
 public class TutorialObjectiveOne : TutorialObjectiveBase
 {
-    private int _currentHoldingObjects = 0;
-    private const int _totalInspectedAmount = 3;
 
     public override void EnterState(TutorialManager manager) // Start objective
     {
         Debug.Log("Tutorial: Hold an Object");
-        UpdateText(manager, _currentHoldingObjects, _totalInspectedAmount);
+        UpdateText(manager);
 
         PlayerVR.OnGripStateChanged += HandleGripStateChanged;
     }
 
-    public override void ExecuteState(TutorialManager manager) // On progression on objective
-    {
-        //_currentHoldingObjects++;
+    //public override void ExecuteState(TutorialManager manager) // On progression on objective.... This is currently redundant
+    //{
+    //    SO_tutorialData.ExecuteCondition(manager, _currentDataIndex);
 
-        //if (_currentHoldingObjects <= _totalInspectedAmount)
-        //{
-        //    UpdateText(manager, _currentHoldingObjects, _totalInspectedAmount);
-        //}
-        //else
-        //{
-        //    if (_currentDataIndex <= SO_tutorialData.Length - 1)
-        //    {
-        //        _currentDataIndex++;
-        //        UpdateText(manager, _currentHoldingObjects, _totalInspectedAmount);
-        //        manager.ShowProgression();
-        //    }
-        //    else
-        //    {
-        //        ExitState(manager);
-        //    }
-        //}
-    }
-    private void HandleGripStateChanged(bool isHolding)
+    //    ObjectiveCondition condition = SO_tutorialData.SO_Objectives[_currentDataIndex];
+    //    if (condition._isCompleted)
+    //    {
+    //        if (_currentDataIndex < SO_tutorialData.SO_Objectives.Count - 1)
+    //        {
+    //            _currentDataIndex++;
+    //            UpdateText(manager);
+    //        }
+    //        else
+    //        {
+    //            ExitState(manager);
+    //        }
+    //    }
+    //}
+
+    private void HandleGripStateChanged(bool isHolding) // The Objective
     {
-        if (isHolding)
+        ObjectiveCondition condition = SO_tutorialData.SO_Objectives[_currentDataIndex];
+
+        if (isHolding && !condition._isCompleted)
         {
-            _currentHoldingObjects++;
-
-            if (_currentHoldingObjects <= _totalInspectedAmount)
-            {
-                UpdateText(TutorialManager.S_Instance, _currentHoldingObjects, _totalInspectedAmount);
-            }
-            else
-            {
-                if (_currentDataIndex < SO_tutorialData.Length - 1)
-                {
-                    _currentDataIndex++;
-                    UpdateText(TutorialManager.S_Instance, _currentHoldingObjects, _totalInspectedAmount);
-                    TutorialManager.S_Instance.ShowProgression();
-                }
-                else
-                {
-                    ExitState(TutorialManager.S_Instance);
-                }
-            }
+            // Execute the condition logic
+            SO_tutorialData.ExecuteCondition(TutorialManager.S_Instance, _currentDataIndex);
+            UpdateText(TutorialManager.S_Instance);
         }
     }
 
     public override void ExitState(TutorialManager manager) // Finish objective
     {
         Debug.Log("Completed: Holding Object");
+        PlayerVR.OnGripStateChanged -= HandleGripStateChanged;
         manager.ShowProgression();
         manager.NextObjective(manager._objectiveTwo); // Start next objective
     }

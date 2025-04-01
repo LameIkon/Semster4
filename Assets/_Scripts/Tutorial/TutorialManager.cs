@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -9,15 +6,15 @@ public class TutorialManager : Singleton<TutorialManager>
     [Header("Main Components")]
 
     // Current Objective
-    TutorialObjectiveBase _currentObjective;
+    TutorialObjectiveBase _currentObjective; 
 
-    // Objectives:
-    public TutorialObjectiveOne _objectiveOne = new TutorialObjectiveOne();
-    public TutorialObjectiveTwo _objectiveTwo = new TutorialObjectiveTwo();
-    public TutorialObjectiveThree _objectiveThree = new TutorialObjectiveThree();
-    public TutorialObjectiveFour _objectiveFour = new TutorialObjectiveFour();
+    // Objectives
+    public TutorialObjectiveOne _objectiveOne;
+    public TutorialObjectiveTwo _objectiveTwo;
+    public TutorialObjectiveThree _objectiveThree;
+    public TutorialObjectiveFour _objectiveFour;
 
-    // new stuff to work with
+    [Header("UI Components")]
     public GameObject _ContinueButton;
     public TextMeshProUGUI _Descriptiontext;
     public TextMeshProUGUI _Objective;
@@ -25,22 +22,20 @@ public class TutorialManager : Singleton<TutorialManager>
 
     private void Start()
     {
-        //_playerVR = PlayerVR.S_Instance;
-        //_Objective.gameObject.SetActive(false);
-        //_Objectivetexttwo.gameObject.SetActive(false);
-        //SetTutorialQuest(_index);
-
-        // New stuff:
         _currentObjective = _objectiveOne;
         _currentObjective.EnterState(this);
     }
 
-    // New version
-    private int number;
+
+    private int _currenProgressDisplay = 0;
     public void ShowProgression()
     {
-        number++;
-        _highlightDots[number].SetActive(true);
+        if (_currenProgressDisplay > 0) // if current step is higher than 0. Prevents out of bounds
+        {
+            _highlightDots[_currenProgressDisplay - 1].SetActive(false); // previous set to false
+        }
+        _highlightDots[_currenProgressDisplay].SetActive(true); // Set new one to true
+        _currenProgressDisplay++;      
     }
 
     public void NextObjective(TutorialObjectiveBase objective)

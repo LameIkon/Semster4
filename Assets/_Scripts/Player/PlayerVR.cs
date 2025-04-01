@@ -52,16 +52,20 @@ public class PlayerVR : Singleton<PlayerVR>
 
     private void OnGripPerformed(InputAction.CallbackContext context)
     {
-        if (context.performed)
-        {
-            //_IsHoldingObjectButton = true;
-            OnGripStateChanged?.Invoke(true);
-        }
-        else if (context.canceled)
-        {
-            //_IsHoldingObjectButton = false;
-            OnGripStateChanged?.Invoke(false);
-        }
+        bool isHolding = context.performed;
+        OnGripStateChanged?.Invoke(isHolding);
+
+
+        //if (context.performed)
+        //{
+        //    //_IsHoldingObjectButton = true;
+        //    OnGripStateChanged?.Invoke(true);
+        //}
+        //else if (context.canceled)
+        //{
+        //    //_IsHoldingObjectButton = false;
+        //    OnGripStateChanged?.Invoke(false);
+        //}
     }
     public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {

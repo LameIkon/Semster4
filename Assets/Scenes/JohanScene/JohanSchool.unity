@@ -24706,6 +24706,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92807ff23b0b2f41aa965d4f530d539, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ContinueButton: {fileID: 1469943051}
+  _Descriptiontext: {fileID: 1303463133}
+  _Objective: {fileID: 816122581}
   _highlightDots:
   - {fileID: 403615377}
   - {fileID: 601585822}
@@ -24715,9 +24718,6 @@ MonoBehaviour:
   - {fileID: 265388597}
   - {fileID: 781259019}
   - {fileID: 320379701}
-  _ContinueButton: {fileID: 1469943051}
-  _Descriptiontext: {fileID: 1303463133}
-  _Objective: {fileID: 0}
 --- !u!4 &1763595380
 Transform:
   m_ObjectHideFlags: 0
