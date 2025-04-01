@@ -1,12 +1,12 @@
 using System;
+using UnityEngine;
 
-[Serializable]
-public class ObjectiveCondition
+public abstract class ObjectiveCondition : ScriptableObject
 {
     public string _conditionDescription;
     public int _currentAmount;
     public int _requiredAmount;
     public bool _isCompleted;
 
-    public virtual void Execute(){}
+    public abstract void Execute();
 }

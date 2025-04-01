@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Tutorial/Conditions/HoldObjectCondition")]
 public class HoldObjectCondition : ObjectiveCondition
 {
     public override void Execute()
@@ -13,10 +14,5 @@ public class HoldObjectCondition : ObjectiveCondition
                 _isCompleted = true;
             }
         }
-    }
-
-    public void test()
-    {
-        Debug.Log("test");
     }
 }
