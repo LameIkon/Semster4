@@ -35,16 +35,16 @@ public class Trash : MonoBehaviour, ITrashable
 	{
 		if ( _data == null) throw new NullReferenceException();
 
-		return _data.SO_TrashAudioClip;
+		return _data.SO_DropInBinAudio;
 	}
 
 	public void PickUpSound()
 	{
 		if (_data == null) throw new NullReferenceException();
 
-		if (_data.SO_PickUpAudioClip != null) 
+		if (_data.SO_PickUpAudio != null) 
 		{
-			_audioSource.clip = _data.SO_PickUpAudioClip;
+			_audioSource.clip = _data.SO_PickUpAudio;
 			_audioSource.Play();
 		}
 	}
@@ -53,9 +53,9 @@ public class Trash : MonoBehaviour, ITrashable
 	{
         if (_data == null) throw new NullReferenceException();
 
-        if (_data.SO_PickUpAudioClip != null)
+        if (_data.SO_PickUpAudio != null)
         {
-            _audioSource.clip = _data.SO_DropOnFloorAudioClip;
+            _audioSource.clip = _data.SO_DroppedOnFloorAudio;
             _audioSource.Play();
         }
     }
@@ -91,9 +91,9 @@ public class Trash : MonoBehaviour, ITrashable
 	{
 		_audioSource = GetComponent<AudioSource>();
 		_audioSource.playOnAwake = false;
-		if (_data.SO_PickUpAudioClip != null)
+		if (_data.SO_PickUpAudio != null)
 		{
-			_audioSource.clip = _data.SO_PickUpAudioClip;
+			_audioSource.clip = _data.SO_PickUpAudio;
 		}
 	}
 

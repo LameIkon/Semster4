@@ -13,64 +13,23 @@ public class SOTrashData : ScriptableObject
 	[Space(10), Header("Sorting Category")]
 	[FormerlySerializedAs("SO_PreferdType")] 
 	public SortingCategory SO_PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
-
-	[FormerlySerializedAs("SO_PreferdTypePoints")] 
-	public float SO_PreferredCategoryPoints;
+	[FormerlySerializedAs("SO_PreferdTypePoints")] public float SO_PreferredCategoryPoints;
 
 	[Space(10)]
-	[FormerlySerializedAs("SO_AcceptableType")] 
-	public SortingCategory SO_AcceptableCategory;
-	
-	[FormerlySerializedAs("SO_AcceptableTypePoints")] 
-	public float SO_AcceptableCategoryPoints;
+	[FormerlySerializedAs("SO_AcceptableType")] public SortingCategory SO_AcceptableCategory;
+	[FormerlySerializedAs("SO_AcceptableTypePoints")] public float SO_AcceptableCategoryPoints;
 
 	[Space(10)]
-	[FormerlySerializedAs("SO_WrongTypePoints")] 
-	public float SO_WrongCategoryPoints;
+	[FormerlySerializedAs("SO_WrongTypePoints")] public float SO_WrongCategoryPoints;
 
     [Space(10), Header("Sorting Information")]
     [TextArea(3, 15)] public string InfoIfSortedCorrectly;
     [TextArea(3, 15)] public string InfoIfSortedWrongly;
+    [FormerlySerializedAs("InfoIfSortedAcceptable")] [TextArea(3, 15)] public string InfoIfSortedAcceptably;
     
-    [FormerlySerializedAs("InfoIfSortedAcceptable")] 
-    [TextArea(3, 15)] public string InfoIfSortedAcceptably;
-
+    // TODO: Convert to arrays of AudioClips 
     [Space(10), Header("Audio")]
-	public AudioClip SO_TrashAudioClip;
-	public AudioClip SO_PickUpAudioClip;
-	public AudioClip SO_DropOnFloorAudioClip;
+    [FormerlySerializedAs("SO_TrashAudioClip")] public AudioClip SO_DropInBinAudio;
+    [FormerlySerializedAs("SO_DropOnFloorAudioClip")] public AudioClip SO_DroppedOnFloorAudio;
+	[FormerlySerializedAs("SO_PickUpAudioClip")] public AudioClip SO_PickUpAudio;
 }
-
-
-
-
-/*
-public class SOTrashData : ScriptableObject
-{
-	[Header("Description")]
-	[SerializeField] private string _name;
-	[SerializeField, TextArea(3, 10)] public string _Description;
-
-	[Header("Sorting Category"), Space(2)]
-	public SortingCategory _PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
-	public float _PreferredCategoryPoints;
-
-	[Space()]
-	public SortingCategory _AcceptableCategory/Categories;     
-	public float _AcceptableCategoryPoints;
-
-	[Space()]
-	public float _WrongCategoryPoints;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
