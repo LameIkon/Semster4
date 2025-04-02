@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
-  m_Name: 1_Part
+  m_Name: 1_Part3
   m_EditorClassIdentifier: 
-  SO_Description: "Velkommen!\n\nF\xF8r du kan g\xE5 i gang er der et par ting du
-    burde vide f\xF8r du kan forts\xE6tte."
+  SO_Description: "Godt g\xE5et!"
   SO_Tasks: []
+  SO_KeepPreviousTaskDescription: 1
