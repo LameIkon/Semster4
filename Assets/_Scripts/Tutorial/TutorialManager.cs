@@ -25,7 +25,7 @@ public class TutorialManager : Singleton<TutorialManager>
         _currentObjective.EnterState(this);
     }
 
-
+    private int _currentObjectiveIndex;
     private int _currenProgressDisplay = 0;
     public void ShowProgression()
     {
@@ -39,11 +39,18 @@ public class TutorialManager : Singleton<TutorialManager>
 
     public void NextObjective()
     {
-        if (_currenProgressDisplay < _allObjectives.Count)
+        Debug.Log("Try next objective");
+        _currentObjectiveIndex++;
+        if (_currentObjectiveIndex < _allObjectives.Count)
         {
-            _currentObjective = _allObjectives[_currenProgressDisplay];
+            _currentObjective = _allObjectives[_currentObjectiveIndex];
             _currentObjective.EnterState(this);
         }
+    }
+
+    public void NextPage()
+    {
+        _currentObjective.NextPage();
     }
 
     //[SerializeField] private SOTutorialData[] SO_tutorialData;

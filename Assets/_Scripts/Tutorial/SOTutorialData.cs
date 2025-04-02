@@ -10,7 +10,8 @@ public class SOTutorialData : ScriptableObject
 
     [Space(10)]
     public bool SO_ShowContinueButton;
-    public List<ObjectiveCondition> SO_Tasks; 
+    public List<ObjectiveCondition> SO_Tasks; // The tasks connected to the objective
+    public int SO_TaskIndex; // Assign in inspector what index the tasks should show up.
 
     public void ExecuteCondition(int conditionIndex)
     {

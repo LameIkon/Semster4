@@ -25671,6 +25671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allObjectives:
   - {fileID: 11400000, guid: d43e830da8032d845984995b5b0a4798, type: 2}
+  - {fileID: 11400000, guid: 48c516955ce28b24aa1ea2c58c1ab6e6, type: 2}
   _ContinueButton: {fileID: 1469943051}
   _Descriptiontext: {fileID: 1303463133}
   _Objective: {fileID: 816122581}
@@ -30671,11 +30672,11 @@ PrefabInstance:
       objectReference: {fileID: 1763595379}
     - target: {fileID: 459155708986076557, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnContinueButtonPressed
+      value: NextPage
       objectReference: {fileID: 0}
     - target: {fileID: 459155708986076557, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TutorialTracker, Assembly-CSharp
+      value: TutorialManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 614001002929492182, guid: 9d8493ae6bd1e3841a2010779b4e04f6, type: 3}
       propertyPath: m_ReverseArrangement
