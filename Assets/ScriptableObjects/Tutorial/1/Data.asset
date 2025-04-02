@@ -19,5 +19,5 @@ MonoBehaviour:
   - "Godt g\xE5et!"
   SO_ShowContinueButton: 0
   SO_Tasks:
-  - {fileID: 11400000, guid: c202d4b5a2ea90e4fa9b3ee76a3da348, type: 2}
   - {fileID: 11400000, guid: 150097831c32ea14c91387c07bee2dcf, type: 2}
+  - {fileID: 11400000, guid: c202d4b5a2ea90e4fa9b3ee76a3da348, type: 2}

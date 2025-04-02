@@ -22,7 +22,7 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
 
         ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[0]; // Get the objectives to the current task
 
-        if (condition._isCompleted)
+        if (!condition._isCompleted)
         {
             _runtimeTutorialData.ExecuteCondition(0); // Check the objective
             UpdateText(TutorialManager.S_Instance);
