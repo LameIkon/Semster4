@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _conditionDescription: inspect affald
   _currentAmount: 0
-  _requiredAmount: 10
+  _requiredAmount: 2
   _isCompleted: 0

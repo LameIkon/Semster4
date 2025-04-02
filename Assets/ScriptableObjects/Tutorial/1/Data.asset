@@ -12,13 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
   m_Name: Data
   m_EditorClassIdentifier: 
-  SO_Description:
-  - "Velkommen! \n\nF\xF8r du kan g\xE5 i gan er der et par ting du burde vide f\xF8r
-    du kan f\xF8rts\xE6tte."
-  - "Som det f\xF8rste, pr\xF8v at samle affald op. "
-  - "Godt g\xE5et!"
-  SO_ShowContinueButton: 0
-  SO_Tasks:
-  - {fileID: 11400000, guid: 150097831c32ea14c91387c07bee2dcf, type: 2}
-  - {fileID: 11400000, guid: c202d4b5a2ea90e4fa9b3ee76a3da348, type: 2}
-  SO_TaskIndex: 1
+  SO_Pages:
+  - {fileID: 11400000, guid: db6ba6276f588644496409ed027e26d8, type: 2}
+  - {fileID: 11400000, guid: c1e4777cdde4eaa488374e03170a8ddf, type: 2}
+  - {fileID: 11400000, guid: 3fb460ba1fb14aa40a4edbe7e34d439f, type: 2}

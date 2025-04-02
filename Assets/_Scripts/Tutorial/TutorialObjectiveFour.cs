@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TutorialObjectiveFour : TutorialObjectiveBase
+public class TutorialObjectiveFour : SOTutorialObjectiveBase
 {
     public override void EnterState(TutorialManager manager)
     {
@@ -10,6 +10,11 @@ public class TutorialObjectiveFour : TutorialObjectiveBase
     public override void ExecuteState(TutorialManager manager)
     {
 
+    }
+
+    public override void CompleteState(TutorialManager manager)
+    {
+        throw new System.NotImplementedException();
     }
 
     public override void ExitState(TutorialManager manager)

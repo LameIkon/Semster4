@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
-  m_Name: Hold
+  m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
+  m_Name: New SO Objective Page 2
   m_EditorClassIdentifier: 
-  _conditionDescription: affald taget op
-  _currentAmount: 0
-  _requiredAmount: 2
-  _isCompleted: 0
+  SO_Description: 'test3
+
+
+'
+  SO_Tasks: []

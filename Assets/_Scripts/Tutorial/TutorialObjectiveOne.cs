@@ -1,8 +1,8 @@
-using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tutorial/ObjectiveOne")]
-public class TutorialObjectiveOne : TutorialObjectiveBase
+public class TutorialObjectiveOne : SOTutorialObjectiveBase
 {
 
     public override void EnterState(TutorialManager manager) // Start objective
@@ -20,11 +20,12 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
     {
         if (!isHolding) return;
 
-        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[0]; // Get the objectives to the current task
+        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
+        ObjectiveCondition condition = currentPage.SO_Tasks[0];
 
         if (!condition._isCompleted)
         {
-            _runtimeTutorialData.ExecuteCondition(0); // Check the objective
+            condition.Execute();
             UpdateText(TutorialManager.S_Instance);
         }
         CheckCompletion();
@@ -34,31 +35,33 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
     {
         if (!isInspecting) return;
 
-        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[1]; // Get the objectives to the current task
+        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
+        ObjectiveCondition condition = currentPage.SO_Tasks[1]; // Get the objectives to the current task
 
         if (!condition._isCompleted)
         {
-            _runtimeTutorialData.ExecuteCondition(1); // Check the objective
+            condition.Execute();
             UpdateText(TutorialManager.S_Instance);
         }
         CheckCompletion();
     }
 
-    private void CheckCompletion() // Check if all conditions are complete
+    public override void CompleteState(TutorialManager manager)
     {
-        foreach (ObjectiveCondition condition in _runtimeTutorialData.SO_Tasks)
+        Debug.Log("Completed Objective");
+        NextPage();
+        //ExitState(TutorialManager.S_Instance); // Finish objective
+
+        if (_currentPage >= _runtimeTutorialData.SO_Pages.Count)
         {
-            if (!condition._isCompleted) // if any task is not complete
-            {
-                return; // Stop here and dont continue
-            }
+            Debug.Log("No more pages, exiting state...");
+            ExitState(manager); // Exit if no more content
         }
-        ExitState(TutorialManager.S_Instance); // Else finish objective
     }
 
     public override void ExitState(TutorialManager manager) // Finish objective
     {
-        Debug.Log("Completed: Holding Object");
+        Debug.Log("Exit: Holding Object");
         PlayerVR.OnGripStateChanged -= HandleGripStateChanged;
         PlayerVR.OnSelectStateChanged -= HandleInspect;
         manager.ShowProgression();
