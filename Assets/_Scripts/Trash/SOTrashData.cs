@@ -1,31 +1,41 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Trash/Data")]
 public class SOTrashData : ScriptableObject
 {
-	[Header("Description")]
+	[Space(10), Header("Description")]
 	public string SO_Name;
 	[TextArea(3, 15)] public string SO_Description;
 
-	[Header("Sorting Category"), Space(2)]
-	public SortingCategory SO_PreferdType;		// Preferd trash type, this is implemented as this to make it more dynamic and scalable
-	public float SO_PreferdTypePoints;
+	[Space(10), Header("Sorting Category")]
+	[FormerlySerializedAs("SO_PreferdType")] 
+	public SortingCategory SO_PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
 
-	[Space()]
-	public SortingCategory SO_AcceptableType;
-	public float SO_AcceptableTypePoints;
+	[FormerlySerializedAs("SO_PreferdTypePoints")] 
+	public float SO_PreferredCategoryPoints;
 
-	[Space()]
-	public float SO_WrongTypePoints;
+	[Space(10)]
+	[FormerlySerializedAs("SO_AcceptableType")] 
+	public SortingCategory SO_AcceptableCategory;
+	
+	[FormerlySerializedAs("SO_AcceptableTypePoints")] 
+	public float SO_AcceptableCategoryPoints;
 
-    [Space()]
-    [TextArea(3,15)] public string InfoIfSortedCorrectly;
+	[Space(10)]
+	[FormerlySerializedAs("SO_WrongTypePoints")] 
+	public float SO_WrongCategoryPoints;
+
+    [Space(10), Header("Sorting Information")]
+    [Multiline] public string InfoIfSortedCorrectly;
     [TextArea(3, 15)] public string InfoIfSortedWrongly;
-    [TextArea(3, 15)] public string InfoIfSortedAcceptable;
+    
+    [FormerlySerializedAs("InfoIfSortedAcceptable")] 
+    [TextArea(3, 15)] public string InfoIfSortedAcceptably;
 
-    [Space()]
+    [Space(10), Header("Audio")]
 	public AudioClip SO_TrashAudioClip;
 	public AudioClip SO_PickUpAudioClip;
 	public AudioClip SO_DropOnFloorAudioClip;
@@ -33,16 +43,6 @@ public class SOTrashData : ScriptableObject
 
 
 
-
-
-
-
-
-
-// The code below should be implemented instead of the above,
-// for now it is commented to avoid merging issues.
-//
-// See also: [1]
 
 /*
 public class SOTrashData : ScriptableObject
@@ -56,7 +56,7 @@ public class SOTrashData : ScriptableObject
 	public float _PreferredCategoryPoints;
 
 	[Space()]
-	public SortingCategory _AcceptableCategory/Categories;     // [1] Could also be an Array or a List
+	public SortingCategory _AcceptableCategory/Categories;     
 	public float _AcceptableCategoryPoints;
 
 	[Space()]

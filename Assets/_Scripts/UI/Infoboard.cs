@@ -61,7 +61,7 @@ public sealed class Infoboard : MonoBehaviour
         else if (points == 0) // Acceptable
         {
             Debug.Log("Acceptable");
-            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedAcceptable}");
+            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedAcceptably}");
         }
         else // Incorrect
         {
