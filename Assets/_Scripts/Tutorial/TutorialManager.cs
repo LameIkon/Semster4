@@ -22,11 +22,13 @@ public class TutorialManager : Singleton<TutorialManager>
     {
         _currentObjective = _allObjectives[0]; // Start at the first index. Rest will assign by themselves
         _currentObjective.EnterState(this);
+        ShowProgression();
     }
 
     public void ShowProgression()
     {
-        if (_currenProgressDisplay > 0) // if current step is higher than 0. Prevents out of bounds
+        Debug.Log(_currenProgressDisplay);
+        if (_currenProgressDisplay > 0) // if current step is higher than 0. This prevents out of bounds
         {
             _highlightDots[_currenProgressDisplay - 1].SetActive(false); // previous set to false
         }
@@ -42,11 +44,19 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             _currentObjective = _allObjectives[_currentObjectiveIndex];
             _currentObjective.EnterState(this);
+            ShowProgression();
+        }
+        else
+        {
+            _currentObjective = null;
         }
     }
 
-    public void NextPage()
+    public void NextPage() // Button
     {
-        _currentObjective.NextPage();
+        if (_currentObjective != null)
+        {
+            _currentObjective.NextPage();
+        }
     }
 }

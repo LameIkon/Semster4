@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tutorial/Conditions/InspectObjectCondition")]
-public class InspectObjectCondition : ObjectiveCondition
+public class InspectObjectCondition : SOObjectiveCondition
 {
    public override void Execute()
    {

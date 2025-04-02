@@ -21,7 +21,10 @@ public class TutorialObjectiveOne : SOTutorialObjectiveBase
         if (!isHolding) return;
 
         SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
-        ObjectiveCondition condition = currentPage.SO_Tasks[0];
+
+        if (currentPage.SO_Tasks.Count == 0) return;
+
+        SOObjectiveCondition condition = currentPage.SO_Tasks[0];
 
         if (!condition._isCompleted)
         {
@@ -36,7 +39,10 @@ public class TutorialObjectiveOne : SOTutorialObjectiveBase
         if (!isInspecting) return;
 
         SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
-        ObjectiveCondition condition = currentPage.SO_Tasks[1]; // Get the objectives to the current task
+
+        if (currentPage.SO_Tasks.Count == 0) return;
+
+        SOObjectiveCondition condition = currentPage.SO_Tasks[1]; // Get the objectives to the current task
 
         if (!condition._isCompleted)
         {
@@ -49,8 +55,8 @@ public class TutorialObjectiveOne : SOTutorialObjectiveBase
     public override void CompleteState(TutorialManager manager)
     {
         Debug.Log("Completed Objective");
+        //_completedPages.Add(_runtimeTutorialData.SO_Pages[_currentPage]);
         NextPage();
-        //ExitState(TutorialManager.S_Instance); // Finish objective
 
         if (_currentPage >= _runtimeTutorialData.SO_Pages.Count)
         {
@@ -64,7 +70,6 @@ public class TutorialObjectiveOne : SOTutorialObjectiveBase
         Debug.Log("Exit: Holding Object");
         PlayerVR.OnGripStateChanged -= HandleGripStateChanged;
         PlayerVR.OnSelectStateChanged -= HandleInspect;
-        manager.ShowProgression();
         manager.NextObjective(); // Start next objective
     }
 }

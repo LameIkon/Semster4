@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
-  m_Name: inspect
+  m_Script: {fileID: 11500000, guid: 428432ae7dc105844950b3db8f53828d, type: 3}
+  m_Name: 1_Objective
   m_EditorClassIdentifier: 
-  _conditionDescription: inspect affald
-  _currentAmount: 0
-  _requiredAmount: 2
-  _isCompleted: 0
+  SO_tutorialData: {fileID: 11400000, guid: 2e4111e65340ba64cbf006b256f6898a, type: 2}

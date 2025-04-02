@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public abstract class ObjectiveCondition : ScriptableObject
+public abstract class SOObjectiveCondition : ScriptableObject
 {
-    public string _conditionDescription;
+    public string SO_conditionDescription;
     public int _currentAmount;
     public int _requiredAmount;
     public bool _isCompleted;
