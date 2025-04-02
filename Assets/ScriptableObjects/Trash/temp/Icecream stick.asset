@@ -15,17 +15,18 @@ MonoBehaviour:
   SO_Name: Ispind
   SO_Description: "Materiale: Tr\xE6.\n\nNedbrydningstid: Optil 10 \xE5r.\n\nAffaldsh\xE5ndtering:
     Br\xE6ndes til fjernvarme og elproduktion."
-  SO_PreferdType: 1
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 1
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro
     at den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at
     det er sv\xE6rt at nedbryde for naturen."
   InfoIfSortedWrongly: "Fordi en ispind best\xE5r af tr\xE6 kunne man godt tro at
     den kan smides i bioaffald, men den er belagt med noget voks som g\xE5r at det
     er sv\xE6rt at nedbryde for naturen."
-  InfoIfSortedAcceptable: Acceptable
+  InfoIfSortedAcceptably: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}
+  SO_DropOnFloorAudioClip: {fileID: 0}

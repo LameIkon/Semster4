@@ -29,7 +29,7 @@ public class SOTrashData : ScriptableObject
 	public float SO_WrongCategoryPoints;
 
     [Space(10), Header("Sorting Information")]
-    [Multiline] public string InfoIfSortedCorrectly;
+    [TextArea(3, 15)] public string InfoIfSortedCorrectly;
     [TextArea(3, 15)] public string InfoIfSortedWrongly;
     
     [FormerlySerializedAs("InfoIfSortedAcceptable")] 
