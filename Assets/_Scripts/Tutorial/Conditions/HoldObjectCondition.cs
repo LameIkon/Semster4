@@ -7,11 +7,7 @@ public class HoldObjectCondition : ObjectiveCondition
     {
         if (PlayerVR.S_Instance.IsHoldingObject())
         {
-            _currentAmount++;
-            if (_currentAmount >= _requiredAmount)
-            {
-                _isCompleted = true;
-            }
+            base.Execute();
         }
     }
 }

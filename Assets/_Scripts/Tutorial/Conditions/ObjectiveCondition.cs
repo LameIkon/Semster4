@@ -8,5 +8,13 @@ public abstract class ObjectiveCondition : ScriptableObject
     public int _requiredAmount;
     public bool _isCompleted;
 
-    public abstract void Execute();
+    public virtual void Execute()
+    {
+        _currentAmount++;
+        if (_currentAmount >= _requiredAmount)
+        {
+            _isCompleted = true;
+        }
+    }
 }
+

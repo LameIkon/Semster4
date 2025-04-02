@@ -3,7 +3,8 @@ using UnityEngine;
 
 public abstract class TutorialObjectiveBase : ScriptableObject
 {
-    public SOTutorialData SO_tutorialData;
+    public SOTutorialData SO_tutorialData; // Scriptable
+    protected SOTutorialData _runtimeTutorialData; // Cloned tutorial data
     protected int _currentTask;
     protected int _currentPage;
 
@@ -19,10 +20,10 @@ public abstract class TutorialObjectiveBase : ScriptableObject
 
         foreach (ObjectiveCondition currentCondition in _runtimeTutorialData.SO_Tasks)
         {
-            string color = (currentCondition._currentAmount >= currentCondition._requiredAmount) ? "green" : "yellow"; // Decide the color. It knows what color just by using the tags
+            string textColor = (currentCondition._currentAmount >= currentCondition._requiredAmount) ? "green" : "yellow"; // Decide the color. It knows what color just by using the tags
 
             manager._Objective.text += string.Format("<color={0}>{1}/{2}</color> {3}\n", // It takes the 3 below values and insert it in corresponding formation
-                color, // Color of values (0)
+                textColor, // Color of values (0)
                 currentCondition._currentAmount, // Current amount (1)
                 currentCondition._requiredAmount, // Max amount (2)
             currentCondition._conditionDescription); // Task Description (3)
@@ -31,7 +32,6 @@ public abstract class TutorialObjectiveBase : ScriptableObject
         manager._ContinueButton.SetActive(_runtimeTutorialData.SO_ShowContinueButton); // Check if there are more 
     }
 
-    protected SOTutorialData _runtimeTutorialData;
 
     public void CloneData()
     {

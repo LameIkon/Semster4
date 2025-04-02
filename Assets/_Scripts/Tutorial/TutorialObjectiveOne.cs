@@ -18,11 +18,13 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
 
     private void HandleGripStateChanged(bool isHolding) // Called by event
     {
-        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[_currentTask]; // Get the objectives to the current task
+        if (!isHolding) return;
 
-        if (isHolding && !condition._isCompleted)
+        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[0]; // Get the objectives to the current task
+
+        if (condition._isCompleted)
         {
-            _runtimeTutorialData.ExecuteCondition(_currentTask); // Check the objective
+            _runtimeTutorialData.ExecuteCondition(0); // Check the objective
             UpdateText(TutorialManager.S_Instance);
         }
         CheckCompletion();
@@ -30,9 +32,11 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
 
     private void HandleInspect(bool isInspecting) // Called by event
     {
-        ObjectiveCondition condition = SO_tutorialData.SO_Tasks[1]; // Get the objectives to the current task
+        if (!isInspecting) return;
 
-        if (isInspecting && !condition._isCompleted)
+        ObjectiveCondition condition = _runtimeTutorialData.SO_Tasks[1]; // Get the objectives to the current task
+
+        if (!condition._isCompleted)
         {
             _runtimeTutorialData.ExecuteCondition(1); // Check the objective
             UpdateText(TutorialManager.S_Instance);
@@ -40,16 +44,16 @@ public class TutorialObjectiveOne : TutorialObjectiveBase
         CheckCompletion();
     }
 
-    private void CheckCompletion()
+    private void CheckCompletion() // Check if all conditions are complete
     {
         foreach (ObjectiveCondition condition in _runtimeTutorialData.SO_Tasks)
         {
-            if (!condition._isCompleted)
+            if (!condition._isCompleted) // if any task is not complete
             {
                 return; // Stop here and dont continue
             }
         }
-        ExitState(TutorialManager.S_Instance);
+        ExitState(TutorialManager.S_Instance); // Else finish objective
     }
 
     public override void ExitState(TutorialManager manager) // Finish objective

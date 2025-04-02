@@ -86,6 +86,11 @@ public class PlayerVR : Singleton<PlayerVR>
         //return _heldObject != null;
     }
 
+    public bool IsInspectingObject()
+    {
+        return true;
+    }
+
     //private void OnGripReleased(InputAction.CallbackContext context)
     //{
     //    _IsHoldingObjectButton = false;
