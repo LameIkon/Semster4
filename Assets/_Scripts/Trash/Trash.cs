@@ -55,7 +55,7 @@ public class Trash : MonoBehaviour, ITrashable
 
         if (_data.SO_PickUpAudio != null)
         {
-            _audioSource.clip = _data.SO_DroppedOnFloorAudio;
+            _audioSource.clip = _data.SO_DropOnFloorAudio;
             _audioSource.Play();
         }
     }
