@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 
-namespace _Scripts.Dialogue
+namespace _IdealabAssets._Scripts.Dialogue
 {
     [CreateAssetMenu(fileName = "DialogueVideoNode", menuName = "Dialogue/VideoNode")]
     public class SODialogueVideoNode : ScriptableObject

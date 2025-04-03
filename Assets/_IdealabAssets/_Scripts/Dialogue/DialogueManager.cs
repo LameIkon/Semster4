@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using _Scripts.Dialogue;
+using _IdealabAssets._Scripts.Dialogue;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour

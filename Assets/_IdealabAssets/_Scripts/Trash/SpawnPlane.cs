@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
-public class CocPlane : MonoBehaviour
+public class SpawnPlane : MonoBehaviour
 {
     private BoxCollider _cocPlane;
     [SerializeField] private Transform _spawnTransform;

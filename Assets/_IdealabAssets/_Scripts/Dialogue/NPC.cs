@@ -1,4 +1,4 @@
-using _Scripts.Dialogue;
+using _IdealabAssets._Scripts.Dialogue;
 using UnityEngine;
 
 public class NPC : MonoBehaviour

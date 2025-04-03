@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2128625774201903562}
   - component: {fileID: 7903288220118288414}
   m_Layer: 0
-  m_Name: CocPlane
+  m_Name: SpawnPlane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

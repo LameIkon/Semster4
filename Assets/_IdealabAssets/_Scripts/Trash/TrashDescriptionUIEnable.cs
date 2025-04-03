@@ -14,7 +14,7 @@ public class TrashDescriptionUIEnable : MonoBehaviour
     private TextMeshProUGUI _headerText;
     private TextMeshProUGUI _contentText;
 
-
+#region Unity Methods
     private void Awake()
     {
         _headerText = _trashUIPanel.GetComponentsInChildren<TextMeshProUGUI>()[0]; //first found, should be Header
@@ -23,8 +23,7 @@ public class TrashDescriptionUIEnable : MonoBehaviour
         UpdateUI(); //we update the texts in awake before Start is called. 
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         _trashUIPanel.SetActive(false);
 
@@ -33,9 +32,7 @@ public class TrashDescriptionUIEnable : MonoBehaviour
             _playerCamera = Camera.main.transform; // Auto-assign VR camera
         }
     }
-
-    // Update is called once per frame
-    void Update() { }
+#endregion
 
     public void OnGrab()
     {
