@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Trash/Data")]
 public class SOTrashData : ScriptableObject
@@ -9,68 +10,26 @@ public class SOTrashData : ScriptableObject
 	public string SO_Name;
 	[TextArea(3, 15)] public string SO_Description;
 
-	[Header("Sorting Category"), Space(2)]
-	public SortingCategory SO_PreferdType;		// Preferd trash type, this is implemented as this to make it more dynamic and scalable
-	public float SO_PreferdTypePoints;
+	[Space(20), Header("Sorting Category")]
+	[FormerlySerializedAs("SO_PreferdType")] 
+	public SortingCategory SO_PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
+	[FormerlySerializedAs("SO_PreferdTypePoints")] public float SO_PreferredCategoryPoints;
 
-	[Space()]
-	public SortingCategory SO_AcceptableType;
-	public float SO_AcceptableTypePoints;
+	[Space(10)]
+	[FormerlySerializedAs("SO_AcceptableType")] public SortingCategory SO_AcceptableCategory;
+	[FormerlySerializedAs("SO_AcceptableTypePoints")] public float SO_AcceptableCategoryPoints;
 
-	[Space()]
-	public float SO_WrongTypePoints;
+	[Space(10)]
+	[FormerlySerializedAs("SO_WrongTypePoints")] public float SO_WrongCategoryPoints;
 
-    [Space()]
-    [TextArea(3,15)] public string InfoIfSortedCorrectly;
-    [TextArea(3, 15)] public string InfoIfSortedWrongly;
-    [TextArea(3, 15)] public string InfoIfSortedAcceptable;
-
-    [Space()]
-	public AudioClip SO_TrashAudioClip;
-	public AudioClip SO_PickUpAudioClip;
-	public AudioClip SO_DropOnFloorAudioClip;
+    [Space(20), Header("Sorting Information")]
+    [TextArea(2, 5)] public string InfoIfSortedCorrectly;
+    [TextArea(2, 5)] public string InfoIfSortedWrongly;
+    [FormerlySerializedAs("InfoIfSortedAcceptable")] [TextArea(2, 15)] public string InfoIfSortedAcceptably;
+    
+    // TODO: Convert to arrays of AudioClips 
+    [Space(20), Header("Audio")]
+    [FormerlySerializedAs("SO_TrashAudioClip")] public AudioClip SO_DropInBinAudio;
+    [FormerlySerializedAs("SO_DropOnFloorAudioClip")] public AudioClip SO_DropOnFloorAudio;
+	[FormerlySerializedAs("SO_PickUpAudioClip")] public AudioClip SO_PickUpAudio;
 }
-
-
-
-
-
-
-
-
-
-// The code below should be implemented instead of the above,
-// for now it is commented to avoid merging issues.
-//
-// See also: [1]
-
-/*
-public class SOTrashData : ScriptableObject
-{
-	[Header("Description")]
-	[SerializeField] private string _name;
-	[SerializeField, TextArea(3, 10)] public string _Description;
-
-	[Header("Sorting Category"), Space(2)]
-	public SortingCategory _PreferredCategory;		// Preferred trash category, this is implemented as this to make it more dynamic and scalable
-	public float _PreferredCategoryPoints;
-
-	[Space()]
-	public SortingCategory _AcceptableCategory/Categories;     // [1] Could also be an Array or a List
-	public float _AcceptableCategoryPoints;
-
-	[Space()]
-	public float _WrongCategoryPoints;
-}
-*/
-
-
-
-
-
-
-
-
-
-
-

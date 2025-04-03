@@ -18,16 +18,16 @@ public class Trash : MonoBehaviour, ITrashable
 		if (_data == null) throw new NullReferenceException();
 		Destroy(gameObject);
 		
-		if (type == _data.SO_PreferdType)	// Will check the type it gets from the TrashBin to the Preferd and Okay types
+		if (type == _data.SO_PreferredCategory)	// Will check the type it gets from the TrashBin to the Preferd and Okay types
 		{
-			return _data.SO_PreferdTypePoints;
+			return _data.SO_PreferredCategoryPoints;
 		}
-		else if (type == _data.SO_AcceptableType)
+		else if (type == _data.SO_AcceptableCategory)
 		{
-			return _data.SO_AcceptableTypePoints;
+			return _data.SO_AcceptableCategoryPoints;
 		}
 
-		return _data.SO_WrongTypePoints;
+		return _data.SO_WrongCategoryPoints;
 
 	}
 
@@ -35,16 +35,16 @@ public class Trash : MonoBehaviour, ITrashable
 	{
 		if ( _data == null) throw new NullReferenceException();
 
-		return _data.SO_TrashAudioClip;
+		return _data.SO_DropInBinAudio;
 	}
 
 	public void PickUpSound()
 	{
 		if (_data == null) throw new NullReferenceException();
 
-		if (_data.SO_PickUpAudioClip != null) 
+		if (_data.SO_PickUpAudio != null) 
 		{
-			_audioSource.clip = _data.SO_PickUpAudioClip;
+			_audioSource.clip = _data.SO_PickUpAudio;
 			_audioSource.Play();
 		}
 	}
@@ -53,9 +53,9 @@ public class Trash : MonoBehaviour, ITrashable
 	{
         if (_data == null) throw new NullReferenceException();
 
-        if (_data.SO_PickUpAudioClip != null)
+        if (_data.SO_PickUpAudio != null)
         {
-            _audioSource.clip = _data.SO_DropOnFloorAudioClip;
+            _audioSource.clip = _data.SO_DropOnFloorAudio;
             _audioSource.Play();
         }
     }
@@ -91,9 +91,9 @@ public class Trash : MonoBehaviour, ITrashable
 	{
 		_audioSource = GetComponent<AudioSource>();
 		_audioSource.playOnAwake = false;
-		if (_data.SO_PickUpAudioClip != null)
+		if (_data.SO_PickUpAudio != null)
 		{
-			_audioSource.clip = _data.SO_PickUpAudioClip;
+			_audioSource.clip = _data.SO_PickUpAudio;
 		}
 	}
 
