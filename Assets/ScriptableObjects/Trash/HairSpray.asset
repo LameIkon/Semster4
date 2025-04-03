@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
-  m_Name: Hair spray
+  m_Name: HairSpray
   m_EditorClassIdentifier: 
   SO_Name: "H\xE5rspray"
   SO_Description: "Materiale: Metal + kemikalier.\n\nNedbrydningstid: 50-200 \xE5r.\n\nAffaldsh\xE5ndtering:

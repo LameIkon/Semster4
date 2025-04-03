@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
-  m_Name: Toilet roll
+  m_Name: PizzaBox
   m_EditorClassIdentifier: 
-  SO_Name: Toiletrulle
-  SO_Description: "Materiale: Pap\n\nNedbrydningstid: 3-6 m\xE5neder\n\nAffaldsh\xE5ndtering:
-    Pap-genbrug (omdannes til nyt pap/papir)"
-  SO_PreferdType: 2
+  SO_Name: Pizzabakke (beskidt)
+  SO_Description: "Materiale: Pap (med madrester)\n\nNedbrydningstid: 3-6 m\xE5neder\n\nAffaldsh\xE5ndtering:
+    Restaffald (forbr\xE6nding \u2013 kan ikke genbruges pga. fedt)"
+  SO_PreferdType: 1
   SO_PreferdTypePoints: 2
-  SO_AcceptableType: 1
+  SO_AcceptableType: 7
   SO_AcceptableTypePoints: 1
   SO_WrongTypePoints: -2
-  InfoIfSortedCorrectly: "Da den best\xE5r af pap skal det sorteres til pap."
-  InfoIfSortedWrongly: "Da den best\xE5r af pap skal det sorteres til pap."
+  InfoIfSortedCorrectly: "Selvom den er lavet af pap, skal den i restaffald s\xE5
+    l\xE6nge den er beskidt, pga. fedt."
+  InfoIfSortedWrongly: "Selvom den er lavet af pap, skal den i restaffald s\xE5 l\xE6nge
+    den er beskidt, pga. fedt."
   InfoIfSortedAcceptable: Acceptable
   SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_PickUpAudioClip: {fileID: 0}

@@ -17,15 +17,15 @@ public class SOTrashData : ScriptableObject
 
 	[Space(10)]
 	[FormerlySerializedAs("SO_AcceptableType")] public SortingCategory SO_AcceptableCategory;
-	[FormerlySerializedAs("SO_AcceptableTypePoints")] public float SO_AcceptableCategoryPoints;
+	[FormerlySerializedAs("SO_AcceptableTypePoints")] public float SO_AcceptableCategoryPoints; 
 
 	[Space(10)]
 	[FormerlySerializedAs("SO_WrongTypePoints")] public float SO_WrongCategoryPoints;
 
     [Space(20), Header("Sorting Information")]
     [TextArea(2, 5)] public string InfoIfSortedCorrectly;
-    [TextArea(2, 5)] public string InfoIfSortedWrongly;
-    [FormerlySerializedAs("InfoIfSortedAcceptable")] [TextArea(2, 15)] public string InfoIfSortedAcceptably;
+    [TextArea(2, 5)] public string InfoIfSortedWrongly;                                                      
+    [FormerlySerializedAs("InfoIfSortedAcceptable")] [TextArea(2, 15)] public string InfoIfSortedAcceptably; 
     
     // TODO: Convert to arrays of AudioClips 
     [Space(20), Header("Audio")]

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Leaderboard : MonoBehaviour
+public class LeaderboardManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI _names;
     [SerializeField] private TextMeshProUGUI _colon;
@@ -30,24 +30,24 @@ public class Leaderboard : MonoBehaviour
 
     public void SaveScore(string username, int score, float totalTime)
     {
-        SaveSystem.Save(username, score, totalTime);
+        LeaderboardDataSaver.Save(username, score, totalTime);
         Load();
     }
 
     private void Load()
     {
-        List<SaveSystem.SaveData> scores = SaveSystem.Load();
+        List<LeaderboardDataSaver.SaveData> scores = LeaderboardDataSaver.Load();
         LoadUI(scores);
     }
 
-    private void LoadUI(List<SaveSystem.SaveData> scores)
+    private void LoadUI(List<LeaderboardDataSaver.SaveData> scores)
     {
         _names.text = string.Empty;
         _colon.text = string.Empty;
         _scores.text = string.Empty;
         _timing.text = string.Empty;
 
-        foreach (SaveSystem.SaveData score in scores)
+        foreach (LeaderboardDataSaver.SaveData score in scores)
         {
             _names.text += $"{score._Username}\n";
             _colon.text += ":\n";

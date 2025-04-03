@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d53275622e25a7e4aaff5b6ac72fa9c9, type: 3}
-  m_Name: Phone Charger
+  m_Name: PhoneCharger
   m_EditorClassIdentifier: 
   SO_Name: Mobiloplader
   SO_Description: "Materiale: Elektronik.\n\nNedbrydningstid: Flere hundrede \xE5r.\n\nAffaldsh\xE5ndtering:
