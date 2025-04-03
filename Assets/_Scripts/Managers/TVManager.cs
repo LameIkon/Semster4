@@ -38,13 +38,15 @@ public class TVManager : MonoBehaviour
         if (_videoPlayer.clip != null && _videoPlayer.isPlaying && !_isDraggingSlider)
         {
             float currentTime = (float)_videoPlayer.time; // Check how much time of the video has passed since start
-            _progressBar.value = currentTime; // Apply time to progress bar
+            _progressBar.value = currentTime;             // Apply time to progress bar
         }
     }
-    
+
     private void ChangeVideo(int number)
     {
-        _videoindexNumber = (_videoindexNumber + number + clips.Length) % clips.Length; // used that way to ensure it wont be negative numbers. (example: 0-1+4 % 4 = 0)
+        _videoindexNumber =
+                (_videoindexNumber + number + clips.Length) %
+                clips.Length; // used that way to ensure it wont be negative numbers. (example: 0-1+4 % 4 = 0)
         VideoToPlay();
     }
 
@@ -66,7 +68,7 @@ public class TVManager : MonoBehaviour
         return _tv.activeInHierarchy;
     }
 
-    #region Buttons
+#region Buttons
     public void DraggingSlider() // Called when dragging slider
     {
         if (!IsTVOn()) return;
@@ -79,7 +81,6 @@ public class TVManager : MonoBehaviour
         _isDraggingSlider = false;
         _videoPlayer.Play();
         _videoPlayer.time = _progressBar.value;
-
     }
 
     public void RestartVideoButton() // Button call
@@ -102,10 +103,12 @@ public class TVManager : MonoBehaviour
         {
             return;
         }
+
         _videoPlayer.Play();
     }
 
     private double _videoLength;
+
     public void TurnTVONOFFButton() // Button call
     {
         if (_tv.activeInHierarchy) // If the tv is currently on
@@ -115,12 +118,12 @@ public class TVManager : MonoBehaviour
         }
 
         _progressBar.gameObject.SetActive(!_tv.activeInHierarchy); // Turn on or off slider
-        _tv.SetActive(!_tv.activeInHierarchy); // Turn on or off tv
-        
+        _tv.SetActive(!_tv.activeInHierarchy);                     // Turn on or off tv
+
         if (_tv.activeInHierarchy) // If the has been turned on. This wont be called if the tv just got turned off
         {
             _videoPlayer.time = _videoLength; // Set the tv length to the time before the tv was turned off
-            _videoPlayer.Pause(); // Stop the video. 
+            _videoPlayer.Pause();             // Stop the video. 
         }
     }
 
@@ -135,5 +138,5 @@ public class TVManager : MonoBehaviour
         if (!IsTVOn()) return;
         ChangeVideo(-1);
     }
-    #endregion
+#endregion
 }

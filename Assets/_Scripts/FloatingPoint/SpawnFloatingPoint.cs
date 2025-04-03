@@ -5,12 +5,14 @@ using UnityEngine;
 
 public class SpawnFloatingPoint : MonoBehaviour
 {
-    public GameObject _FloatingPoint; // Declaring our GameObject. Attach this script to the object which should be able to instantiate FloatingPoints.
+    public GameObject
+            _FloatingPoint; // Declaring our GameObject. Attach this script to the object which should be able to instantiate FloatingPoints.
+
     [SerializeField] private float _yOffset;
 
     private void OnEnable()
     {
-        TrashBin.s_OnTrashedEvent += HandleTrashEvent;   
+        TrashBin.s_OnTrashedEvent += HandleTrashEvent;
     }
 
     private void OnDisable()
@@ -20,12 +22,11 @@ public class SpawnFloatingPoint : MonoBehaviour
 
     private void HandleTrashEvent(GameObject sender, float points)
     {
-        if ( _FloatingPoint != null )
-        {       
-            GameObject go = Instantiate(_FloatingPoint, sender.transform.position+Vector3.up*_yOffset, Quaternion.Euler(0, 90, 0), sender.transform);      // Instantiates the FloatingPoint. Becomes a child of parent object.
-            go.GetComponent<TextMeshPro>().text = points.ToString();                                              // <- Variable for points goes here.
+        if (_FloatingPoint != null)
+        {
+            GameObject go = Instantiate(_FloatingPoint, sender.transform.position + Vector3.up * _yOffset, Quaternion.Euler(0, 90, 0),
+                    sender.transform);                               // Instantiates the FloatingPoint. Becomes a child of parent object.
+            go.GetComponent<TextMeshPro>().text = points.ToString(); // <- Variable for points goes here.
         }
-       
     }
-
 }

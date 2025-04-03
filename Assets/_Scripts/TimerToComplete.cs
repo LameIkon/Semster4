@@ -6,9 +6,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TimerToComplete : MonoBehaviour
-{   
+{
     [SerializeField] private float _timeLimit;
-    private float _timeRemaining;   
+    private float _timeRemaining;
     private Coroutine _countDown;
     private bool _gameIsOver = false;
     [SerializeField] private TextMeshProUGUI _timerText;
@@ -26,13 +26,13 @@ public class TimerToComplete : MonoBehaviour
         if (_testStart)
         {
             StartCountDown();
-        }       
+        }
     }
 
 
-    IEnumerator CountDown ()
+    IEnumerator CountDown()
     {
-        while (_timeRemaining >= 0) 
+        while (_timeRemaining >= 0)
         {
             yield return new WaitForSeconds(1f);
             _timeRemaining--;
@@ -52,27 +52,27 @@ public class TimerToComplete : MonoBehaviour
     {
         StopCountDown();
 
-        if (!_gameIsOver) 
-        { 
-            //Implent logic for when completed before timer ran out.
+        if (!_gameIsOver)
+        {
+            // Implement logic for when completed before timer ran out.
         }
     }
 
     public void StartCountDown()
     {
-        if(_countDown == null)
+        if (_countDown == null)
         {
             _countDown = StartCoroutine(CountDown());
-        }        
+        }
     }
 
     private void StopCountDown()
     {
-        if (_countDown != null) 
+        if (_countDown != null)
         {
             StopCoroutine(_countDown);
             _countDown = null;
-        }       
+        }
     }
 
     private void UpdateTimer(float currentTime)
@@ -87,11 +87,11 @@ public class TimerToComplete : MonoBehaviour
 
     public void OnEnable()
     {
-        CompletionTracker.s_OnCompletion += GameIsComplete;
+        CompletionTrackerBoard.s_OnComplete += GameIsComplete;
     }
 
     public void OnDisable()
     {
-        CompletionTracker.s_OnCompletion -= GameIsComplete;
+        CompletionTrackerBoard.s_OnComplete -= GameIsComplete;
     }
 }

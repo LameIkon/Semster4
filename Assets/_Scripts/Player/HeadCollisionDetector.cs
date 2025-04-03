@@ -25,6 +25,7 @@ public class HeadCollisionDetector : MonoBehaviour
                 detectedHits.Add(hit);
             }
         }
+
         return detectedHits;
     }
 

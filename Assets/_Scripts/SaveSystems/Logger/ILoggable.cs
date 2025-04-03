@@ -1,6 +1,6 @@
 using System;
 
-public interface ILogable
+public interface ILoggable
 {
 	void Log();
 }

@@ -5,13 +5,12 @@ using UnityEngine;
 
 public class DoorOpener : MonoBehaviour
 {
-
     private int _angle = 90;
     public float _DurationToOpen;
     private bool _isOpening = false;
 
-    [SerializeField] private GameObject _door; //put in right door
-    private AudioSource _audioSource; //saves door audio source comp
+    [SerializeField] private GameObject _door;     //put in right door
+    private AudioSource _audioSource;              //saves door audio source comp
     [SerializeField] private AudioClip _doorSound; // acutal Audio clip to play
 
     private void Awake()
@@ -38,9 +37,9 @@ public class DoorOpener : MonoBehaviour
 
         while (timeElapsed < duration)
         {
-           _door.transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / duration);            
+            _door.transform.rotation = Quaternion.Slerp(startRotation, endRotation, timeElapsed / duration);
             timeElapsed += Time.deltaTime;
-            yield return null;  
+            yield return null;
         }
 
         _door.transform.rotation = endRotation;
@@ -50,16 +49,16 @@ public class DoorOpener : MonoBehaviour
     private void CompletionEvent()
     {
         Debug.Log("All trash objects have been sorted");
-        OpenDoor(); 
+        OpenDoor();
     }
 
     public void OnEnable()
     {
-        CompletionTracker.s_OnCompletion += CompletionEvent;
+        CompletionTrackerBoard.s_OnComplete += CompletionEvent;
     }
 
     public void OnDisable()
     {
-        CompletionTracker.s_OnCompletion -= CompletionEvent;
+        CompletionTrackerBoard.s_OnComplete -= CompletionEvent;
     }
 }

@@ -8,14 +8,15 @@ public class HeadCollisionHandler : MonoBehaviour
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _pushBackStrength = 1f;
 
-    
+
     private Vector3 CalculatePushBackDirection(List<RaycastHit> colliderHits)
     {
         Vector3 combinedNormal = Vector3.zero;
         foreach (RaycastHit hit in colliderHits)
         {
-            combinedNormal += new Vector3(hit.normal.x,0,hit.normal.z); 
+            combinedNormal += new Vector3(hit.normal.x, 0, hit.normal.z);
         }
+
         return combinedNormal;
     }
 
@@ -25,6 +26,7 @@ public class HeadCollisionHandler : MonoBehaviour
         {
             return;
         }
+
         Vector3 pushBackDirection = CalculatePushBackDirection(_detector._DetectionColliderHits);
         _characterController.Move(pushBackDirection.normalized * _pushBackStrength * Time.deltaTime);
     }

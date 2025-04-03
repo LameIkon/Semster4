@@ -18,7 +18,7 @@ public class TrashDescriptionUIEnable : MonoBehaviour
     private void Awake()
     {
         _headerText = _trashUIPanel.GetComponentsInChildren<TextMeshProUGUI>()[0]; //first found, should be Header
-        _contentText = _trashUIPanel.GetComponentsInChildren<TextMeshProUGUI>()[1]; 
+        _contentText = _trashUIPanel.GetComponentsInChildren<TextMeshProUGUI>()[1];
 
         UpdateUI(); //we update the texts in awake before Start is called. 
     }
@@ -31,20 +31,17 @@ public class TrashDescriptionUIEnable : MonoBehaviour
         if (_playerCamera == null)
         {
             _playerCamera = Camera.main.transform; // Auto-assign VR camera
-        }    
+        }
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-    }
+    void Update() { }
 
     public void OnGrab()
     {
-        _trashUIPanel.SetActive(true);     
+        _trashUIPanel.SetActive(true);
         _trashUIPanel.transform.SetParent(_playerCamera);
-        _trashUIPanel.transform.localScale = new Vector3(0.5f,0.5f,0.5f);     
+        _trashUIPanel.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
     }
 
     public void OnRelease()
@@ -57,8 +54,9 @@ public class TrashDescriptionUIEnable : MonoBehaviour
     {
         if (_headerText != null)
         {
-            _headerText.text = _trashData.SO_Name; 
+            _headerText.text = _trashData.SO_Name;
         }
+
         if (_contentText != null)
         {
             _contentText.text = _trashData.SO_Description;

@@ -6,7 +6,7 @@ using TMPro;
 
 [RequireComponent(typeof(BoxCollider), typeof(Animator), typeof(AudioSource)),
  RequireComponent(typeof(Rigidbody))]
-public class TrashBin : MonoBehaviour, ILogable
+public class TrashBin : MonoBehaviour, ILoggable
 {
     /*
      * The implementation of the TrashBin handles the sending of data to the TrashManager,
