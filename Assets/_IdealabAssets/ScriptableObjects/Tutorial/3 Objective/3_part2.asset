@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
+  m_Name: 3_part2
+  m_EditorClassIdentifier: 
+  SO_Description: Inspicer og sortere affaldet.
+  SO_Tasks:
+  - {fileID: 11400000, guid: da5bce419748f82448c8e39bb6c53608, type: 2}
+  - {fileID: 11400000, guid: a0e30015270ed52468aac7f990fed766, type: 2}
+  SO_KeepPreviousTaskDescription: 0

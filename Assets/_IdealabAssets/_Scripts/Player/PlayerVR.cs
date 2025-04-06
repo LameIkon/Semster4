@@ -24,8 +24,8 @@ public class PlayerVR : Singleton<PlayerVR>
     public bool _IsInspectingObjectButton;
 
 
-    public static event Action<bool> OnGripStateChanged; // Event to notify listeners
-    public static event Action<bool> OnSelectStateChanged; // Event to notify listeners
+    public static event Action<bool> S_OnGripStateChanged; // Event to notify listeners
+    public static event Action<bool> S_OnSelectStateChanged; // Event to notify listeners
 
     private void OnEnable()
     {
@@ -54,7 +54,7 @@ public class PlayerVR : Singleton<PlayerVR>
     private void OnGripPerformed(InputAction.CallbackContext context)
     {
         bool isHolding = context.performed;
-        OnGripStateChanged?.Invoke(isHolding);
+        S_OnGripStateChanged?.Invoke(isHolding);
 
 
         //if (context.performed)
@@ -71,12 +71,12 @@ public class PlayerVR : Singleton<PlayerVR>
 
     public void TestGripButton() // button
     {
-        OnGripStateChanged?.Invoke(true);
+        S_OnGripStateChanged?.Invoke(true);
     }
 
     public void TestInspectButton() // button
     {
-        OnSelectStateChanged?.Invoke(true);
+        S_OnSelectStateChanged?.Invoke(true);
     }
 
     public static event Action<bool> S_TestTrashing; // Used for tutorial
