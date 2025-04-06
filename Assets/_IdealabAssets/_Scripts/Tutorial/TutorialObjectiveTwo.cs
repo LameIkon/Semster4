@@ -7,10 +7,10 @@ public class TutorialObjectiveTwo : SOTutorialObjectiveBase
 
     }
 
-    public override void ExecuteState(TutorialManager manager)
-    {
+    //public override void ExecuteState(TutorialManager manager)
+    //{
 
-    }
+    //}
 
     public override void CompleteState(TutorialManager manager)
     {

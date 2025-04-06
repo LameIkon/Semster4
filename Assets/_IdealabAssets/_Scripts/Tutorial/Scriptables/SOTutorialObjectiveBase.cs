@@ -7,10 +7,29 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     protected SOTutorialData _runtimeTutorialData; // Cloned tutorial data
     protected int _currentPage;
 
-    public abstract void EnterState(TutorialManager manager);
-    public virtual void ExecuteState(TutorialManager manager) { }
-    public abstract void CompleteState(TutorialManager manager);
-    public abstract void ExitState(TutorialManager manager);
+    public virtual void EnterState(TutorialManager manager)
+    {
+        Debug.Log("Tutorial: Hold an Object");
+        CloneData(); // Copy the scriptable objects that needs to be used
+        UpdateText(manager); // Display/update UI
+    }
+    //public virtual void ExecuteState(TutorialManager manager) { }
+    public virtual void CompleteState(TutorialManager manager)
+    {
+        Debug.Log("Completed Objective");
+        NextPage();
+
+        if (_currentPage >= _runtimeTutorialData.SO_Pages.Count)
+        {
+            Debug.Log("No more pages, exiting state...");
+            ExitState(manager); // Exit if no more content
+        }
+    }
+    public virtual void ExitState(TutorialManager manager)
+    {
+        Debug.Log("Exit: Holding Object");
+        manager.NextObjective(); // Start next objective
+    }
 
     public void NextPage()
     {
@@ -87,4 +106,43 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             }
         }
     }
+
+    #region Tasks
+    public void HandleGripState(bool isHolding, int taskIndex) // Called by event
+    {
+        if (!isHolding) return;
+
+        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
+
+        if (currentPage.SO_Tasks.Count <= taskIndex) return;
+
+        SOObjectiveCondition condition = currentPage.SO_Tasks[taskIndex];
+
+        if (!condition._isCompleted)
+        {
+            condition.Execute();
+            UpdateText(TutorialManager.S_Instance);
+        }
+        CheckCompletion();
+    }
+
+    public void HandleInspect(bool isInspecting, int taskIndex) // Called by event
+    {
+        if (!isInspecting) return;
+
+        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
+
+        if (currentPage.SO_Tasks.Count <= taskIndex) return;
+
+        SOObjectiveCondition condition = currentPage.SO_Tasks[taskIndex]; // Get the objectives to the current task
+
+        if (!condition._isCompleted)
+        {
+            condition.Execute();
+            UpdateText(TutorialManager.S_Instance);
+        }
+        CheckCompletion();
+    }
+
+    #endregion
 }
