@@ -73,17 +73,6 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         manager._ContinueButton.SetActive(!currentPageData.HasTasks()); // Show only if there are no tasks
     }
 
-    protected void CheckCompletion() // Check if all conditions are complete
-    {
-        foreach (SOObjectiveCondition condition in _runtimeTutorialData.SO_Pages[_currentPage].SO_Tasks)
-        {
-            if (!condition._isCompleted) // if any task is not complete
-            {
-                return; // Stop here and dont continue
-            }
-        }
-        CompleteState(TutorialManager.S_Instance); // Complete objective
-    }
 
 
     public void CloneData()
@@ -108,27 +97,10 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     }
 
     #region Tasks
-    public void HandleGripState(bool isHolding, int taskIndex) // Called by event
+
+    public void HandleTask(bool state, int taskIndex)
     {
-        if (!isHolding) return;
-
-        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
-
-        if (currentPage.SO_Tasks.Count <= taskIndex) return;
-
-        SOObjectiveCondition condition = currentPage.SO_Tasks[taskIndex];
-
-        if (!condition._isCompleted)
-        {
-            condition.Execute();
-            UpdateText(TutorialManager.S_Instance);
-        }
-        CheckCompletion();
-    }
-
-    public void HandleInspect(bool isInspecting, int taskIndex) // Called by event
-    {
-        if (!isInspecting) return;
+        if (!state) return;
 
         SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
 
@@ -142,6 +114,17 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             UpdateText(TutorialManager.S_Instance);
         }
         CheckCompletion();
+    }
+    protected void CheckCompletion() // Check if all conditions are complete
+    {
+        foreach (SOObjectiveCondition condition in _runtimeTutorialData.SO_Pages[_currentPage].SO_Tasks)
+        {
+            if (!condition._isCompleted) // if any task is not complete
+            {
+                return; // Stop here and dont continue
+            }
+        }
+        CompleteState(TutorialManager.S_Instance); // Complete objective
     }
 
     #endregion
