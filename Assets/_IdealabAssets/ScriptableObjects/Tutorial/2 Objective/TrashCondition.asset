@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
-  m_Name: we
+  m_Script: {fileID: 11500000, guid: 4e23f95280eb2074fb60715ebb7377c1, type: 3}
+  m_Name: TrashCondition
   m_EditorClassIdentifier: 
-  _conditionDescription: sd
+  SO_conditionDescription: Affald smidt ud
   _currentAmount: 0
-  _requiredAmount: 2
+  _requiredAmount: 1
   _isCompleted: 0

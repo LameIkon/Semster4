@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
-  m_Name: InspectCondition
+  m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
+  m_Name: 2_Part1
   m_EditorClassIdentifier: 
-  SO_conditionDescription: affald inspiceret
-  _currentAmount: 0
-  _requiredAmount: 2
-  _isCompleted: 0
+  SO_Description: "Pr\xF8v at smide affaldet ud."
+  SO_Tasks:
+  - {fileID: 11400000, guid: 0920201810ef4214eb146cb6c4ee65eb, type: 2}
+  SO_KeepPreviousTaskDescription: 0

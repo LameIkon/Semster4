@@ -10570,7 +10570,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221733917}
         m_TargetAssemblyTypeName: PlayerVR, Assembly-CSharp
-        m_MethodName: TestButton
+        m_MethodName: TestInspectButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12229,7 +12229,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1221733917}
         m_TargetAssemblyTypeName: PlayerVR, Assembly-CSharp
-        m_MethodName: Test2Button
+        m_MethodName: TestGripButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18025,14 +18025,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 244083537}
     m_Modifications:
-    - target: {fileID: 73949512329761232, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      propertyPath: m_TurnAmount
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 73949512329761232, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
-      propertyPath: m_LeftHandTurnInput.m_InputActionReference
-      value: 
-      objectReference: {fileID: -7374733323251553461, guid: c348712bda248c246b8c49b3db54643f, type: 3}
     - target: {fileID: 2243020122175513880, guid: 77e7c27b2c5525e4aa8cc9f99d654486, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
@@ -26405,6 +26397,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _allObjectives:
   - {fileID: 11400000, guid: d43e830da8032d845984995b5b0a4798, type: 2}
+  - {fileID: 11400000, guid: 7c1ab42c123a5df4b9ff43735483d8cc, type: 2}
   _ContinueButton: {fileID: 1469943051}
   _Descriptiontext: {fileID: 1303463133}
   _Objective: {fileID: 816122581}
@@ -26768,63 +26761,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4558593196022300, guid: 991e8973513e2ad408232c1afeb3a9df, type: 3}
   m_PrefabInstance: {fileID: 1789892314}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1791100530
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3590521413496264970, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_Name
-      value: Bjarne
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.029666154
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.9995599
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -183.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7402821487697682989, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 629d44e6ea416e74587f4542ea907fcd, type: 3}
 --- !u!1001 &1791370268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27317,7 +27253,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 231655288}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221733917}
+        m_TargetAssemblyTypeName: PlayerVR, Assembly-CSharp
+        m_MethodName: TestTrashingButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1815703853
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32269,4 +32217,3 @@ SceneRoots:
   - {fileID: 962527115}
   - {fileID: 1348472826}
   - {fileID: 696129614}
-  - {fileID: 1791100530}

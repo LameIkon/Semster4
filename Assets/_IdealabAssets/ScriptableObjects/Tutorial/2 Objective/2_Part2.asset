@@ -9,7 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 428432ae7dc105844950b3db8f53828d, type: 3}
-  m_Name: test
+  m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
+  m_Name: 2_Part2
   m_EditorClassIdentifier: 
-  SO_tutorialData: {fileID: 11400000, guid: a9cf908bcbd23ce49972e391c48b85b6, type: 2}
+  SO_Description: "Godt g\xE5et!"
+  SO_Tasks: []
+  SO_KeepPreviousTaskDescription: 1

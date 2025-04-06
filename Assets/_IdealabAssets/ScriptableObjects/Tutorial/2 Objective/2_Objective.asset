@@ -9,10 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d9de3564cfb8ac4aa8e7ea177b20d16, type: 3}
-  m_Name: we 1
+  m_Script: {fileID: 11500000, guid: c27501f836a6af8459f911ec3662ef31, type: 3}
+  m_Name: 2_Objective
   m_EditorClassIdentifier: 
-  _conditionDescription: asdasd
-  _currentAmount: 0
-  _requiredAmount: 1
-  _isCompleted: 0
+  SO_tutorialData: {fileID: 11400000, guid: 8e0eec111df5a734ba2f820283a90881, type: 2}

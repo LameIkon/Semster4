@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Tutorial/Conditions/HoldObjectCondition")]
-public class HoldObjectCondition : SOObjectiveCondition
+public class SOHoldObjectCondition : SOObjectiveCondition
 {
     public override void Execute()
     {

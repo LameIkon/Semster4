@@ -69,14 +69,20 @@ public class PlayerVR : Singleton<PlayerVR>
         //}
     }
 
-    public void TestButton() // button
+    public void TestGripButton() // button
     {
         OnGripStateChanged?.Invoke(true);
     }
 
-    public void Test2Button() // button
+    public void TestInspectButton() // button
     {
         OnSelectStateChanged?.Invoke(true);
+    }
+
+    public static event Action<bool> S_TestTrashing; // Used for tutorial
+    public void TestTrashingButton() // button
+    {
+        S_TestTrashing?.Invoke(true);
     }
 
 

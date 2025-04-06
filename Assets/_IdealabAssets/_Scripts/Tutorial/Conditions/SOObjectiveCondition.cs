@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class SOObjectiveCondition : ScriptableObject
@@ -6,7 +5,7 @@ public abstract class SOObjectiveCondition : ScriptableObject
     public string SO_conditionDescription;
     public int _currentAmount;
     public int _requiredAmount;
-    public bool _isCompleted;
+    public bool _isCompleted { get; private set; }
 
     public virtual void Execute()
     {

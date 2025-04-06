@@ -10,15 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: testdata
+  m_Name: 2_ObjectiveData
   m_EditorClassIdentifier: 
-  SO_Description:
-  - 'Noget tekst
-
-    asdsad'
-  - dasdasdasd
-  SO_ShowContinueButton: 0
-  SO_Tasks:
-  - {fileID: 11400000, guid: d42f8f9eb025f9a45b51006bf38965da, type: 2}
-  - {fileID: 11400000, guid: 3987ff98c1342f845985887fe39afc93, type: 2}
-  SO_TaskIndex: 2
+  SO_Pages:
+  - {fileID: 11400000, guid: 74fe2cdaa3221e047abf5a1e34c252a6, type: 2}
+  - {fileID: 11400000, guid: cbf76dee1fa0bae49a3059f92ef7bd0e, type: 2}
