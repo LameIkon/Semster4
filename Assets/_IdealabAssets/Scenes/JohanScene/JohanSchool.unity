@@ -26399,6 +26399,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d43e830da8032d845984995b5b0a4798, type: 2}
   - {fileID: 11400000, guid: 7c1ab42c123a5df4b9ff43735483d8cc, type: 2}
   - {fileID: 11400000, guid: a6ad41069c94d4c45b7a5c92c50185e5, type: 2}
+  - {fileID: 11400000, guid: b3bfda0734ec5344e84a7dfd47c16204, type: 2}
   _ContinueButton: {fileID: 1469943051}
   _Descriptiontext: {fileID: 1303463133}
   _Objective: {fileID: 816122581}
@@ -31908,7 +31909,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 656397635}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1221733917}
+        m_TargetAssemblyTypeName: PlayerVR, Assembly-CSharp
+        m_MethodName: TestDoorOpenedButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &2136763388
 CanvasRenderer:
   m_ObjectHideFlags: 0

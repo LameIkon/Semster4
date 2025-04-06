@@ -9,8 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a1b3bab7378cf34baef46ac7caa230e, type: 3}
-  m_Name: TutorialPart4 - 1
+  m_Script: {fileID: 11500000, guid: adf59303c28bdd942851150a56fd4f36, type: 3}
+  m_Name: 4_Objective
   m_EditorClassIdentifier: 
-  SO_Description: "Kan du se skraldespanden lidt l\xE6ngere henne af gangen? pr\xF8v
-    at smide affald ud der.\n\n<b><color=#FFFF00>1/4</color> affald smidt ud</b>\n"
+  SO_tutorialData: {fileID: 11400000, guid: 5a2560383ab7d224aab364e9414cf8a0, type: 2}

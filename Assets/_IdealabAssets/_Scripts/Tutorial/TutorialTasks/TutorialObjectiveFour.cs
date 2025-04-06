@@ -1,24 +1,22 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Tutorial/Objective/Four")]
 public class TutorialObjectiveFour : SOTutorialObjectiveBase
 {
     public override void EnterState(TutorialManager manager)
     {
-
+        PlayerVR.S_TestDoor += SetDoorOpenedState;
+        base.EnterState(manager);
     }
 
-    //public override void ExecuteState(TutorialManager manager)
-    //{
-
-    //}
-
-    public override void CompleteState(TutorialManager manager)
+    private void SetDoorOpenedState(bool isDoorEnter)
     {
-        throw new System.NotImplementedException();
+        HandleTask(isDoorEnter, 0);
     }
 
     public override void ExitState(TutorialManager manager)
     {
-
+        PlayerVR.S_TestDoor -= SetDoorOpenedState;
+        base.ExitState(manager);
     }
 }

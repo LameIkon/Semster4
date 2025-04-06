@@ -69,22 +69,27 @@ public class PlayerVR : Singleton<PlayerVR>
         //}
     }
 
-    public void TestGripButton() // button
+    public void TestGripButton()
     {
         S_OnGripStateChanged?.Invoke(true);
     }
 
-    public void TestInspectButton() // button
+    public void TestInspectButton() 
     {
         S_OnSelectStateChanged?.Invoke(true);
     }
 
     public static event Action<bool> S_TestTrashing; // Used for tutorial
-    public void TestTrashingButton() // button
+    public void TestTrashingButton() 
     {
         S_TestTrashing?.Invoke(true);
     }
 
+    public static event Action<bool> S_TestDoor; // Used for tutorial
+    public void TestDoorOpenedButton() 
+    {
+        S_TestDoor?.Invoke(true);
+    }
 
     public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {

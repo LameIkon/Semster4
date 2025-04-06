@@ -32,6 +32,9 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             _highlightDots[_currenProgressDisplay - 1].SetActive(false); // previous set to false
         }
+
+        if (_highlightDots.Length <= _currenProgressDisplay) return;
+
         _highlightDots[_currenProgressDisplay].SetActive(true); // Set new one to true
         _currenProgressDisplay++;
     }
