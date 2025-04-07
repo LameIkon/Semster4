@@ -3,9 +3,12 @@ using UnityEngine;
 
 public abstract class SOTutorialObjectiveBase : ScriptableObject
 {
-    public SOTutorialData SO_tutorialData; // Scriptable
-    protected SOTutorialData _runtimeTutorialData; // Cloned tutorial data
+    //public SOTutorialData SO_tutorialData; // Scriptable
+    [SerializeField] private List<SOObjectivePage> SO_Pages; // Original dataset
+    protected List<SOObjectivePage> _runtimeTutorialData; // Cloned tutorial data
     protected int _currentPage;
+
+
 
     public virtual void EnterState(TutorialManager manager)
     {
@@ -19,7 +22,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         Debug.Log("Completed Objective");
         NextPage();
 
-        if (_currentPage >= _runtimeTutorialData.SO_Pages.Count)
+        if (_currentPage >= SO_Pages.Count)
         {
             Debug.Log("No more pages, exiting state...");
             ExitState(manager); // Exit if no more content
@@ -34,7 +37,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     public void NextPage()
     {
         _currentPage++;
-        if (_currentPage < _runtimeTutorialData.SO_Pages.Count) // Check if there are more pages left
+        if (_currentPage < _runtimeTutorialData.Count) // Check if there are more pages left
         {
             Debug.Log("Next page");
             UpdateText(TutorialManager.S_Instance);
@@ -46,12 +49,12 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             ExitState(TutorialManager.S_Instance);
         }
 
-        
+       
     }
 
     protected void UpdateText(TutorialManager manager)
     {
-        SOObjectivePage currentPageData = _runtimeTutorialData.SO_Pages[_currentPage];
+        SOObjectivePage currentPageData = _runtimeTutorialData[_currentPage];
 
         manager._Descriptiontext.text = currentPageData.SO_Description;
         if (!currentPageData.SO_KeepPreviousTaskDescription) // Keep or remove it. Done in inspector
@@ -77,19 +80,22 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
 
     public void CloneData()
     {
-        _runtimeTutorialData = Instantiate(SO_tutorialData); // Clone the SO
-        _currentPage = 0; // Reset Page number
+        _runtimeTutorialData = new List<SOObjectivePage>(); // Create new list of pages
 
-
-        for (int page = 0; page < SO_tutorialData.SO_Pages.Count; page++)
+        foreach (SOObjectivePage page in SO_Pages)
         {
-            _runtimeTutorialData.SO_Pages[page] = Instantiate(SO_tutorialData.SO_Pages[page]);
+            SOObjectivePage clonedPage = Instantiate(page); // Clone
+            List<SOObjectiveCondition> clonedTasks = new List<SOObjectiveCondition>(); // Create new list of tasks
 
-            for (int task = 0; task < SO_tutorialData.SO_Pages[page].SO_Tasks.Count; task++)
+            foreach (SOObjectiveCondition task in page.SO_Tasks)
             {
-                _runtimeTutorialData.SO_Pages[page].SO_Tasks[task] = Instantiate(SO_tutorialData.SO_Pages[page].SO_Tasks[task]);
+                clonedTasks.Add(Instantiate(task));
             }
+
+            clonedPage.SO_Tasks = clonedTasks;
+            _runtimeTutorialData.Add(clonedPage);
         }
+        _currentPage = 0; // Reset Page number
     }
 
     #region Tasks
@@ -98,7 +104,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     {
         if (!state) return;
 
-        SOObjectivePage currentPage = _runtimeTutorialData.SO_Pages[_currentPage];
+        SOObjectivePage currentPage = _runtimeTutorialData[_currentPage];
 
         if (currentPage.SO_Tasks.Count <= taskIndex) return;
 
@@ -111,9 +117,18 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         }
         CheckCompletion();
     }
+
+    public void ExecuteTask(int pageIndex, int conditionIndex)
+    {
+        if (_runtimeTutorialData[pageIndex].SO_Tasks[conditionIndex] != null)
+        {
+            _runtimeTutorialData[pageIndex].SO_Tasks[conditionIndex].Execute();
+        }
+    }
+
     protected void CheckCompletion() // Check if all conditions are complete
     {
-        foreach (SOObjectiveCondition condition in _runtimeTutorialData.SO_Pages[_currentPage].SO_Tasks)
+        foreach (SOObjectiveCondition condition in _runtimeTutorialData[_currentPage].SO_Tasks)
         {
             if (!condition._isCompleted) // if any task is not complete
             {

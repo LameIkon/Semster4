@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 428432ae7dc105844950b3db8f53828d, type: 3}
   m_Name: 1_Objective
   m_EditorClassIdentifier: 
-  SO_tutorialData: {fileID: 11400000, guid: 2e4111e65340ba64cbf006b256f6898a, type: 2}
+  SO_Pages:
+  - {fileID: 11400000, guid: db6ba6276f588644496409ed027e26d8, type: 2}
+  - {fileID: 11400000, guid: c1e4777cdde4eaa488374e03170a8ddf, type: 2}
+  - {fileID: 11400000, guid: 3fb460ba1fb14aa40a4edbe7e34d439f, type: 2}
   SO_trashToInstantiate:
   - {fileID: 6879808493778121822, guid: cd672ded2e02834419a7a04271104d05, type: 3}
   - {fileID: 6023552695703259733, guid: 9c6dc57fef7e2d14a9405db6d4cc0ebe, type: 3}
