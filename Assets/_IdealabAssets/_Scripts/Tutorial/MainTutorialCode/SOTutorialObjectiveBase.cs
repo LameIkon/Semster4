@@ -45,12 +45,12 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             Debug.Log("No page left");
             ExitState(TutorialManager.S_Instance);
         }
+
+        
     }
 
     protected void UpdateText(TutorialManager manager)
     {
-        Debug.Log(_currentPage);
-
         SOObjectivePage currentPageData = _runtimeTutorialData.SO_Pages[_currentPage];
 
         manager._Descriptiontext.text = currentPageData.SO_Description;
@@ -80,10 +80,6 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         _runtimeTutorialData = Instantiate(SO_tutorialData); // Clone the SO
         _currentPage = 0; // Reset Page number
 
-        //foreach (ObjectiveCondition condition in SO_tutorialData.SO_Tasks)
-        //{
-        //    _runtimeTutorialData.SO_Tasks.Add(Instantiate(condition)); // Just clone the object
-        //}
 
         for (int page = 0; page < SO_tutorialData.SO_Pages.Count; page++)
         {

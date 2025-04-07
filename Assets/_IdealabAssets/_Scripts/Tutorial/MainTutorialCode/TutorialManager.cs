@@ -8,6 +8,7 @@ public class TutorialManager : Singleton<TutorialManager>
     // All Objectives 
     public List<SOTutorialObjectiveBase> _allObjectives;
     private SOTutorialObjectiveBase _currentObjective; // Current Objective
+    [SerializeField] private Transform _spawnPoint;
 
     [Header("UI Components")]
     public GameObject _ContinueButton;
@@ -37,6 +38,11 @@ public class TutorialManager : Singleton<TutorialManager>
 
         _highlightDots[_currenProgressDisplay].SetActive(true); // Set new one to true
         _currenProgressDisplay++;
+    }
+
+    public Vector3 GetSpawnPosition()
+    {
+        return _spawnPoint.position;
     }
 
     public void NextObjective()
