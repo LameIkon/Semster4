@@ -3,10 +3,13 @@ using UnityEngine;
 
 public abstract class SOTutorialObjectiveBase : ScriptableObject
 {
-    //public SOTutorialData SO_tutorialData; // Scriptable
     [SerializeField] private List<SOObjectivePage> SO_Pages; // Original dataset
     protected List<SOObjectivePage> _runtimeTutorialData; // Cloned tutorial data
     protected int _currentPage;
+
+    [Tooltip("Optional: Only needed if you want to spawn objects. You can leave this empty.")]
+    [SerializeField] private List<GameObject> SO_trashToInstantiate; // Original list if need instantiate objects to the scene
+    protected List<GameObject> SO_SpawnedTrashObjects = new(); // Clone of original. To track if any objects are missing. To prvent soft lock
 
 
 
@@ -14,6 +17,8 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     {
         Debug.Log("Tutorial: Hold an Object");
         CloneData(); // Copy the scriptable objects that needs to be used
+        SO_SpawnedTrashObjects.Clear(); // Clear list of tracked objects
+        CreateObjects();
         UpdateText(manager); // Display/update UI
     }
     //public virtual void ExecuteState(TutorialManager manager) { }
@@ -47,9 +52,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         {
             Debug.Log("No page left");
             ExitState(TutorialManager.S_Instance);
-        }
-
-       
+        }  
     }
 
     protected void UpdateText(TutorialManager manager)
@@ -138,5 +141,42 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         CompleteState(TutorialManager.S_Instance); // Complete objective
     }
 
+    #endregion
+
+    #region CreateObjects
+    private void CreateObjects()
+    {
+        if (SO_trashToInstantiate == null) return; // Return if we dont have ny objects to check after
+
+        Vector3 spawnPosition = TutorialManager.S_Instance.GetSpawnPosition();
+        foreach (GameObject prefabObject in SO_trashToInstantiate)
+        {
+            GameObject spawned = Instantiate(prefabObject, spawnPosition, Quaternion.identity);
+            SO_SpawnedTrashObjects.Add(spawned);
+        }
+    }
+
+    public void CheckAndRestoreTrash(bool notUsedBool) // Should be called by event
+    {
+        if (SO_SpawnedTrashObjects == null) return; // Return if we dont have ny objects to check after
+
+        bool allGone = true;
+        Debug.Log(SO_SpawnedTrashObjects.Count);
+        foreach (GameObject prefabObject in SO_SpawnedTrashObjects)
+        {
+            if (prefabObject != null) // Ignore null references - objecs become null when destroyed
+            {
+                allGone = false;
+                break; // Stop if we find a value besides null
+            }
+        }
+
+        if (allGone) // If we have no objects in tracked list
+        {
+            Debug.Log("spawn");
+            SO_SpawnedTrashObjects.Clear(); // Clear old references
+            CreateObjects();
+        }
+    }
     #endregion
 }
