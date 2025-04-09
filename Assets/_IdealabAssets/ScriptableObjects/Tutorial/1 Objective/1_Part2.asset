@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
   m_Name: 1_Part2
   m_EditorClassIdentifier: 
-  SO_Description: "Pr\xF8v at samle noget affald op."
+  SO_Description: "Som det f\xF8rste pr\xF8v at samle noget affald op. Brug <color=#00CFFF>'gribe
+    knappen'</color>"
   SO_Tasks:
   - {fileID: 11400000, guid: 150097831c32ea14c91387c07bee2dcf, type: 2}
+  SO_ImagePrefab: {fileID: 1702973847924987156, guid: e5814a4102f454c4daf8d39e96c5b4db, type: 3}
   SO_KeepPreviousTaskDescription: 0
+  SO_KeepPreviousImage: 0

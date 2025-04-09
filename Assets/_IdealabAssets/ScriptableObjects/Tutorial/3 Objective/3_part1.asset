@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
   m_Name: 3_part1
   m_EditorClassIdentifier: 
-  SO_Description: "Inds\xE6t tekst her om inspicering. Tryk videre"
-  SO_Tasks: []
+  SO_Description: "Du har ogs\xE5 mulighed for at inspicer affaldet. Brug <color=#00CFFF>'Udv\xE6lg
+    knappen'</color> og f\xE5 <color=#00CFFF>sorteret affaldet</color>"
+  SO_Tasks:
+  - {fileID: 11400000, guid: da5bce419748f82448c8e39bb6c53608, type: 2}
+  - {fileID: 11400000, guid: a0e30015270ed52468aac7f990fed766, type: 2}
+  SO_ImagePrefab: {fileID: 5900248340988418859, guid: 8ebbad72411fc8947b04914e5c15e1d3, type: 3}
   SO_KeepPreviousTaskDescription: 0
+  SO_KeepPreviousImage: 0

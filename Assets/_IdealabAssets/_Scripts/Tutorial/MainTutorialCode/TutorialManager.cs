@@ -14,8 +14,8 @@ public class TutorialManager : Singleton<TutorialManager>
     public GameObject _ContinueButton;
     public TextMeshProUGUI _Descriptiontext;
     public TextMeshProUGUI _Objective;
-    [SerializeField] private GameObject[] _highlightDots;
     public GameObject _ImageHolder;
+    [SerializeField] private GameObject[] _highlightDots;
 
 
     private int _currentObjectiveIndex;

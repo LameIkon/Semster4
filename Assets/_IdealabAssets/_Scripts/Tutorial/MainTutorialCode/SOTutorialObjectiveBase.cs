@@ -63,7 +63,22 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         if (!currentPageData.SO_KeepPreviousTaskDescription) // Keep or remove it. Done in inspector
         {
             manager._Objective.text = string.Empty;
-        } 
+        }
+        
+        if (!currentPageData.SO_KeepPreviousImage)
+        {
+            foreach (Transform child in manager._ImageHolder.transform) // Check for child of imageholder
+            {
+                Destroy(child.gameObject); // Destory it since we dont need it. (For future maybe look for a way to activate and deactivate instead of instantiate and destroy)
+            }
+        }
+
+        if (currentPageData.SO_ImagePrefab != null) // If have Image create it and make it child of imageholder
+        {
+            Debug.Log("created image");
+            GameObject image = Instantiate(currentPageData.SO_ImagePrefab); // Instantiate
+            image.transform.SetParent(manager._ImageHolder.transform, false); // Set child to parent 
+        }
 
         foreach (SOObjectiveCondition currentCondition in currentPageData.SO_Tasks)
         {
@@ -75,6 +90,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
                 currentCondition._requiredAmount, // Max amount (2)
             currentCondition.SO_conditionDescription); // Task Description (3)
         }
+
         
         manager._ContinueButton.SetActive(!currentPageData.HasTasks()); // Show only if there are no tasks
     }
