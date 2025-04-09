@@ -79,8 +79,6 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         manager._ContinueButton.SetActive(!currentPageData.HasTasks()); // Show only if there are no tasks
     }
 
-
-
     public void CloneData()
     {
         _runtimeTutorialData = new List<SOObjectivePage>(); // Create new list of pages

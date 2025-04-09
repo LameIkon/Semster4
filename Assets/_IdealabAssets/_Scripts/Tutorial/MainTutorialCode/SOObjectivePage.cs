@@ -6,6 +6,7 @@ public class SOObjectivePage : ScriptableObject
 {
     [TextArea(3, 15)] public string SO_Description; // The text for this page
     public List<SOObjectiveCondition> SO_Tasks; // Tasks tied to this page
+    public GameObject SO_ImagePrefab; // To show Images
     public bool SO_KeepPreviousTaskDescription;
 
     public bool HasTasks()
