@@ -15,7 +15,6 @@ public class Trash : MonoBehaviour, ITrashable
     public float Trashing(SortingCategory type)
     {
         if (_data == null) throw new NullReferenceException();
-        Destroy(gameObject);
 
         if (type == _data.SO_PreferredCategory) // Will check the type it gets from the TrashBin to the Preferd and Okay types
         {
@@ -27,6 +26,17 @@ public class Trash : MonoBehaviour, ITrashable
         }
 
         return _data.SO_WrongCategoryPoints;
+    }
+
+    public bool Vomit(SortingCategory type) 
+    { 
+        if(type == _data.SO_PreferredCategory || type == _data.SO_AcceptableCategory) 
+        {
+            Destroy(gameObject);
+            return false; 
+        }
+
+        return true;     
     }
 
     public AudioClip TrashingSound()
@@ -51,7 +61,7 @@ public class Trash : MonoBehaviour, ITrashable
     {
         if (_data == null) throw new NullReferenceException();
 
-        if (_data.SO_PickUpAudio != null)
+        if (_data.SO_DropOnFloorAudio != null)
         {
             _audioSource.clip = _data.SO_DropOnFloorAudio;
             _audioSource.Play();

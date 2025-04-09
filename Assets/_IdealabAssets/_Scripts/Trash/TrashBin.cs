@@ -31,6 +31,9 @@ public class TrashBin : MonoBehaviour, ILoggable
     private readonly int _expandCorrectAnimation = Animator.StringToHash("ExpandCorrect");
     private readonly int _expandIncorrectAnimation = Animator.StringToHash("ExpandIncorrect");
 
+    [SerializeField] private float _vomitForce;
+    private Transform _mouthVomitPoint;
+
     private void OnTriggerEnter(Collider target)
     {
         if (_binData == null)
@@ -59,6 +62,13 @@ public class TrashBin : MonoBehaviour, ILoggable
         if (clip != null)
         {
             PlayTrashSound(clip);
+        }
+
+        if (trash.Vomit(_binData._AllowedType))
+        {
+            Rigidbody rb = target.GetComponent<Rigidbody>();
+            Vector3 fireDir = Quaternion.Euler(30, 0, 0) * _mouthVomitPoint.forward;
+            rb.AddForce(fireDir * _vomitForce, ForceMode.Impulse);
         }
     }
 
@@ -104,6 +114,7 @@ public class TrashBin : MonoBehaviour, ILoggable
         Rigidbody rb = GetComponent<Rigidbody>();
         rb.isKinematic = true;
         rb.detectCollisions = true;
+        _mouthVomitPoint = gameObject.GetComponentInChildren<Transform>();
     }
 #endregion
 }
