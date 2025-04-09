@@ -9,6 +9,9 @@ namespace UnityEngine.XR.Content.Interaction
     /// InputMediator works by injecting input processors on every binding in active action maps.
     /// Usage is via <see cref="ConsumeControl"/> and <see cref="ReleaseControl"/>.
     /// </summary>
+    /// 
+
+    /*
     public static class InputMediator
     {
         /// <summary>
@@ -410,5 +413,5 @@ namespace UnityEngine.XR.Content.Interaction
 
             return actionIndex;
         }
-    }
+    }*/
 }
