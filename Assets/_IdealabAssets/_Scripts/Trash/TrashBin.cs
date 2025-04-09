@@ -67,8 +67,8 @@ public class TrashBin : MonoBehaviour, ILoggable
         if (trash.Vomit(_binData._AllowedType))
         {
             Rigidbody rb = target.GetComponent<Rigidbody>();
-            Vector3 fireDir = Quaternion.Euler(30, 0, 0) * _mouthVomitPoint.forward;
-            rb.AddForce(fireDir * _vomitForce, ForceMode.Impulse);
+            Vector3 vomitDir = Quaternion.Euler(30, 0, 0) * _mouthVomitPoint.forward;
+            rb.AddForce(vomitDir * _vomitForce, ForceMode.Impulse);
         }
     }
 
