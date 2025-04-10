@@ -60,6 +60,10 @@ public class TutorialManager : Singleton<TutorialManager>
         else
         {
             Debug.Log("Finished tutorial");
+            if (GameManager.S_Instance != null)
+            {
+                GameManager.S_instance.SetGameMode(GameMode.NormalGameMode);
+            }
             _ContinueButton.SetActive(false);
             _currentObjective = null;
         }
