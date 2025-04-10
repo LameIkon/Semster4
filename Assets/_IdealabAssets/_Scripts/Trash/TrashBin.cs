@@ -22,6 +22,7 @@ public class TrashBin : MonoBehaviour, ILoggable
     public static event Action<float, SOTrashData> s_OnTrashedEvent2;
     public static event Action<string, string, float> s_OnLogEvent;
     public static event Action s_OnTrashedEvent3; // Used for tutorial
+    public static event Action s_OnTrashedEvent4; // Used for tutorial
 
     // Audio
     private AudioSource _audioSource;
@@ -47,6 +48,7 @@ public class TrashBin : MonoBehaviour, ILoggable
             s_OnTrashedEvent?.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
             s_OnTrashedEvent2?.Invoke((float)points, trash.TrashData());
             s_OnTrashedEvent3?.Invoke(); // Should always be true since the if statement above have accepted it 
+            Invoke(nameof(CheckFortrash),0.1f);
             if (s_OnLogEvent != null)
             {
                 s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name, (float)points);
@@ -60,6 +62,11 @@ public class TrashBin : MonoBehaviour, ILoggable
         {
             PlayTrashSound(clip);
         }
+    }
+
+    private void CheckFortrash()
+    {
+        s_OnTrashedEvent4?.Invoke();
     }
 
     private void PlayTrashSound(AudioClip clip)
