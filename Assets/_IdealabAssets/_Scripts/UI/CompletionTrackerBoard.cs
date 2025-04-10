@@ -41,8 +41,11 @@ public class CompletionTrackerBoard : MonoBehaviour
 
     private void HandleCrossOutFromBoard(float points, SOTrashData data)
     {
-        _trackerBoards.CrossOut(data);
-        PickUpTrash(data);
+        if (points > 0)
+        {
+            _trackerBoards.CrossOut(data);
+            PickUpTrash(data);
+        }
     }
 
     private void PickUpTrash(SOTrashData data)
