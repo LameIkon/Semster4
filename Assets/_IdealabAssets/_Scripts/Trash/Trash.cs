@@ -32,7 +32,7 @@ public class Trash : MonoBehaviour, ITrashable
 
     public bool Vomit(SortingCategory type)
     {
-        if (type == _data.SO_PreferredCategory || type == _data.SO_AcceptableCategory)
+        if (type == _data.SO_PreferredCategory) // || type == _data.SO_AcceptableCategory. Dont destroy accepted since we have concluded only looking at accepted or not accepted types
         {
             Destroy(gameObject);
             return false;
