@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
+using Random = System.Random;
 
 [RequireComponent(typeof(BoxCollider), typeof(Rigidbody), typeof(AudioSource)),
  RequireComponent(typeof(XRGrabInteractable), typeof(XRGeneralGrabTransformer), typeof(TrashDescriptionUIEnable))]
@@ -20,7 +21,8 @@ public class Trash : MonoBehaviour, ITrashable
         {
             return _data.SO_PreferredCategoryPoints;
         }
-        else if (type == _data.SO_AcceptableCategory)
+
+        if (type == _data.SO_AcceptableCategory)
         {
             return _data.SO_AcceptableCategoryPoints;
         }
@@ -28,52 +30,46 @@ public class Trash : MonoBehaviour, ITrashable
         return _data.SO_WrongCategoryPoints;
     }
 
-    public bool Vomit(SortingCategory type) 
-    { 
-        if(type == _data.SO_PreferredCategory || type == _data.SO_AcceptableCategory) 
+    public bool Vomit(SortingCategory type)
+    {
+        if (type == _data.SO_PreferredCategory || type == _data.SO_AcceptableCategory)
         {
             Destroy(gameObject);
-            return false; 
+            return false;
         }
 
-        return true;     
+        return true;
     }
 
     public AudioClip TrashingSound()
     {
-        if (_data == null) throw new NullReferenceException();
+        // TODO: Implement 
+        return null;
 
-        return _data.SO_DropInBinAudio;
+        // if (_data == null) throw new NullReferenceException();
+        //
+        // return _data.SO_DropInBinAudio;
     }
 
     public void PickUpSound()
     {
         if (_data == null) throw new NullReferenceException();
 
-        if (_data.SO_PickUpAudio != null)
-        {
-            _audioSource.clip = _data.SO_PickUpAudio;
-            _audioSource.Play();
-        }
+        AudioClip pickUpClip = _data.SO_PickUp[UnityEngine.Random.Range(0, _data.SO_PickUp.Length)];
+        _audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        _audioSource.clip = pickUpClip;
+        _audioSource.Play();
     }
 
     public void DropSound()
     {
         if (_data == null) throw new NullReferenceException();
 
-        if (_data.SO_DropOnFloorAudio != null)
-        {
-            _audioSource.clip = _data.SO_DropOnFloorAudio;
-            _audioSource.Play();
-        }
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Floor"))
-        {
-            DropSound();
-        }
+        AudioClip dropOnFloorClip = _data.SO_DropOnFloor[UnityEngine.Random.Range(0, _data.SO_DropOnFloor.Length)];
+        _audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+        _audioSource.clip = dropOnFloorClip;
+        Debug.Log("Should play NOW");
+        _audioSource.Play();
     }
 
     public SOTrashData TrashData()
