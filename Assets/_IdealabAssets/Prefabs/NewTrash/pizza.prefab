@@ -448,7 +448,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5a494339a69044498f7e98731186de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trashUIPanel: {fileID: 5296308629482924527, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+  _trashUIPanel: {fileID: 2003998293078492642}
   _trashData: {fileID: 11400000, guid: da74130ff49c8a94ab769b465ad5cdb7, type: 2}
 --- !u!114 &4314131668904602473
 MonoBehaviour:
@@ -472,6 +472,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6339869892745634474}
     m_Modifications:
+    - target: {fileID: 1406772183033754728, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_text
+      value: "Sodavandsd\xE5se"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527965520694219075, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_text
+      value: "Materiale: Metal (st\xE5l/aluminium)\n\nNedbrydningstid: 50-200 \xE5r.\n\nAffaldsh\xE5ndtering:
+        Pant eller metal"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -524,5 +545,10 @@ PrefabInstance:
 --- !u!4 &1190200965767012184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+  m_PrefabInstance: {fileID: 5931211534679452685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2003998293078492642 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5296308629482924527, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
   m_PrefabInstance: {fileID: 5931211534679452685}
   m_PrefabAsset: {fileID: 0}

@@ -8,6 +8,27 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5793080561197060397}
     m_Modifications:
+    - target: {fileID: 1406772183033754728, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_text
+      value: "Sodavandsd\xE5se"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4527965520694219075, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_text
+      value: "Materiale: Metal (st\xE5l/aluminium)\n\nNedbrydningstid: 50-200 \xE5r.\n\nAffaldsh\xE5ndtering:
+        Pant eller metal"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -60,6 +81,11 @@ PrefabInstance:
 --- !u!4 &6226545362206725544 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4813103421799936853, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+  m_PrefabInstance: {fileID: 1486950988696397565}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6711193202239491858 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5296308629482924527, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
   m_PrefabInstance: {fileID: 1486950988696397565}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6336443105383970502
@@ -526,7 +552,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5a494339a69044498f7e98731186de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trashUIPanel: {fileID: 5296308629482924527, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
+  _trashUIPanel: {fileID: 6711193202239491858}
   _trashData: {fileID: 11400000, guid: d7ccc3ce33d39704eb0a3c9122a37251, type: 2}
 --- !u!114 &2291691692528157150
 MonoBehaviour:
