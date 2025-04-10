@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine;
-using TMPro;
 
 [RequireComponent(typeof(BoxCollider), typeof(Animator), typeof(AudioSource)),
  RequireComponent(typeof(Rigidbody))]
@@ -35,6 +32,9 @@ public class TrashBin : MonoBehaviour, ILoggable
     [SerializeField] private float _vomitForce;
     private Transform _mouthVomitPoint;
 
+    [SerializeField] private bool _jonasBool = true;
+    [SerializeField] private bool _johanBool;
+
     private void OnTriggerEnter(Collider target)
     {
         if (_binData == null)
@@ -66,15 +66,28 @@ public class TrashBin : MonoBehaviour, ILoggable
             PlayTrashSound(clip);
         }
 
+        
+
         if (trash.Vomit(_binData._AllowedType))
         {
             Rigidbody rb = target.GetComponent<Rigidbody>();
-            Vector3 vomitDir = Quaternion.AngleAxis(30, _mouthVomitPoint.transform.right) * _mouthVomitPoint.transform.forward;
-            rb.AddForce(vomitDir * _vomitForce, ForceMode.Impulse);
-            Debug.DrawRay(_mouthVomitPoint.position, _mouthVomitPoint.forward * 2, Color.green);
-            Debug.DrawRay(_mouthVomitPoint.position, vomitDir * 2, Color.red);
+            if (_jonasBool)
+            {
+                Vector3 vomitDir = Quaternion.AngleAxis(30, _mouthVomitPoint.transform.right) * _mouthVomitPoint.transform.forward;
+                rb.AddForce(vomitDir * _vomitForce, ForceMode.Impulse);
+                Debug.DrawRay(_mouthVomitPoint.position, _mouthVomitPoint.forward * 2, Color.green);
+                Debug.DrawRay(_mouthVomitPoint.position, vomitDir * 2, Color.red);
+            }
+            else if (_johanBool)
+            {
+                Vector3 startPos = target.transform.position;
+                Vector3 targetPos = _mouthVomitPoint.position;
+                Vector3 vomitDir = (targetPos - startPos).normalized;
+                rb.AddForce(vomitDir * _vomitForce, ForceMode.Impulse);
+            }
         }
     }
+
 
     private void CheckFortrash()
     {

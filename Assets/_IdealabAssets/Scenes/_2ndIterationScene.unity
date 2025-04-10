@@ -7043,6 +7043,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PaperAndCardboard
       objectReference: {fileID: 0}
+    - target: {fileID: 1405752919845381853, guid: 9635d972de74e8148a6590117d73a481, type: 3}
+      propertyPath: _johanBool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1405752919845381853, guid: 9635d972de74e8148a6590117d73a481, type: 3}
+      propertyPath: _vomitForce
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 3423676575408325718, guid: 9635d972de74e8148a6590117d73a481, type: 3}
       propertyPath: m_LocalPosition.x
       value: 57.672966
@@ -7807,6 +7815,14 @@ PrefabInstance:
     - target: {fileID: 504248653683156389, guid: 64bff60a38824e542a41ea419766d98f, type: 3}
       propertyPath: m_Name
       value: Textiles
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175493277380470552, guid: 64bff60a38824e542a41ea419766d98f, type: 3}
+      propertyPath: _johanBool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175493277380470552, guid: 64bff60a38824e542a41ea419766d98f, type: 3}
+      propertyPath: _vomitForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3382597219862253264, guid: 64bff60a38824e542a41ea419766d98f, type: 3}
       propertyPath: m_Avatar
@@ -11695,6 +11711,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: d82458219b2e9d5418df228141d3c662, type: 2}
     - target: {fileID: 5731285390710959719, guid: 6a5703d7df9c4a14d97e07afca46fa85, type: 3}
+      propertyPath: _johanBool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5731285390710959719, guid: 6a5703d7df9c4a14d97e07afca46fa85, type: 3}
       propertyPath: _vomitForce
       value: 20
       objectReference: {fileID: 0}
@@ -11745,6 +11765,10 @@ PrefabInstance:
     - target: {fileID: 6744492145249544202, guid: 6a5703d7df9c4a14d97e07afca46fa85, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976255706829490667, guid: 6a5703d7df9c4a14d97e07afca46fa85, type: 3}
+      propertyPath: _johanBool
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6976255706829490667, guid: 6a5703d7df9c4a14d97e07afca46fa85, type: 3}
       propertyPath: _vomitForce
@@ -19837,6 +19861,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bin_pelican
       objectReference: {fileID: 0}
+    - target: {fileID: 4630936281810946670, guid: 5658d29582ef3734497a73f0fcb44be4, type: 3}
+      propertyPath: _jonasBool
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20083,6 +20111,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 2402721591643197881, guid: 96a38340a7dbf624fb945f301f87352e, type: 3}
+      propertyPath: _jonasBool
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6229562149913688652, guid: 96a38340a7dbf624fb945f301f87352e, type: 3}
       propertyPath: m_Name
       value: bin_goat
@@ -20373,6 +20405,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 1195359585772131959, guid: 11e2a7fe6641d6d4dbeb28b7aa273be4, type: 3}
+      propertyPath: _jonasBool
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3734111548376371718, guid: 11e2a7fe6641d6d4dbeb28b7aa273be4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.58
@@ -20549,6 +20585,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 1804625758752286176, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: _johanBool
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804625758752286176, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: _jonasBool
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574296197736693941, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574296197736693941, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0502
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574296197736693941, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0254
+      objectReference: {fileID: 0}
     - target: {fileID: 6060486595427574448, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.35
@@ -20838,6 +20894,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 1023430246795354947, guid: 8cf60f13de977a54e904c252f0ceabf6, type: 3}
+      propertyPath: _jonasBool
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6038849547839872886, guid: 8cf60f13de977a54e904c252f0ceabf6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.08
