@@ -59,6 +59,8 @@ public class TutorialManager : Singleton<TutorialManager>
         }
         else
         {
+            Debug.Log("Finished tutorial");
+            _ContinueButton.SetActive(false);
             _currentObjective = null;
         }
     }

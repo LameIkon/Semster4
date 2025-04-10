@@ -21,6 +21,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         CreateObjects();
         TrashBin.s_OnTrashedEvent4 += CheckAndRestoreTrash;
         UpdateText(manager); // Display/update UI
+        CheckCompletion(); // Check if there is any tasks.
     }
     //public virtual void ExecuteState(TutorialManager manager) { }
     public virtual void CompleteState(TutorialManager manager)
@@ -93,7 +94,6 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             currentCondition.SO_conditionDescription); // Task Description (3)
         }
 
-        
         manager._ContinueButton.SetActive(!currentPageData.HasTasks()); // Show only if there are no tasks
     }
 
