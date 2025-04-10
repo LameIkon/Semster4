@@ -18457,6 +18457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e68917133e3a1740be9e6be3b8e6f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isRightTrigger: 1
+  _isLeftTrigger: 0
 --- !u!1001 &1165323315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19853,8 +19855,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inputActionAsset: {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  _IsHoldingObjectButton: 0
-  _IsInspectingObjectButton: 0
 --- !u!1001 &1227939904
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21858,6 +21858,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e68917133e3a1740be9e6be3b8e6f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _isRightTrigger: 0
+  _isLeftTrigger: 1
 --- !u!65 &1341087824
 BoxCollider:
   m_ObjectHideFlags: 0

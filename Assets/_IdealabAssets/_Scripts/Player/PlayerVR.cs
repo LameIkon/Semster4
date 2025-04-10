@@ -17,12 +17,10 @@ public class PlayerVR : Singleton<PlayerVR>
     private InputAction _rightSelectionAction;
 
     // To track held objects
-    private GameObject _heldObject; // For other scripts to check if holding an object
-
-    [Header("booleans")] // For other scripts to check if buttons are being pressed
-    public bool _IsHoldingObjectButton;
-    public bool _IsInspectingObjectButton;
-
+    private GameObject _heldRightObject; // For other scripts to check if holding an object
+    private GameObject _heldLeftObject; // For other scripts to check if holding an object
+    private bool _toggleRightInspect;
+    private bool _toggleLeftInspect;
 
     public static event Action<bool> S_OnGripStateChanged; // Event to notify listeners
     public static event Action<bool> S_OnSelectStateChanged; // Event to notify listeners
@@ -51,52 +49,25 @@ public class PlayerVR : Singleton<PlayerVR>
         DisableLeftMap();
     }
 
-    private void OnGripStarted(InputAction.CallbackContext context)
+    private void OnGripStarted(InputAction.CallbackContext context) // Need delay since it takes time for item to get to hand
     {
         if (context.started)
         {
             Invoke(nameof(InvokeGrip),0.3f);
         }
     }
-
     private void InvokeGrip()
     {
         S_OnGripStateChanged?.Invoke(true);
     }
 
-    private void OnGripCanceled(InputAction.CallbackContext context)
-    {
-        if (context.canceled)
-        {
-            S_OnGripStateChanged?.Invoke(false);
-        }
-    }
-
-    public void TestGripButton()
-    {
-        S_OnGripStateChanged?.Invoke(true);
-    }
-
-    public void TestInspectButton() 
-    {
-        S_OnSelectStateChanged?.Invoke(true);
-    }
-
-    //public static event Action<bool> S_TestTrashing; // Used for tutorial
-    public void TestTrashingButton() // button
-    {
-        //S_TestTrashing?.Invoke(true);
-    }
-
-    public static event Action<bool> S_TestDoor; // Used for tutorial
-    public void TestDoorOpenedButton() 
-    {
-        S_TestDoor?.Invoke(true);
-    }
-
     public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {
-        if (_heldObject != null)
+        if (_heldRightObject != null)
+        {
+            return true;
+        }
+        else if (_heldLeftObject != null)
         {
             return true;
         }
@@ -104,58 +75,88 @@ public class PlayerVR : Singleton<PlayerVR>
         {
             return false;
         }
-        //return _heldObject != null;
     }
 
     public bool IsInspectingObject() // For other scripts 
     {
-        if (_heldObject != null && _toggleInspect)
+        if (_heldRightObject != null && _toggleRightInspect)
+        {
+            return true;
+        }
+        else if (_heldLeftObject != null && _toggleLeftInspect)
         {
             return true;
         }
         else
         {
-            Debug.Log(_toggleInspect);
             return false;
         }
     }
-
-    private bool _toggleInspect;
-    private void OnSelectStarted(InputAction.CallbackContext context)
+    #region Select
+    private void OnSelectRightStarted(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            Invoke(nameof(InvokeSelect), 0.3f);
-            _toggleInspect = true;
-            //S_OnGripStateChanged?.Invoke(true);            
+            Invoke(nameof(InvokeSelect), 0.2f);
+            _toggleRightInspect = true;          
         }
     }
 
-    private void OnSelectCancel(InputAction.CallbackContext context)
+    private void OnSelectRightCancel(InputAction.CallbackContext context)
     {
         if (context.canceled)
         {
-            _toggleInspect = false;
+            _toggleRightInspect = false;
             S_OnSelectStateChanged?.Invoke(false);
         }
     }
 
+    private void OnSelectLeftStarted(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            Invoke(nameof(InvokeSelect), 0.2f);
+            _toggleLeftInspect = true;          
+        }
+    }
+
+    private void OnSelectLeftCancel(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            _toggleLeftInspect = false;
+            S_OnSelectStateChanged?.Invoke(false);
+        }
+    }
     private void InvokeSelect()
     {
         S_OnSelectStateChanged?.Invoke(true);
     }
+    #endregion
 
-
-    public void OnObjectTriggerEnter(Collider other) // Used by hands for when entering its trigger
+    # region Triggers
+    public void OnObjectRightTriggerEnter(Collider other) // Used by hands for when entering its trigger
     {
-        _heldObject = other.gameObject;
+        _heldRightObject = other.gameObject;
     }
 
-    public void OnObjectTriggerExit() // Used by hands for when entering exiting trigger
+    public void OnObjectRightTriggerExit() // Used by hands for when entering exiting trigger
     {
-        _heldObject = null;
+        _heldRightObject = null;
     }
 
+    public void OnObjectLeftTriggerEnter(Collider other) // Used by hands for when entering its trigger
+    {
+        _heldLeftObject = other.gameObject;
+    }
+
+    public void OnObjectLeftTriggerExit() // Used by hands for when entering exiting trigger
+    {
+        _heldLeftObject = null;
+    }
+    #endregion
+
+    #region Input map
     private void FindActionMaps()
     {
         // Initialize the left and right Action Maps from the Input Action Asset
@@ -172,44 +173,59 @@ public class PlayerVR : Singleton<PlayerVR>
 
     private void EnableRightMap()
     {
-        //_rightGripAction.performed += OnGripPerformed;
         _rightGripAction.started += OnGripStarted;
-        _rightGripAction.canceled += OnGripCanceled;
 
-
-        //_rightSelectionAction.performed += OnSelectionPerformed;
-
-        _rightSelectionAction.started += OnSelectStarted;
-        _rightSelectionAction.canceled += OnSelectCancel;
+        _rightSelectionAction.started += OnSelectRightStarted;
+        _rightSelectionAction.canceled += OnSelectRightCancel;
     }
 
     private void EnableLeftMap()
     {
-        //_leftGripAction.performed += OnGripPerformed;
-        //_leftGripAction.canceled += OnGripReleased;
-        //_leftSelectionAction.performed += OnSelectionPerformed;
-        //_leftSelectionAction.canceled += OnSelectionReleased;
+        _leftGripAction.started += OnGripStarted;
+
+        _leftSelectionAction.started += OnSelectLeftStarted;
+        _leftSelectionAction.canceled += OnSelectLeftCancel;
     }
     private void DisableRightMap()
     {
-        //_rightGripAction.performed -= OnGripPerformed;
-       // _rightGripAction.canceled -= OnGripReleased;
-        //_rightSelectionAction.performed -= OnSelectionPerformed;
-        //_rightSelectionAction.canceled -= OnSelectionReleased;
-
         _rightGripAction.started -= OnGripStarted;
-        _rightGripAction.canceled -= OnGripCanceled;
-        _rightSelectionAction.started -= OnSelectStarted;
-        _rightSelectionAction.canceled -= OnSelectCancel;
+
+        _rightSelectionAction.started -= OnSelectRightStarted;
+        _rightSelectionAction.canceled -= OnSelectRightCancel;
     }
 
     private void DisableLeftMap()
     {
-        //_leftGripAction.performed -= OnGripPerformed;
-        //_leftGripAction.canceled -= OnGripReleased;
-        //_leftSelectionAction.performed -= OnSelectionPerformed;
-        //_leftSelectionAction.canceled -= OnSelectionReleased;
+        _leftGripAction.started -= OnGripStarted;
 
-
+        _leftSelectionAction.started -= OnSelectLeftStarted;
+        _leftSelectionAction.canceled-= OnSelectLeftCancel;
     }
+
+    #endregion
+
+    #region Testing
+    public void TestGripButton() // Test
+    {
+        S_OnGripStateChanged?.Invoke(true);
+    }
+
+    public void TestInspectButton() // Test
+    {
+        S_OnSelectStateChanged?.Invoke(true);
+    }
+
+    public static event Action<bool> S_TestTrashing; // Used for tutorial
+    public void TestTrashingButton() // button
+    {
+        S_TestTrashing?.Invoke(true);
+    }
+
+    public static event Action<bool> S_TestDoor; // Used for tutorial
+    public void TestDoorOpenedButton() 
+    {
+        S_TestDoor?.Invoke(true);
+    }
+
+    #endregion
 }
