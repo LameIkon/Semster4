@@ -20,7 +20,7 @@ public class TrashBin : MonoBehaviour, ILoggable
     // Events
     public static event Action<GameObject, float> s_OnTrashedEvent; // The event that connects to the TrashManager
     public static event Action<float, SOTrashData> s_OnTrashedEvent2;
-    public static event Action<string, string, float> s_OnLogEvent;
+    public static event Action<string, string> s_OnLogEvent;
     public static event Action s_OnTrashedEvent3; // Used for tutorial
     public static event Action s_OnTrashedEvent4; // Used for tutorial
 
@@ -54,7 +54,7 @@ public class TrashBin : MonoBehaviour, ILoggable
             Invoke(nameof(CheckFortrash),0.1f);
             if (s_OnLogEvent != null)
             {
-                s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name, (float)points);
+                s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name);
             }
 
             EnablePolish(points);

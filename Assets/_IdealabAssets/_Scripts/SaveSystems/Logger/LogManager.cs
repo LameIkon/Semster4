@@ -38,9 +38,9 @@ public class LogManager : Singleton<LogManager>
     }
 #endregion
 
-    private void Add(string trash, string trashBin, float points)
+    private void Add(string trash, string trashBin)
     {
-        _data.AddToDic(trash, trashBin, points);
+        _data.AddToDic(trash, trashBin);
         _logger.Log();
     }
 

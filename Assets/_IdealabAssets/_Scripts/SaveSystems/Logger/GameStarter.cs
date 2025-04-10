@@ -20,7 +20,7 @@ public class GameStarter : MonoBehaviour
         if (target.GetComponent<CharacterController>() != null || target.GetComponent<XRDeviceSimulator>() != null)
         {
             s_OnGameStartEvent?.Invoke();
-            Destroy(gameObject);
+            Destroy(this);
         }
     }
 
