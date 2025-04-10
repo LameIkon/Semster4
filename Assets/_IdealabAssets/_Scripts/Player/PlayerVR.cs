@@ -77,8 +77,14 @@ public class PlayerVR : Singleton<PlayerVR>
         if (context.started)
         {
             Debug.Log("started");
-            S_OnGripStateChanged?.Invoke(true);
+            Invoke(nameof(InvokeGrip),0.3f);
+            //S_OnGripStateChanged?.Invoke(true);
         }
+    }
+
+    private void InvokeGrip()
+    {
+        S_OnGripStateChanged?.Invoke(true);
     }
 
     private void OnGripCanceled(InputAction.CallbackContext context)
@@ -129,10 +135,12 @@ public class PlayerVR : Singleton<PlayerVR>
     {
         if (_heldObject != null && _toggleInspect)
         {
+            Debug.Log("true");
             return true;
         }
         else
         {
+            Debug.Log(_toggleInspect);
             return false;
         }
     }
@@ -143,17 +151,9 @@ public class PlayerVR : Singleton<PlayerVR>
         if (context.started)
         {
             Debug.Log("started");
-            S_OnGripStateChanged?.Invoke(true);
-
-            if (_heldObject)
-            {
-                _toggleInspect = true;
-            }
-            else
-            {
-                _toggleInspect = false;
-            }
-            
+            Invoke(nameof(InvokeSelect), 0.3f);
+            _toggleInspect = true;
+            //S_OnGripStateChanged?.Invoke(true);            
         }
     }
 
@@ -161,9 +161,15 @@ public class PlayerVR : Singleton<PlayerVR>
     {
         if (context.canceled)
         {
+            _toggleInspect = false;
             Debug.Log("canceled");
-            S_OnGripStateChanged?.Invoke(false);
+            S_OnSelectStateChanged?.Invoke(false);
         }
+    }
+
+    private void InvokeSelect()
+    {
+        S_OnSelectStateChanged?.Invoke(true);
     }
 
 

@@ -70,4 +70,14 @@ public class TutorialManager : Singleton<TutorialManager>
             _currentObjective.NextPage();
         }
     }
+
+    public void UnlockDoor()
+    {
+        Debug.Log("door unlocked");
+    }
+
+    public void LockDoor()
+    {
+        Debug.Log("door locked");
+    }
 }
