@@ -29,3 +29,17 @@ MonoBehaviour:
   SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
   SO_DropOnFloorAudio: {fileID: 0}
   SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 6d4d7ce452d09604aa97949aa0efa846, type: 3}
+  - {fileID: 8300000, guid: 895db0a8b6d8c4a4e87a50e9577857e9, type: 3}
+  - {fileID: 8300000, guid: d465ed2711376d7409a9201e34858738, type: 3}
+  - {fileID: 8300000, guid: c0ce338964c71fb4293a23d9621da38f, type: 3}
+  - {fileID: 8300000, guid: b29e95888eb5e6f42bd40065b642001c, type: 3}
+  - {fileID: 8300000, guid: 2811944a681e7614db716179f447d2cb, type: 3}
+  - {fileID: 8300000, guid: 433e682f07eaa3c4ca04b0049ccf0e8d, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 54bb2cf8d91ff6a488c887b328e4ff74, type: 3}
+  - {fileID: 8300000, guid: bbaa9d24699370a4aa9fb5c004681056, type: 3}
+  - {fileID: 8300000, guid: 7440cb05b5aff2f4d94e14afe6629e8c, type: 3}
+  - {fileID: 8300000, guid: 25c04c6c7a8dbf0429cac81a1f3f8863, type: 3}
+  - {fileID: 8300000, guid: 976f0786a3bbff647a4c1241f8959d3e, type: 3}

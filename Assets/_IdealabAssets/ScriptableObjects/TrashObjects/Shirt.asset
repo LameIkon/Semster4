@@ -15,13 +15,21 @@ MonoBehaviour:
   SO_Name: "Tr\xF8je"
   SO_Description: "Materiale: Tekstil\n\nNedbrydningstid: Bomuld (1-5 \xE5r), Polyester
     (20-200 \xE5r)\n\nAffaldsh\xE5ndtering: Genbrug (hvis i god stand)"
-  SO_PreferdType: 6
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 6
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Da det er t\xF8j skal det sortes som tekstilaffald."
   InfoIfSortedWrongly: "Da det er t\xF8j skal det sortes som tekstilaffald."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 8300000, guid: 852f1ca83534d1946bbba3b539a77bbc, type: 3}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 8300000, guid: 852f1ca83534d1946bbba3b539a77bbc, type: 3}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 3fd493dcd911ba84a9a0ae104c896fb3, type: 3}
+  - {fileID: 8300000, guid: 2435e0e7ea47e4a4ea7ef0294a0adefa, type: 3}
+  - {fileID: 8300000, guid: b27f2051ad7221c43a05fb0f16748f26, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 3395a4580ce747543948f0a1ef32e359, type: 3}
+  - {fileID: 8300000, guid: 58f0d478a8f5c2f4cb371a4e2c65416d, type: 3}

@@ -15,16 +15,29 @@ MonoBehaviour:
   SO_Name: "Syltet\xF8jsglas"
   SO_Description: "Materiale: Glas.\n\nNedbrydningstid: Flere tusinde \xE5r.\n\nAffaldsh\xE5ndtering:
     Knuses og smeltes om til nye glasskomponenter.\n"
-  SO_PreferdType: 3
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 3
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: 'Fordi beholderen er lavet af glas skal det sorteres ud
     til glas. '
   InfoIfSortedWrongly: 'Fordi beholderen er lavet af glas skal det sorteres ud til
     glas. '
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
-  SO_PickUpAudioClip: {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}
-  SO_DropOnFloorAudioClip: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
+  SO_DropOnFloorAudio: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
+  SO_PickUpAudio: {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 2dc8b6240cb08fe4d847ef1249856a33, type: 3}
+  - {fileID: 8300000, guid: 211f73e848a996543a61e9d9d310e06a, type: 3}
+  - {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
+  - {fileID: 8300000, guid: c8d91622fb6789f448bafb21cd3ea19e, type: 3}
+  - {fileID: 8300000, guid: e71133cca5651e1429266c0415fe4b3a, type: 3}
+  - {fileID: 8300000, guid: ed23b2cd348a10b47ae58baaec5095ad, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: ab238e0c3ee7aef4b9069bd120b03ea7, type: 3}
+  - {fileID: 8300000, guid: 46f33dc08a1dc634a9008eab43f80718, type: 3}
+  - {fileID: 8300000, guid: 6ecb9184a29a4ac42a2f8d4fec84e339, type: 3}
+  - {fileID: 8300000, guid: 42f04feb2c57eee418f42c900b390944, type: 3}
+  - {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}

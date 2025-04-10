@@ -15,13 +15,25 @@ MonoBehaviour:
   SO_Name: Mobiloplader
   SO_Description: "Materiale: Elektronik.\n\nNedbrydningstid: Flere hundrede \xE5r.\n\nAffaldsh\xE5ndtering:
     skal afleveres p\xE5 genbrugsplads."
-  SO_PreferdType: 5
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -5
+  SO_PreferredCategory: 5
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -5
   InfoIfSortedCorrectly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
   InfoIfSortedWrongly: "Elektronik skal i farligt affald eller ud p\xE5 en genbrugsstation"
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: a7c542e44b3a24449ac55befaec07038, type: 3}
+  - {fileID: 8300000, guid: 88f9c4f9cbfa71c4e9be6e076b540fb8, type: 3}
+  - {fileID: 8300000, guid: 9d59ffbf65117334296bc7cc01bd7bbc, type: 3}
+  - {fileID: 8300000, guid: 67c21d8bd2620bc4b93ce871d6c0a0ac, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 54bb2cf8d91ff6a488c887b328e4ff74, type: 3}
+  - {fileID: 8300000, guid: bbaa9d24699370a4aa9fb5c004681056, type: 3}
+  - {fileID: 8300000, guid: 7440cb05b5aff2f4d94e14afe6629e8c, type: 3}
+  - {fileID: 8300000, guid: 25c04c6c7a8dbf0429cac81a1f3f8863, type: 3}
+  - {fileID: 8300000, guid: 976f0786a3bbff647a4c1241f8959d3e, type: 3}

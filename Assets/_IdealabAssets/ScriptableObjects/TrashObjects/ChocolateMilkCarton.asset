@@ -16,16 +16,28 @@ MonoBehaviour:
   SO_Description: "Materiale: Pap (ca. 75%) + plast (ca. 20%) + aluminium (ca. 5%).\n\nNedbrydningstid:
     5-10 \xE5r for beholderen og 30-70+\xE5r for plastikl\xE5get.\n\nAffaldsh\xE5ndtering:
     Det bliver genanvendt til nyt pap og plastik."
-  SO_PreferdType: 4
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 1
-  SO_AcceptableTypePoints: 0
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 4
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 1
+  SO_AcceptableCategoryPoints: 0
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Selvom den best\xE5r af forskellige materialer, skal den
     i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
   InfoIfSortedWrongly: "Selvom den best\xE5r af forskellige materialer, skal den
     i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 8e2c8e73cc68a884b8358f3949f0312b, type: 3}
-  SO_PickUpAudioClip: {fileID: 8300000, guid: ab8d95e2b47059948bc013c1915fa018, type: 3}
-  SO_DropOnFloorAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 8e2c8e73cc68a884b8358f3949f0312b, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 8300000, guid: ab8d95e2b47059948bc013c1915fa018, type: 3}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 28354e99b883e5847a8266656f55aeba, type: 3}
+  - {fileID: 8300000, guid: 8e2c8e73cc68a884b8358f3949f0312b, type: 3}
+  - {fileID: 8300000, guid: a05d95588c9c32041bcc3405a4eb2389, type: 3}
+  - {fileID: 8300000, guid: ab8d95e2b47059948bc013c1915fa018, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 3d76a42878b9f814bb39a8489c199e1a, type: 3}
+  - {fileID: 8300000, guid: 879cdd29f6bd79e4c8e6899af9eaa244, type: 3}
+  - {fileID: 8300000, guid: 4e87687046804e6498b45bf741a806c1, type: 3}
+  - {fileID: 8300000, guid: fab1ba920486a294c833c6ac7dbdaec8, type: 3}
+  - {fileID: 8300000, guid: 969307383800d0c4b99c4d39a05ddb07, type: 3}
+  - {fileID: 8300000, guid: 9348112dad2e65642b66402e7d0cf6d8, type: 3}

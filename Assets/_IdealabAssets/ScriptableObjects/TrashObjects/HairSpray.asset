@@ -16,16 +16,29 @@ MonoBehaviour:
   SO_Description: "Materiale: Metal + kemikalier.\n\nNedbrydningstid: 50-200 \xE5r.\n\nAffaldsh\xE5ndtering:
     Affald best\xE5ende af kemikalier skal sorteres korrekt, da det indeholder skadelige
     komponenter."
-  SO_PreferdType: 5
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -5
+  SO_PreferredCategory: 5
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -5
   InfoIfSortedCorrectly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
     rester af kemikalier og derfor skal den altid smides ud i farligt affald."
   InfoIfSortedWrongly: "Selvom beholderen er lavet af metal, kan der godt v\xE6re
     rester af kemikalier og derfor skal den altid smides ud i farligt affald."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 871244e86929c5248a94e719456d6eea, type: 3}
-  SO_PickUpAudioClip: {fileID: 8300000, guid: 6396910bb413bd4499c48651d2213f98, type: 3}
-  SO_DropOnFloorAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 871244e86929c5248a94e719456d6eea, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 8300000, guid: 6396910bb413bd4499c48651d2213f98, type: 3}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: c1fd0d836d5f1324bbbfb522a36f2f8a, type: 3}
+  - {fileID: 8300000, guid: f6490edfff8486a4e92b47b43fb37119, type: 3}
+  - {fileID: 8300000, guid: 4d863358a0b2ef645989cd9cbf3417dc, type: 3}
+  - {fileID: 8300000, guid: 0ae74dd46d89d9141a59edde8a95b934, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: d003d5d79db5ad84984b0ab32e4ebc86, type: 3}
+  - {fileID: 8300000, guid: 8e1818b8aff860c48b0853658bec56af, type: 3}
+  - {fileID: 8300000, guid: af2f22a12b345774db26540d9d776496, type: 3}
+  - {fileID: 8300000, guid: 86afacf33a194914287c67beefa25d8c, type: 3}
+  - {fileID: 8300000, guid: aa61b35dfb64224438807c65c203a327, type: 3}
+  - {fileID: 8300000, guid: 3f0c9edce9002de478bbd2f0a25e3084, type: 3}
+  - {fileID: 8300000, guid: 26e7acd75b7def74a849690a8c623c59, type: 3}

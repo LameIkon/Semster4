@@ -15,13 +15,24 @@ MonoBehaviour:
   SO_Name: "\xC6ggebakke"
   SO_Description: "Materiale: Papir/pap.\n\nNedbrydningstid: Ca. 3 m\xE5neder.\n\nAffaldsh\xE5ndtering:
     Omdannes til nyt pap eller papir."
-  SO_PreferdType: 2
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 1
-  SO_AcceptableTypePoints: 0
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 2
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 1
+  SO_AcceptableCategoryPoints: 0
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Da den best\xE5r af pap skal det sorteres til pap."
   InfoIfSortedWrongly: "Da den best\xE5r af pap skal det sorteres til pap."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 114c341cdebb0a44da83f134cee92dc8, type: 3}
+  - {fileID: 8300000, guid: 0f936e12aac17b34ca700e5e3f83b0ce, type: 3}
+  - {fileID: 8300000, guid: c721f046f6c0229479384b7a141052ff, type: 3}
+  - {fileID: 8300000, guid: 39904f223be83c94eb20ad492aa03e56, type: 3}
+  - {fileID: 8300000, guid: 6f3050454927fa44585e4917e05fb666, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 73f1fd393455b4243a03689e0c7ad747, type: 3}
+  - {fileID: 8300000, guid: fcd32f1389b06444ca1ccd039a2a4f24, type: 3}
+  - {fileID: 8300000, guid: 4096f79f2930d164babe4be3e9b8458f, type: 3}

@@ -16,15 +16,31 @@ MonoBehaviour:
   SO_Description: "Materiale: Plastik (polypropylen + nylon)\n\nNedbrydningstid:
     Flere hundrede \xE5r\n\nAffaldsh\xE5ndtering: Restaffald  (Br\xE6ndes til fjernvarme
     og elproduktion.)"
-  SO_PreferdType: 1
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 7
-  SO_AcceptableTypePoints: 1
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 1
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 7
+  SO_AcceptableCategoryPoints: 1
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Da den best\xE5r af mange forskellige materiale er det
     sv\xE6rt at genbruge det."
   InfoIfSortedWrongly: "Da den best\xE5r af mange forskellige materiale er det sv\xE6rt
     at genbruge det."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 6d4d7ce452d09604aa97949aa0efa846, type: 3}
+  - {fileID: 8300000, guid: 895db0a8b6d8c4a4e87a50e9577857e9, type: 3}
+  - {fileID: 8300000, guid: d465ed2711376d7409a9201e34858738, type: 3}
+  - {fileID: 8300000, guid: c0ce338964c71fb4293a23d9621da38f, type: 3}
+  - {fileID: 8300000, guid: b29e95888eb5e6f42bd40065b642001c, type: 3}
+  - {fileID: 8300000, guid: 2811944a681e7614db716179f447d2cb, type: 3}
+  - {fileID: 8300000, guid: 433e682f07eaa3c4ca04b0049ccf0e8d, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 3d76a42878b9f814bb39a8489c199e1a, type: 3}
+  - {fileID: 8300000, guid: 879cdd29f6bd79e4c8e6899af9eaa244, type: 3}
+  - {fileID: 8300000, guid: 4e87687046804e6498b45bf741a806c1, type: 3}
+  - {fileID: 8300000, guid: fab1ba920486a294c833c6ac7dbdaec8, type: 3}
+  - {fileID: 8300000, guid: 969307383800d0c4b99c4d39a05ddb07, type: 3}
+  - {fileID: 8300000, guid: 9348112dad2e65642b66402e7d0cf6d8, type: 3}
