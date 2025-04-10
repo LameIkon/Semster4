@@ -51,22 +51,43 @@ public class PlayerVR : Singleton<PlayerVR>
         DisableLeftMap();
     }
 
-    private void OnGripPerformed(InputAction.CallbackContext context)
+    //private void OnGripPerformed(InputAction.CallbackContext context)
+    //{
+    //    if (context.started)
+    //    {
+    //        Debug.Log("started");
+    //        //_IsHoldingObjectButton = true;
+    //        S_OnGripStateChanged?.Invoke(context.started);
+    //        Debug.Log(context.started);
+    //    }
+    //    else if (context.canceled)
+    //    {
+    //        Debug.Log("cancelled");
+    //        S_OnGripStateChanged?.Invoke(context.canceled);
+    //        Debug.Log(context.canceled);
+    //    }
+    //    else if (context.performed)
+    //    {
+    //        Debug.Log(context.performed);
+    //    }
+    //}
+
+    private void OnGripStarted(InputAction.CallbackContext context)
     {
-        bool isHolding = context.performed;
-        S_OnGripStateChanged?.Invoke(isHolding);
+        if (context.started)
+        {
+            Debug.Log("started");
+            S_OnGripStateChanged?.Invoke(true);
+        }
+    }
 
-
-        //if (context.performed)
-        //{
-        //    //_IsHoldingObjectButton = true;
-        //    OnGripStateChanged?.Invoke(true);
-        //}
-        //else if (context.canceled)
-        //{
-        //    //_IsHoldingObjectButton = false;
-        //    OnGripStateChanged?.Invoke(false);
-        //}
+    private void OnGripCanceled(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            Debug.Log("cancelled");
+            S_OnGripStateChanged?.Invoke(false);
+        }
     }
 
     public void TestGripButton()
@@ -93,38 +114,68 @@ public class PlayerVR : Singleton<PlayerVR>
 
     public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {
-        return true;
+        if (_heldObject != null)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
         //return _heldObject != null;
     }
 
-    public bool IsInspectingObject()
+    public bool IsInspectingObject() // For other scripts 
     {
-        return true;
+        if (_heldObject != null && _toggleInspect)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
-    //private void OnGripReleased(InputAction.CallbackContext context)
-    //{
-    //    _IsHoldingObjectButton = false;
-    //}
-
-    private void OnSelectionPerformed(InputAction.CallbackContext context)
+    private bool _toggleInspect;
+    private void OnSelectStarted(InputAction.CallbackContext context)
     {
-        _IsInspectingObjectButton = true;
+        if (context.started)
+        {
+            Debug.Log("started");
+            S_OnGripStateChanged?.Invoke(true);
+
+            if (_heldObject)
+            {
+                _toggleInspect = true;
+            }
+            else
+            {
+                _toggleInspect = false;
+            }
+            
+        }
     }
 
-    //private void OnSelectionReleased(InputAction.CallbackContext context)
-    //{
-    //    _IsInspectingObjectButton = false;
-    //}
+    private void OnSelectCancel(InputAction.CallbackContext context)
+    {
+        if (context.canceled)
+        {
+            Debug.Log("canceled");
+            S_OnGripStateChanged?.Invoke(false);
+        }
+    }
 
 
     public void OnObjectTriggerEnter(Collider other) // Used by hands for when entering its trigger
     {
+        Debug.Log("you are holding an object");
         _heldObject = other.gameObject;
     }
 
     public void OnObjectTriggerExit() // Used by hands for when entering exiting trigger
     {
+        Debug.Log("stopped holding object");
         _heldObject = null;
     }
 
@@ -140,37 +191,48 @@ public class PlayerVR : Singleton<PlayerVR>
 
         _leftSelectionAction = _leftActionMap.FindAction("Activate");
         _rightSelectionAction = _rightActionMap.FindAction("Activate");
-
     }
 
     private void EnableRightMap()
     {
-        _rightGripAction.performed += OnGripPerformed;
-        //_rightGripAction.canceled += OnGripReleased;
-        _rightSelectionAction.performed += OnSelectionPerformed;
-        //_rightSelectionAction.canceled += OnSelectionReleased;
+        //_rightGripAction.performed += OnGripPerformed;
+        _rightGripAction.started += OnGripStarted;
+        _rightGripAction.canceled += OnGripCanceled;
+
+
+        //_rightSelectionAction.performed += OnSelectionPerformed;
+
+        _rightSelectionAction.started += OnSelectStarted;
+        _rightSelectionAction.canceled += OnSelectCancel;
     }
 
     private void EnableLeftMap()
     {
-        _leftGripAction.performed += OnGripPerformed;
+        //_leftGripAction.performed += OnGripPerformed;
         //_leftGripAction.canceled += OnGripReleased;
-        _leftSelectionAction.performed += OnSelectionPerformed;
+        //_leftSelectionAction.performed += OnSelectionPerformed;
         //_leftSelectionAction.canceled += OnSelectionReleased;
     }
     private void DisableRightMap()
     {
-        _rightGripAction.performed -= OnGripPerformed;
+        //_rightGripAction.performed -= OnGripPerformed;
        // _rightGripAction.canceled -= OnGripReleased;
-        _rightSelectionAction.performed -= OnSelectionPerformed;
+        //_rightSelectionAction.performed -= OnSelectionPerformed;
         //_rightSelectionAction.canceled -= OnSelectionReleased;
+
+        _rightGripAction.started -= OnGripStarted;
+        _rightGripAction.canceled -= OnGripCanceled;
+        _rightSelectionAction.started -= OnSelectStarted;
+        _rightSelectionAction.canceled -= OnSelectCancel;
     }
 
     private void DisableLeftMap()
     {
-        _leftGripAction.performed -= OnGripPerformed;
+        //_leftGripAction.performed -= OnGripPerformed;
         //_leftGripAction.canceled -= OnGripReleased;
-        _leftSelectionAction.performed -= OnSelectionPerformed;
+        //_leftSelectionAction.performed -= OnSelectionPerformed;
         //_leftSelectionAction.canceled -= OnSelectionReleased;
+
+
     }
 }
