@@ -19,6 +19,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         CloneData(); // Copy the scriptable objects that needs to be used
         SO_SpawnedTrashObjects.Clear(); // Clear list of tracked objects
         CreateObjects();
+        TrashBin.s_OnTrashedEvent4 += CheckAndRestoreTrash;
         UpdateText(manager); // Display/update UI
     }
     //public virtual void ExecuteState(TutorialManager manager) { }
@@ -36,6 +37,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     public virtual void ExitState(TutorialManager manager)
     {
         Debug.Log("Exit: Holding Object");
+        TrashBin.s_OnTrashedEvent4 -= CheckAndRestoreTrash;
         manager.NextObjective(); // Start next objective
     }
 
@@ -121,7 +123,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     {
         if (!state) return;
 
-        CheckAndRestoreTrash(); // WIP
+        //CheckAndRestoreTrash(); // WIP
         
         SOObjectivePage currentPage = _runtimeTutorialData[_currentPage];
 
@@ -134,7 +136,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             condition.Execute();
             UpdateText(TutorialManager.S_Instance);
         }
-        CheckAndRestoreTrash(); // WIP. Checker for trash. Safety feature that will check for every progress done to prevent soft lock.
+        //CheckAndRestoreTrash(); // WIP. Checker for trash. Safety feature that will check for every progress done to prevent soft lock.
         CheckCompletion();
     }
 
@@ -179,12 +181,11 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         if (SO_SpawnedTrashObjects == null) return; // Return if we dont have any objects to check after
 
         bool allGone = true;
-        Debug.Log(SO_SpawnedTrashObjects.Count);
         foreach (GameObject prefabObject in SO_SpawnedTrashObjects)
         {
             if (prefabObject != null) // Ignore null references - objecs become null when destroyed
             {
-                Debug.Log("still have trash");
+                Debug.Log(prefabObject.name);
                 allGone = false;
                 break; // Stop if we find a value besides null
             }
