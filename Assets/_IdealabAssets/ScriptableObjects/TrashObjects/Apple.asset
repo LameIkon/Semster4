@@ -17,7 +17,7 @@ MonoBehaviour:
     Genanvendes til biogas og g\xF8dning."
   SO_PreferredCategory: 0
   SO_PreferredCategoryPoints: 2
-  SO_AcceptableCategory: 1
+  SO_AcceptableCategory: 7
   SO_AcceptableCategoryPoints: 0
   SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "\xC6ble er organisk materiale og skal ud i madaffald da
@@ -25,9 +25,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: "\xC6ble er organisk materiale og skal ud i madaffald da det
     laves om til biogas."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 0}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 61377ae90f2923845bffb93aa75af3ed, type: 3}
   - {fileID: 8300000, guid: 6220f6b5e86287647a48e6f09b5fe7c9, type: 3}
@@ -40,3 +37,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6fcfe109caf0a8941943b7ce44da77ba, type: 3}
   - {fileID: 8300000, guid: 0e4b95b249f7cf14680eb875ebc59c29, type: 3}
   - {fileID: 8300000, guid: 509669ffb9d16fb4f80452ef45d3f831, type: 3}
+  SO_DropInBin: []

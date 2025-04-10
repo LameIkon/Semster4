@@ -19825,6 +19825,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bin_pelican
       objectReference: {fileID: 0}
+    - target: {fileID: 9087907859991433231, guid: 5658d29582ef3734497a73f0fcb44be4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -1879831266629077759, guid: 533891fb000471b4ca4abe8ab203c964, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20071,6 +20075,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 1514637291263227527, guid: 96a38340a7dbf624fb945f301f87352e, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 3018293464407900647, guid: 2fa792c607dabb148b63d0fbc58184eb, type: 3}
     - target: {fileID: 6229562149913688652, guid: 96a38340a7dbf624fb945f301f87352e, type: 3}
       propertyPath: m_Name
       value: bin_goat
@@ -20405,6 +20413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: bin_temu_spheal
       objectReference: {fileID: 0}
+    - target: {fileID: 5356776652748191884, guid: 11e2a7fe6641d6d4dbeb28b7aa273be4, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 34875105856698224, guid: 60d42be8add4f6a47b6858d08222a5b7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -20537,6 +20549,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2142744337}
     m_Modifications:
+    - target: {fileID: 993304692815076692, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1367606472988813792, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2263317838190272382, guid: 4097948222a5ff849b9ae428f9f708a9, type: 3}
     - target: {fileID: 6060486595427574448, guid: de73abc291ba733478194ce51adf0a5f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.35
@@ -20866,6 +20886,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6342213105644454883, guid: 8cf60f13de977a54e904c252f0ceabf6, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -8191557880837907402, guid: e1d6110a49c5b214ea544ece097dbd2d, type: 3}
     - target: {fileID: 6378677103813346764, guid: 8cf60f13de977a54e904c252f0ceabf6, type: 3}
       propertyPath: m_Name
       value: bin_snake

@@ -18,7 +18,7 @@ MonoBehaviour:
     Det bliver genanvendt til nyt pap og plastik."
   SO_PreferredCategory: 4
   SO_PreferredCategoryPoints: 2
-  SO_AcceptableCategory: 1
+  SO_AcceptableCategory: 7
   SO_AcceptableCategoryPoints: 0
   SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Selvom den best\xE5r af forskellige materialer, skal den
@@ -26,9 +26,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: "Selvom den best\xE5r af forskellige materialer, skal den
     i plastik/drikkekarton, fordi i pap m\xE5 der ikke komme plastik."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 8e2c8e73cc68a884b8358f3949f0312b, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 8300000, guid: ab8d95e2b47059948bc013c1915fa018, type: 3}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 28354e99b883e5847a8266656f55aeba, type: 3}
   - {fileID: 8300000, guid: 8e2c8e73cc68a884b8358f3949f0312b, type: 3}
@@ -41,3 +38,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fab1ba920486a294c833c6ac7dbdaec8, type: 3}
   - {fileID: 8300000, guid: 969307383800d0c4b99c4d39a05ddb07, type: 3}
   - {fileID: 8300000, guid: 9348112dad2e65642b66402e7d0cf6d8, type: 3}
+  SO_DropInBin: []

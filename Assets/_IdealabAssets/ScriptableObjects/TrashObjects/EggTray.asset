@@ -17,15 +17,12 @@ MonoBehaviour:
     Omdannes til nyt pap eller papir."
   SO_PreferredCategory: 2
   SO_PreferredCategoryPoints: 2
-  SO_AcceptableCategory: 1
+  SO_AcceptableCategory: 7
   SO_AcceptableCategoryPoints: 0
   SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Da den best\xE5r af pap skal det sorteres til pap."
   InfoIfSortedWrongly: "Da den best\xE5r af pap skal det sorteres til pap."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 0}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 114c341cdebb0a44da83f134cee92dc8, type: 3}
   - {fileID: 8300000, guid: 0f936e12aac17b34ca700e5e3f83b0ce, type: 3}
@@ -36,3 +33,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73f1fd393455b4243a03689e0c7ad747, type: 3}
   - {fileID: 8300000, guid: fcd32f1389b06444ca1ccd039a2a4f24, type: 3}
   - {fileID: 8300000, guid: 4096f79f2930d164babe4be3e9b8458f, type: 3}
+  SO_DropInBin: []
