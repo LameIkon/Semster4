@@ -19,3 +19,4 @@ MonoBehaviour:
   SO_ImagePrefab: {fileID: 0}
   SO_KeepPreviousTaskDescription: 0
   SO_KeepPreviousImage: 0
+  SO_CheckCompletionOnEnterState: 1
