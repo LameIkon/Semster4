@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "tr\xF8je"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9712ea7363778b546b682a886487b56f, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     - target: {fileID: 1151388028547126963, guid: 9712ea7363778b546b682a886487b56f, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.97924054

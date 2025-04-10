@@ -9,6 +9,7 @@ public class SOObjectivePage : ScriptableObject
     public GameObject SO_ImagePrefab; // To show Images
     public bool SO_KeepPreviousTaskDescription; // If want to keep previous tasks
     public bool SO_KeepPreviousImage; // If want to keep previous image
+    public bool SO_CheckCompletionOnEnterState;
 
     public bool HasTasks()
     {

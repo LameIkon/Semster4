@@ -63,6 +63,7 @@ public class PlayerVR : Singleton<PlayerVR>
 
     public bool IsHoldingObject() // For other scripts to check if player is currently holding an object
     {
+        Debug.Log("check holding");
         if (_heldRightObject != null)
         {
             return true;

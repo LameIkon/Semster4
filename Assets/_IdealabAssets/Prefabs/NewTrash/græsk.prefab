@@ -68,6 +68,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: "gr\xE6sk"
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a64a91eedce6f9148ad4acf5cc8ec406, type: 3}
+      propertyPath: m_TagString
+      value: Trash
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

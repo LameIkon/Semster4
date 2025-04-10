@@ -21,7 +21,11 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         CreateObjects();
         TrashBin.s_OnTrashedEvent4 += CheckAndRestoreTrash;
         UpdateText(manager); // Display/update UI
-        CheckCompletion(); // Check if there is any tasks.
+        
+        if (_runtimeTutorialData[_currentPage].SO_CheckCompletionOnEnterState)
+        {
+            CheckCompletion(); // Check if there is any tasks.
+        }
     }
     //public virtual void ExecuteState(TutorialManager manager) { }
     public virtual void CompleteState(TutorialManager manager)
