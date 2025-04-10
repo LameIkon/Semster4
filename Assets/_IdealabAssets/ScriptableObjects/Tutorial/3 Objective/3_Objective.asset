@@ -15,7 +15,6 @@ MonoBehaviour:
   SO_Pages:
   - {fileID: 11400000, guid: faaf2ca047c7e864981feb4a334bce42, type: 2}
   - {fileID: 11400000, guid: 3f8744ed790f9eb48a9409f27516f4ea, type: 2}
-  - {fileID: 11400000, guid: 25c0d086283aa3d43b8b390f1d9563da, type: 2}
   SO_trashToInstantiate:
   - {fileID: 6023552695703259733, guid: 9c6dc57fef7e2d14a9405db6d4cc0ebe, type: 3}
   - {fileID: 610937471534523737, guid: c02c4706acc4397499499f609d89246c, type: 3}
