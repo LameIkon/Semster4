@@ -31,9 +31,6 @@ public class SOTrashData : ScriptableObject
     [Space(20), Header("Audio")]
 	public AudioClip[] SO_DropOnFloor;
 	public AudioClip[] SO_PickUp;
-	
-	// Deprecated
-	[FormerlySerializedAs("SO_TrashAudioClip")] public AudioClip SO_DropInBinAudio;
-	[FormerlySerializedAs("SO_DropOnFloorAudioClip")] public AudioClip SO_DropOnFloorAudio;
-	[FormerlySerializedAs("SO_PickUpAudioClip")] public AudioClip SO_PickUpAudio;
+	public AudioClip[] SO_DropInBin;
+
 }

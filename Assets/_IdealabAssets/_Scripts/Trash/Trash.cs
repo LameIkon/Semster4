@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Transformers;
-using Random = System.Random;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(BoxCollider), typeof(Rigidbody), typeof(AudioSource)),
  RequireComponent(typeof(XRGrabInteractable), typeof(XRGeneralGrabTransformer), typeof(TrashDescriptionUIEnable))]
@@ -43,12 +43,17 @@ public class Trash : MonoBehaviour, ITrashable
 
     public AudioClip TrashingSound()
     {
-        // TODO: Implement 
-        return null;
+        if (_data == null) 
+        {
+            Debug.LogError($"No data assigned {gameObject.name}");
+        }
 
-        // if (_data == null) throw new NullReferenceException();
-        //
-        // return _data.SO_DropInBinAudio;
+        if (_data.SO_DropInBin.Length == 0) 
+        {
+            return null; 
+        }
+
+        return _data.SO_DropInBin[Random.Range(0, _data.SO_DropInBin.Length)];
     }
 
     public void PickUpSound()
@@ -68,7 +73,6 @@ public class Trash : MonoBehaviour, ITrashable
         AudioClip dropOnFloorClip = _data.SO_DropOnFloor[UnityEngine.Random.Range(0, _data.SO_DropOnFloor.Length)];
         _audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);
         _audioSource.clip = dropOnFloorClip;
-        Debug.Log("Should play NOW");
         _audioSource.Play();
     }
 
@@ -93,10 +97,7 @@ public class Trash : MonoBehaviour, ITrashable
     {
         _audioSource = GetComponent<AudioSource>();
         _audioSource.playOnAwake = false;
-        if (_data.SO_PickUpAudio != null)
-        {
-            _audioSource.clip = _data.SO_PickUpAudio;
-        }
     }
+
 #endregion
 }
