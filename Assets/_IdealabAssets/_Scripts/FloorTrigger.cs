@@ -14,6 +14,11 @@ public class FloorTrigger : MonoBehaviour
 
    }
 
+    private void Start() 
+    {
+        Reset();
+    }
+
     private void Reset()
     {
         GetComponent<BoxCollider>().isTrigger = true;
