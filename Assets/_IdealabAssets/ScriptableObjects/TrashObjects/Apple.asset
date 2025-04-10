@@ -15,15 +15,28 @@ MonoBehaviour:
   SO_Name: "\xC6ble"
   SO_Description: "Materiale: Organisk.\n\nNedbrydningstid: 2-5 uger.\n\nAffaldsh\xE5ndtering:
     Genanvendes til biogas og g\xF8dning."
-  SO_PreferdType: 0
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 1
-  SO_AcceptableTypePoints: 0
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 0
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 1
+  SO_AcceptableCategoryPoints: 0
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "\xC6ble er organisk materiale og skal ud i madaffald da
     det laves om til biogas."
   InfoIfSortedWrongly: "\xC6ble er organisk materiale og skal ud i madaffald da det
     laves om til biogas."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 61377ae90f2923845bffb93aa75af3ed, type: 3}
+  - {fileID: 8300000, guid: 6220f6b5e86287647a48e6f09b5fe7c9, type: 3}
+  - {fileID: 8300000, guid: 816012317b8bffe4b9c4d1839fa4a8bc, type: 3}
+  - {fileID: 8300000, guid: 6145f32da62f1104082be1252c88f497, type: 3}
+  - {fileID: 8300000, guid: a5ca97436b632a34db96b6d36d72f786, type: 3}
+  - {fileID: 8300000, guid: 21d9a6bdf27e44c4c86674991aa6f686, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: 55242f653c19a944caf04430e1fd2d19, type: 3}
+  - {fileID: 8300000, guid: 6fcfe109caf0a8941943b7ce44da77ba, type: 3}
+  - {fileID: 8300000, guid: 0e4b95b249f7cf14680eb875ebc59c29, type: 3}
+  - {fileID: 8300000, guid: 509669ffb9d16fb4f80452ef45d3f831, type: 3}

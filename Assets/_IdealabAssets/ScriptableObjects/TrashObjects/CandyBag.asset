@@ -16,13 +16,28 @@ MonoBehaviour:
   SO_Description: "Materiale: Bl\xF8d plastik (multilag).\n\nNedbrydningstid: 100-500
     \xE5r.\n\nAffaldsh\xE5ndtering: Affaldet kan ikke genanvendes og skal bare til
     forbr\xE6nding."
-  SO_PreferdType: 1
-  SO_PreferdTypePoints: 2
-  SO_AcceptableType: 4
-  SO_AcceptableTypePoints: 0
-  SO_WrongTypePoints: -2
+  SO_PreferredCategory: 1
+  SO_PreferredCategoryPoints: 2
+  SO_AcceptableCategory: 4
+  SO_AcceptableCategoryPoints: 0
+  SO_WrongCategoryPoints: -2
   InfoIfSortedCorrectly: "Da det er bl\xF8d plast skal det i rest affald."
   InfoIfSortedWrongly: "Da det er bl\xF8d plast kan det ikke genanvendes."
-  InfoIfSortedAcceptable: Acceptable
-  SO_TrashAudioClip: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_PickUpAudioClip: {fileID: 0}
+  InfoIfSortedAcceptably: Acceptable
+  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
+  SO_DropOnFloorAudio: {fileID: 0}
+  SO_PickUpAudio: {fileID: 0}
+  SO_DropOnFloor:
+  - {fileID: 8300000, guid: 93e3b160efe512a42894d4d3c8938e37, type: 3}
+  - {fileID: 8300000, guid: bef790d6c855ace4e9a1504302dc8d48, type: 3}
+  - {fileID: 8300000, guid: 2657641042f671e488d7172abaef1660, type: 3}
+  - {fileID: 8300000, guid: 3819230c0def98846a0cb3fbfe67f87f, type: 3}
+  - {fileID: 8300000, guid: a67a59b19763d0247849fcc0d7145183, type: 3}
+  SO_PickUp:
+  - {fileID: 8300000, guid: cf5a73b0c987fe3409ce71fdcabca1c7, type: 3}
+  - {fileID: 8300000, guid: 1ce2995f3d4284540846195e707f57ec, type: 3}
+  - {fileID: 8300000, guid: 9f5dc8594a44d7941a223e693ddb1dae, type: 3}
+  - {fileID: 8300000, guid: ff6b3c3054402f146832b861d0d75595, type: 3}
+  - {fileID: 8300000, guid: 0bc1efe640ab3104a93489df5b9a28e8, type: 3}
+  - {fileID: 8300000, guid: 9a8a8fb1b7a1a9145a8660a4c4317d1b, type: 3}
+  - {fileID: 8300000, guid: 0383471b89e564b40a198e1591bd802b, type: 3}
