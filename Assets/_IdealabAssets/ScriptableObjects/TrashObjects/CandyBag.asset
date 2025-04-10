@@ -24,9 +24,6 @@ MonoBehaviour:
   InfoIfSortedCorrectly: "Da det er bl\xF8d plast skal det i rest affald."
   InfoIfSortedWrongly: "Da det er bl\xF8d plast kan det ikke genanvendes."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 0}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 93e3b160efe512a42894d4d3c8938e37, type: 3}
   - {fileID: 8300000, guid: bef790d6c855ace4e9a1504302dc8d48, type: 3}
@@ -41,3 +38,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0bc1efe640ab3104a93489df5b9a28e8, type: 3}
   - {fileID: 8300000, guid: 9a8a8fb1b7a1a9145a8660a4c4317d1b, type: 3}
   - {fileID: 8300000, guid: 0383471b89e564b40a198e1591bd802b, type: 3}
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}

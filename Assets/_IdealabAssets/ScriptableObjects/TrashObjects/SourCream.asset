@@ -24,9 +24,6 @@ MonoBehaviour:
     plast."
   InfoIfSortedWrongly: "Da den best\xE5r af h\xE5rd plast skal det sorteres til plast."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: d1d2ed79410b2bb47b0bcaf6ebc7af68, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 8300000, guid: 07ee009c88df35e46b9202fff3956bd7, type: 3}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 19e0df9fe612e8d49b97d58bfc963338, type: 3}
   - {fileID: 8300000, guid: d1d2ed79410b2bb47b0bcaf6ebc7af68, type: 3}
@@ -34,3 +31,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 0e6a9042c38f36e4fa3d072dda3f8e55, type: 3}
   SO_PickUp:
   - {fileID: 8300000, guid: 742f30cc7f63a18489879ce6e49e7349, type: 3}
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}
