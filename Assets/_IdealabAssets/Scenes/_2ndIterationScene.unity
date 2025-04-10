@@ -8906,6 +8906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LogManager
       objectReference: {fileID: 0}
+    - target: {fileID: 787021067108138938, guid: 20eb6b77eb1934d49820e8bf9db0d695, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12736,6 +12740,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TutorialManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2386210719873247865, guid: 3713d7366fa8d7844acef697cf5d280c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5290795843610562687, guid: 3713d7366fa8d7844acef697cf5d280c, type: 3}
       propertyPath: _Objective
       value: 
@@ -15492,6 +15500,10 @@ PrefabInstance:
     - target: {fileID: 8769026120561872465, guid: eb32a5ece2f56e7408a95f01f5599286, type: 3}
       propertyPath: m_Name
       value: CompletionTrackerBoard
+      objectReference: {fileID: 0}
+    - target: {fileID: 8769026120561872465, guid: eb32a5ece2f56e7408a95f01f5599286, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
