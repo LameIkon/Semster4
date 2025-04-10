@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SO_conditionDescription: Affald smidt ud
   _currentAmount: 0
-  _requiredAmount: 1
+  _requiredAmount: 2
   _isCompleted: 0

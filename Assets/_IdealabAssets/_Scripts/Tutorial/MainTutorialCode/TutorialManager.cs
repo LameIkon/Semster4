@@ -8,12 +8,15 @@ public class TutorialManager : Singleton<TutorialManager>
     // All Objectives 
     public List<SOTutorialObjectiveBase> _allObjectives;
     private SOTutorialObjectiveBase _currentObjective; // Current Objective
+    [SerializeField] private Transform _spawnPoint;
 
     [Header("UI Components")]
     public GameObject _ContinueButton;
     public TextMeshProUGUI _Descriptiontext;
     public TextMeshProUGUI _Objective;
+    public GameObject _ImageHolder;
     [SerializeField] private GameObject[] _highlightDots;
+
 
     private int _currentObjectiveIndex;
     private int _currenProgressDisplay;
@@ -39,6 +42,11 @@ public class TutorialManager : Singleton<TutorialManager>
         _currenProgressDisplay++;
     }
 
+    public Vector3 GetSpawnPosition()
+    {
+        return _spawnPoint.position;
+    }
+
     public void NextObjective()
     {
         Debug.Log("Try next objective");
@@ -61,5 +69,15 @@ public class TutorialManager : Singleton<TutorialManager>
         {
             _currentObjective.NextPage();
         }
+    }
+
+    public void UnlockDoor()
+    {
+        Debug.Log("door unlocked");
+    }
+
+    public void LockDoor()
+    {
+        Debug.Log("door locked");
     }
 }

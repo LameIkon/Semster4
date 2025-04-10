@@ -21,7 +21,7 @@ public class TrashBin : MonoBehaviour, ILoggable
     public static event Action<GameObject, float> s_OnTrashedEvent; // The event that connects to the TrashManager
     public static event Action<float, SOTrashData> s_OnTrashedEvent2;
     public static event Action<string, string, float> s_OnLogEvent;
-    public static event Action<bool> s_OnTrashedEvent3; // Used for tutorial
+    public static event Action s_OnTrashedEvent3; // Used for tutorial
 
     // Audio
     private AudioSource _audioSource;
@@ -49,7 +49,7 @@ public class TrashBin : MonoBehaviour, ILoggable
         {
             s_OnTrashedEvent?.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
             s_OnTrashedEvent2?.Invoke((float)points, trash.TrashData());
-            s_OnTrashedEvent3?.Invoke(true); // Should always be true since the if statement above have accepted it 
+            s_OnTrashedEvent3?.Invoke(); // Should always be true since the if statement above have accepted it 
             if (s_OnLogEvent != null)
             {
                 s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name, (float)points);

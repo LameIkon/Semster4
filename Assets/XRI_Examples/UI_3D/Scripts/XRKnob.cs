@@ -18,6 +18,8 @@ namespace UnityEngine.XR.Content.Interaction
         /// </summary>
         struct TrackedRotation
         {
+
+
             /// <summary>
             /// The anchor rotation we calculate an offset from
             /// </summary>

@@ -14,6 +14,8 @@ namespace UnityEngine.XR.Content.Interaction
         [Tooltip("Transform joint that pulls a door to follow an interactor")]
         TransformJoint m_DoorPuller;
 
+        [SerializeField] private GameObject m_doorLocked;
+
         [SerializeField]
         GameObject m_KeyKnob;
 
@@ -66,6 +68,22 @@ namespace UnityEngine.XR.Content.Interaction
         /// </summary>
         public UnityEvent onUnlock => m_OnUnlock;
 
+        private void OnEnable()
+        {
+            DoorUnlock.OnUnlock += UnlockDoor;
+        }
+
+        private void OnDisable()
+        {
+            DoorUnlock.OnUnlock -= UnlockDoor;
+        }
+
+        private void UnlockDoor()
+        {
+            m_DoorPuller.gameObject.SetActive(true);
+             m_doorLocked.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+        }
+
         void Start()
         {
             m_OpenDoorLimits = m_DoorJoint.limits;
@@ -75,6 +93,11 @@ namespace UnityEngine.XR.Content.Interaction
             m_DoorJoint.limits = m_ClosedDoorLimits;
             m_KeyKnob.SetActive(false);
             m_Closed = true;
+            
+            
+            m_DoorPuller.gameObject.SetActive(false);
+            m_doorLocked.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            
         }
 
         void Update()
@@ -160,12 +183,14 @@ namespace UnityEngine.XR.Content.Interaction
 
         public void KeyLockSelect(SelectEnterEventArgs args)
         {
+            Debug.Log("Key inserted");
             m_KnobInteractor = args.interactorObject as XRBaseInteractor;
             m_KnobInteractorAttachTransform = args.interactorObject.GetAttachTransform(args.interactableObject);
         }
 
         public void KeyLockDeselect(SelectExitEventArgs args)
         {
+            Debug.Log("something key");
             m_KnobInteractor = null;
             m_KnobInteractorAttachTransform = null;
         }

@@ -7,7 +7,7 @@ public class TutorialObjectiveThree : SOTutorialObjectiveBase
     {
         PlayerVR.S_OnSelectStateChanged += SetInspectState;
         TrashBin.s_OnTrashedEvent3 += SetTrashingState;
-        PlayerVR.S_TestTrashing += SetTrashingState; // Test. Should be deleted later
+        //PlayerVR.S_TestTrashing += SetTrashingState; // Test. Should be deleted later
         base.EnterState(manager);
     }
 
@@ -16,9 +16,9 @@ public class TutorialObjectiveThree : SOTutorialObjectiveBase
         HandleTask(isInspecting, 1);
     }
 
-    private void SetTrashingState(bool isTrashing)
+    private void SetTrashingState()
     {
-        HandleTask(isTrashing, 0);
+        HandleTask(true, 0);
     }
 
 
@@ -26,7 +26,7 @@ public class TutorialObjectiveThree : SOTutorialObjectiveBase
     {
         PlayerVR.S_OnSelectStateChanged -= SetInspectState;
         TrashBin.s_OnTrashedEvent3 -= SetTrashingState;
-        PlayerVR.S_TestTrashing -= SetTrashingState; // Test. Should be deleted later
+        //PlayerVR.S_TestTrashing -= SetTrashingState; // Test. Should be deleted later
         base.ExitState(manager);
     }
 }

@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adf59303c28bdd942851150a56fd4f36, type: 3}
   m_Name: 4_Objective
   m_EditorClassIdentifier: 
-  SO_tutorialData: {fileID: 11400000, guid: 5a2560383ab7d224aab364e9414cf8a0, type: 2}
+  SO_Pages:
+  - {fileID: 11400000, guid: 857cbc005b220214f8e7a66e1f77f2c4, type: 2}
+  SO_trashToInstantiate:
+  - {fileID: 784072565763923235, guid: 52b0efbba0ab54548af1006d60566fe1, type: 3}

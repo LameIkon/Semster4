@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
   m_Name: 2_Part1
   m_EditorClassIdentifier: 
-  SO_Description: "Pr\xF8v at smide affaldet ud."
+  SO_Description: "Som det n\xE6ste, pr\xF8v at <color=#00CFFF>smid affaldet ud</color>
+    i en <color=#00CFFF>skraldespand</color>, st\xE5ende bagved."
   SO_Tasks:
   - {fileID: 11400000, guid: 0920201810ef4214eb146cb6c4ee65eb, type: 2}
+  SO_ImagePrefab: {fileID: 0}
   SO_KeepPreviousTaskDescription: 0
+  SO_KeepPreviousImage: 0

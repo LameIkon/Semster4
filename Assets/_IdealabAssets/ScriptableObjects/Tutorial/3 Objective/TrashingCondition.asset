@@ -15,3 +15,4 @@ MonoBehaviour:
   SO_conditionDescription: Affald sorteret
   _currentAmount: 0
   _requiredAmount: 2
+  _isCompleted: 0

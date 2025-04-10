@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 542f936469d2d4f4b817448bff2fbcb9, type: 3}
   m_Name: 4_part1
   m_EditorClassIdentifier: 
-  SO_Description: "Pr\xF8v at \xE5bne d\xF8ren"
-  SO_Tasks:
-  - {fileID: 11400000, guid: eccd8e2b3ce0d9343b47530e5cd51c9a, type: 2}
+  SO_Description: "Det var introduktionen! <color=#00CFFF>n\xF8glen</color> ligger
+    p\xE5 <color=#00CFFF>skrivebordet</color>. Brug n\xF8glen til at l\xE5se d\xF8ren
+    op og g\xE5 videre."
+  SO_Tasks: []
+  SO_ImagePrefab: {fileID: 0}
   SO_KeepPreviousTaskDescription: 0
+  SO_KeepPreviousImage: 0
