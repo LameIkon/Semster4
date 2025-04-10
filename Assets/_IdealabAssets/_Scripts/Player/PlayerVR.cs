@@ -51,34 +51,11 @@ public class PlayerVR : Singleton<PlayerVR>
         DisableLeftMap();
     }
 
-    //private void OnGripPerformed(InputAction.CallbackContext context)
-    //{
-    //    if (context.started)
-    //    {
-    //        Debug.Log("started");
-    //        //_IsHoldingObjectButton = true;
-    //        S_OnGripStateChanged?.Invoke(context.started);
-    //        Debug.Log(context.started);
-    //    }
-    //    else if (context.canceled)
-    //    {
-    //        Debug.Log("cancelled");
-    //        S_OnGripStateChanged?.Invoke(context.canceled);
-    //        Debug.Log(context.canceled);
-    //    }
-    //    else if (context.performed)
-    //    {
-    //        Debug.Log(context.performed);
-    //    }
-    //}
-
     private void OnGripStarted(InputAction.CallbackContext context)
     {
         if (context.started)
         {
-            Debug.Log("started");
             Invoke(nameof(InvokeGrip),0.3f);
-            //S_OnGripStateChanged?.Invoke(true);
         }
     }
 
@@ -91,7 +68,6 @@ public class PlayerVR : Singleton<PlayerVR>
     {
         if (context.canceled)
         {
-            Debug.Log("cancelled");
             S_OnGripStateChanged?.Invoke(false);
         }
     }
@@ -106,10 +82,10 @@ public class PlayerVR : Singleton<PlayerVR>
         S_OnSelectStateChanged?.Invoke(true);
     }
 
-    public static event Action<bool> S_TestTrashing; // Used for tutorial
-    public void TestTrashingButton() 
+    //public static event Action<bool> S_TestTrashing; // Used for tutorial
+    public void TestTrashingButton() // button
     {
-        S_TestTrashing?.Invoke(true);
+        //S_TestTrashing?.Invoke(true);
     }
 
     public static event Action<bool> S_TestDoor; // Used for tutorial
@@ -135,7 +111,6 @@ public class PlayerVR : Singleton<PlayerVR>
     {
         if (_heldObject != null && _toggleInspect)
         {
-            Debug.Log("true");
             return true;
         }
         else
@@ -150,7 +125,6 @@ public class PlayerVR : Singleton<PlayerVR>
     {
         if (context.started)
         {
-            Debug.Log("started");
             Invoke(nameof(InvokeSelect), 0.3f);
             _toggleInspect = true;
             //S_OnGripStateChanged?.Invoke(true);            
@@ -162,7 +136,6 @@ public class PlayerVR : Singleton<PlayerVR>
         if (context.canceled)
         {
             _toggleInspect = false;
-            Debug.Log("canceled");
             S_OnSelectStateChanged?.Invoke(false);
         }
     }
@@ -175,13 +148,11 @@ public class PlayerVR : Singleton<PlayerVR>
 
     public void OnObjectTriggerEnter(Collider other) // Used by hands for when entering its trigger
     {
-        Debug.Log("you are holding an object");
         _heldObject = other.gameObject;
     }
 
     public void OnObjectTriggerExit() // Used by hands for when entering exiting trigger
     {
-        Debug.Log("stopped holding object");
         _heldObject = null;
     }
 

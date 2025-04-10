@@ -7,7 +7,7 @@ public class SOTutorialObjectiveOne : SOTutorialObjectiveBase
     public override void EnterState(TutorialManager manager) // Start objective
     {
         PlayerVR.S_OnGripStateChanged += SetGripState;
-        PlayerVR.S_TestTrashing += CheckAndRestoreTrash;       
+        //PlayerVR.S_TestTrashing += CheckAndRestoreTrash;       
         base.EnterState(manager);
     }
 
@@ -19,7 +19,7 @@ public class SOTutorialObjectiveOne : SOTutorialObjectiveBase
     public override void ExitState(TutorialManager manager) // Finish objective
     {
         PlayerVR.S_OnGripStateChanged -= SetGripState;
-        PlayerVR.S_TestTrashing -= CheckAndRestoreTrash;
+        //PlayerVR.S_TestTrashing -= CheckAndRestoreTrash;
         base.ExitState(manager);
         
     }

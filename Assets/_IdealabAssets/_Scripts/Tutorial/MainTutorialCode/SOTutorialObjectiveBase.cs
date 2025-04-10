@@ -121,6 +121,8 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     {
         if (!state) return;
 
+        CheckAndRestoreTrash(); // WIP
+        
         SOObjectivePage currentPage = _runtimeTutorialData[_currentPage];
 
         if (currentPage.SO_Tasks.Count <= taskIndex) return;
@@ -132,6 +134,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             condition.Execute();
             UpdateText(TutorialManager.S_Instance);
         }
+        CheckAndRestoreTrash(); // WIP. Checker for trash. Safety feature that will check for every progress done to prevent soft lock.
         CheckCompletion();
     }
 
@@ -170,9 +173,10 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         }
     }
 
-    public void CheckAndRestoreTrash(bool notUsedBool) // Should be called by event
+    public void CheckAndRestoreTrash() // Should be called by event
     {
-        if (SO_SpawnedTrashObjects == null) return; // Return if we dont have ny objects to check after
+        Debug.Log("check");
+        if (SO_SpawnedTrashObjects == null) return; // Return if we dont have any objects to check after
 
         bool allGone = true;
         Debug.Log(SO_SpawnedTrashObjects.Count);
@@ -180,6 +184,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         {
             if (prefabObject != null) // Ignore null references - objecs become null when destroyed
             {
+                Debug.Log("still have trash");
                 allGone = false;
                 break; // Stop if we find a value besides null
             }

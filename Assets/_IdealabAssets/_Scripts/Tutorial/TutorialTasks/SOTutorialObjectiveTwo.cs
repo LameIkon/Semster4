@@ -6,19 +6,19 @@ public class SOTutorialObjectiveTwo : SOTutorialObjectiveBase
     public override void EnterState(TutorialManager manager)
     {
         TrashBin.s_OnTrashedEvent3 += SetTrashingState;
-        PlayerVR.S_TestTrashing += SetTrashingState; // Test. Should be deleted later
+        //PlayerVR.S_TestTrashing += SetTrashingState; // Test. Should be deleted later
         base.EnterState(manager);
     }
 
-    private void SetTrashingState(bool isTrashing)
+    private void SetTrashingState()
     {
-        HandleTask(isTrashing, 0);
+        HandleTask(true, 0);
     }
 
     public override void ExitState(TutorialManager manager)
     {
         TrashBin.s_OnTrashedEvent3 -= SetTrashingState;
-        PlayerVR.S_TestTrashing -= SetTrashingState; // Test. Should be deleted later
+        //PlayerVR.S_TestTrashing -= SetTrashingState; // Test. Should be deleted later
         base.ExitState(manager);
     }
 }
