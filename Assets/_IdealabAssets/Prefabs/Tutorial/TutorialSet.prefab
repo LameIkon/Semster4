@@ -875,6 +875,7 @@ GameObject:
   - component: {fileID: 7787577765739917117}
   - component: {fileID: 8204384011737247394}
   - component: {fileID: 5250299045858869387}
+  - component: {fileID: 3521654452281802652}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -970,6 +971,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6763583421306502351, guid: 091d46575613e314ebd83f3eb909fc11, type: 3}
+--- !u!54 &3521654452281802652
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550578316620348934}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1580559758013730543
 GameObject:
   m_ObjectHideFlags: 0
@@ -4856,6 +4884,7 @@ GameObject:
   - component: {fileID: 2017218986476838783}
   - component: {fileID: 4880427454447934476}
   - component: {fileID: 7615794208135744981}
+  - component: {fileID: 1820332405938494723}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -4951,6 +4980,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6763583421306502351, guid: 091d46575613e314ebd83f3eb909fc11, type: 3}
+--- !u!54 &1820332405938494723
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106156091844297656}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7205374425429157773
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +6846,7 @@ GameObject:
   - component: {fileID: 5503530386367332585}
   - component: {fileID: 5798995039079676147}
   - component: {fileID: 3533862523700263677}
+  - component: {fileID: 8573951396273707778}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -6885,6 +6942,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6763583421306502351, guid: 091d46575613e314ebd83f3eb909fc11, type: 3}
+--- !u!54 &8573951396273707778
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8561770607723906314}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8562855775825474786
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,6 +6981,7 @@ GameObject:
   - component: {fileID: 3766256977236234506}
   - component: {fileID: 9146463870025966029}
   - component: {fileID: 1509512080214169192}
+  - component: {fileID: 4750193500579262057}
   m_Layer: 8
   m_Name: Wall
   m_TagString: Untagged
@@ -6992,6 +7077,33 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6763583421306502351, guid: 091d46575613e314ebd83f3eb909fc11, type: 3}
+--- !u!54 &4750193500579262057
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8562855775825474786}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8672353909018551198
 GameObject:
   m_ObjectHideFlags: 0
