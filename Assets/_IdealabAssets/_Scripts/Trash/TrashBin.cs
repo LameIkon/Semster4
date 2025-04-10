@@ -44,7 +44,7 @@ public class TrashBin : MonoBehaviour, ILoggable
         }
 
         target.TryGetComponent<ITrashable>(out ITrashable trash); // Check if the GameObject entering the Trigger has an ITrashable
-        float? points = trash.Trashing(_binData._AllowedType);    // and calling the Trashing method, the method returns a float
+        float? points = trash?.Trashing(_binData._AllowedType);    // and calling the Trashing method, the method returns a float
 
         if (points != null)
         {
@@ -60,7 +60,7 @@ public class TrashBin : MonoBehaviour, ILoggable
             EnablePolish(points);
         }
 
-        AudioClip clip = trash.TrashingSound();
+        AudioClip clip = trash?.TrashingSound();
         if (clip != null)
         {
             PlayTrashSound(clip);
