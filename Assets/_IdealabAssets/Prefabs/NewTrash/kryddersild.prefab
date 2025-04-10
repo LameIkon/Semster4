@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b5a494339a69044498f7e98731186de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _trashUIPanel: {fileID: 5448092986268152604}
+  _trashUIPanel: {fileID: 5296308629482924527, guid: 7a4b0886a54950f47adc7460364bdc34, type: 3}
   _trashData: {fileID: 11400000, guid: 85d790c19dc85ec44b4d2e49372ad97f, type: 2}
 --- !u!114 &3053277258780130575
 MonoBehaviour:

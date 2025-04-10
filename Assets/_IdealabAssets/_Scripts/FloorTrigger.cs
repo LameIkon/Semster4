@@ -13,4 +13,9 @@ public class FloorTrigger : MonoBehaviour
       Debug.Log(target.name + "2222eqwe");
 
    }
+
+    private void Reset()
+    {
+        GetComponent<BoxCollider>().isTrigger = true;
+    }
 }
