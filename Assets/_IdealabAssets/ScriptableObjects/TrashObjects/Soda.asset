@@ -25,9 +25,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: "Sodavandsd\xE5ser skal helst pantes, hvis det ikke er muligt
     skal den sorteres som metal, da det kan genanvendes til nye dele. "
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 0}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: c1fd0d836d5f1324bbbfb522a36f2f8a, type: 3}
   - {fileID: 8300000, guid: f6490edfff8486a4e92b47b43fb37119, type: 3}
@@ -41,3 +38,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: aa61b35dfb64224438807c65c203a327, type: 3}
   - {fileID: 8300000, guid: 3f0c9edce9002de478bbd2f0a25e3084, type: 3}
   - {fileID: 8300000, guid: 26e7acd75b7def74a849690a8c623c59, type: 3}
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}

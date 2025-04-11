@@ -33,4 +33,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 73f1fd393455b4243a03689e0c7ad747, type: 3}
   - {fileID: 8300000, guid: fcd32f1389b06444ca1ccd039a2a4f24, type: 3}
   - {fileID: 8300000, guid: 4096f79f2930d164babe4be3e9b8458f, type: 3}
-  SO_DropInBin: []
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}

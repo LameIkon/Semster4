@@ -23,9 +23,6 @@ MonoBehaviour:
   InfoIfSortedCorrectly: "Da det er t\xF8j skal det sortes som tekstilaffald."
   InfoIfSortedWrongly: "Da det er t\xF8j skal det sortes som tekstilaffald."
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: 16fba6d30ed741d4a9fdd6e79ee2f3ac, type: 3}
-  SO_DropOnFloorAudio: {fileID: 0}
-  SO_PickUpAudio: {fileID: 8300000, guid: 852f1ca83534d1946bbba3b539a77bbc, type: 3}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 3fd493dcd911ba84a9a0ae104c896fb3, type: 3}
   - {fileID: 8300000, guid: 2435e0e7ea47e4a4ea7ef0294a0adefa, type: 3}
@@ -33,3 +30,8 @@ MonoBehaviour:
   SO_PickUp:
   - {fileID: 8300000, guid: 3395a4580ce747543948f0a1ef32e359, type: 3}
   - {fileID: 8300000, guid: 58f0d478a8f5c2f4cb371a4e2c65416d, type: 3}
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}

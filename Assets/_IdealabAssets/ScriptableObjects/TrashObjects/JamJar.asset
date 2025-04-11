@@ -25,9 +25,6 @@ MonoBehaviour:
   InfoIfSortedWrongly: 'Fordi beholderen er lavet af glas skal det sorteres ud til
     glas. '
   InfoIfSortedAcceptably: Acceptable
-  SO_DropInBinAudio: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
-  SO_DropOnFloorAudio: {fileID: 8300000, guid: d5dcddc6dfa13a741a72c2b850e4171b, type: 3}
-  SO_PickUpAudio: {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}
   SO_DropOnFloor:
   - {fileID: 8300000, guid: 2dc8b6240cb08fe4d847ef1249856a33, type: 3}
   - {fileID: 8300000, guid: 211f73e848a996543a61e9d9d310e06a, type: 3}
@@ -41,3 +38,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 6ecb9184a29a4ac42a2f8d4fec84e339, type: 3}
   - {fileID: 8300000, guid: 42f04feb2c57eee418f42c900b390944, type: 3}
   - {fileID: 8300000, guid: 0c4df6ab8c3848c439f127ae35d1f7a4, type: 3}
+  SO_DropInBin:
+  - {fileID: 8300000, guid: be958e60e24086041888ae98bfe5a91b, type: 3}
+  - {fileID: 8300000, guid: ffb625d31c634904598aeb714848324c, type: 3}
+  - {fileID: 8300000, guid: eb31de0a2557ef147b36da3ed43bc3e4, type: 3}
+  - {fileID: 8300000, guid: cb057c8d6d64ed345b86e43d40179622, type: 3}
