@@ -7,10 +7,12 @@ public class FloorTrigger : MonoBehaviour
 {
    void OnTriggerEnter(Collider target)
    {
-      Debug.Log(target.name + "eqwe");
-      target.TryGetComponent(out ITrashable trash);
-      trash.DropSound();
-      Debug.Log(target.name + "2222eqwe");
+        if (target.TryGetComponent(out ITrashable trash) && trash != null)
+        {
+            Debug.Log(target.name + "eqwe");
+            trash.DropSound();
+            Debug.Log(target.name + "2222eqwe");
+        }
 
    }
 

@@ -77,13 +77,8 @@ public class TutorialManager : Singleton<TutorialManager>
         }
     }
 
-    public void UnlockDoor()
+    public void SkipTask() // For Dev testing -  Use when you want to go to next task
     {
-        Debug.Log("door unlocked");
-    }
-
-    public void LockDoor()
-    {
-        Debug.Log("door locked");
+        _currentObjective.CompleteState(this);
     }
 }

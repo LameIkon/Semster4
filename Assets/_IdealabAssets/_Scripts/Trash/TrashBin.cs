@@ -70,6 +70,7 @@ public class TrashBin : MonoBehaviour, ILoggable
             {
                 s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name);
             }
+            trash.DestroyTrashOnTrashing();
         }
         else if (trash.GetTrashType() != _binData._AllowedType) // If trash gets declined
         {

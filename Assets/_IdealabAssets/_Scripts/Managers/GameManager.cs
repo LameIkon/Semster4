@@ -5,13 +5,14 @@ public class GameManager : Singleton<GameManager>
 
     private GameMode _currentMode;
 
-    [SerializeField] private TutorialManager tutorialManager;
-    [SerializeField] private CompletionTrackerBoard completionTrackerBoard;
+    [SerializeField] private TutorialManager _TutorialManager;
+    [SerializeField] private CompletionTrackerBoard _CompletionTrackerBoard;
+    [SerializeField] private HighscoreTable _HighscoreTable; 
     //[SerializeField] private LogManager logManager;
 
     private void Start()
     {
-        SetGameMode(GameMode.TutorialMode);
+        SetGameMode(GameMode.TutorialMode); // Initialize by setting it to tutorial
     }
 
     public void SetGameMode(GameMode newMode)
@@ -45,26 +46,28 @@ public class GameManager : Singleton<GameManager>
 
     private void EnterTutorialMode()
     {
-        tutorialManager.gameObject.SetActive(true);
+        _TutorialManager.gameObject.SetActive(true);
         Debug.Log("Entered Tutorial Mode");
     }
 
     private void ExitTutorialMode()
     {
-        tutorialManager.gameObject.SetActive(false);
+        _TutorialManager.gameObject.SetActive(false);
         Debug.Log("Exited Tutorial Mode");
     }
 
     private void EnterNormalGameMode()
     {
-        completionTrackerBoard.gameObject.SetActive(true);
+        _CompletionTrackerBoard.gameObject.SetActive(true);
+        _HighscoreTable.gameObject.SetActive(true);
         //logManager.gameObject.SetActive(true);
         Debug.Log("Entered Normal Game Mode");
     }
 
     private void ExitNormalGameMode()
     {
-        completionTrackerBoard.gameObject.SetActive(false);
+        _CompletionTrackerBoard.gameObject.SetActive(false);
+        _HighscoreTable.gameObject.SetActive(false);
         Debug.Log("Exited Normal Game Mode");
     }
 }

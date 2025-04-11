@@ -34,7 +34,6 @@ public class Trash : MonoBehaviour, ITrashable
     {
         if (type == _data.SO_AcceptableCategory)
         {
-            //Destroy(gameObject); // Destroy trash
             return true;
         }
         return false;
@@ -43,6 +42,11 @@ public class Trash : MonoBehaviour, ITrashable
     public SortingCategory GetTrashType()
     {
         return _data.SO_PreferredCategory;
+    }
+
+    public void DestroyTrashOnTrashing()
+    {
+        Destroy(gameObject);
     }
 
     public AudioClip TrashingSound()
@@ -70,9 +74,13 @@ public class Trash : MonoBehaviour, ITrashable
         _audioSource.Play();
     }
 
+
+
     public void DropSound()
     {
         if (_data == null) throw new NullReferenceException();
+
+        if (_data.SO_DropOnFloor.Length == 0) return; // No audios applied! 
 
         AudioClip dropOnFloorClip = _data.SO_DropOnFloor[UnityEngine.Random.Range(0, _data.SO_DropOnFloor.Length)];
         _audioSource.pitch = UnityEngine.Random.Range(0.8f, 1.2f);

@@ -8,6 +8,8 @@ public interface ITrashable
 
     SortingCategory GetTrashType();
     AudioClip TrashingSound();
+
+    void DestroyTrashOnTrashing();
     void PickUpSound();
     void DropSound();
     SOTrashData TrashData();
