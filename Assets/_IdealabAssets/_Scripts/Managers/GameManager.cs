@@ -7,7 +7,7 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private TutorialManager tutorialManager;
     [SerializeField] private CompletionTrackerBoard completionTrackerBoard;
-    [SerializeField] private LogManager logManager;
+    //[SerializeField] private LogManager logManager;
 
     private void Start()
     {
@@ -58,7 +58,7 @@ public class GameManager : Singleton<GameManager>
     private void EnterNormalGameMode()
     {
         completionTrackerBoard.gameObject.SetActive(true);
-        logManager.gameObject.SetActive(true);
+        //logManager.gameObject.SetActive(true);
         Debug.Log("Entered Normal Game Mode");
     }
 

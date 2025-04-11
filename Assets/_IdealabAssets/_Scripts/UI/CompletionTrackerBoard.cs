@@ -95,7 +95,7 @@ public sealed class TrackerBoards
 
         string Format(string text)
         {
-            return $"<s>{text}</s>";
+            return $"<color=red><s>{text}</s></color>";
         }
     }
 

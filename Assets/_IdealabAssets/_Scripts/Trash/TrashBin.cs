@@ -68,7 +68,7 @@ public class TrashBin : MonoBehaviour, ILoggable
 
         
 
-        if (trash.Vomit(_binData._AllowedType))
+        if (trash.Vomit(_binData._AllowedType) && trash != null)
         {
             Rigidbody rb = target.GetComponent<Rigidbody>();
             if (_jonasBool)
