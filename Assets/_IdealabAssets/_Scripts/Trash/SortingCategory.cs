@@ -11,3 +11,4 @@ public enum SortingCategory : Byte
     Textiles,                      // Tekstilaffald
     None
 }
+

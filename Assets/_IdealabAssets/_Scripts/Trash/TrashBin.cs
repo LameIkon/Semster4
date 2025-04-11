@@ -16,10 +16,11 @@ public class TrashBin : MonoBehaviour, ILoggable
 
     // Events
     public static event Action<GameObject, float> s_OnTrashedEvent; // The event that connects to the TrashManager
-    public static event Action<float, SOTrashData> s_OnTrashedEvent2;
+    //public static event Action<float, SOTrashData> s_OnTrashedEvent2;
     public static event Action<string, string> s_OnLogEvent;
     public static event Action s_OnTrashedEvent3; // Used for tutorial
-    public static event Action s_OnTrashedEvent4; // Used for tutorial
+    public static event Action s_OnTrashedEvent4; // Used for tutorial. Delayer
+    public static event Action<SOTrashBinData, SOTrashData> s_OnTrashedEvent5;
 
     // Audio
     private AudioSource _audioSource;
@@ -44,32 +45,37 @@ public class TrashBin : MonoBehaviour, ILoggable
         }
 
         target.TryGetComponent<ITrashable>(out ITrashable trash); // Check if the GameObject entering the Trigger has an ITrashable
+
+        if (trash == null) return; // If we dont have trash return
+
         float? points = trash?.Trashing(_binData._AllowedType);    // and calling the Trashing method, the method returns a float
 
-        if (points != null)
+
+        s_OnTrashedEvent?.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
+        s_OnTrashedEvent5?.Invoke(_binData, trash.TrashData()); // Used for InforBoard to check how it was sorted
+
+        if (trash.GetTrashType() == _binData._AllowedType) // If the trash is accepted
         {
-            s_OnTrashedEvent?.Invoke(gameObject, (float)points); // Casts the points as a float and invokes the OnTrashedEvent
-            s_OnTrashedEvent2?.Invoke((float)points, trash.TrashData());
             s_OnTrashedEvent3?.Invoke(); // This should be changed. It needs to know if the trashcan accepted or declined the trash
             Invoke(nameof(CheckFortrash),0.1f); // We need a small delay to check for trash after it gets deleted. This should be changed. It needs to know if the trashcan accepted or declined the trash
-            if (s_OnLogEvent != null)
+            PlayAnimation(trash.GetTrashType());
+            AudioClip clip = trash?.TrashingSound(); // Run trash sound
+
+            if (clip != null)
+            {
+                PlayTrashSound(clip);
+            }
+
+            if (s_OnLogEvent != null) // Log trash has been trashed
             {
                 s_OnLogEvent.Invoke(target.gameObject.name, gameObject.name);
             }
-
-            EnablePolish(points);
         }
-
-        AudioClip clip = trash?.TrashingSound();
-        if (clip != null)
+        else if (trash.GetTrashType() != _binData._AllowedType) // If trash gets declined
         {
-            PlayTrashSound(clip);
-        }
+            PlayAnimation(trash.GetTrashType());
 
-        
-
-        if (trash.Vomit(_binData._AllowedType) && trash != null)
-        {
+            // Vomit
             Rigidbody rb = target.GetComponent<Rigidbody>();
             if (_jonasBool)
             {
@@ -100,7 +106,7 @@ public class TrashBin : MonoBehaviour, ILoggable
         _audioSource.Play();
     }
 
-    private void EnablePolish(float? points) // Checks if the value is positive or negative
+    private void PlayAnimation(SortingCategory type) // Checks if the value is positive or negative
     {
         if (_animator == null)
         {
@@ -108,7 +114,14 @@ public class TrashBin : MonoBehaviour, ILoggable
             return;
         }
 
-        _animator.Play(points > 0 ? _expandCorrectAnimation : _expandIncorrectAnimation); // Play corresponding animation
+        if (type == _binData._AllowedType) // If sorted correctly 
+        {
+            _animator.Play(_expandCorrectAnimation);
+        }
+        else // If sorted Incorrectly
+        {
+            _animator.Play(_expandIncorrectAnimation);
+        }
     }
 
     public void Log() { }

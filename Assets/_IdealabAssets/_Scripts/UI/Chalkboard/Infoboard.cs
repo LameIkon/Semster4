@@ -18,12 +18,12 @@ public sealed class Infoboard : MonoBehaviour
 
     private void OnEnable()
     {
-        TrashBin.s_OnTrashedEvent2 += DisplayInfoMessage;
+        TrashBin.s_OnTrashedEvent5 += DisplayInfoMessage;
     }
 
     private void OnDisable()
     {
-        TrashBin.s_OnTrashedEvent2 -= DisplayInfoMessage;
+        TrashBin.s_OnTrashedEvent5 -= DisplayInfoMessage;
     }
 
     #endregion
@@ -32,9 +32,9 @@ public sealed class Infoboard : MonoBehaviour
     /// This method displays information regarding how well trash is sorted on the Infoboard. It takes 2 parameters
     /// of type float and SOTrashData. 
     /// </summary>
-    /// <param name="points">Used for checking how well trash was sorted.</param>
+    /// <param name="soTrashBinData">Used for checking how well trash was sorted.</param>
     /// <param name="soTrashData">Used for accessing infomation about trash.</param>
-    private static void DisplayInfoMessage(float points, SOTrashData soTrashData)
+    private static void DisplayInfoMessage(SOTrashBinData soTrashBinData, SOTrashData soTrashData)
     {
         if (s_instance == null)
         {
@@ -53,16 +53,16 @@ public sealed class Infoboard : MonoBehaviour
         //        ? $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}"
         //        : $"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedWrongly}";
 
-        if (points > 0) // Correct
+        if (soTrashBinData._AllowedType == soTrashData.SO_PreferredCategory) // Correct
         {
             Debug.Log("Correct");
             s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedCorrectly}");
         }
-        else if (points == 0) // Acceptable
-        {
-            Debug.Log("Acceptable");
-            s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedAcceptably}");
-        }
+        //else if (soTrashBinData._AllowedType == soTrashData.SO_AcceptableCategory) // Acceptable
+        //{
+        //    Debug.Log("Acceptable");
+        //    s_instance._infoMessage.text = ($"{soTrashData.SO_Description}\n\n{soTrashData.InfoIfSortedAcceptably}");
+        //}
         else // Incorrect
         {
             Debug.Log("Incorrect");

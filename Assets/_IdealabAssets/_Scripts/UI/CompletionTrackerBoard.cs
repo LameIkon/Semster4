@@ -23,28 +23,28 @@ public class CompletionTrackerBoard : MonoBehaviour
     private void OnEnable()
     {
         //TrashBin.s_OnTrashedEvent2 += HandleRemoveItemFromList; // Depending on how it should look on the board;
-        TrashBin.s_OnTrashedEvent2 += HandleCrossOutFromBoard;
+        TrashBin.s_OnTrashedEvent5 += HandleCrossOutFromBoard;
     }
 
     private void OnDisable()
     {
         //TrashBin.s_OnTrashedEvent2 -= HandleRemoveItemFromList;
-        TrashBin.s_OnTrashedEvent2 -= HandleCrossOutFromBoard;
+        TrashBin.s_OnTrashedEvent5 -= HandleCrossOutFromBoard;
     }
 #endregion
 
-    private void HandleRemoveItemFromBoard(float points, SOTrashData data)
+    private void HandleRemoveItemFromBoard(SOTrashBinData Unused, SOTrashData data)
     {
         _trackerBoards.RemoveTrash(data);
         PickUpTrash(data);
     }
 
-    private void HandleCrossOutFromBoard(float points, SOTrashData data)
+    private void HandleCrossOutFromBoard(SOTrashBinData trashBinData, SOTrashData trashData)
     {
-        if (points > 0)
+        if (trashBinData._AllowedType == trashData.SO_PreferredCategory)
         {
-            _trackerBoards.CrossOut(data);
-            PickUpTrash(data);
+            _trackerBoards.CrossOut(trashData);
+            PickUpTrash(trashData);
         }
     }
 

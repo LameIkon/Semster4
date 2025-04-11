@@ -30,15 +30,19 @@ public class Trash : MonoBehaviour, ITrashable
         return _data.SO_WrongCategoryPoints;
     }
 
-    public bool Vomit(SortingCategory type)
+    public bool IsTrashed(SortingCategory type) // Check if the trash that is tried to be trashed is of the accepted type.
     {
-        if (type == _data.SO_PreferredCategory) // || type == _data.SO_AcceptableCategory. Dont destroy accepted since we have concluded only looking at accepted or not accepted types
+        if (type == _data.SO_AcceptableCategory)
         {
-            Destroy(gameObject);
-            return false;
+            //Destroy(gameObject); // Destroy trash
+            return true;
         }
+        return false;
+    }
 
-        return true;
+    public SortingCategory GetTrashType()
+    {
+        return _data.SO_PreferredCategory;
     }
 
     public AudioClip TrashingSound()

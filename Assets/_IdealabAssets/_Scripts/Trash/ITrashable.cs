@@ -2,8 +2,11 @@ using UnityEngine;
 
 public interface ITrashable
 {
+    //bool IsTrashed(SortingCategory type);
+
     float Trashing(SortingCategory type);
-    bool Vomit(SortingCategory type);
+
+    SortingCategory GetTrashType();
     AudioClip TrashingSound();
     void PickUpSound();
     void DropSound();
