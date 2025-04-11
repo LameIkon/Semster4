@@ -27,7 +27,7 @@ public class Logger : ILoggable
 
     public void Log()
     {
-        _writer.WriteLog(_data.TrashDic, _data.Points, _data.TimeBetweenTrash, _data.CreatedTime, _data.StartedTime, _data.StoppedTime);
+        _writer.WriteLog(_data.TrashDic, _data.TimeBetweenTrash, _data.CreatedTime, _data.StartedTime, _data.StoppedTime);
     }
 
     public void GameStarted()
@@ -74,32 +74,32 @@ public class LogWriter
     }
 
 
-    public void WriteLog(IDictionary<string, string> trashLog, IList<float> points, IList<TimeSpan> timeBetweenTrash,
+    public void WriteLog(IDictionary<string, IList<string>> trashLog, IDictionary<string, IList<TimeSpan>> timeBetweenTrash,
                          params DateTime[] dateTimes)
     {
-        WriteTrashLog(trashLog, points, timeBetweenTrash);
+        WriteTrashLog(trashLog, timeBetweenTrash);
         WriteTimeLog(dateTimes);
     }
 
-    private void WriteTrashLog(IDictionary<string, string> trashLog, IList<float> points, IList<TimeSpan> timeBetweenTrash)
+    private void WriteTrashLog(IDictionary<string, IList<string>> trashLog, IDictionary<string, IList<TimeSpan>> timeBetweenTrash)
     {
         ClearLog(GetTrashLogPath());
 
         IList<string> logs = new List<string>();
 
-        foreach (KeyValuePair<string, string> trashLogItem in trashLog)
+        foreach (KeyValuePair<string, IList<string>> trashLogItem in trashLog)
         {
-            logs.Add($"{trashLogItem.Key},{trashLogItem.Value},");
+            int index = 0;
+            for (int i = 0; i < trashLogItem.Value.Count; i++) 
+            {
+                logs.Add($"{trashLogItem.Key},{trashLogItem.Value[i]},{timeBetweenTrash[trashLogItem.Key][i]}");            
+            }
         }
 
-        for (int i = 0; i < points.Count; i++)
-        {
-            logs[i] += $"{points[i]},{timeBetweenTrash[i]}";
-        }
 
         using (StreamWriter writer = new StreamWriter(GetTrashLogPath(), true))
         {
-            writer.WriteLine("Trash,TrashBin,Points,TimeBetween");
+            writer.WriteLine("Trash,TrashBin,TimeBetween");
 
             foreach (string log in logs)
             {
@@ -195,8 +195,7 @@ public class LogReader
                         string line = reader.ReadLine();
                         string[] tokens = line.Split(',');
                         trashDic.Add(tokens[0], tokens[1]);
-                        points.Add(float.Parse(tokens[2]));
-                        timeBetweenTrash.Add(TimeSpan.Parse(tokens[3]));
+                        timeBetweenTrash.Add(TimeSpan.Parse(tokens[2]));
                     }
                     catch (FormatException ex)
                     {
@@ -237,7 +236,7 @@ public class LogReader
             }
         }
 
-        return new LogData(trashDic, created, startGame, stoppedGame, points, timeBetweenTrash);
+        return new LogData(trashDic, created, startGame, stoppedGame, timeBetweenTrash);
     }
 
     private string GetTrashLogPath()
