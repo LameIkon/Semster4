@@ -17,7 +17,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     {
         Debug.Log("Tutorial: Hold an Object");
         CloneData(); // Copy the scriptable objects that needs to be used
-        SO_SpawnedTrashObjects.Clear(); // Clear list of tracked objects
+        //SO_SpawnedTrashObjects.Clear(); // Clear list of tracked objects
         CreateObjects();
         TrashBin.s_OnTrashedEvent4 += CheckAndRestoreTrash;
         UpdateText(manager); // Display/update UI
@@ -31,8 +31,8 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
     public virtual void CompleteState(TutorialManager manager)
     {
         Debug.Log("Completed Objective");
+        RemoveInstantiatedObjects(); // Remove objects since task got completed
         NextPage();
-
         if (_currentPage >= SO_Pages.Count)
         {
             Debug.Log("No more pages, exiting state...");
@@ -175,6 +175,7 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
         foreach (GameObject prefabObject in SO_trashToInstantiate)
         {
             GameObject spawned = Instantiate(prefabObject, spawnPosition, Quaternion.identity);
+            spawned.transform.SetParent(TutorialManager.S_Instance._InstantiatedObjectHolder.transform); // Set instantied as child of object holder. Used later to track what object are part of the tutorial
             SO_SpawnedTrashObjects.Add(spawned);
         }
     }
@@ -200,6 +201,17 @@ public abstract class SOTutorialObjectiveBase : ScriptableObject
             Debug.Log("spawn");
             SO_SpawnedTrashObjects.Clear(); // Clear old references
             CreateObjects();
+        }
+    }
+
+    public void RemoveInstantiatedObjects()
+    {
+        if (_runtimeTutorialData[_currentPage].SO_KeepObjects) return; // If set to true dont destroy gameobjects from that task EVER!
+
+        foreach (Transform child in TutorialManager.S_Instance._InstantiatedObjectHolder.transform) // Foreach gameobject in object holder destroy. Used every task to remove stuff
+        {
+            Debug.Log(child.name);
+            Destroy(child.gameObject);
         }
     }
     #endregion
